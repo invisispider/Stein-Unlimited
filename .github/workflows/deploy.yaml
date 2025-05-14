@@ -1,0 +1,90 @@
+permissions:
+  contents: read
+  security-events: write
+
+  # added this comment so something would change
+  
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install app
+      run: npm ci
+
+
+    - name: Set environment variables
+      run: |
+        echo "VITE_YOUTUBE_API_KEY=${{ secrets.VITE_YOUTUBE_API_KEY }}" >> $GITHUB_ENV
+        echo "VITE_YOUTUBE_CHANNEL_ID=${{ secrets.VITE_YOUTUBE_CHANNEL_ID }}" >> $GITHUB_ENV
+        echo "VITE_FB_ADMIN_UID=${{ secrets.VITE_FB_ADMIN_UID }}" >> $GITHUB_ENV
+        echo "VITE_FB_APIKEY=${{ secrets.VITE_FB_APIKEY }}" >> $GITHUB_ENV
+        echo "VITE_FB_APPID=${{ secrets.VITE_FB_APPID }}" >> $GITHUB_ENV
+        echo "VITE_FB_MEASUREMENTID=${{ secrets.VITE_FB_MEASUREMENTID }}" >> $GITHUB_ENV
+        echo "VITE_FB_MESSAGINGSENDERID=${{ secrets.VITE_FB_MESSAGINGSENDERID }}" >> $GITHUB_ENV
+        echo "VITE_FB_STORAGEBUCKET=${{ secrets.VITE_FB_STORAGEBUCKET }}" >> $GITHUB_ENV
+        echo "VITE_RECAPTCHA=${{ secrets.VITE_RECAPTCHA }}" >> $GITHUB_ENV
+        echo "VITE_RECAPTCHA_DEBUG_TOKEN=${{ secrets.VITE_RECAPTCHA_DEBUG_TOKEN }}" >> $GITHUB_ENV
+        echo "VITE_UID=${{ secrets.VITE_UID }}" >> $GITHUB_ENV
+        echo "VITE_UN_FB_DATABASEURL=${{ secrets.VITE_UN_FB_DATABASEURL }}" >> $GITHUB_ENV
+
+    - name: Check if VITE_FB_APIKEY is populated
+      run: |
+        if [ -z "${VITE_FB_APIKEY}" ]; then
+          echo "VITE_FB_APIKEY is EMPTY"
+          exit 1
+        else
+          echo "VITE_FB_APIKEY is present and has ${#VITE_FB_APIKEY} characters"
+        fi
+      env:
+        VITE_FB_APIKEY: ${{ secrets.VITE_FB_APIKEY }}
+
+    - name: run Vitest tests
+      run: npm run test:unit
+
+    - name: build app to production
+      run: npm run build
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: End to End test with Playwright
+      run: npm run test:e2e
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+    # - name: Deploy to Firebase
+    #   uses: w9jds/firebase-action@master
+    #   with:
+    #     arg: deploy --only hosting
+    #   env:
+    #     GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+    #     PROJECT_ID: stein-unlimited
+    #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    #     FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+
+    - name: Deploy to firebase preview channel
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: "${{ secrets.GITHUB_TOKEN }}"
+        firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
+        projectId: stein-unlimited
+        channelId: production
+

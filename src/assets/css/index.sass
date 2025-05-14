@@ -1,0 +1,299 @@
+@use "@/assets/css/theme"
+@use "@/assets/css/unthinkme"
+@use "@/assets/css/landing"
+@use "@/assets/css/sidebar"
+@use "@/assets/css/animations"
+@use "@/assets/css/vars" as *
+
+*, *:before, *:after
+    box-sizing: border-box
+html, body
+    margin: 0
+.hidden
+    visibility: hidden
+
+.green
+    color: #31e833
+.red
+    color: #da1a54
+button, a, router-link, RouterLink, i
+    cursor: pointer
+
+#appWrapper
+    display: flex
+    flex-direction: column
+    font-family: Roboto
+    min-height: 100vh
+    text-align: center
+    justify-content: flex-start
+    @media screen and (min-width: 999px)
+        .flex-column p
+            text-align: left
+            text-indent: 3em
+  
+a, router-link
+  text-decoration: none
+  align-items: flex-end
+  justify-content: flex-end
+  margin-block: auto
+  padding: 0
+
+// MOBILE VERTICAL STYLE
+#appWrapper.vertical
+    .home-content
+        font-family: Poppins
+        padding-inline: 0.4em
+.flex-column
+    display: grid
+    grid-auto-rows: min-content min-content auto min-content
+    margin-block-start: 50px
+    flex-grow: 1
+.flex
+    display: flex
+
+.home-content
+    padding: 0
+    display: flex
+    flex-direction: column
+    font-size-adjust: 0.8
+    line-height: 200%
+    @media screen and (min-width: 800px)
+        margin-inline: 10%
+    a:not(.stu-banner)
+        display: inline
+        color: $active
+    a
+        text-decoration: none
+    p
+        text-align: left
+        text-indent: 2em
+        padding-block: 0.2em
+        margin-inline: 1.3em
+        max-width: 85%
+        text-justify: inter-word
+        text-indent: 3em
+        a 
+            margin-inline: 0
+
+.active-link
+    color: $active
+.social-grp
+    display: flex
+    background-color: $social-grp-color
+    justify-content: center
+    position: fixed
+    bottom: 0
+    width: 100vw
+    justify-self: center
+    padding: 0.2em
+    a
+        font-size: 12px
+    a:has(.social)
+        .social
+            max-width: 100%
+            max-height: 27px
+            margin-inline: 0.3em
+        
+#style-selector
+    position: fixed
+    z-index: 2
+    width: 100vw
+    padding-block-end: 4px
+    .material-icons
+        font-size: 1.4em
+.btn-grp
+    display: flex
+    flex-direction: row-reverse
+    width: 100vw
+    grid-template-columns: repeat(10, 10%)
+    margin-block: 3px
+    padding-inline: 1em
+    *
+        align-self: center
+        justify-self: center
+        border-radius: 20%
+        padding: 0.23em
+    @media screen and (min-width: 350px)
+        i, span
+            margin-inline: 0.2em
+   
+.stu-banner
+    display: inline-block
+    height: auto
+    margin-inline: auto
+    max-width: 94%
+    border-radius: 10px
+    margin: 0
+    padding: 0
+    @media screen and (max-width: 500px)
+        max-width: 90%
+.sidebar
+    color: #fff
+    display: flex
+    flex-direction: column
+    background-color: #2f855a
+    position: fixed
+    z-index: 100
+    top: 0
+    left: 0
+    padding: .5em
+    transition: .3s ease
+    font-family: Poppins
+.sidebar:not(.sidebar:has(.rotate-180))
+    border-right: 2px solid #18222c
+.rotate-180
+    top: 0
+    padding: 6px 50px
+    margin: 0
+    border-radius: 5%
+
+.topnav
+    .christmas-icon
+        font-size: 1.8rem
+        list-style-type: none
+        justify-content: center
+    .navItem
+        font-family: 'Roboto'
+        font-weight: 600
+        border-radius: 7px
+        margin-block: 0.4em
+        white-space: nowrap
+        cursor: pointer
+        list-style-type: none
+        justify-content: center
+    a, router-link
+        border-radius: 6px
+
+
+@media screen and (min-width: 430px)
+    .topnav
+        max-width: 100vw
+        ul
+            min-height: 2rem
+            max-width: 100vw
+            justify-content: flex-start
+            align-items: center
+            list-style-type: none
+            flex-wrap: nowrap
+        ul li
+            min-width: 10vw
+            padding: .2rem
+#player
+    max-width: 100vw
+
+
+// UTILITY CLASSES
+.pointer
+    cursor: pointer
+.center-text
+    text-align: center
+
+.work-schedules
+    margin: auto
+    @media screen and (max-width: 400px)
+        display: none
+.home-logo, #landing-title
+  justify-self: center
+  margin-top: 3em
+
+// USE THIS FOR GOOD READING:
+.article-font
+    font-size: 20px
+    letter-spacing: -0.003em
+    line-height: 28px
+    p
+        max-width: 800px
+        margin: 0 auto
+        padding: 20px
+
+
+#beacon-div
+    margin: 3em
+    text-align: justify
+    p
+        text-indent: 2em
+
+/* Novel container */
+#beacon-div
+    max-width: 800px
+    margin: 40px auto
+    padding: 20px
+    /* background: white; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    border-radius: 8px
+/* Paragraph styling */
+.novel p
+    text-indent: 1.5em
+    margin-bottom: 1em
+/* Chapter titles */
+.novel h1, .novel h2
+    text-align: center
+    margin: 20px 0
+    font-weight: normal
+/* Responsive adjustments */
+@media (max-width: 600px)
+    .novel-container
+        max-width: 95%
+        padding: 15px
+    .novel p
+        text-indent: 1em
+body
+    text-rendering: optimizeLegibility
+
+
+
+#appWrapper.horizontal
+    .collapse-icon
+        // position: fixed
+        color: #92099e
+        transition: .2s linear
+        z-index: 540
+        top: 0
+        left: 0
+        font-size: 30px
+        margin-block: 0.3em
+    .collapse-icon:not(.rotate-180)
+        position: relative
+    .rotate-180
+        // left: 0
+        transform: rotate(180deg)
+        transition: .2s linear
+        position: fixed
+        margin-left: 0.3em
+    .vac-col-messages
+        z-index: 0
+    .vac-room-header
+        z-index: 0
+    .vac-avatar
+        margin-left: 2%
+
+    .move-up
+        top: -60px
+
+    .wheelie
+        position: fixed
+        z-index: 300
+        bottom: 90px
+        font-size: 8rem
+
+    .userButton
+        color: red
+        font-size: 1.3rem
+        padding: 3px 10px
+        display: block
+        border-radius: 5px
+
+    .userButton:hover
+        background: rgb(220, 220, 220)
+    .home-container
+        display: flex
+        font-family: Roboto
+        flex-direction: column
+        width: 100vw
+        i
+            margin: 0
+            padding: 0
+
+    @media screen and (min-width: 430px)
+        .home-container
+            flex-align: center

@@ -1,0 +1,71 @@
+{
+  "headers": [
+    {
+      "source": "/**",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'https://www.gstatic.com https://www.googleapis.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.gstatic.com https://www.googleapis.com https://www.youtube.com; style-src 'self'; img-src 'self' https://firebasestorage.googleapis.com https://www.gstatic.com https://i.ytimg.com; connect-src 'self' https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://firebasestorage.googleapis.com https://*.googleapis.com https://*.firebaseio.com https://*.firebaseappcheck.googleapis.com https://stein-unlimited.cloudfunctions.net; font-src 'self' https://fonts.gstatic.com https://cdn.glitch.me; frame-src 'self' https://www.google.com https://www.google.com/recaptcha/ https://www.google.com https://www.youtube.com; object-src 'none'; worker-src 'self';"
+        }
+      ]
+    },
+    {
+      "source": "**/*.js",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { 
+        "source": "**", 
+        "destination": "/index.html" 
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "runtime": "nodejs20",
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run lint", "npm --prefix \"$RESOURCE_DIR\" run build"],
+      "codebase": "default",
+      "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log", "*.local"]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    }
+  }
+}

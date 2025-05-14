@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /chatRooms/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid != null;
+    }
+    match /colors/{document} {
+      allow read: if true;
+      allow write: if request.auth.uid != null;
+    }
+    match /utmblog/{document=**} {
+    	allow read: if true;
+      allow write: if request.auth.token.admin == true;
+    }
+    match /users/{document} {
+      allow read: if request.auth.uid != null;
+    }
+    match /youtubechannel/{document=**} {
+    	allow read: if true;
+      allow write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if request.auth.token.admin == true;
+    }
+  }
+}

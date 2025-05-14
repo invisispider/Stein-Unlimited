@@ -1,0 +1,107 @@
+
+
+#nav
+	padding: 30px
+	@media (hover: hover)
+	a:hover
+		background-color: #00bd7e33
+#nav a
+	font-weight: bold
+	color: #2c3e50
+#nav a.router-link-exact-active
+	color: #42b983
+
+button, a, router-link, RouterLink, i
+	cursor: pointer
+	display: block
+	
+.sidebar
+	position: fixed
+	z-index: 1
+	// top: 1%
+	// left: 1%
+	padding: .5em .5em 6em .5em
+	transition: .3s ease
+.sidebar:has(.rotate-180)
+	// position: relative
+	padding: 0
+	// border: 2px solid #2c3e50
+.sidebar:not(.sidebar:has(.rotate-180))
+	border-right: 2px solid #2c3e50
+.clock-wrapper
+	fill: red
+.collapse-icon
+	color: #92099e
+	transition: .2s linear
+	z-index: 540
+	// border-radius: 0
+	min-width: 100px
+.collapse-icon:not(.rotate-180)
+	// bottom: 10%
+	// left: 41%
+
+.rotate-180
+	// left: 7px
+	transform: rotate(180deg)
+	transition: .2s linear
+.vac-col-messages
+	z-index: 0
+.vac-room-header
+	z-index: 0
+.vac-avatar
+	margin-left: 2%
+
+.topnav
+	background-image: url(@/assets/img/keys.jpg)
+	background-repeat: repeat-x
+	background-position: bottom
+	background-size: contain
+	max-height: 100vh
+	padding-inline: 1em
+	.christmas-icon
+		font-size: 1.6rem
+		list-style-type: none
+		display: flex
+		i
+			margin: auto
+			padding: 0.3em
+		span
+			margin: auto
+			padding: 0.3em
+	.navItem
+		font-size: 1.4em
+		box-shadow: 0 1px .1em #4e934f
+		border-radius: 10px
+		white-space: nowrap
+		cursor: pointer
+		list-style-type: none
+		justify-content: center
+	// .nav-item-dark
+	// 	box-shadow: 0 0 40px #f0cf6c
+	a, router-link
+		color: #fbf
+		border-radius: 6px
+	a:hover, router-link:hover
+		color: #fff
+
+.sidebar-link
+	display: flex
+	align-items: center
+	cursor: pointer
+	position: relative
+	font-weight: 400
+	user-select: none
+	margin: 0.1em 0
+	padding: 0.4em
+	border-radius: 0.25em
+	height: 1.5em
+	color: white
+	text-decoration: none
+.sidebar-link:hover
+	background-color: var(--sidebar-item-hover)
+.sidebar-link.active
+	background-color: var(--sidebar-item-active)
+.sidebar-link .icon
+	flex-shrink: 0
+	width: 25px
+	margin-right: 10px

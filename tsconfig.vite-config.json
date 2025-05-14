@@ -1,0 +1,9 @@
+{
+  "extends": "./node_modules/@vue/tsconfig/tsconfig.json",
+  "include": ["vite.config.*"],
+  "exclude": ["archive/**"],
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node", "vitest"]
+  },
+}

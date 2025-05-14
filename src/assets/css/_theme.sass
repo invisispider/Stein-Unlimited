@@ -1,0 +1,386 @@
+@use "sass:color"
+$mygreen: #31e833
+$dark-purple: #92099e
+$dark-green: #2f855a
+$light-black: #5a5a5a
+$medium-thalmon: rgb(245, 120, 89)
+$peace: #115f83
+$pink-light: #e75480
+$button-text: #FDC
+$button-back: rgb(40, 16, 80)
+$button-active: rgb(135 19 175)
+$button-hover: rgb(149 13 135 / 62%)
+$a-text: #f6e1a9
+$a-active: #A45
+$a-hover: rgb(7 0 81 / 80%)
+$limegreen: limegreen
+$div-bckgrd: rgb(19 18 30 / 80%)
+$box-shadow-stein: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
+$deep-blue: #60a5fa
+$golden: #ff8c00
+
+@mixin style-icons($name, $color)
+    ##{$name}
+        color: $color
+        background-color: color.complement($color)
+
+@function icon-color($name, $c)
+    @return $c
+
+$habit-colors: (
+    "struggles": #260436,
+    "flowers": #ffb6c1,
+    "elders": #efefef,
+    "vivid": #cc4b67,
+    "peace": #2563eb,
+    "harvests": #cd853f,
+    "hallows": $dark-green,
+    "feasts": #101010,
+)
+@each $h, $c in $habit-colors
+    @include style-icons("#{h}+-theme", $c)
+
+@mixin unThemeMe($theme-name, $icon-color, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
+    #appWrapper.#{""+$theme-name}
+        $box-shadow: 2px 2px $icon-color, -2px -2px $contrast
+
+        background-color: $bg-color
+        color: $color
+        a
+            color: $safe-text
+        // .topnav
+        .christmas-icon
+            color: rgb(49, 232, 51)
+        .navItem
+            box-shadow: 0 0 5px $contrast
+            border: solid 1px white
+        .nav-item-dark
+            box-shadow: 0 0 40px $color
+        a:hover, router-link:hover
+            color: $loud
+
+        // VIDEOS
+        #video-container
+            .stu-banner
+                box-shadow: $box-shadow
+            button
+                background-color: $vid-div
+                color: $color
+            button:hover
+                background-color: $sidebar-bg
+            button.active
+                background-color: $smooth-bg
+            div:hover
+                background-color: $mod-bg
+            div
+                background-color: $vid-div
+                box-shadow: $box-shadow
+            a
+                color: $color
+            a:visited
+                color: $safe-text
+            .member-berries
+                box-shadow: $box-shadow
+                // background: linear-gradient(#8f21ae, #26524f)
+        .lime-green
+            color: $limegreen
+
+        .rotate-180
+            background-color: $sidebar-bg
+        .home-changer, #style-selector
+            i, .tinytext
+                // border: 1px solid $mod-bg
+                background-color: $sidebar-bg
+            i:hover, .tinytext *:hover
+                background-color: $sidebar-bg
+            background-color: $mod-bg
+
+        .sidebar
+            background-color: $sidebar-bg
+
+        .pedantic
+            color: $loud
+
+        .bullet-point
+            background-image: linear-gradient(to bottom, $mod-bg, $smooth-bg)
+            border-radius: 10px
+            padding: 13px
+            text-align: center
+        // crossword
+        #acrossDiv, #downDiv
+            h2
+                box-shadow: 1px 1px 5px 1px $hooks
+        .couch
+            // color: $contrast
+            background-color: $vid-div
+        .buttons
+            background-color: $mod-bg
+            color: $color
+            span
+                background-color: $loud
+            span:hover
+                // color: lighten($color, 20%)
+                color: color.adjust($color, $lightness: +20%)
+                // background-color: darken($loud, 20%)
+                background-color: color.adjust($loud, $lightness: -20%)
+        .crossword-body
+            span
+                box-shadow: 1px 1px 5px 1px $sidebar-bg
+        #puzzle-clues
+            span:hover
+                background-color: $hooks
+            h2
+                color: $color
+                background-color: $mod-bg
+            h2:hover
+                background-color: $hooks
+
+        #puzzle-body:not(.clearme)
+            color: $color
+        #puzzle-body .clearme
+            color: $contrast
+        .navItem, #puzzle-body .clearme
+            background-color: $smooth-bg
+
+        .video-div
+            background-color: $vid-div
+            border-color: $loud
+        .login-page
+            background-color: $mod-bg
+            box-shadow: 1px 1px 5px 1px $loud
+            border-radius: 8px
+            h2
+                // background-color: $sidebar-bg
+                color: $loud
+            input
+                background-color: $bg-color
+                border: 1px solid $vid-div
+                color: $color
+                &[name="submit"]
+                    border-radius: 8px
+                    color: $icon-color
+            i
+                color: $bg-color
+                text-shadow: -1px -2px $loud
+            a, router-link
+                color: $color
+                padding-block: 3px
+            button, .login-submit-button
+                cursor: pointer
+                background-color: $smooth-bg
+                margin: 3em
+                padding: 1rem
+                margin: 1rem auto
+                color: $color
+                border-radius: 8px
+                border: 1px solid $color
+                padding: 0.6rem 1rem
+
+        // TIME
+        .zen-wrapper
+            background-color: color.adjust($bg-color, $lightness: +10%)
+
+        
+        .title-logo h2
+            color: $loud
+        .smiley
+            background-image: linear-gradient(to bottom, $sidebar-bg, $icon-color, $sidebar-bg)
+            i:hover
+                color: $smooth-bg
+        .active
+            // background-color: $vid-div
+            // background-color: $smooth-bg
+            // background-color: $color
+            stroke: $loud
+            fill: $loud
+            color: $hooks
+        .zenwheel
+            text:not(.year-markers)
+                // cursor: pointer
+                fill: $color
+                stroke: $color
+            text.active
+                fill: $loud
+                stroke: $loud
+            .pie-chart
+                fill: $mod-bg
+                // stroke: $mod-bg
+                // stroke-width: 10px
+            .zen-cycle-arm
+                stroke: $smooth-bg
+            .habit-divider
+                fill: $bg-color
+                stroke: $smooth-bg
+
+        // #habits
+            // h2
+                // box-shadow: 0 0 1px $sidebar-bg
+        .holiday
+            color: $loud
+
+        .clock-hand
+            stroke: $contrast
+            stroke-width: 2
+        .greg-dark, .greg-light, .greg-text
+            stroke: $color
+        .zen-borders
+            stroke: $icon-color
+            stroke: $color
+            stroke: $smooth-bg
+        .greg-dark
+            fill: $smooth-bg
+        .greg-light
+            fill: $vid-div
+        .greg-text
+            fill: $color
+        .zen-mint
+            fill: $color
+        .inner-rect
+            fill: $loud
+        .daytop-bg
+            fill: $smooth-bg
+        .daytop-tx
+            fill: $color
+            stroke: $color
+        .alt-fill
+            fill: $mod-bg
+        .black-fill
+            fill: $vid-div
+        .session-before
+            fill: $sidebar-bg
+        .sessionActive
+            fill: $loud
+        .session-after
+            fill: $vid-div
+        .year-hand
+            stroke: $contrast
+        .year-clock-hand-axis
+            fill: $loud
+
+        .baheader-zen
+            background-color: $mod-bg
+            color: $color
+        .unchunk
+            color: $contrast
+        .uncell
+            background-color: $sidebar-bg
+
+        .selected-date
+            background-color: $mod-bg
+            color: $loud
+        .uncell-zen
+            border: 1px solid $mod-bg
+        .uncell-zen:hover
+            background-color: $smooth-bg
+        .zen-borders:hover
+            fill: $smooth-bg
+        .conversion-table
+            background-color: $bg-color
+            table
+                color: $color
+                box-shadow: 0 0 8px 1px $contrast
+                .th
+                    border: 1px solid $icon-color
+                .th-blue
+                    border: 1px solid $sidebar-bg
+        .info-panel
+            z-index: 6000
+            .btn-grp
+                background-color: $mod-bg
+                // color: red
+                a:hover
+                    color: green
+                .active
+                    color: blue
+
+            i, .tinytext
+                background-color: $mod-bg
+            i:hover, .tinytext:hover
+                background-color: $sidebar-bg
+        // INTEGRAL
+        .hilight
+            color: $loud
+        .btn-group
+            :hover
+                background-color: $sidebar-bg
+            button
+                // background-color: #08F
+                // background-color: #101
+                background-color: $smooth-bg
+                color: $color
+                :hover
+                    background-color: $vid-div
+            .darken
+                // background-color: darken($smooth-bg, 30%)
+                background-color: color.adjust($smooth-bg, $lightness: -30%)
+        .home-changer a
+            background-color: $sidebar-bg
+            color: $color
+            // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
+            box-shadow: 1px 2px $smooth-bg, -1px -2px $loud
+        .home-changer a:hover
+            background-color: $loud
+
+        .bisque
+            stroke: $icon-color
+            fill: $mod-bg
+        #arrow path
+            fill: $contrast
+        .year-markers
+            fill: $smooth-bg
+            stroke: $color
+            opacity: 1
+            // fill: bisque
+            // stroke: tomato
+
+        .work-schedules
+            td, th
+                border: 1px solid $color
+            .border-red
+                border: 2px solid red
+            .border-black
+                border: 2px solid black
+            .border-blue
+                border: 2px solid dodgerblue
+            .border-pink
+                border: 2px solid hotpink
+
+        // MUSIC
+        #music-main
+            h2, h1
+                color: $color
+                text-shadow: 2px 1px 4px $contrast
+            .testimonial
+                text-shadow: 2px 1px 4px $vid-div 
+            .double-width
+                background-color: $vid-div 
+                box-shadow: 1px 0 10px $icon-color
+
+        .glow
+            animation: glow 4s infinite alternate
+
+        .zenwheel text.active
+            animation: glow 2.5s ease-in-out infinite alternate
+            @keyframes glow
+                0%
+                    text-shadow: 0px 0px -3px $color, 3px 3px 6px $loud
+                to
+                    text-shadow: 0px 0px 4px $icon-color, 0px 0px 6px $contrast
+
+@include unThemeMe(struggles, $dark-purple, #9d5fa5, #000000, #cfb0ef, #1e0127, 
+    #0e031b, #15082e, #040007, #92099e, #6f8d7d, #4a6cb6)
+@include unThemeMe(flowers, #ffe6f2, #4a0e2a, #c9b8bd, #46071a, #cf83b3, 
+    #885988, #ff69b4, #db7093, #800080, #dda0dd, #e6ca7e)
+@include unThemeMe(elders, $light-black, #084955, #faf0f0, #012121, #9981a8, 
+    #d2b2e0, #dad0d0, #797171, rgb(144, 139, 211), #022326, #666)
+@include unThemeMe(vivid, $peace, #9e2b2b, #e6e7df, rgb(6, 1, 17), #ac91a3, 
+    #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
+@include unThemeMe(peace, #cee0e2, #1c3d5a, #e2eeec, #9e9494, #2874a6, 
+    #213a49, #3498db, #2e86c1, #7ab7be, #aed6f1, #a3e3ee)
+@include unThemeMe(harvests, $medium-thalmon, #945f5f, #333, rgb(249, 194, 159), 
+    #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, #ff5050)
+@include unThemeMe(hallows, $dark-green, #87cc9b, #161616, #68f78e, #100a14, 
+    #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #298372)
+@include unThemeMe(feasts, #daa520, #fff8dc, #4d3c36, #14140f, #b8860b, 
+    #8b5e3c, #cd853f, #ffa500, #ff8c00, #deb887, #ff4500)
+// $icon-color, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loudm $contrast, $hooks

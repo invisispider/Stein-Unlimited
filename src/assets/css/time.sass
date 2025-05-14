@@ -1,0 +1,306 @@
+@use "@/assets/css/vars.sass" as *
+@font-face
+	font-family: HK Grotesk
+	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+@font-face
+	font-family: HK Grotesk
+	font-weight: bold
+	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+
+// HMTL -> body -> div#app -> div#appWrapper -> sidebar, style-selector, .zen-wrapper ->
+	// .title-logo, .zen-meters, .zenwheel.time-borders, .day-container.time-borders, section#habits
+
+// .zenclock-container, .day-container, .title-logo, #habits, .zenwheel
+//   margin: auto
+//   justify-content: space-around
+//   align-items: center
+
+.zen-wrapper
+	font-family: HK Grotesk
+	display: flex
+	flex-direction: column
+	padding: 20px 5px
+	// max-width: 100vw
+	align-content: space-between
+	// margin-block: 2em 5em
+	padding: 2em 2em
+	// padding-block-end: 0
+	@media screen and (min-width: 700px)
+		display: grid
+		grid-template-columns: 1fr max-content
+		grid-template-rows: auto
+		grid-template-areas: "dayContainer titleLogo" "habitsDiv habitsDiv"
+		#habits
+			justify-content: center
+	@media screen and (min-width: 1000px)
+		grid-template-columns: max-content max-content 2fr
+		grid-template-areas: "dayContainer titleLogo habitsDiv"
+		// grid-template-rows: 1fr max-content
+		// height: 100vw
+		align-items: flex-start
+		// grid-template-rows: max-content
+		// height: max-content
+	@media screen and (min-width: 1400px)
+		grid-template-columns: 1fr 1fr 1fr
+		// grid-template-areas: "dayContainer titleLogo" "habitsDiv habitsDiv"
+	// font-size: 1em
+	// max-width: 1970px
+	// width: 100vw
+	// display: grid
+	// grid-auto-rows: 320px
+	// justify-content: space-evenly
+	// min-height: 100vh
+	// grid-gap: 10px
+	// @media screen and (min-width: 1440px)
+		// grid-template: auto / 1fr 1fr
+	// @media screen and (max-width: 425px)
+		// display: flex
+		// flex-direction: column
+		// overflow-x: hidden
+		// margin: 0
+		// svg
+			// transform: scaleX(60%)
+		// overflow-x: scroll
+	// @media screen and (max-width: 800px)
+		// min-width: 100%
+		// grid-template: 1fr / auto
+	// color: $stein-lumenwhite
+	// background-color: $midnight
+		// line-height: 105%
+	h1
+		font-size: 2.7rem
+		margin-block-start: 1em
+		margin-block-end: 0
+	// h2
+	// 	margin: 0 0 .4em
+	// 	color: $hot-purple
+	// 	font-size: 2rem
+	// h3
+		// margin: 0 0 .1em
+		// font-size: 1.31em
+		// color: $teal
+	.selected
+		background-color: $stein-purple
+		// color: red
+		list-style: none
+		font-size: 1.3em
+		color: $safe-light
+	a:hover
+		text-decoration: none
+
+	
+.title-logo
+	grid-area: titleLogo
+	// margin: 0 auto
+	justify-content: start
+	align-items: center
+	// height: 100%
+#habits
+	// align-self: start
+	grid-area: habitsDiv
+.zenwheel
+	grid-area: zenWheel
+	svg
+		max-width: 100%
+		padding: 0.3em
+
+.info-panel
+	display: flex
+	flex-direction: column
+	position: fixed
+	align-items: center
+	z-index: 3
+	bottom: 0
+	right: 0
+	color: $stein-lumenwhite
+	background: rgba(11, 6, 14, 0.96)
+	height: 100vh
+	overflow-y: scroll
+	// justify-content: center
+	.info-template
+		width: 100vw
+		padding-inline: 15%
+		p
+			text-align: left
+			text-indent: 2em
+		@media screen and (min-width: 1200px)
+			padding-inline: 30%
+		// @media screen and (min-width: 600px)
+			
+		div:not(.holiday-flex)
+			display: flex
+			flex-direction: column
+
+	.btn-grp
+		padding: 0 3%
+		display: flex
+		width: auto
+		flex-wrap: wrap
+		justify-content: space-evenly
+		flex-direction: row
+		a
+			padding: 5px
+
+
+	h1
+		margin: 1em 10%
+		text-shadow: 1px 1px 10px black
+
+.title-logo
+	display: flex
+	flex-direction: column
+	// margin: auto
+	// align-self: start
+	// align-items: space-between
+	// justify-content: center
+	// @media screen and (max-width: 999px)
+		// width: 100vw
+	// text-align: center
+	// display: grid
+.holiday
+	display: block
+.smiley
+	// margin-inline: auto
+	// margin-block-end: 0
+	padding: 0.6em 0.4em
+	border-radius: 6px
+	width: max-content
+	max-width: 90vw
+	// flex-grow: 1
+	// max-height: 100%
+	// margin: 0 1em
+	i
+		border-radius: 10%
+		padding-inline: 1em
+		font-size: 1.8em
+	// i.active
+	// 	color: lime	
+
+	
+// TimeConversions
+.conversion-table
+	border-radius: 5px
+	// max-width: 90%
+	display: grid
+	align-items: stretch
+	margin: 0.4rem
+	padding: 0.3em
+	// grid-gap: 2rem
+	table		
+		font-size: 1.0rem
+		th
+			padding: 0.5rem 0.8rem
+
+
+// @keyframes tick-pulse
+// 	0%
+// 		transform: rotate(-90deg)
+// 	to
+// 		transform: rotate(270deg)
+// .tick-pulse
+// 	animation: tick-pulse 1s ease
+// 	animation-iteration-count: infinite
+
+
+
+.flex-me
+	display: flex
+	// @media screen and (max-width: 800px)
+		// margin: 0
+		// flex-direction: column
+// .clock
+	// display: flex
+	// flex-direction: column
+	// svg
+		// margin: 4px
+#habits
+	display: flex
+	flex-direction: column
+	max-width: 95vw
+	padding: 0.2em
+	cursor: pointer
+	// @media screen and (max-width: 999px)
+	h2
+		margin-block-start: 1.8em
+		margin-block-end: 0.2em
+	// @media screen and (min-width: 799px)
+		// grid-gap: 30px
+		// display: grid
+		// margin: 1em
+		// align-items: space-around
+.baheader
+	text-align: center
+	font-weight: 500
+	height: 20px
+	// width: 100%
+	align-self: flex-end
+
+.unchunk
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+	grid-gap: 1px
+	min-width: 300px
+.uncell
+	margin: 0
+	height: 35px
+	// width: 100%
+	align-content: center
+	padding: 0
+
+// .dayname
+	// color: lime
+// .dayname-active
+	// background-color: darkViolet
+// .session-cell
+	// color: black
+	// background-color: lime
+	// text-align: left
+.zenwheel 
+	text
+		cursor: pointer
+
+.day-container
+	grid-area: dayContainer
+	// margin-block-end: 1em
+	margin-block-end: auto
+	margin-block-start: 1.9em
+	display: flex
+	flex-direction: column
+	max-width: 100vw
+	padding: 0
+	align-items: center
+	border-radius: 5px
+@mixin round-corner
+	rx: 4px
+	ry: 4px
+// .
+.zen-borders
+	@include round-corner
+// .center-circle
+// 	fill: rgba(91, 246, 65, 0.7)
+// 	stroke: white
+// 	stroke-dasharray: 3 200
+// 	stroke-width: 18
+
+
+// ANIMATIONS
+@keyframes woggle
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(0.7)
+	70%
+		transform: scale(1.2)
+	100%
+		transform: scale(0)
+.wiggle-enter-active
+	animation: woggle 0.5s reverse
+.wiggle-leave-active
+	animation: woggle 0.5s ease
+
+.phase-enter-from, .phase-leave-to
+	opacity: 0
+.phase-leave-from, .phase-enter-to
+	opacity: 1
+.phase-enter-active, .phase-leave-active
+	transition: opacity 0.5s ease

@@ -1,0 +1,30 @@
+# Node modules
+node_modules
+
+# Build output
+/dist
+/.vite
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Git directory
+.git
+.gitignore
+
+# Docker specific files
+.dockerignore
+Dockerfile
+
+# IDE-specific files
+.vscode
+.idea
+
+# Environment files (if you don't want them in the container)
+.env

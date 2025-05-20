@@ -17,10 +17,10 @@ export default {
 <template>
   <router-link :to="to" class="sidebar-link" :class="{ active: isActive }">
     <!-- <i class="material-icons">panorama_fish_eye</i> -->
-    <transition name="fade">
+    <!-- <transition name="fade"> -->
       <span v-if="!collapsed">
         <slot />
       </span>
-    </transition>
+    <!-- </transition> -->
   </router-link>
 </template>

@@ -1,125 +1,222 @@
 // APP
-.route-enter-from
-	opacity: 0
-	transform: translate(100px)
-.route-enter-active
-	transition: all .3s ease-out
-.route-leave-to
-	opacity: 0
-	transform: translate(-100px)
-.route-leave-active
-	transition: all .3s ease-in
+.slideUpPop-enter-from, .slideUpPop-leave-to
+    opacity: 0
+    transform: translateY(30px) scale(0.97)
+.slideUpPop-enter-to, .slideUpPop-leave-from
+    opacity: 1
+    transform: translateY(0) scale(1)
+.slideUpPop-enter-active, .slideUpPop-leave-active
+    transition: all 0.4s cubic-bezier(0.26, 1, 0.48, 1.2)
+
 // HOME
 .shrink2-enter-from, .shrink2-leave-to
-	scale: 0.3
+    scale: 0.3
 .shrink2-enter-to, .shrink2-leave-from
-	scale: 1
+    scale: 1
 .shrink2-enter-active, .shrink2-leave-active
-	transition: scale 0.2s
+    transition: scale 0.2s
+
 // SIDEBAR
+.popeasescale-enter-from, .popeasescale-leave-to
+    opacity: 0
+    scale: 0.7
+.popeasescale-enter-to, .popeasescale-leave-from
+    opacity: 1
+    scale: 1
+.popeasescale-enter-active, .popeasescale-leave-active
+    transition: scale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease
+
+// UNUSED
+.slideandfade-enter-from, .slideandfade-leave-to
+    opacity: 0
+    transform: translateY(-20px)
+.slideandfade-enter-to, .slideandfade-leave-from
+    opacity: 1
+    transform: translateY(0)
+.slideandfade-enter-active, .slideandfade-leave-active
+    transition: transform 0.3s ease, opacity 0.3s ease
+
+.route-enter-from
+    opacity: 0
+    transform: translate(100px)
+.route-enter-active
+    transition: all .3s ease-out
+.route-leave-to
+    opacity: 0
+    transform: translate(-100px)
+.route-leave-active
+    transition: all .3s ease-in
+
+.melt-enter-from, .melt-leave-to
+  opacity: 0
+  transform: skewY(3deg) scaleY(1.2)
+  filter: blur(2px)
+.melt-enter-to, .melt-leave-from
+  opacity: 1
+  transform: skewY(0) scaleY(1)
+  filter: blur(0)
+.melt-enter-active, .melt-leave-active
+  transition: all 0.6s ease-out
+
+.lofi-enter-from, .lofi-leave-to
+  opacity: 0
+  transform: scale(0.95) rotateX(5deg)
+  filter: saturate(0.5) contrast(0.8)
+.lofi-enter-to, .lofi-leave-from
+  opacity: 1
+  transform: scale(1) rotateX(0)
+  filter: saturate(1) contrast(1)
+.lofi-enter-active, .lofi-leave-active
+  transition: all 0.5s ease-in-out
+
+  /* Optional: smoother hardware acceleration */
+.tilde-enter-active, .tilde-leave-active 
+  transition: all 0.8s ease-in-out
+  transform-origin: center
+  clip-path: path("M0,50 Q25,0 50,50 T100,50 L100,100 L0,100 Z")
+.tilde-enter-from
+  clip-path: path("M0,50 Q25,100 50,50 T100,50 L100,100 L0,100 Z")
+  transform: rotate(180deg)
+  opacity: 0
+.tilde-enter-to
+  clip-path: path("M0,50 Q25,0 50,50 T100,50 L100,100 L0,100 Z")
+  transform: rotate(0deg)
+  opacity: 1
+.tilde-leave-from
+  clip-path: path("M0,50 Q25,0 50,50 T100,50 L100,100 L0,100 Z")
+  transform: rotate(0deg)
+  opacity: 1
+.tilde-leave-to
+  clip-path: path("M0,50 Q25,100 50,50 T100,50 L100,100 L0,100 Z")
+  transform: rotate(-180deg)
+  opacity: 0
+
+.techy-enter-from, .techy-leave-to
+    clip-path: circle(0% at 0% 0%)
+    opacity: 0
+.techy-enter-to, .techy-leave-from
+    clip-path: circle(150% at 50% 50%)
+    opacity: 1
+.techy-enter-active, .techy-leave-active
+    transition: clip-path 0.5s ease, opacity 0.3s ease
+
+.emerge-enter-from, .emerge-leave-to
+    transform: scale(0.3)
+    transform-origin: top left
+    opacity: 0
+.emerge-enter-to, .emerge-leave-from
+    transform: scale(1)
+    opacity: 1
+.emerge-enter-active, .emerge-leave-active
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out
+
 
 .fadeDown-enter-from, .fadeDown-leave-to
-	opacity: 0
-	transform: translateY(-500px)
+    opacity: 0
+    transform: translateY(-500px)
 .fadeDown-enter-active, .fadeDown-leave-active
-	transition: all .6s ease
+    transition: all .6s ease
+
 .fade-enter-from, .fade-leave-to
-	opacity: 0
+    opacity: 0
 .fade-enter-active, .fade-leave-active
-	transition: opacity .5s ease
+    transition: opacity .5s ease
 .fadeUp-enter-from, .fadeUp-leave-to
-	opacity: 0
-	transform: translateY(20px)
+    opacity: 0
+    transform: translateY(20px)
+
 .fadeUp-enter-to, .fadeUp-leave-from
-	opacity: 1
-	transform: translateY(0)
+    opacity: 1
+    transform: translateY(0)
 .fadeUp-enter-active, .fadeInUp-leave-active
-	transition: all .5s ease
-// .shrink-enter-from, .shrink-leave-to
-// 	scale: 0
-// .shrink-enter-to, .shrink-leave-from
-// 	scale: 1
-// .shrink-enter-active
-// 	transition: scale 5s ease
+    transition: all .5s ease
+
+.shrink-enter-from, .shrink-leave-to
+    scale: 0
+.shrink-enter-to, .shrink-leave-from
+    scale: 1
+.shrink-enter-active
+    transition: scale 1s ease
 
 // CROSSWORD
 .grow-enter-from, .grow-leave-to
-	// opacity: 0
-	transform: scale(0)
+    // opacity: 0
+    transform: scale(0)
 .grow-enter-to, .grow-leave-from
-	// opacity: 1
-	transform: scale(1)
+    // opacity: 1
+    transform: scale(1)
 .grow-enter-active, .grow-leave-active
-	transition: all .4s
+    transition: all .4s
+
 // TEACHER
 .pulse
-	animation: pulse 1s infinite alternate
+    animation: pulse 1s infinite alternate
 @keyframes pulse
-	0%
-		transform: scale(1)
-	to
-		transform: scale(1.2)
+    0%
+        transform: scale(1)
+    to
+        transform: scale(1.2)
 .bounceMe
-	animation: bounce 3s ease
-	animation-iteration-count: 20
-	animation-delay: 6s
+    animation: bounce 3s ease
+    animation-iteration-count: 20
+    animation-delay: 6s
 @keyframes bounce
-	0%
-		transform: scale(1)
-	50%
-		transform: scale(.9)
-	70%
-		transform: scale(1.15)
-	to
-		transform: scale(1)
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(.9)
+    70%
+        transform: scale(1.15)
+    to
+        transform: scale(1)
 .bounceInRight-enter-active, .bounceInRight-leave-active
-	transition: all 3s ease
+    transition: all 3s ease
 .bounceInRight-enter-active
-	animation: bounceInRight 2s ease
+    animation: bounceInRight 2s ease
 @keyframes bounceInRight
-	0%
-		opacity: 0
-		transform: translate(2000px)
-	60%
-		transform: translate(-20px)
-	80%
-		transform: translate(5px)
-	to
-		opacity: 1
-		transform: translate(0)
+    0%
+        opacity: 0
+        transform: translate(2000px)
+    60%
+        transform: translate(-20px)
+    80%
+        transform: translate(5px)
+    to
+        opacity: 1
+        transform: translate(0)
 .bounceInRight-enter-active
-	animation: bounceInLeft 2s ease
+    animation: bounceInLeft 2s ease
 @keyframes bounceInLeft
-	0%
-		opacity: 0
-		transform: translate(-2000px)
-	60%
-		transform: translate(20px)
-	80%
-		transform: translate(-5px)
-	to
-		opacity: 1
-		transform: translate(0)
+    0%
+        opacity: 0
+        transform: translate(-2000px)
+    60%
+        transform: translate(20px)
+    80%
+        transform: translate(-5px)
+    to
+        opacity: 1
+        transform: translate(0)
 .bounceIn-enter-active
-	animation: bounceIn 2s ease
+    animation: bounceIn 2s ease
 @keyframes bounceIn
-	0%
-		opacity: 0
-		transform: scale(.3)
-	50%
-		transform: scale(1.05)
-	70%
-		transform: scale(.9)
-	to
-		opacity: 1
-		transform: scale(1)
+    0%
+        opacity: 0
+        transform: scale(.3)
+    50%
+        transform: scale(1.05)
+    70%
+        transform: scale(.9)
+    to
+        opacity: 1
+        transform: scale(1)
 
-// .spinMe
-// 	animation: spang 15s linear
-// 	animation-iteration-count: infinite
-// @keyframes spang
-// 	0%
-// 		transform: rotate(0)
-// 	to
-// 		transform: rotate(360deg)
+.spinMe
+    animation: spang 15s linear
+    animation-iteration-count: infinite
+@keyframes spang
+    0%
+        transform: rotate(0)
+    to
+        transform: rotate(360deg)
 

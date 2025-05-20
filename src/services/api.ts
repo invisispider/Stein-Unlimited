@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getDocs, collection } from '@firebase/firestore'
 import { getFirestoreInstance } from '@/services/firebaseconfig';
 const firestoreDb = getFirestoreInstance();
-const API_BASE_URL = 'https://stein-unlimited.cloudfunctions.net/api';
+const API_BASE_URL = 'https://stein-unlimited.cloudfunctions.net';
 
 // Admin Use
 export async function getAllUsers() {

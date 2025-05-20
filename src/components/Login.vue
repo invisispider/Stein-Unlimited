@@ -190,35 +190,33 @@ async function ensureUserProfile(user: User): Promise<void> {
       </div>
 
       <div v-if="!store.email">
-        <h2>Kenny Logins</h2>
-        <label for="email">
-        <input v-model="inputEmail" type="email"
-        placeholder="Email" name="email" autocomplete="email"
-        />
-        </label>
-        <i class="material-icons">supervisor_account</i>
-        <br />
-        <label for="password">
-          <input v-model="inputPassword" type="password" placeholder="Password" 
-          name="password"
-          autocomplete="current-password"
-        
-        />
-        </label>
-        <i class="material-icons">password</i>
-        <button class="login-submit-button" type="submit" name="submit">Password Sign In</button>
-        <div>{{ errorMessage }}</div>
-        <button class="login-submit-button" @click.prevent="startEmailLogin">Login with Email Link</button>
-        <button class="login-submit-button" @click.prevent="startGoogleLogin">Login with Google</button>
-        <RouterLink to="TermsOfService"><i class="material-icons">build</i> Terms of Service</RouterLink>
-        <RouterLink to="PrivacyPolicy"><i class="material-icons">grade</i> Privacy Policy</RouterLink>
+        <div>
+          <h2>Kenny Logins</h2>
+          <label for="email">
+          <input v-model="inputEmail" type="email"
+          placeholder="Email" name="email" autocomplete="email"
+          />
+          </label>
+          <i class="material-icons">supervisor_account</i>
+          <br />
+          <label for="password">
+            <input v-model="inputPassword" type="password" placeholder="Password" 
+            name="password"
+            autocomplete="current-password"
+          
+          />
+          </label>
+          <i class="material-icons">password</i>
+          <button class="login-submit-button" type="submit" name="submit">Password Sign In</button>
+          <div>{{ errorMessage }}</div>
+          <button class="login-submit-button" @click.prevent="startEmailLogin">Login with Email Link</button>
+          <button class="login-submit-button" @click.prevent="startGoogleLogin">Login with Google</button>
+          <RouterLink to="TermsOfService"><i class="material-icons">build</i> Terms of Service</RouterLink>
+          <RouterLink to="PrivacyPolicy"><i class="material-icons">grade</i> Privacy Policy</RouterLink>
+        </div>
       </div>
 
-      <div v-else class="user">
-        <UserDashboard
-          :styleMode="store.styleMode" :user="userData.user"
-          :errorMessage="errorMessage"
-        />
+      <div v-else>
         <RouterLink class="login-submit-button" to="Logout">Logout</RouterLink>
       </div>
     </form>

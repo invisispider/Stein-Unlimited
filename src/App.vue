@@ -22,46 +22,9 @@ const toggleSidebarNow = () => {
 }
 
 const isLoading = ref(true);
-
 const toggleLoading = ()=> isLoading.value = !isLoading.value
 onMounted(() => {
-//     onAuthStateChanged(auth, async (user) => {
-//         try {
-//             if (user) {
-//                 store.setUser(user);
-//                 store.setAuthIsReady();
-//                 router.isReady().then(() => {
-//                     // Redirect to /Talk
-//                     if (router.currentRoute.value.path === '/Login') {
-//                         router.push('/Talk');
-//                     }
-//                 });
-                
-//                 const docRef = doc(firestoreDb, "users", user.uid);
-//                 const docSnap = await getDoc(docRef);
-                
-//                 if (docSnap.exists()) {
-//                     const docData = docSnap.data();
-//                     store.setUser({ 
-//                         ...docData, 
-//                         uid: user.uid, 
-//                         email: user.email ?? undefined, 
-//                     });
-//                 }
-                
-//                 const idTokenResult = await user.getIdTokenResult();
-//                 store.setAdmin(!!idTokenResult.claims.admin);
-                
-//                 console.info(idTokenResult.claims.admin ? "Admin logged in" : "Welcome user!");
-//             } else {
-//                 store.setAuthIsReady();
-//                 console.info("Auth ready, no user.");
-//             }
             toggleLoading();
-//         } catch (err) {
-//             console.error('Auth handler error:', err);
-//         }
-//     });
 });
 </script>
 <template>
@@ -74,7 +37,7 @@ onMounted(() => {
             <Sidebar />
             <StyleSelector />
             <router-view v-slot="{ Component }">
-                <transition name="route" mode="out-in">
+                <transition name="slideUpPop" mode="out-in" appear>
                     <component :is="Component" @click="toggleSidebarNow" />
                 </transition>
             </router-view>

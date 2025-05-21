@@ -1,154 +1,100 @@
 <script setup lang="ts">
-// import { ref } from "vue";
+import { ref } from 'vue';
+
 // import ThousandPlusPlaylist from "@/components/ThousandPlusPlaylist.vue";
 document.title = "Music Lessons with Adam";
 // const showPlaylist = ref(true);
-// const steinPlayers = ref(false);
-// const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
+const steinPlayers = ref(false);
+const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 </script>
 <template>
 	<div id="music-main">
-		<!-- <div v-if="steinPlayers" class="stein-players">
-			<iframe style="border: 0;"
-				src="https://bandcamp.com/EmbeddedPlayer/album=2892329347/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
-				seamless>
-				<a href="https://thesteinsound.bandcamp.com/album/shades">Shades by Stein</a>
-			</iframe>
-			<iframe style="border: 0;"
-				src="https://bandcamp.com/EmbeddedPlayer/album=1494684139/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
-				seamless>
-				<a href="https://thesteinsound.bandcamp.com/album/accidance-2">Accidance! by Stein</a>
-			</iframe>
-			<iframe style="border: 0;"
-				src="https://bandcamp.com/EmbeddedPlayer/album=2566349416/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
-				seamless>
-				<a href="https://thesteinsound.bandcamp.com/album/travels-reissue">Travels (Reissue) by Stein</a>
-			</iframe>
-		</div> -->
-		<!-- <h2 v-else
-			class="double-width glow" 
-			style="cursor: pointer;" 
-			@click="toggleSteinPlayers"
-			>Listen to Adam's music as Stein.
-		</h2> -->
-		<h1 class="glow double-width">Adam Loewen</h1>
-		<div class="headban fadeInUp">
-			<!-- <h2>Instruments</h2> -->
+		<h1 class="glow double-width">Music Teacher ~ Adam Loewen</h1>
+		<div class="headban fadeInUp shadow-me">
 			<h3>🎤 Voice</h3>
 			<h3>🎹 Piano</h3>
 			<h3>🎸 Guitar</h3>
 			<h3>♟️ Bass</h3>
-			<h3>🧹 Uke</h3>
-			<!-- <h3>🥁 Drums</h3> -->
-			<!-- <h3>🖋️ Songwriting</h3> -->
-			<h3>🎼 Theory</h3>
-			<!-- <h3>🎙️ Recording</h3> -->
-			<h3>👉🏿 Coaching</h3>
-			<h3>⚕️ Therapy</h3>
+			<h3>🧹 Ukelele</h3>
+			<h3>🥁 Drums</h3>
+			<h3>🖋️ Songwriting</h3>
+			<h3>🎼 Music Theory</h3>
+			<h3>🎙️ Recording</h3>
+			<h3>🎯 Coaching</h3>
+			<h3>⚕️ Music Therapy</h3>
 			<img class="stu-banner" src="@/assets/img/musicbusinesscardF.png" />
 		</div>
-		<h3>Currently Available:</h3>
-		<p>Remote online lessons.</p>
-		<p>In-home lessons around Missoula, MT.</p>
-		<!-- <h3>Rates:</h3> -->
-		<!-- <p>$30 per half hour - includes lesson prep but not travel
-			costs or materials.
-		</p> -->
-		<h2 class="double-width">Benefits</h2>
-		<div class="benefits">
-			<p>Master music reading, theory, and vocabulary</p>
-			<!-- <p>Develop multiple intelligences and social skills.</p> -->
-			<p>Positive attitude, self-esteem, and confidence</p>
-			<p>Emotional and artistic expression</p>
-			<p>Community performance opportunities</p>
-			<p>It's terribly fun</p>
+		<h4 style="margin-block: 0.6em;">☑️ Performances and Events</h4> 
+		<h4 style="margin-block: 0.6em;">☑️ Remote Online Coaching</h4>
+		<h4 style="margin-block: 0.6em;">☑️ Private Lessons in Missoula</h4>
+		<div v-if="steinPlayers" class="stein-players">
+			<iframe style="border: 0;"
+				src="https://bandcamp.com/EmbeddedPlayer/album=2892329347/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
+				seamless>
+			</iframe>
+			<a href="https://thesteinsound.bandcamp.com/album/shades">Shades by Stein</a>
 		</div>
-		<h2 class="double-width">Skills</h2>
-		<div class="benefits">
-			<p>Critical awareness and goal-orientation</p>
-			<p>Work closely with personal aims and ambitions</p>
-			<p>Work ethic and practice schedulin</p>
-			<p>Breathing, posture and self awarenes</p>
-		</div>
-		<!-- <h3>Growing Together:</h3>
-		<p>I work extensively with ensembles, and occasionally
-			have had the opportunity to create them from families or
-			unrelated students who had expressed interest.
-			This type of lesson is extremely rewarding and cost
-			effective on both sides, and it allows me to continue developing
-			the more advanced students.
-		</p> -->
-		<!-- <h3>Advanced Students:</h3>
-		<p>I am available to coach or mentor existing musical talent or acts.
-			I can help to devise overall strategies and business practices.
-			I can work with interpersonal dynamics and roles, help brainstorm
-			or workshop new material, isolate or brush up parts and develop overall image and
-			presentation.
-		</p>
- -->
-		<!-- <h2 class="double-width">Methods</h2> -->
-		<!-- <h3>Learn classical, pop, or jazz on any instrument.</h3> -->
-		<!-- <h3>Develop personal style and compose original material.</h3> -->
-		<!-- <h2>
-			<RouterLink to="Integral">
-				The Integral or Holistic approach is a methodology that applies to music.
-			</RouterLink>
-		</h2> -->
-		<!-- <p>Entirely relevant to singing, we may practice a small amount of yoga to
-			warm up. This offers superlative
-			comprehension of proper breathing and posture.</p> -->
-		<!-- <p>If we feel
-			nervous or preoccupied, we may work on building rapport, reframing
-			situational context, or ice-breaker warmup games.
-		</p> -->
-		<!-- <p>
-			We get comfortable being loud, being ourselves, and working together.
-		</p>
-		<p>We learn to stop being afraid to make music.
-		</p>
-		<p>We develop and schedule goals and maintain a practice.</p>
-		<p>We may learn about acoustics, physics, and mathematics.</p>
-		<p>We may learn history of musical styles and technology. </p>
-		<p>We may analyze sounds and trends and search for secret sauce.</p>
-		<p>We might be at a stage where we're talking music business, recording, gigging, social media, band dynamics.
-		</p>
-		<h3>Curiosity compells us to music. <br>Never lose that!</h3> -->
-
-		<h2 class="double-width">Experience</h2>
-		<h4>For six years, I taught as staff at Vancouver Music Academy, My Voice Music
-			(teen after-school program), and Westside Music School
-			(Harmony Road classes), while also freelancing as Stein unLimited. I
-			was also facilitating intructor and music teacher at Community Yoga
-			in Michigan.
+		<h4
+			class="double-width" 
+			style="cursor: pointer;" 
+			@click="toggleSteinPlayers"
+			>Listen to Adam's band Stein
 		</h4>
+		<h2 class="">Benefits</h2>
+		<div class="benefits">
+			<p>Abstract expression of your feelings and personality</p>
+			<p>Growth / Abundance mindset enables confidence and positivity</p>
+			<p>Perform with peers in a supportive setting</p>
+			<p>Fun, affirming style celebrates all levels</p>
+			<p>Unlock what lies hidden within you</p>
+		</div>
+		<h2 class="">Skills</h2>
+		<div class="benefits">
+			<p>Master sight reading and music theory</p>
+			<p>Critical self-awareness and goal-setting</p>
+			<p>Breath, posture and healthy habits</p>
+			<p>Learn any style, any artist, any song</p>
+			<p><b>Beyond playing instruments:</b> universalizing methodology</p>
+		</div>
+		<RouterLink style="margin-bottom: 1em;;" to="Integral">
+			🧩 The Integral / Holistic Approach
+		</RouterLink>
+		<h2 class="" style="">Teaching Experience</h2>
+		<!-- <h4> -->
+		<table>
+			<thead></thead>
+			<tbody class="experience-table">
+				<tr>
+					<td>Harmony Road Instructor</td>
+					<th>WESTSIDE MUSIC SCHOOL</th>
+				</tr>
+				<tr>
+					<td>Teacher</td>
+					<th>MY VOICE MUSIC</th>
+				</tr>
+				<tr>
+					<td>Teacher</td>
+					<th>VANCOUVER MUSIC ACADEMY</th>
+				</tr>
+				<tr>
+					<td>Studio Volunteer</td>
+					<th>BOYS & GIRLS CLUB</th>
+				</tr>
+				<tr>
+					<td>Facillitator</td>
+					<th>COMMUNITY YOGA</th>
+				</tr>
+				<tr>
+					<td>Holistic Teacher</td>
+					<th>STEIN UNLIMITED</th>
+				</tr>
+			</tbody>
+		</table>
+		<!-- </h4> -->
 		<h2>Read about me in
 			<a href="https://www.bigrapidsnews.com/news/article/evart-music-teacher-provides-osceola-county-fun-17741370.php"
 			target="_blank">Big Rapids News.</a>
 		</h2>
-		<h4>I studied music, history, theory, and trumpet in college and played
-			in classical, jazz, and pop bands for 20 years. I have written and recorded over
-			a thousand original songs, and performed hundreds on
-			stage.
-		</h4>
-
-		<!-- <h2 class="double-width">Specialization</h2>
-		<h3>
-			I teach the same way as conventional teachers, at base.
-		</h3>
-		<h3>My lessons
-			often take on a more holistic role in the life of the student.
-		</h3>
-		<h3>It doesn't happen every time, but many students have gained
-			benefits beyond simply learning to play music.
-		</h3>
-		<p>I have worked extensively with the elderly,
-			emotionally troubled, developmentally disabled,
-			neuro-atypical and autistic spectrum clients,
-			often blending in elements of music therapy. Parents and students
-			have reported positive changes to behavior and perspective - that
-			lessons bring out "new sides" to the student!
-		</p> -->
-
 		<h2 class="double-width glow">Testimonials</h2>
 		<div class="testimonials">
 			<div class="testimonial">
@@ -157,7 +103,8 @@ document.title = "Music Lessons with Adam";
 				class each week. We would highly recommend him!"
 			</div>
 			<img class="kid-image" src="@/assets/img/kidpiano.jpg" />
-			<img class="kid-image" src="@/assets/img/kidsplash.jpg" />
+			<!-- <img class="kid-image" src="@/assets/img/kidsplash.jpg" /> -->
+			<img class="kid-image" src="@/assets/img/kidfest.jpg" />
 			<div class="testimonial">
 				"There are no shortcuts in music. Adam is a teacher with an effective
 				grasp of musicality in addition to the patience to teach this art
@@ -165,7 +112,6 @@ document.title = "Music Lessons with Adam";
 			</div>
 			<img class="kid-image" src="@/assets/img/kiddrum.jpg" />
 			<img class="kid-image" src="@/assets/img/kiddrum2.jpg" />
-			<!-- <img class="kid-image" src="@/assets/img/kidfest.jpg" /> -->
 			<div class="testimonial">
 				"My name is Owen. I play the drums. Adam is a very good teacher. He
 				helps me learning new songs and is patient with me."
@@ -181,6 +127,68 @@ document.title = "Music Lessons with Adam";
 				for that."
 			</div>
 		</div>
+		<h2 class="">Story</h2>
+		<p class="bio">Adam didn’t grow up in a musical household. As a kid, he was
+			into video games, cartooning, and filmmaking. He enjoyed playing trumpet 
+			in school band, but insecurity kept him from practicing at home.
+			It wasn’t until high school, when he bought a guitar on a whim, that music 
+			really took hold — and never really let go.
+		</p><p class="bio">
+			He learned by jamming with his friend James, working through online tabs 
+			and method books, and absorbing rock history. Over time, he became a prolific 
+			songwriter, recording more than a thousand demo songs. At first, he kept 
+			everything private — writing, recording, and even “releasing” albums no one 
+			ever heard. These songs were confessional, surreal, and often tangled with 
+			contradictory themes and moods.
+		</p><p class="bio">
+			His first recording project, <em>Kitty Blue</em> (as Ante Meridiem) was  
+			a synth-heavy frollick through youthful grief and heartbreak. It was followed by 
+			<em>There You Are,</em> an acoustic collection featuring layered guitars 
+			and raw, contemplative lyrics. Home recording felt like a sort of wizardry - creating
+			this huge bank of personal spells and summoning incantations from thin air!
+		</p><p class="bio">			
+			At the University of Montana, Adam joined local bands and expanded  
+			into jazz, classical, and more obscure genres. He gave up on trumpet. 
+			He learned production techniques in professional studios through collaboration 
+			and volunteering. There were many projects and albums, gigging, touring,
+			music videos - but it was never enough. The truth was, Adam struggled a great 
+			deal with singing, confidence, and leadership. 
+		</p><p class="bio">	
+			It became harder and harder to defend himself, to make excuses, to apologize 
+			- until finally, he was forced to acknowledge the real issue: that 
+			musical ability is not what makes a human being worthy of love. 
+			He stopped 
+			playing for many years, and instead, opened up to the many things 
+			which cannot be depicted on a treble clef. Twenty years after embarking down 
+			this path, Adam began to have the experience of enjoying his own 
+			singing for the first time. That, above all, is what Adam aspires to 
+			deliver to his students, because he knows firsthand the 
+			many factors that can lead to apparent success or failure. 
+		</p><p class="bio">			
+			In his thirties, Adam became the kind of teacher that he never had for himself - 
+			mentoring kids and adults 
+			through schools and community programs in Portland and Vancouver.
+			He lived in a shared art house, hosted regular concert parties, and 
+			created a strong community that was wholesome, vulnerable, and connected.
+			This living, churning engine of collective harmony and growth mattered deeply to the 
+			many people involved, even if it didn't always pay the bills.
+		</p><p class="bio">			
+			Today, Adam plays, sings, and teaches for joy. He offers experimental 
+			sessions combining music with yoga, dance, improv, and mindfulness
+			to achieve a unique form of integrative therapy. He children 
+			develop personality and creativity, and supports adults in reaching 
+			long-held musical ambitions. 
+		</p><p class="bio">
+			<b>The Bottom Line: </b>Whatever you practice, you get better at. You can 
+			get better and better at playing music in a way that is frustrating and 
+			unsatisfying. You can get outstandingly good at not being ready, at awaiting 
+			discovery, at convincing yourself that you aren't a star and don't want to be. 
+			We are whole people, not just instrumentalists.
+			When you're ready to stop holding back, Adam's right there with ya!
+			Sincerely, the secret to the whole thing is this: 
+			<em>It's okay for you to sing. You like to sing. Everybody wants you to sing 
+				because you're great at it. They can't wait to hear you. They're gonna love it.</em>
+		</p>
 		<h2 class="double-width glow">Adam's Music</h2>
 		<h2>Watch a playlist of cover songs and original home recordings.
 			<a href="https://www.youtube.com/watch?v=j4BOaxU6zvk&list=PL-HrctEZpo50_xIks89Gi_2TA__wYh00l"
@@ -219,91 +227,41 @@ document.title = "Music Lessons with Adam";
 	display: flex
 	justify-content: center
 	flex-wrap: wrap
-	// justify-content: space-around
 	padding-inline: 20%
-	*
-		margin: 1em
-// 	// font-size: 26px
-// 	vertical-align: middle
-// 	text-align: center
-// 	color: white
-// .contdiv
-// 	font-family: 'Lobster'
-// 	justify-content: center
-// 	text-align: center
-	// color: #ede
-	// font-size: 1.3rem
-	// overflow: hidden
-	// margin: 1em auto
-	// padding: 0.2em
+	h3
+		margin: 0.4em
+
 .testimonials
 	.testimonial
 		display: flex
 		flex-direction: column
 		font-family: 'lhandw'
-		// font-size: 1rem
 .kid-image
-	// box-shadow: -1px 0 4px white
 	border: 1px solid #a996b9
-	// min-width: 300px
 	border-radius: 20px
-	margin: 5px
+	margin: 15px
 	filter: sepia(40%)
 	-webkit-filter: sepia(40%)
-	max-width: 40vw
+	max-width: 300px
 	border-radius: 7px
-	min-height: 40vw
+	min-height: 300px
 	max-height: 10vh
-// @media screen and (min-width: 430px)
-// 	.testimonials
-// 		text-align: center
-// 		// grid-template-columns: 1fr
-// 		margin: 1rem 5rem
-// 		align-items: center
-// 		.testimonial
-// 			p
-// 				width: 100%
-// 				font-family: 'lhandw'
-// 				color: #bff
-// 				// font-size: 1.2rem
-// 				// display: flex
-// 				// flex-direction: column
 
 .double-width
 	margin: 1rem 10%
 	text-align: center
 	padding: 8px
 	border-radius: 6px
-	// font-size: 3rem
-	// font-family: 'Lobster', cursive
-	// color: white
-// @media screen and (min-width: 430px)
-// 	.headban
-// 		padding-bottom: 0
-// 		background-size: 400px
-// 	.double-width
-// 		text-align: center
-// 		// grid-column: 1/3
-// 	.testimonials
-// 		display: grid
-// 		grid-gap: 1em
-// 		grid-template-columns: 1fr 1fr 1fr 1fr
-// 		img
-// 			margin: auto
-// #habits
-// 	padding: 1em
+
 .stein-players
 	display: flex
 	flex-direction: column
 	max-width: 100vw
 	align-items: center
-	// margin: 0
-	// pardding: 0
 	iframe
 		max-width: 80vw
 		max-width: 88vw
-		// height: 120px
-		// margin: 0
+
 .inline
 	display: inline-flex
 	margin: auto
@@ -323,17 +281,27 @@ h2, h1
 .stu-banner
 	max-width: 500px
 	min-width: 300px
-	// margin-inline: auto
 	margin-block: 30px
-// a, router-link
-	// cursor: pointer
-	// text-decoration: none
-	// color: inherit
+
 .benefits
 	list-style: none
-	// padding-inline: 1em
 	li
 		margin-block: auto
 h2 a, h2 router-link
 	text-decoration: none
+
+.bio
+	max-width: 70ch
+	text-align: justify
+	text-justify: inter-word
+	text-indent: 3em
+	margin-block: 0.3em
+.experience-table
+	font-size-adjust: +0.65
+	td 
+		text-align: right
+	th
+		text-align: left
+	th:before
+		content: " -| "
 </style>

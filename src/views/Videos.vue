@@ -23,12 +23,11 @@ const buttons = [
 // @TODO upload stein Opposites tracks to unwolfme?
 const jPlays = junkPlays.reverse();
 const gParts = gwtfParts.reverse();
-
+const widenString = '------------------------------------------';
 </script>
 <template>
   <div id="video-container" class="container">
     <h1>Previous Projects</h1>
-    <!-- <h4 class="white lg">A list of crap old youtube videos</h4> -->
     <div class="button-group">
       <button v-for="button of buttons" :key="button.display" :class="{ active: button.select == selector }"
         @click="selector = button.select">{{ button.display }}</button>
@@ -37,7 +36,6 @@ const gParts = gwtfParts.reverse();
       <h2>The Junk era</h2>
       <p>For many years, Adam took ownership of the hobby status of his passions.
         He recorded music demos as Junk Tracks and made comedy videos as Junk Reviews.
-        <!-- The unWolfMeLightOx channel became an outlet for "lightOx" to tell jokes. -->
       </p>
       <h2>Junk Reviews (2011-2015)</h2>
       <p>Following early YouTube trends, Adam rants about pop media with 
@@ -84,28 +82,14 @@ const gParts = gwtfParts.reverse();
         Adam challenged the group to write down everything funny,
         and to take every aspect of the film seriously. 
         Thilo was the brains, the motor, and the editor of the operation. 
-        <!-- Whatever task he was given, he did it profesionally -->
-        <!-- and seriously. Like he was a robot programmed to do just that.  -->
-        <!-- Along with Adam,  -->
         He contributed everything that was intelligent, but more noticeably,
         the absurd and non-sequitor tone.
       </p>
       <p>Sambath held the camera and said "Quiet set, quiet set, Qui-set!"
         Which became our faux production team name. Quiset Productions.
         He was also responsible for stunts and dangerous things.</p>
-      <!-- <h3>All in all, it is friendly and unassuming, and if you can sit through the
-        thing, and kind of get into where it's coming from,
-        it's a pretty one of a kind film, with aspects that are surprisingly
-        smart and funny.
-      </h3> -->
-      <!-- <h3>It was 100% a, "no, I'm serious - let's quit joking around - let's <em>actually</em> make a movie!" situation.
-      </h3> -->
       <p>It's amazing to think that three idiots were able to pull together a film production
         with themselves as production crew and main cast, not knowing how to make movies or act, and knowing it.
-        <!-- Many scenes from the script were mostly filmed and not lost or destroyed. -->
-        <!-- We shot  -->
-        <!-- All the pages from the script were shot, several reshot. -->
-        <!-- It was edited into a feature, with special effects and rock music by Stein. -->
       </p>
     </section>
     <section v-if="selector == 'steinLive'">
@@ -122,6 +106,9 @@ const gParts = gwtfParts.reverse();
         lineup miscarriages. What never changed was the purple, green, and black.
       </p>
       <p class="member-berries">
+        <span class="member"></span> | <span class="berries"></span>
+        <span class="member">{{widenString}}</span>|<span class="berries">{{widenString}}</span>
+        <span class="member">{{widenString}}</span>|<span class="berries">{{widenString}}</span>
         <span class="member">Adam Loewen</span> | <span class="berries">Guitar, Vox</span>
         <span class="member">Thilo Savage</span> | <span class="berries">Drums, Keys</span>
         <span class="member">Taya Jacobs</span> | <span class="berries">Keys, Vox</span>
@@ -142,15 +129,12 @@ const gParts = gwtfParts.reverse();
         <a :href="vid.link" target="_blank">{{ vid.title }}</a>
       </div>
       <h2>Lore</h2>
-      <h3>Purple and Green are the duality of nature. Purple is ethereal, weblike
+      <h3>Purple and Green are the nature of duality. Purple is ethereal, weblike
         essence that absorbs, detects, and authentically experiences. Green is direction, 
-        purpose, and engagement with the flow of positive action.
-        <!-- You can consider it like yin and yang,  -->
-        Apollo and Dionysus, left and right brain, additive
+        purpose, and engagement within the flow of positive action.
+        Apollo and Dionysus, left and right, additive
         and subtractive, male and female, self and shadow. 
-        <!-- We mostly exist between these two worlds, or lenses. -->
-      </h3>
-      <h3>But a funny thing happens when instead of opposing and reflecting one another,
+        But a funny thing happens when instead of opposing and reflecting one another,
         they energize and focus one another. They amplify, they eclipse, they make love, they create.
       </h3>
       <!-- <h3>The Truth, my friends... oh, the Truth.</h3>
@@ -159,39 +143,18 @@ const gParts = gwtfParts.reverse();
         chosen because we had a friend who would make fun of some of our stereotypical Jewish
         tones, behaviors, and rationales, by calling us "Steins."
       </h4> -->
-      <!-- <h2>Formation</h2>
-      <p>Adam lived a double life as a musician. While trying to gain experience playing
-        in decent bands around town, his great passion was for producing demos. For many years,
-        he had written hundreds and hundreds of songs, and while he was capable of writing more or less
-        conventionally appealing songs, in his own practice, he was drawn towards something else.
-      </p>
-      <p>Songwriting, and using sound arrangement and production techniques, can be a process
-        of revealing the self to the self. These are songs that came out of nowhere and have a
-        strange internal symmetry.
-      </p> -->
       <h4>There is nothing like the feeling of writing a song on the guitar,
         recording and producing it like a full band, and then walking around town in the middle of the
         night listening to it on headphones to check the mastering.
       </h4>
-      <!-- <p>The experience of Stein rarely surpassed the energy of the demos. It was mostly
-        a dream not fully rendered. A lot of why the band ultimately started to happen was
-        this infectious passion that the other members had for what Adam was trying to do.
-      </p> -->
-      <!-- <p>We got together
-        because we had in common this love of
-        the strange and absurd, this friendly but rude sense of humor, we had the passion and we
-        loved to play. We worked very hard and took it seriously.
-      </p>
-      <h3>Stein meant an awful lot to the hundreds of people who were a part of it.💜💚</h3> -->
+      <!-- <h3>Stein meant an awful lot to the hundreds of people who were a part of it.💜💚</h3> -->
       <h2>Early Material</h2>
       <p><em>We were making Going With the Flow, rehearsing
         generally around 40 songs, ever changing, every single evening. There were hundreds of songs,
         generally adapted from demos or acoustic songs. We were just trying to
         get good, constantly rewriting everything, changing the style, adding
         tricks.</em> 
-        <!-- Eventually, we were playing shows, and became worthy of interest for local musicians. -->
       </p>
-      <!-- <h2>Travels</h2> -->
       <a href="https://thesteinsound.bandcamp.com/album/shades" target="_blank">
         <img class="stu-banner" alt="travels" src="@/assets/img/stein1travels.jpg" />
       </a>
@@ -220,8 +183,6 @@ const gParts = gwtfParts.reverse();
         who liked to joke around and talk about ideas. 
         Playing music was part of that.
         The music and media itself was crude, but we 
-        <!-- , as creative control was much looser. -->
-        <!--experiencing for the first time this sense of having a tribe -->
         felt free to
         be ourselves, like we were not alone.
       </p>
@@ -243,13 +204,10 @@ const gParts = gwtfParts.reverse();
           deep cuts from non-existing bands. It created
           conflict to introduce a disciplined, high concept set with several ballads to a party
           dance band.
-        <!-- </p>
-        <p> -->
           What shines through is feminine, vulnerable, and thought-provoking, with
         moments of surreal beauty. The production and musicianship is competent.
         Shades is a mirror to Travels, tracing the psyche's course over the landscape of
         sleep.
-        <!-- , and the reintegration of that into the complexity of life. -->
       </p>
       <img class="stu-banner" alt="shades banner" src="@/assets/img/steinshades.jpg" />
       <h2>Opposites Attract</h2>
@@ -259,18 +217,11 @@ const gParts = gwtfParts.reverse();
         comedy dance pop songs explicitly focused on sex. 
         Stein was a business looking to market sex, with
         the hidden agenda of being a love cult. Sex is an analogy for love.
-      <!-- </p> -->
-      <!-- <p> -->
         The finished album currently sits unmastered on a Google drive.
         It was ridiculous. It took too long to make. Everyone moved
         on. 
-        <!-- It became imperative that Adam focus more on career. He mostly stopped playing and
-        teaching music, and stopped thinking of himself as a musician. -->
       </p>
       <img class="stu-banner" alt="travels" src="@/assets/img/stein4opposites.png" />
-      <!-- <h2>Stein unLimited</h2> -->
-      <!-- <h3>The transformation story of Stein continues. Stay tuned for episodic,
-        duality-driven Self-Help Rock<br>~The Future of Sales~</h3> -->
     </section>
     <!-- <section v-if="selector == 'randomVids'">
       <h2>Vlogs (2008-2017)</h2>
@@ -282,16 +233,6 @@ const gParts = gwtfParts.reverse();
   </div>
 </template>
 <style lang="sass" scoped>
-// $button-text: #FDC
-// $button-back: rgb(40, 16, 80)
-// $button-active: rgb(135 19 175)
-// $button-hover: rgb(149 13 135 / 62%)
-// $a-text: #f6e1a9
-// $a-active: #A45
-// $a-hover: rgb(7 0 81 / 80%)
-// $limegreen: limegreen
-// $div-bckgrd: rgb(19 18 30 / 80%)
-// $box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
 #video-container
   .stu-banner
     max-width: 500px

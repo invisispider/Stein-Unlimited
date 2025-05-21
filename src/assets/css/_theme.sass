@@ -20,12 +20,19 @@ $deep-blue: #60a5fa
 $golden: #ff8c00
 
 @mixin style-icons($name, $color)
-    ##{$name}
-        color: $color
-        background-color: color.complement($color)
+  $icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
+  $lightness: color.channel($color, "lightness", $space: hsl)
 
-@function icon-color($name, $c)
-    @return $c
+  $bg-color: if(
+    $lightness > 60%,
+    color.scale($icon-color, $lightness: -45%, $saturation: -80%),
+    color.scale($icon-color, $lightness: 45%, $saturation: -80%)
+  )
+
+  ##{$name}
+    color: $icon-color
+    background-color: $bg-color
+    border: 1px solid rgba(0,0,0,0.1)
 
 $habit-colors: (
     "struggles": #260436,
@@ -38,11 +45,11 @@ $habit-colors: (
     "feasts": #101010,
 )
 @each $h, $c in $habit-colors
-    @include style-icons("#{h}+-theme", $c)
+    @include style-icons("#{$h}-theme", $c)
 
-@mixin unThemeMe($theme-name, $icon-color, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
+@mixin unThemeMe($theme-name, $icon, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
     #appWrapper.#{""+$theme-name}
-        $box-shadow: 2px 2px $icon-color, -2px -2px $contrast
+        $box-shadow: 2px 2px $icon, -2px -2px $contrast
 
         background-color: $bg-color
         color: $color
@@ -87,10 +94,10 @@ $habit-colors: (
 
         .rotate-180
             background-color: $sidebar-bg
-        .home-changer, #style-selector
-            i, .tinytext
+        #style-selector
+            // i, .tinytext
                 // border: 1px solid $mod-bg
-                background-color: $sidebar-bg
+                // background-color: $sidebar-bg
             i:hover, .tinytext *:hover
                 background-color: $sidebar-bg
             background-color: $mod-bg
@@ -158,7 +165,7 @@ $habit-colors: (
                 color: $color
                 &[name="submit"]
                     border-radius: 8px
-                    color: $icon-color
+                    color: $icon
             i
                 color: $bg-color
                 text-shadow: -1px -2px $loud
@@ -184,7 +191,7 @@ $habit-colors: (
         .title-logo h2
             color: $loud
         .smiley
-            background-image: linear-gradient(to bottom, $sidebar-bg, $icon-color, $sidebar-bg)
+            background-image: linear-gradient(to bottom, $sidebar-bg, $icon, $sidebar-bg)
             i:hover
                 color: $smooth-bg
         .active
@@ -224,7 +231,7 @@ $habit-colors: (
         .greg-dark, .greg-light, .greg-text
             stroke: $color
         .zen-borders
-            stroke: $icon-color
+            stroke: $icon
             stroke: $color
             stroke: $smooth-bg
         .greg-dark
@@ -280,7 +287,7 @@ $habit-colors: (
                 color: $color
                 box-shadow: 0 0 8px 1px $contrast
                 .th
-                    border: 1px solid $icon-color
+                    border: 1px solid $icon
                 .th-blue
                     border: 1px solid $sidebar-bg
         .info-panel
@@ -313,16 +320,18 @@ $habit-colors: (
             .darken
                 // background-color: darken($smooth-bg, 30%)
                 background-color: color.adjust($smooth-bg, $lightness: -30%)
-        .home-changer a
+        .home-changer
             background-color: $sidebar-bg
-            color: $color
-            // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
-            box-shadow: 1px 2px $smooth-bg, -1px -2px $loud
+            a
+                background-color: $mod-bg
+                color: $color
+                // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
+                box-shadow: 1px 2px $smooth-bg, -1px -2px $loud
         .home-changer a:hover
             background-color: $loud
 
         .bisque
-            stroke: $icon-color
+            stroke: $icon
             fill: $mod-bg
         #arrow path
             fill: $contrast
@@ -330,8 +339,6 @@ $habit-colors: (
             fill: $smooth-bg
             stroke: $color
             opacity: 1
-            // fill: bisque
-            // stroke: tomato
 
         .work-schedules
             td, th
@@ -354,7 +361,7 @@ $habit-colors: (
                 text-shadow: 2px 1px 4px $vid-div 
             .double-width
                 background-color: $vid-div 
-                box-shadow: 1px 0 10px $icon-color
+                box-shadow: 1px 0 10px $icon
 
         .glow
             animation: glow 4s infinite alternate
@@ -365,22 +372,22 @@ $habit-colors: (
                 0%
                     text-shadow: 0px 0px -3px $color, 3px 3px 6px $loud
                 to
-                    text-shadow: 0px 0px 4px $icon-color, 0px 0px 6px $contrast
+                    text-shadow: 0px 0px 4px $icon, 0px 0px 6px $contrast
 
 @include unThemeMe(struggles, $dark-purple, #9d5fa5, #000000, #cfb0ef, #1e0127, 
     #0e031b, #15082e, #040007, #92099e, #6f8d7d, #4a6cb6)
 @include unThemeMe(flowers, #ffe6f2, #4a0e2a, #c9b8bd, #46071a, #cf83b3, 
     #885988, #ff69b4, #db7093, #800080, #dda0dd, #e6ca7e)
-@include unThemeMe(elders, $light-black, #084955, #faf0f0, #012121, #9981a8, 
-    #d2b2e0, #dad0d0, #797171, rgb(144, 139, 211), #022326, #666)
-@include unThemeMe(vivid, $peace, #9e2b2b, #e6e7df, rgb(6, 1, 17), #ac91a3, 
-    #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
-@include unThemeMe(peace, #cee0e2, #1c3d5a, #e2eeec, #9e9494, #2874a6, 
-    #213a49, #3498db, #2e86c1, #7ab7be, #aed6f1, #a3e3ee)
-@include unThemeMe(harvests, $medium-thalmon, #945f5f, #333, rgb(249, 194, 159), 
+@include unThemeMe(elders, $medium-thalmon, #945f5f, #333, rgb(249, 194, 159), 
     #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, #ff5050)
+@include unThemeMe(vivid, $peace, #9e2b2b, #e4e6d6, rgb(6, 1, 17), #ac91a3, 
+    #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
+@include unThemeMe(peace, $light-black, #084955, #faf0f0, #012121, #9981a8, 
+    #d2b2e0, #dad0d0, #797171, rgb(144, 139, 211), #022326, #666)
+@include unThemeMe(harvests, #daa520, #fff8dc, #4d3c36, #14140f, #b8860b, 
+    #8b5e3c, #cd853f, #ffa500, #ff8c00, #deb887, #ff4500)
 @include unThemeMe(hallows, $dark-green, #87cc9b, #161616, #68f78e, #100a14, 
     #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #298372)
-@include unThemeMe(feasts, #daa520, #fff8dc, #4d3c36, #14140f, #b8860b, 
-    #8b5e3c, #cd853f, #ffa500, #ff8c00, #deb887, #ff4500)
-// $icon-color, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loudm $contrast, $hooks
+@include unThemeMe(feasts, #cee0e2, #1c3d5a, #e2eeec, #4d1b13, #2874a6, 
+    #213a49, #3498db, #2e86c1, #7ab7be, #aed6f1, #a3e3ee)
+// $icon, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loudm $contrast, $hooks

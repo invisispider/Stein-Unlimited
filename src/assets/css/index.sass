@@ -1,8 +1,8 @@
-@use "@/assets/css/theme"
-@use "@/assets/css/unthinkme"
+@use "@/assets/css/animations"
 @use "@/assets/css/landing"
 @use "@/assets/css/sidebar"
-@use "@/assets/css/animations"
+@use "@/assets/css/theme"
+@use "@/assets/css/unthinkme"
 @use "@/assets/css/vars" as *
 
 *, *:before, *:after
@@ -10,7 +10,8 @@
     // transition: none !important
 html, body
     margin: 0
-
+button, a, router-link, RouterLink, i
+    cursor: pointer
 .hidden
     visibility: hidden
 
@@ -24,7 +25,7 @@ button, a, router-link, RouterLink, i
 #appWrapper
     display: flex
     flex-direction: column
-    font-family: Roboto
+    font-family: Roboto, Poppins
     min-height: 100vh
     text-align: center
     justify-content: flex-start
@@ -43,7 +44,6 @@ a, router-link
 // MOBILE VERTICAL STYLE
 #appWrapper.vertical
     .home-content
-        font-family: Poppins
         padding-inline: 0.4em
 .flex-column
     display: grid

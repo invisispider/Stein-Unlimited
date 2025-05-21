@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, watch, nextTick, computed } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
 import YearWheel from "@/components/Time/YearWheel.vue";
@@ -15,20 +15,28 @@ const panelList = ["unlimited",
   "reading", "year", "calendar", "clock"
   ];
 
-const timePulse = async () => {
-  let luxDate = DateTime.now().toLocal();
-  let luxCalendar = luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
-  let sec = luxDate.second;
-  let min = luxDate.minute;
-  let hou = luxDate.hour;
-  let secs = luxDate.diff(luxDate.startOf("day"), "seconds").as("seconds");
+const timePulse = async (inputDate:DateTime|null = null) => {
+  if (inputDate) {
+    // timePulse();
+    let localDate = inputDate.toLocal();
+    if (inputDate===null) {
+      return;
+    } else {
+      let localDate = DateTime.now().toLocal();   
+    }
+  }
+  let luxCalendar = localDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
+  let sec = localDate.second;
+  let min = localDate.minute;
+  let hou = localDate.hour;
+  let secs = localDate.diff(localDate.startOf("day"), "seconds").as("seconds");
   let adjsecs = secs < 6 * 3600 ? secs + 18 * 3600 : secs - 6 * 3600;
   let trueh = (secs / 3600) % 24;
   let adjh = (adjsecs / 3600) % 24;
   let whiles = Math.floor((adjsecs / store.ins_in_whi) % store.mom_in_whi);
   let sess = Math.floor(adjh / store.hou_in_sess);
   store.forma =
-    luxDate.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET) +
+    localDate.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET) +
     " " +
     luxCalendar;
   store.second = sec;
@@ -69,6 +77,15 @@ const toggleShow = async (a: string) => {
 };
 const showChart = ref("year");
 
+const inputTime = ref<Date|null>(null);
+const inputDate = ref<Date|null>(null);
+const convertedTime = computed((date)=>{
+
+})
+const convertedDate = computed((date)=>{
+
+})
+const restartTimer = () => timerID = setInterval(timePulse, 1000);
 </script>
 <template>
   <div id="zen-wrapper" class="zen-wrapper" data-test-id="zen-wrapper">
@@ -96,6 +113,14 @@ const showChart = ref("year");
       <!-- <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3> -->
       <transition name="wiggle" appear>
         <div class="smiley">
+          <label for="time">Convert time:</label>
+          <input v-model="inputTime" name="time" type="time" />
+          <label for="date">Convert Date:</label>
+          <input v-model="inputDate" name="date" type="date" />
+          <label for="reset">reset</label>
+          <input @click.prevent="restartTimer" name="reset" type="button" />
+          <br>
+          <p>{{ convertedDate }} {{ convertedTime }}</p>
           <!-- <div class="table-modal"> -->
           <i class="material-icons" :class="showChart == 'clock' ? 'active' : ''"
             @click="showChart = 'clock'">watch_later</i>

@@ -61,7 +61,7 @@ onUnmounted(() => {
 
 </script>
 <template>
-  <div class="video-grid">
+  <div>
     <TransitionGroup name="video" tag="div" class="video-grid">
       <div 
         v-for="video in sortedVideos"
@@ -120,12 +120,12 @@ img:hover
   display: grid
   grid-template-columns: repeat(1, 1fr)
   gap: 1rem
+  justify-items: space-around
   // min-height: 100vh
   @media (min-width: 640px)
     grid-template-columns: repeat(2, 1fr)
   @media (min-width: 768px)
     grid-template-columns: repeat(3, 1fr)
-
 .video-item
   cursor: pointer
 

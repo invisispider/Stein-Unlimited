@@ -85,6 +85,6 @@ test('style selector and navigation', async ({ page }) => {
   await expect(page).toHaveURL('/');
 
   await page.goto('/pants');
-  await expect(page).toHaveTitle('Uh Oh Oh No');
+  await expect(page).toHaveTitle('404 | Uh Oh Oh No');
   await expect(page.locator('div.fourohfour')).toHaveText(/pants is in another castle/);
 });

@@ -26,6 +26,7 @@ const sharedGlobals = {
   setInterval: 'readonly',
   NodeJS: 'readonly',
   DOMParser: 'readonly',
+  IntersectionObserver: 'readonly',
 };
 
 export default [

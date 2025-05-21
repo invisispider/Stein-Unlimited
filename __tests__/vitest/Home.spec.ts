@@ -33,7 +33,7 @@ describe('Home.vue', () => {
 
   it('sets the correct document title', () => {
     mount(Home);
-    expect(document.title).toBe('Stein unLimited');
+    expect(document.title).toBe('Stein unLimited ~We Create the Future~');
   });
 
   it('renders social media links', () => {

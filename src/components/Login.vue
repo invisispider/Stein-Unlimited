@@ -15,7 +15,7 @@ import {
 // browserLocalPersistence,
 // setPersistence,
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import UserDashboard from "./UserDashboard.vue";
+// import UserDashboard from "./UserDashboard.vue";
 // import { user } from "firebase-functions/v1/auth";
 import type { User } from 'firebase/auth';
 // import type { DocumentData } from "firebase-admin/firestore";
@@ -59,15 +59,6 @@ const errorMessage = ref('')
 const inputPassword = ref("");
 const inputEmail = ref("");
 const isEmailLinkProcessing = ref(false);
-const userData = ref({ user: '' })
-
-// const fullUserData = ref({
-//   uid: "",
-//   email: "",
-//   displayName: "",
-//   photoURL: ""
-// }) 
- // or "password" for email link
 
 onMounted(async () => {
   isEmailLinkProcessing.value = isSignInWithEmailLink(auth, window.location.href);
@@ -75,10 +66,7 @@ onMounted(async () => {
     try {
       const user = await completeEmailLinkLogin();
       if (user) {
-        // store.setUid(user.uid);
         store.setUser(user);
-        // store.setIsIn();
-        // store.setAuthIsReady();
         ensureUserProfile(user);
       }
     } catch (error: unknown) {
@@ -87,15 +75,11 @@ onMounted(async () => {
   }
 });
 
-// Main logic function
 const signIn = async () => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, inputEmail.value, inputPassword.value);
     const user = userCredential.user;
     store.setUser(user)
-    // store.setUid(user.uid);
-    // store.setIsIn();
-    // store.setAuthIsReady();
     ensureUserProfile(user);
   } catch (error) {
     if (error instanceof Error) {
@@ -104,11 +88,9 @@ const signIn = async () => {
   }
 };
 
-// Function to complete email link sign-in
 const completeEmailLinkLogin = async () => {
   if (isSignInWithEmailLink(auth, window.location.href)) {
     let email = window.localStorage.getItem('emailForSignIn');
-    // If user opened link on different device
     if (!email) {
       email = window.prompt('Please provide your email for confirmation');
     }
@@ -140,10 +122,6 @@ const startGoogleLogin = async () => {
     const user = await loginWithGoogle();
     store.setUser(user);
     ensureUserProfile(user);
-
-    // store.setUid(user.uid);
-    // store.setIsIn();
-    // store.setAuthIsReady();
   } catch (error) {
     console.error(error);
     alert('Google login failed.');

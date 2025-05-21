@@ -8,21 +8,56 @@ import { collection, query, orderBy, getDocs,
 import UnthinkmeGallery from "@/components/UnthinkmeGallery.vue";
 import type { VideoItem } from '~types/VideoItem';
 import LoadingComponent from '@/components/LoadingComponent.vue';
+
 document.title = "unThinkMe on YouTube ~ Stein unLimited";
+
+const firestoreDb = getFirestoreInstance();
 
 const pageSize = 20;
 const lastVisible = ref<QueryDocumentSnapshot<DocumentData> | null>(null);
 const youtubeVideos = ref<VideoItem[]>([]);
 const isLoadingVideos = ref(false);
+const hasMoreVideos = ref(true);
 
-const loadingVideos = ref(true);
-const firestoreDb = getFirestoreInstance();
+async function loadVideos(initial = false) {
+  if (isLoadingVideos.value || (!initial && !hasMoreVideos.value)) return;
 
-// const youTubeData = ref<DocumentData | undefined>({});
-// const fromHtmlEntities = (str: string) => {
-//   var doc = new DOMParser().parseFromString(str, "text/html");
-//   return doc.documentElement.textContent;
-// };
+  isLoadingVideos.value = true;
+
+  try {
+    const baseQuery = query(
+      collection(firestoreDb, 'youtubechannel'),
+      orderBy('publishedAt', 'desc'),
+      ...(lastVisible.value && !initial ? [startAfter(lastVisible.value)] : []),
+      limit(pageSize)
+    );
+
+    const snapshot = await getDocs(baseQuery);
+
+    const videos: VideoItem[] = [];
+    snapshot.forEach((doc)=> {
+      const data = doc.data() as VideoItem;
+      if (data.resourceId) videos.push(data);
+    });
+
+    if (initial) {
+      youtubeVideos.value = videos;
+    } else {
+      youtubeVideos.value.push(...videos);
+    }
+
+    if (snapshot.docs.length < pageSize) {
+      hasMoreVideos.value = false;
+    }
+
+    lastVisible.value = snapshot.docs.at(-1) ?? null;
+
+  } catch (error) {
+    console.error("Error loading videos:", error);
+  }
+
+  isLoadingVideos.value = false;
+}
 
 interface UtmArticle {
   id: number;
@@ -35,57 +70,18 @@ interface UtmArticle {
 
 const blogData = ref<UtmArticle[]>([]);
 
-const q = query(collection(firestoreDb, "utmblog"), orderBy("id", "desc"));
 const getBlog = async () => {
-  const tempData: DocumentData = [];
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // console.log(doc.id, " => ", doc.data());
-    tempData.push(doc.data());
-  });
-  blogData.value = tempData as UtmArticle[];
-  // console.log(tempData);
+  const q = query(collection(firestoreDb, "utmblog"), orderBy("id", "desc"));
+  const snapshot = await getDocs(q);
+  blogData.value = snapshot.docs.map(doc => doc.data() as UtmArticle);
 }
 
 // const docIdChannelMasterData = '3Z68IXuOQH7E6ZZcI9cp'
-
 onMounted(async () => {
-  try {
-    // Query the entire 'youtubechannel' collection
-    const querySnapshotYt = await getDocs(collection(firestoreDb, 'youtubechannel'));
-    
-    const videos: VideoItem[] = [];
-    querySnapshotYt.forEach((doc) => {
-      const data = doc.data() as VideoItem; 
-      if (data.resourceId) {
-        videos.push(data)
-      }
-    });
+  await loadVideos(true); 
+  getBlog(); 
+});
 
-    youtubeVideos.value = videos;
-  } catch (error) {
-    console.error("Error getting documents:", error);
-  }
-  getBlog();
-  loadingVideos.value = false;
-})
-
-/* USE THIS TO GET IMAGE LINKS FOR NOW @TODO MAKE THIS EDITABLE IN ADMIN */
-// const listedStorageImages = ref([])
-// const blogImgRef = refer(storage, 'utmblog')
-// const getImageLinks = () => {
-//   const theImagesINeed = [
-//   ]
-//   theImagesINeed.forEach((item) => {
-//       console.info(getDownloadURL(refer(blogImgRef, item)))
-//   });
-// }
-// onMounted(()=>{
-//   getImageLinks()
-// })
-// watch(sizes.browserWidth.value, async (new, old) => {
-//   if (new)
-// }
 </script>
 <template>
   <div class="home-content unthinkme">
@@ -96,10 +92,10 @@ onMounted(async () => {
     <img src="@/assets/img/unthinkme.png" style="margin-block: 1em;" class="stu-banner" />
     <h2 class="glow">Latest Videos:</h2>
 
-    <LoadingComponent v-if="loadingVideos" />
-    <!-- <div v-else class="video-container"> -->
-    <div class="video-container">
-    <UnthinkmeGallery :videos="youtubeVideos" />
+    <LoadingComponent v-if="isLoadingVideos" />
+    <div v-else class="video-container">
+    <UnthinkmeGallery :videos="youtubeVideos" :has-more="hasMoreVideos" 
+      @loadMore="loadVideos(false)" />
     </div>
       <h2 class="unthink-title">Classic Videos: <i class="material-icons glow">park</i> Integral Philosophy</h2>
       <UtmBlogArticle v-for="datum in blogData" :id="datum.id" :key="datum.id" :date="datum.date"

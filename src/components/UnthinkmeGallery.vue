@@ -2,32 +2,24 @@
 import { ref, computed, nextTick, watch, onMounted } from 'vue';
 import type { VideoItem } from '~types/VideoItem';
 import LoadingComponent from './LoadingComponent.vue';
+
+const emit = defineEmits(['loadMore']);
 const props = withDefaults(defineProps<{
   videos?: VideoItem[];
+  hasMore?: boolean;
 }>(), {
-  videos: () => []
+  videos: () => [],
+  hasMore: true,
 });
-const isThumbnailsLoading = ref(true);
-const imagesToLoad = ref(0);
 
 const selectedVideoId = ref<string | null>(null);
-const currentPage = ref(1);
-const pageSize = 20;
 const isRendering = ref(true);
 
 const sortedVideos = computed(() => {
-  if (!props.videos || props.videos.length === 0) return [];
-  return props.videos?.slice() // clone array to avoid mutatingp rops
-    .sort((a, b) => {
-      const dateA = new Date(a.publishedAt).getTime();
-      const dateB = new Date(b.publishedAt).getTime();
-      return dateB - dateA; // newest first
-    }) || [];
-});
-
-const paginatedVideos = computed(() => {
-  const videos = sortedVideos.value;
-    return videos.slice((currentPage.value - 1) * pageSize, currentPage.value * pageSize)
+  // if (!props.videos || props.videos.length === 0) return [];
+  return props.videos?.slice().sort((a, b) => 
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  ) || [];
 });
 
 function openVideo(videoId: string) {
@@ -38,97 +30,42 @@ function closeVideo() {
   selectedVideoId.value = null;
 }
 
-async function nextPage() {
-    if (currentPage.value * pageSize < props.videos.length) {
-      isRendering.value = true;  
-      currentPage.value++;
-      await nextTick();
-      isRendering.value = false;
-    }
-}
-
-async function prevPage() {
-    if (currentPage.value > 1) {
-      isRendering.value = true;
-      currentPage.value--;
-      await nextTick();
-      isRendering.value = false;
-    }
-}
-
-function handleImageLoadOnce(this: HTMLImageElement) {
-  console.log('Image loaded:', this.src);
-  this.removeEventListener('load', handleImageLoadOnce);
-  this.removeEventListener('error', handleImageLoadOnce);
-  handleImageLoad();
-}
-watch(paginatedVideos, async (newVideos) => {
-  isThumbnailsLoading.value = true;
+watch(sortedVideos, async () => {
+  isRendering.value = true;
   await nextTick();
-
-  setTimeout(() => {
-    const imageEls = document.querySelectorAll<HTMLImageElement>('.video-thumb');
-    imagesToLoad.value = imageEls.length;
-
-    if (imageEls.length === 0) {
-      isThumbnailsLoading.value = false;
-      return;
-    }
-
-    imageEls.forEach(img => {
-      if (img.complete) {
-        handleImageLoad();
-      } else {
-        img.addEventListener('load', handleImageLoadOnce);
-        img.addEventListener('error', handleImageLoadOnce);
-      }
-    });
-  }, 0); // Defer to after DOM paint
-}, { immediate: true });
-
-function handleImageLoad() {
-  imagesToLoad.value--;
-  if (imagesToLoad.value <= 0) {
-    isThumbnailsLoading.value = false;
-  }
-}
+  isRendering.value = false;
+});
 
 onMounted(() => {
-  if (paginatedVideos.value.length > 0) {
-    const event = new CustomEvent('retrack-thumbnails');
-    window.dispatchEvent(event); 
+  if (sortedVideos.value.length > 0) {
+    window.dispatchEvent(new CustomEvent('retrack-thumbnails')); 
   }
-})
+  isRendering.value = false;
+});
 </script>
 <template>
-  <div class="pagination controls">
-    <button :disabled="currentPage === 1"
-        class="pagination-button"
-        @click="prevPage"
-    >Previous
-    </button>
-    <button :disabled="currentPage * pageSize >= videos.length"
-        class="pagination-button"
-        @click="nextPage"
-    >Next
-    </button>
-  </div>
-  <LoadingComponent v-show="isRendering || isThumbnailsLoading" />
-  <div v-show="!isRendering && !isThumbnailsLoading" class="video-grid">
+  <div class="video-grid">
     <div 
-      v-for="video in paginatedVideos"
-      :key="video.resourceId.videoId"
-      class="video-item"
-      @click="openVideo(video.resourceId.videoId)"
+    v-for="video in sortedVideos"
+    :key="video.resourceId.videoId"
+    class="video-item"
+    @click="openVideo(video.resourceId.videoId)"
     >
       <img 
-        :src="video.thumbnails.high.url"
-        :alt="video.title"
-        class="video-thumb"
+      v-if="video.thumbnails?.high?.url"
+      loading="lazy"
+      :src="video.thumbnails.high.url"
+      :alt="video.title"
+      class="video-thumb"
       />
       <h3 class="video-title">{{ video.title }}</h3>
     </div>
   </div>
+
+  <LoadingComponent v-show="isRendering" />
+  
+  <button v-if="props.hasMore" @click.prevent="emit('loadMore')" >Load More</button>
+  
   <div 
     v-if="selectedVideoId"
     class="modal"

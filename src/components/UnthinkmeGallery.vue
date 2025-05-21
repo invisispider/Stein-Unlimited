@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, nextTick, watch, onMounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { VideoItem } from '~types/VideoItem';
 import LoadingComponent from './LoadingComponent.vue';
 
@@ -7,16 +7,18 @@ const emit = defineEmits(['loadMore']);
 const props = withDefaults(defineProps<{
   videos?: VideoItem[];
   hasMore?: boolean;
+  isRendering?: boolean;
 }>(), {
   videos: () => [],
   hasMore: true,
+  isRendering: false
 });
 
+
 const selectedVideoId = ref<string | null>(null);
-const isRendering = ref(true);
+// const isRendering = ref(true);
 
 const sortedVideos = computed(() => {
-  // if (!props.videos || props.videos.length === 0) return [];
   return props.videos?.slice().sort((a, b) => 
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   ) || [];
@@ -30,41 +32,55 @@ function closeVideo() {
   selectedVideoId.value = null;
 }
 
-watch(sortedVideos, async () => {
-  isRendering.value = true;
-  await nextTick();
-  isRendering.value = false;
-});
+const infiniteScrollTrigger = ref<HTMLElement | null>(null);
+
+let observer: IntersectionObserver;
 
 onMounted(() => {
-  if (sortedVideos.value.length > 0) {
-    window.dispatchEvent(new CustomEvent('retrack-thumbnails')); 
+  observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !props.isRendering && props.hasMore) {
+      emit('loadMore');
+    }
+  }, {
+    root: null,
+    rootMargin: '100px',
+    threshold: 0.1
+  });
+
+  if (infiniteScrollTrigger.value) {
+    observer.observe(infiniteScrollTrigger.value);
   }
-  isRendering.value = false;
 });
+
+onUnmounted(() => {
+  if (observer && infiniteScrollTrigger.value) {
+    observer.unobserve(infiniteScrollTrigger.value);
+  }
+});
+
 </script>
 <template>
   <div class="video-grid">
-    <div 
-    v-for="video in sortedVideos"
-    :key="video.resourceId.videoId"
-    class="video-item"
-    @click="openVideo(video.resourceId.videoId)"
-    >
-      <img 
-      v-if="video.thumbnails?.high?.url"
-      loading="lazy"
-      :src="video.thumbnails.high.url"
-      :alt="video.title"
-      class="video-thumb"
-      />
-      <h3 class="video-title">{{ video.title }}</h3>
-    </div>
+    <TransitionGroup name="video" tag="div" class="video-grid">
+      <div 
+        v-for="video in sortedVideos"
+        :key="video.resourceId.videoId"
+        class="video-item"
+        @click="openVideo(video.resourceId.videoId)"
+      >
+        <img 
+        v-if="video.thumbnails?.high?.url"
+        loading="lazy"
+        :src="video.thumbnails.high.url"
+        :alt="video.title || 'YouTube thumbnail'"
+        class="video-thumb"
+        />
+        <h3 class="video-title">{{ video.title }}</h3>
+      </div>
+    </TransitionGroup>
   </div>
-
-  <LoadingComponent v-show="isRendering" />
-  
-  <button v-if="props.hasMore" @click.prevent="emit('loadMore')" >Load More</button>
+  <div ref="infiniteScrollTrigger" class="scroll-trigger"></div>
+  <LoadingComponent v-show="props.isRendering" />
   
   <div 
     v-if="selectedVideoId"
@@ -88,6 +104,13 @@ onMounted(() => {
 <style lang="sass" scoped>
 #loading
   min-height: 100vh
+// .load-more-wrapper
+//   display: flex
+//   jusifty-content: center
+//   margin-block: 2em
+.scroll.trigger
+  display: block
+  height: 1px
 img
   transition: transform 0.2s ease
 img:hover
@@ -157,5 +180,18 @@ img:hover
   background-color: #e53935
   color: white
   border-radius: 0.5rem
+
+// laoding animation
+.video-enter-active, .video-leave-active
+  transition: all 0.3s ease
+.video-enter-from
+  opacity: 0
+  transform: translateY(10px)
+.video-enter-to
+  opacity: 1
+  transform: translateY(0)
+.video-leave-to
+  opacity: 0
+  transform: translateY(-10px)
 
 </style>

@@ -4,7 +4,7 @@ import { useStore } from '@/stores/index';
 // import axios from 'axios';
 import { isValidName } from '@/utils/validator';
 import AvatarSelector from '@/components/AvatarSelector.vue';
-
+import { updateUser } from '@/services/api';
 
 const store = useStore()
 // const userId = ref(null);
@@ -41,7 +41,8 @@ const saveName = async () => {
 
         isEditing.value = false
         canEditName.value = false // optionally block edits for a period
-        alert('Name updated!')
+        // alert('Name updated!')
+        await updateUser({ uid: store.uid, displayName: trimmedName })
     } catch (err) {
         console.error('Error updating name:', err)
         alert('Error updating name.')

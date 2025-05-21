@@ -7,13 +7,14 @@
 </template>
 <style lang="sass">
 #loading
-  position: absolute
-  z-index: 1000
+  filter: invert(1)
+  // position: absolute
+  z-index: 100
   background-color: white
-  height: 100vh
-  width: 100vw
+  height: 100%
+  width: 100%
   text-align: center
-  line-height: 100vh
+  line-height: 100%
   img
     border-radius: 6px
     position: relative

@@ -3,18 +3,31 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /chatRooms/{document=**} {
       allow read: if true;
-      allow write: if request.auth.uid != null;
+      allow write: if false;
     }
     match /colors/{document} {
       allow read: if true;
       allow write: if request.auth.uid != null;
     }
+    match /mjblog/{document} {
+      allow read, write: if false;
+    }
+    match /storageLinks/{document} {
+      allow read, write: if false;
+    }
+    match /todo_collection/{document} {
+      allow read, write: if false;
+    }
     match /utmblog/{document=**} {
     	allow read: if true;
-      allow write: if request.auth.token.admin == true;
+      allow write: if false;
     }
-    match /users/{document} {
-      allow read: if request.auth.uid != null;
+    match /users/{uid} {
+      allow get: if request.auth.uid != null;
+      allow write: if request.auth.uid == uid;
+    }
+    match /yogaCalendar/{document} {
+      allow read, write: if false;
     }
     match /youtubechannel/{document=**} {
     	allow read: if true;

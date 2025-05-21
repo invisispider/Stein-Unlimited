@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
 import useCrossword from "@/composables/Crosswords/integralcrossword";
-document.title = "Integral Crossword Puzzle";
+document.title = "Integral Crossword ~ Stein unLimited";
 const across = ref(useCrossword.across)
 const down = ref(useCrossword.down)
 const collapseAcross = ref(false);

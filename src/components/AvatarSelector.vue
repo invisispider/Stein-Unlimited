@@ -14,8 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useStore } from '@/stores/index';
+import { updateUser } from '@/services/api';
 
 interface AvatarColor {
 name: string;
@@ -24,29 +25,49 @@ hex: string;
 
 const store = useStore();
 
+// const colors: AvatarColor[] = [
+// { name: 'Infrared', hex: '#cd6d45' },
+// { name: 'Magenta', hex: '#df20c2' },
+// { name: 'Red', hex: '#ff0000' },
+// { name: 'Amber', hex: '#bf8117' },
+// { name: 'Orange', hex: '#ef8f00' },
+// { name: 'Green', hex: '#4daf50' },
+// { name: 'Teal', hex: '#20c5b8' },
+// { name: 'Turquoise', hex: '#0080a0' },
+// { name: 'Indigo', hex: '#5f51c5' },
+// { name: 'Violet', hex: '#8a2bf2' },
+// { name: 'Ultraviolet', hex: '#af80ff' },
+// { name: 'Clearlight', hex: '#d0d7da' },
+// ];
 const colors: AvatarColor[] = [
-{ name: 'Infrared', hex: '#cd6d45' },
-{ name: 'Magenta', hex: '#df20c2' },
-{ name: 'Red', hex: '#ff0000' },
-{ name: 'Amber', hex: '#bf8117' },
-{ name: 'Orange', hex: '#ef8f00' },
-{ name: 'Green', hex: '#4daf50' },
-{ name: 'Teal', hex: '#20c5b8' },
-{ name: 'Turquoise', hex: '#0080a0' },
-{ name: 'Indigo', hex: '#5f51c5' },
-{ name: 'Violet', hex: '#8a2bf2' },
-{ name: 'Ultraviolet', hex: '#af80ff' },
-{ name: 'Clearlight', hex: '#d0d7da' },
+  { name: 'Infrared', hex: '#bc556d' },
+  { name: 'Magenta', hex: '#a7025a' },
+  { name: 'Red', hex: '#dc1b07' },
+  { name: 'Amber', hex: '#a9712a' },
+  { name: 'Orange', hex: '#efa128' },
+  { name: 'Green', hex: '#069a23' },
+  { name: 'Teal', hex: '#00a6c4' },
+  { name: 'Turquoise', hex: '#1964df' },
+  { name: 'Indigo', hex: '#271ec8' },
+  { name: 'Violet', hex: '#4929b5' },
+  { name: 'Ultraviolet', hex: '#947fcb' },
+  { name: 'Clearlight', hex: '#f0edf6' },
 ];
-
 const selected = ref<string | null>(null);
+
+onMounted(()=> {
+  if (store.level) {
+    selected.value = store.level;
+  }  
+})
 
 function selectAvatar(color: AvatarColor) {
 selected.value = color.name;
 }
-function confirmSelection() {
+async function confirmSelection() {
     if (selected.value) {
-        store.setUser({ level: selected.value }); 
+        store.setUser({ level: selected.value });
+        await updateUser({ uid: store.uid, level: selected.value }) 
     }
 }
 </script>

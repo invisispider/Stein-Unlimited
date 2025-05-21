@@ -12,7 +12,7 @@ import AdminUserList from '@/components/Admin/AdminUserList.vue';
 
 // import { httpsCallable } from "firebase/functions";
 // import { fireFunctions } from "@/services/firebaseconfig";
-document.title = "the Experiment";
+document.title = "Upstairs ~ Stein unLimited";
 const store = useStore();
 const router = useRouter();
 const doShowTodo = ref(false);

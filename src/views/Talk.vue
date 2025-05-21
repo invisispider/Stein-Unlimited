@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import UserDashboard from '@/components/UserDashboard.vue';
-
+document.title = "Talk ~ Stein unLimited"
 </script>
 <template>
     <div class="talk-component">

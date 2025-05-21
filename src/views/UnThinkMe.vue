@@ -2,11 +2,22 @@
 import { ref, onMounted } from 'vue'
 import { getFirestoreInstance } from "@/services/firebaseconfig";
 import UtmBlogArticle from "@/components/UtmBlogArticle.vue";
-import { collection, query, orderBy, getDocs, type DocumentData } from "firebase/firestore";
+import { collection, query, orderBy, getDocs, 
+  type DocumentData, limit, startAfter, 
+  type QueryDocumentSnapshot } from "firebase/firestore";
 import UnthinkmeGallery from "@/components/UnthinkmeGallery.vue";
 import type { VideoItem } from '~types/VideoItem';
+import LoadingComponent from '@/components/LoadingComponent.vue';
+document.title = "unThinkMe on YouTube ~ Stein unLimited";
+
+const pageSize = 20;
+const lastVisible = ref<QueryDocumentSnapshot<DocumentData> | null>(null);
+const youtubeVideos = ref<VideoItem[]>([]);
+const isLoadingVideos = ref(false);
+
+const loadingVideos = ref(true);
 const firestoreDb = getFirestoreInstance();
-document.title = "unThinkMe";
+
 // const youTubeData = ref<DocumentData | undefined>({});
 // const fromHtmlEntities = (str: string) => {
 //   var doc = new DOMParser().parseFromString(str, "text/html");
@@ -38,8 +49,6 @@ const getBlog = async () => {
 
 // const docIdChannelMasterData = '3Z68IXuOQH7E6ZZcI9cp'
 
-const youtubeVideos = ref<VideoItem[]>([]);
-
 onMounted(async () => {
   try {
     // Query the entire 'youtubechannel' collection
@@ -57,8 +66,8 @@ onMounted(async () => {
   } catch (error) {
     console.error("Error getting documents:", error);
   }
-
   getBlog();
+  loadingVideos.value = false;
 })
 
 /* USE THIS TO GET IMAGE LINKS FOR NOW @TODO MAKE THIS EDITABLE IN ADMIN */
@@ -77,8 +86,6 @@ onMounted(async () => {
 // watch(sizes.browserWidth.value, async (new, old) => {
 //   if (new)
 // }
-
-
 </script>
 <template>
   <div class="home-content unthinkme">
@@ -89,15 +96,14 @@ onMounted(async () => {
     <img src="@/assets/img/unthinkme.png" style="margin-block: 1em;" class="stu-banner" />
     <h2 class="glow">Latest Videos:</h2>
 
+    <LoadingComponent v-if="loadingVideos" />
+    <!-- <div v-else class="video-container"> -->
     <div class="video-container">
     <UnthinkmeGallery :videos="youtubeVideos" />
     </div>
       <h2 class="unthink-title">Classic Videos: <i class="material-icons glow">park</i> Integral Philosophy</h2>
-      <!-- <div class=""> -->
-        <UtmBlogArticle v-for="datum in blogData" :id="datum.id" :key="datum.id" :date="datum.date"
+      <UtmBlogArticle v-for="datum in blogData" :id="datum.id" :key="datum.id" :date="datum.date"
           :content="datum.content" :tnurl="datum.tnurl" :ytlink="datum.ytlink" :title="datum.title" class="video-div" />
-      <!-- </div> -->
-    <!-- </div> -->
   </div>
 </template>
 <style scoped lang="sass">

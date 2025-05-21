@@ -7,4 +7,16 @@ export type RootState = {
   email: string;
   admin: boolean;
   points: number;
+  photoURL: string;
+  bio: string;
+  website: string;
+  level: string;
+  state: string;
+  type: string;
+  quadrant: string;
+  userCreated: string;
+  userUpdated: string;
+  lastLogin: string;
+  isBanned: false;
+  roles: [];
 };

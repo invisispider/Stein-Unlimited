@@ -1,30 +1,31 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, nextTick, watch, onMounted } from 'vue';
 import type { VideoItem } from '~types/VideoItem';
-
+import LoadingComponent from './LoadingComponent.vue';
 const props = withDefaults(defineProps<{
   videos?: VideoItem[];
 }>(), {
   videos: () => []
 });
+const isThumbnailsLoading = ref(true);
+const imagesToLoad = ref(0);
 
 const selectedVideoId = ref<string | null>(null);
 const currentPage = ref(1);
 const pageSize = 20;
+const isRendering = ref(true);
 
 const sortedVideos = computed(() => {
   if (!props.videos || props.videos.length === 0) return [];
-  return props.videos
-    .slice() // clone array to avoid mutatingp rops
+  return props.videos?.slice() // clone array to avoid mutatingp rops
     .sort((a, b) => {
       const dateA = new Date(a.publishedAt).getTime();
       const dateB = new Date(b.publishedAt).getTime();
       return dateB - dateA; // newest first
-    })
+    }) || [];
 });
 
 const paginatedVideos = computed(() => {
-  if (!sortedVideos.value) return [];
   const videos = sortedVideos.value;
     return videos.slice((currentPage.value - 1) * pageSize, currentPage.value * pageSize)
 });
@@ -37,34 +38,83 @@ function closeVideo() {
   selectedVideoId.value = null;
 }
 
-function nextPage() {
+async function nextPage() {
     if (currentPage.value * pageSize < props.videos.length) {
-        currentPage.value++;
+      isRendering.value = true;  
+      currentPage.value++;
+      await nextTick();
+      isRendering.value = false;
     }
 }
 
-function prevPage() {
+async function prevPage() {
     if (currentPage.value > 1) {
-        currentPage.value--;
+      isRendering.value = true;
+      currentPage.value--;
+      await nextTick();
+      isRendering.value = false;
     }
 }
+
+function handleImageLoadOnce(this: HTMLImageElement) {
+  console.log('Image loaded:', this.src);
+  this.removeEventListener('load', handleImageLoadOnce);
+  this.removeEventListener('error', handleImageLoadOnce);
+  handleImageLoad();
+}
+watch(paginatedVideos, async (newVideos) => {
+  isThumbnailsLoading.value = true;
+  await nextTick();
+
+  setTimeout(() => {
+    const imageEls = document.querySelectorAll<HTMLImageElement>('.video-thumb');
+    imagesToLoad.value = imageEls.length;
+
+    if (imageEls.length === 0) {
+      isThumbnailsLoading.value = false;
+      return;
+    }
+
+    imageEls.forEach(img => {
+      if (img.complete) {
+        handleImageLoad();
+      } else {
+        img.addEventListener('load', handleImageLoadOnce);
+        img.addEventListener('error', handleImageLoadOnce);
+      }
+    });
+  }, 0); // Defer to after DOM paint
+}, { immediate: true });
+
+function handleImageLoad() {
+  imagesToLoad.value--;
+  if (imagesToLoad.value <= 0) {
+    isThumbnailsLoading.value = false;
+  }
+}
+
+onMounted(() => {
+  if (paginatedVideos.value.length > 0) {
+    const event = new CustomEvent('retrack-thumbnails');
+    window.dispatchEvent(event); 
+  }
+})
 </script>
-
 <template>
-    <div class="pagination controls">
-        <button :disabled="currentPage === 1"
-            class="pagination-button"
-            @click="prevPage"
-        >Previous
-        </button>
-        <button :disabled="currentPage * pageSize >= videos.length"
-            class="pagination-button"
-            @click="nextPage"
-        >Next
-        </button>
-    </div>
-
-  <div class="video-grid">
+  <div class="pagination controls">
+    <button :disabled="currentPage === 1"
+        class="pagination-button"
+        @click="prevPage"
+    >Previous
+    </button>
+    <button :disabled="currentPage * pageSize >= videos.length"
+        class="pagination-button"
+        @click="nextPage"
+    >Next
+    </button>
+  </div>
+  <LoadingComponent v-show="isRendering || isThumbnailsLoading" />
+  <div v-show="!isRendering && !isThumbnailsLoading" class="video-grid">
     <div 
       v-for="video in paginatedVideos"
       :key="video.resourceId.videoId"
@@ -79,8 +129,6 @@ function prevPage() {
       <h3 class="video-title">{{ video.title }}</h3>
     </div>
   </div>
-
-  <!-- Modal -->
   <div 
     v-if="selectedVideoId"
     class="modal"
@@ -101,6 +149,8 @@ function prevPage() {
   </div>
 </template>
 <style lang="sass" scoped>
+#loading
+  min-height: 100vh
 img
   transition: transform 0.2s ease
 img:hover
@@ -109,6 +159,7 @@ img:hover
   display: grid
   grid-template-columns: repeat(1, 1fr)
   gap: 1rem
+  // min-height: 100vh
   @media (min-width: 640px)
     grid-template-columns: repeat(2, 1fr)
   @media (min-width: 768px)

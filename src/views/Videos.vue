@@ -6,6 +6,7 @@ import steinLive from "@/composables/videosstein";
 // import randomVids from "@/composables/videosunwolfme";
 import { ref } from "vue";
 // unWolfMe
+document.title = "YouTube Archive ~ Stein unLimited";
 const selector = ref('steinLive');
 const buttons = [
   { 'select': 'steinLive', 'display': 'Stein' },

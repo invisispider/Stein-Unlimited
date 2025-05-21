@@ -8,7 +8,7 @@ import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
 import InfoView from "@/components/Time/InfoView.vue";
 import TimeConversions from "@/components/Time/TimeConversions.vue";
-document.title = "unLimited Time";
+document.title = "unLimited Time | Live Demo";
 const store = useTime();
 const activePanel = ref('');
 const panelList = ["unlimited", 

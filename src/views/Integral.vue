@@ -9,7 +9,7 @@ import Lines from "@/components/Integral/Lines.vue";
 import Types from "@/components/Integral/Types.vue";
 import InfoPanel from "@/components/Integral/InfoPanel.vue"
 
-document.title = "Integral Theory Map";
+document.title = "Integral Theory ~ Stein unLimited";
 
 const modeSelectorButtons = ['Map', 'States', 'Levels', 'Lines', 'Quadrants', 'Types'];
 const Selected = ref('Map');

@@ -2,7 +2,7 @@
 export default {
   name: "FourOhFour",
 };
-document.title = "Uh Oh Oh No";
+document.title = "404 | Uh Oh Oh No";
 </script>
 
 <template>

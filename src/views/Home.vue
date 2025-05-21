@@ -5,7 +5,7 @@ import UnThinkMe from '@/components/Landing/UnThinkMe.vue';
 import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
 import Beacon from '@/components/Landing/Beacon.vue';
 import { useSocials } from "@/composables/socials";
-document.title = "Stein unLimited";
+document.title = "Stein unLimited ~We Create the Future~";
 const { socials } = useSocials();
 </script>
 <template>

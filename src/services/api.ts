@@ -2,7 +2,8 @@ import axios from 'axios';
 import { getDocs, collection } from '@firebase/firestore'
 import { getFirestoreInstance } from '@/services/firebaseconfig';
 const firestoreDb = getFirestoreInstance();
-const API_BASE_URL = 'https://stein-unlimited.cloudfunctions.net';
+const API_BASE_URL = 'https://us-central1-stein-unlimited.cloudfunctions.net';
+
 
 // Admin Use
 export async function getAllUsers() {
@@ -22,6 +23,7 @@ export async function getAllUsers() {
 // ✅ Update user data (POST /updateUser)
 export const updateUser = async (data: Record<string, unknown>) => {
   try {
+    console.log('Sending to updateUser:', data);
     const res = await axios.post(`${API_BASE_URL}/updateUser`, data);
     return res.data;
   } catch (error: unknown) {

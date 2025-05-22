@@ -12,7 +12,13 @@ import Flatpickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.min.css';
 import { setupTimeWatcher } from "@/composables/setupTimeWatcher";
 
+import integral_states_info from "@/content/integral_states_info.md?raw";
+import injectMarkdown from '@/composables/injectMarkdown';
+const htmlOrdinary = injectMarkdown(integral_states_info, 'INTRODUCTION');
+
 document.title = "unLimited Time | Live Demo";
+
+
 const store = useTime();
 const activePanel = ref('');
 const panelList = ["unlimited", 

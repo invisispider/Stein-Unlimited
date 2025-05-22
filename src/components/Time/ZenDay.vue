@@ -81,11 +81,11 @@ const svgH = computed(()=>svgHeight.value*.5);
       <g @click="emit('moment')">
         <title>Our version of Minutes</title>
         <rect :y="30" :width="svgWidth" :height="svgH" class="daytop-bg" />
-        <rect :width="(svgWidth / 100) * store.zmoment"
+        <rect :width="(svgWidth / 100) * store.zmoment||0"
           :height="svgH" :y="30"
           class="alt-fill"
         />
-        <rect :width="(svgWidth / 10) * store.zwhile"
+        <rect :width="(svgWidth / 10) * store.zwhile||0"
           :height="svgH" :y="30" class="inner-rect"
         />
         <text x="4" :y="16+30" class="daytop-tx">
@@ -96,7 +96,7 @@ const svgH = computed(()=>svgHeight.value*.5);
         <title>Our version of Seconds</title>
         <rect :y="52" :width="svgWidth" :height="svgH" class="daytop-bg" />
         <rect :y="52" class="inner-rect"
-          :width="(svgWidth / store.ins_in_mom) * store.instant" 
+          :width="(svgWidth / store.INS_IN_MOM) * store.instant" 
           :height="svgH"
           />
         <text x="4" :y="30+22+16" class="daytop-tx">Instant: {{ store.instant }}</text>

@@ -7,6 +7,8 @@ const emit = defineEmits(["clock", "calendar"]);
     <table v-if="props.showChart == 'clock'" style="cursor: pointer;" 
       @click="emit('clock')">
       <tbody>
+        <!-- @TODO our year start date in Roman -->
+        <!-- @TODO zenCycle in roman -->
       <tr>
         <th colSpan="4">Clock Time</th>
       </tr>

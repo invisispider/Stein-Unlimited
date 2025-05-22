@@ -20,3 +20,27 @@ export type RootState = {
   isBanned: false;
   roles: [];
 };
+
+export type TimeState = {
+  now: Date;
+  second: number;
+  minute: number;
+  hour: number;
+  instant: number;
+  zmoment: number;
+  zwhile: number;
+  zhour: number;
+  zsess: number;
+  forma: string;
+  true_h: number;
+  dayOfYear: number;
+  habitNum: number;
+  dayNum: number;
+  zYear: number;
+  dayOfHabit: number;
+  inputDate: string | null;
+}
+
+// NOTE: the app reads from this file, 
+// but I believe in testing, we needed types 
+// in the root as well

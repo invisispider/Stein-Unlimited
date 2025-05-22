@@ -66,17 +66,17 @@ onMounted(() => {
 
 
 const resetClock = () => {
-  console.info('clicked Back To Now button.');
+  // console.info('clicked Back To Now button.');
   if (!store.inputDate) {
-    console.warn("No inputDate available.");
+    // console.warn("No inputDate available.");
     return;
   }
-  console.log("inputDate before parse:", store.inputDate);
+  // console.log("inputDate before parse:", store.inputDate);
   const from = DateTime.fromFormat(store.inputDate, "yyyy-MM-dd HH:mm");
   if (from.isValid) {
     store.animateBackToNow(from);
   } else {
-    console.warn("Invalid date string in store.inputDate:", store.inputDate);
+    // console.warn("Invalid date string in store.inputDate:", store.inputDate);
   }
 };
 

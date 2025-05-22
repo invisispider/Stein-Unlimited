@@ -56,13 +56,13 @@ export const useTime = defineStore('time', () => {
 
     // const timerStarted = ref(false);
 
-    // === GETTERS ===
-    // This Roman Year
-    const curYear = computed(() => state.now.getFullYear());
-    // epoch milliseconds to start of this Roman year.
-    const startOfYear = computed(() => new Date(curYear.value, 0, 1).valueOf());
-    // day number into year (1-indexed) computed from epoch millis = floor(<MILLIS_INTO_YEAR>now millis - yearstart millis / MILLIS_IN_DAY)
-    const dayOfYearR = computed(() => Math.floor((new Date().valueOf() - startOfYear.value) / 86400000));
+    // // === GETTERS ===
+    // // This Roman Year
+    // const curYear = computed(() => state.now.getFullYear());
+    // // epoch milliseconds to start of this Roman year.
+    // const startOfYear = computed(() => new Date(curYear.value, 0, 1).valueOf());
+    // // day number into year (1-indexed) computed from epoch millis = floor(<MILLIS_INTO_YEAR>now millis - yearstart millis / MILLIS_IN_DAY)
+    // const dayOfYearR = computed(() => Math.floor((new Date().valueOf() - startOfYear.value) / 86400000));
 
 
     const habitName = computed(() => habitNames[state.habitNum]);
@@ -113,14 +113,14 @@ export const useTime = defineStore('time', () => {
 
     function startTimer() {
         if (timerID.value) return; 
-        console.info("startTimer called with valid timerID")
+        // console.info("startTimer called with valid timerID")
         timerID.value = setInterval(()=> {
             updateTime();
         }, 1000);
     }
 
     function stopTimer() {
-        console.log("Stopping timer:", timerID.value);
+        // console.log("Stopping timer:", timerID.value);
         if (timerID.value) {
             clearInterval(timerID.value);
             timerID.value = null;
@@ -132,7 +132,7 @@ export const useTime = defineStore('time', () => {
     };
 
     function stopAnimation() {
-        console.log("stopAnimation called");
+        // console.log("stopAnimation called");
         if (animationTimerID.value) {
             clearInterval(animationTimerID.value);
             animationTimerID.value = null;
@@ -140,7 +140,7 @@ export const useTime = defineStore('time', () => {
     }
 
     function animateToSelectedDate(to: DateTime) {
-        console.log("animateToSelectedDate called");
+        // console.log("animateToSelectedDate called");
         stopAnimation();
         stopTimer();
 
@@ -149,7 +149,7 @@ export const useTime = defineStore('time', () => {
         if (!isFinite(diff)) return;
 
         const duration = Math.min(Math.abs(diff), 2000);
-        const frames = Math.floor(duration / 33);
+        const frames = Math.floor(duration / 22);
         const step = diff / frames;
 
         let frame = 0;
@@ -165,12 +165,12 @@ export const useTime = defineStore('time', () => {
                     startTimer();
                 }
             }
-        }, 33);
+        }, 22);
     }
     
     // Animate back to now (from a given date)
     function animateBackToNow(from: DateTime) {
-        console.info("animateBackToNow called");
+        // console.info("animateBackToNow called");
         stopAnimation();
         stopTimer();
 
@@ -178,7 +178,7 @@ export const useTime = defineStore('time', () => {
         const diff = to.diff(from, ["milliseconds"]).milliseconds;
 
         if (!isFinite(diff) || diff <= 0) {
-            console.warn("animateBackToNow received bad diff")
+            // console.warn("animateBackToNow received bad diff")
             updateTime();
             startTimer();
             return;
@@ -202,31 +202,61 @@ export const useTime = defineStore('time', () => {
     }
 
     onUnmounted(() => {
-        console.info("unmounting, stopping timer.")
+        // console.info("unmounting, stopping timer.")
         stopTimer();
     });
 
-    watchEffect(() => {
-        // eppoch millis at midnight today
-        const doy = dayOfYearR.value;
+            // === GETTERS ===
+        const dayOfYearR = computed(() => {
+        const currentDate = new Date(state.now); // Use state.now, not new Date()
+        const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+        return Math.floor((currentDate.valueOf() - startOfYear.valueOf()) / 86400000);
+        });
 
-        // Slide all days over to fit with zenCycle and yearstart date = Dec ??
-        if (doy === 366) {
-            state.dayOfYear = 0;  // this is wrong?
-        } else if (doy > 358) {  // next zenYear 8 days before Roman, increase year and reset day count.
-            state.zYear++;
-            state.dayOfYear = doy % 358;
-        } else if (doy < 358) {   // other days within Roman year, slide the day up by 8.
-            state.dayOfYear = doy + 8;
+        // === REACTIVE STATE UPDATER ===
+        watchEffect(() => {
+        const doy = dayOfYearR.value;
+        let doyz: number;
+        let nextZYear = state.now.getFullYear() + 10000;
+
+        if (doy > 358) {
+            // Wrap to next Zen year
+            nextZYear++;
+            doyz = doy % 358;
         } else {
-            state.dayOfYear = doy + 3; // On day 359,
+            // Offset days to align Zen calendar
+            doyz = doy + 8;
         }
 
-        state.habitNum = Math.floor(state.dayOfYear / DAYS_IN_HABIT);
-        state.dayNum = doy % 45;
-        state.dayOfHabit = doy % DAYS_IN_HABIT;
+        Object.assign(state, {
+            zYear: nextZYear,
+            dayOfYear: doyz,
+            habitNum: Math.floor(doyz / DAYS_IN_HABIT),
+            dayNum: doy % 45,
+            dayOfHabit: doy % DAYS_IN_HABIT,
+        });
+        });
+    // watchEffect(() => {
+    //     // eppoch millis at midnight today
+    //     const doy = dayOfYearR.value;
 
-    });
+    //     // Slide all days over to fit with zenCycle and yearstart date = Dec ??
+    //     if (doy === 366) {
+    //         state.dayOfYear = 0;  // this is wrong?
+    //     } else if (doy > 358) {  // next zenYear 8 days before Roman, increase year and reset day count.
+    //         state.zYear++;
+    //         state.dayOfYear = doy % 358;
+    //     } else if (doy < 358) {   // other days within Roman year, slide the day up by 8.
+    //         state.dayOfYear = doy + 8;
+    //     } else {
+    //         state.dayOfYear = doy + 3; // On day 359,
+    //     }
+
+    //     state.habitNum = Math.floor(state.dayOfYear / DAYS_IN_HABIT);
+    //     state.dayNum = doy % 45;
+    //     state.dayOfHabit = doy % DAYS_IN_HABIT;
+
+    // });
 
     // clamp for zero division and such
     // function clamp(value: number, min: number, max: number): number {

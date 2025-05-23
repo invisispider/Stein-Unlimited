@@ -1,14 +1,44 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /chatRooms/{document=**} {
-      allow read: if true;
-      allow write: if false;
+
+    function isSignedIn() {
+      return request.auth != null;
     }
-    match /colors/{document} {
-      allow read: if true;
-      allow write: if request.auth.uid != null;
+
+    function isAdmin() {
+      return request.auth.token.admin == true;
     }
+
+    function hasLinks(text) {
+      return text.Matches('(?i)(http|https|www|\\.com|\\.net|\\.org|\\.io|\\.gov|\\.edu|mailto:)');
+    }
+
+    function isValidMessage(data) {
+        return
+        data.uid == request.auth.uid &&
+        data.text is string &&
+        data.text.size() <= 2500 &&
+        !hasLinks(data.text) &&
+        data.displayName is string &&
+        data.timestamp is timestamp &&
+        data.level is string;
+    }
+
+    match /messages/{messageId} {
+      allow read: if request.auth != null;
+      allow create: if isSignedIn() && isValidMessage(request.resource.data);
+      allow update, delete: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    match /yogaCalendar/{document} {
+      allow read, write: if false;
+    }
+
     match /mjblog/{document} {
       allow read, write: if false;
     }
@@ -22,19 +52,14 @@ service cloud.firestore {
     	allow read: if true;
       allow write: if false;
     }
-    match /users/{uid} {
-      allow get: if request.auth.uid != null;
-      allow write: if request.auth.uid == uid;
-    }
-    match /yogaCalendar/{document} {
-      allow read, write: if false;
-    }
+
+
     match /youtubechannel/{document=**} {
     	allow read: if true;
       allow write: if false;
     }
     match /{document=**} {
-      allow read, write: if request.auth.token.admin == true;
+      allow read, write: if isAdmin();
     }
   }
 }

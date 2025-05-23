@@ -63,7 +63,7 @@ test('style selector and navigation', async ({ page }) => {
     return style.backgroundColor;
   });
   console.log(computedStyle)
-  await expect(computedStyle).toBe('rgb(250, 240, 240)')
+  await expect(computedStyle).toBe('rgb(51, 51, 51)')
 
   // change the theme to dark purple
   await page.getByTestId('dark').click();

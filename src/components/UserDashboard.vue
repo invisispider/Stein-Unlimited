@@ -72,8 +72,8 @@ const showRules = ref(false);
         <!-- <div>{{ props.errorMessage }}</div> -->
           <h4>Select Level:</h4>
         <AvatarSelector />
-        <h4 @click="showRules=!showRules" class="chat-rules-button">CHAT RULES</h4>
-        <div @click="showRules=!showRules" v-show="showRules" class="chat-rules">
+        <h4 class="chat-rules-button" @click="showRules=!showRules">CHAT RULES</h4>
+        <div v-show="showRules" class="chat-rules" @click="showRules=!showRules">
             <ol style="text-align: left;">
                 <li>No spam or hack or link, just Talk</li>
                 <li>Users can post one message under 2500 characters per day</li>

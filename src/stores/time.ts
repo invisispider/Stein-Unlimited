@@ -19,7 +19,7 @@ export const useTime = defineStore('time', () => {
     const dayNames = ["Sun", "Tues", "Thurs", "Fri", "Satur"];
     
     const INS_IN_MOM = 80;
-    const MOM_IN_WHI = 10;
+    // const MOM_IN_WHI = 10;
     const MOM_IN_SESS = 100;
     const INS_IN_WHI = 800;
     const INS_IN_SESS = 8000;

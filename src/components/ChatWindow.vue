@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import { getFirestoreInstance } from '@/services/firebaseconfig';
 import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
 
-import type { Timestamp, DocumentData } from 'firebase/firestore';
+import type { Timestamp } from 'firebase/firestore';
 
 const firestoreDb = getFirestoreInstance();
 

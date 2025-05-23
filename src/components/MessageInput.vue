@@ -16,6 +16,9 @@ const canSubmit = computed(() => text.value.length > 0 && text.value.length <= 2
 
 const postMessage = async () => {
   const user = store.displayName
+  if (!user) {
+    alert("Who Goes There? - must have a name.")
+  }
   const today = new Date().toISOString().split('T')[0]
 
   const q = query(

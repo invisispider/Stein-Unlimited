@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
 import YearWheel from "@/components/Time/YearWheel.vue";
 import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
-// import InfoView from "@/components/Time/InfoView.vue";
 import TimeConversions from "@/components/Time/TimeConversions.vue";
 import Flatpickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.min.css';
@@ -27,20 +26,8 @@ const store = useTime();
 
 const activePanel = ref('');
 
-// const toggle = () => {  
-  // showInfo.value = !showInfo.value;
-//   document.documentElement.style.overflowY = "scroll";
-//   document.body.focus();
-// };
 const toggleShow = async (a: string) => {
   activePanel.value = a;
-  // showInfo.value = true;
-  // document.documentElement.style.overflowY = "hidden";
-  // await nextTick()
-  // let it = document.getElementById('info-panel')
-  // if (it) {
-    // it.scrollTo(0, 0);
-  // }
 };
 const showChart = ref("year");
 
@@ -78,16 +65,6 @@ const scrollToTop = () => {
 </script>
 <template>
   <div id="zen-wrapper" class="zen-wrapper" data-test-id="zen-wrapper">
-      <!-- <div v-show="showInfo" id="info-panel" key="apple" class="info-panel article-font"> -->
-        <!-- <div class="btn-grp"> -->
-          <!-- <a v-for="panel of panelList" 
-          :key="panel" 
-          :class="{ active: panel === activePanel }"
-          @click="toggleShow(panel)">
-          {{ panel }}</a> -->
-        <!-- </div> -->
-        <!-- <InfoView :infoview="activePanel" @click="toggle" /> -->
-      <!-- </div> -->
     <div class="title-logo">
       <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
           src="@/assets/icons/favicon-32x32.png" />Time</h1>
@@ -100,7 +77,7 @@ const scrollToTop = () => {
       <transition name="wiggle" appear>
         <div class="smiley">
           <div style="padding: 2px;">
-          <Flatpickr placeholder="convert Roman time" v-model="store.inputDate" 
+          <Flatpickr v-model="store.inputDate" placeholder="convert Roman time" 
           :config="flatpickrOptions" />
            </div>
           <button @click="resetClock">Back to now</button>
@@ -130,13 +107,13 @@ const scrollToTop = () => {
         <div class="content-button" @click="toggleShow('INSTANT')">INSTANT</div>
       </div>
       <Transition name="phase">
-        <div class="content" v-if="activePanel=='READING'" v-html="htmlREADING"></div>
-        <div class="content" v-else-if="activePanel=='YEAR'" v-html="htmlYEAR"></div>
-        <div class="content" v-else-if="activePanel=='CALENDAR'" v-html="htmlCALENDAR"></div>
-        <div class="content" v-else-if="activePanel=='CLOCK'" v-html="htmlCLOCK"></div>
-        <div class="content" v-else-if="activePanel=='MOMENT'" v-html="htmlMOMENT"></div>
-        <div class="content" v-else-if="activePanel=='INSTANT'" v-html="htmlINSTANT"></div>
-        <div class="content" v-else v-html="htmlINTRODUCTION"></div>
+        <div v-if="activePanel=='READING'" class="content" v-html="htmlREADING"></div>
+        <div v-else-if="activePanel=='YEAR'" class="content" v-html="htmlYEAR"></div>
+        <div v-else-if="activePanel=='CALENDAR'" class="content" v-html="htmlCALENDAR"></div>
+        <div v-else-if="activePanel=='CLOCK'" class="content" v-html="htmlCLOCK"></div>
+        <div v-else-if="activePanel=='MOMENT'" class="content" v-html="htmlMOMENT"></div>
+        <div v-else-if="activePanel=='INSTANT'" class="content" v-html="htmlINSTANT"></div>
+        <div v-else class="content" v-html="htmlINTRODUCTION"></div>
       </Transition>
       <div class="content-button" @click="scrollToTop">TOP</div>
     </div>
@@ -194,15 +171,5 @@ const scrollToTop = () => {
   margin: auto
   thead, tbody
     display: inline-flex
-// from time.sass
-    // td, th
-  //   border: 1px solid $color
-  // .border-red
-  //     border: 2px solid red
-  // .border-black
-  //     border: 2px solid black
-  // .border-blue
-  //     border: 2px solid dodgerblue
-  // .border-pink
-  //     border: 2px solid hotpink
+
 </style>

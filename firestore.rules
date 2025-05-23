@@ -11,7 +11,7 @@ service cloud.firestore {
     }
 
     function hasLinks(text) {
-      return text.Matches('(?i)(http|https|www|\\.com|\\.net|\\.org|\\.io|\\.gov|\\.edu|mailto:)');
+      return text.matches('(?i)(http|https|www|\\.com|\\.net|\\.org|\\.io|\\.gov|\\.edu|mailto:)');
     }
 
     function isValidMessage(data) {
@@ -31,7 +31,7 @@ service cloud.firestore {
       allow update, delete: if isAdmin();
     }
 
-    match /users/{uid} {
+    match /users/{userId} {
       allow read, write: if isSignedIn() && request.auth.uid == userId;
     }
 

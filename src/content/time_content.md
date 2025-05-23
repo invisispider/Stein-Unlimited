@@ -5,13 +5,8 @@
 
 Welcome to the Future - this is a new way of experiencing the flow of moments, the living rhythm of existence. Taking advantage of the timeless, unLimited Time introduces **zen** as a variable; our calendar includes the untracked, the eternal, and the mystery.
 
-<!-- **Tired of ticking round in circles?** 
-
-**Anxious about falling through a schedule?**  
-
-**Let's stop geting ahead of ourselves.** -->
-
 > Time shouldn't feel like a countdown.  
+> Or falling through your schedule.  
 > What if it flowed — like breath, like music, like water?
 
 Our system emphasizes flow, organic rhythm, and simple comprehension - in terms of the language, geometry, and conceptualization we actually use to understand events and happenings. We invest meaning, positivity, and evolutionary development concepts from Integral Theory and a holistic birds-eye-view on historical global time systems - from Egyptian to Chinese - to transform the Roman slaver's sundial docket with an ultra-modern, sophisticated UI.
@@ -77,7 +72,7 @@ Try it out. Bookmark this demo and use it as your own unLimited clock and calend
 
 ### Contribute
 
-Want to help? Donate via [Venmo](venmolink.com) and leave a note with the features you'd like to see. We aim to build unLimited Time scheduling and life timeline visualization apps.
+Want to help? Donate via [Venmo](https://venmo.com/u/unThinkMe-Adam) and leave a note with the features you'd like to see. We aim to build unLimited Time scheduling and life timeline visualization apps.
 
 
 ## [READING]
@@ -88,7 +83,7 @@ Want to help? Donate via [Venmo](venmolink.com) and leave a note with the featur
 
 "Night twenty-six, fifty two."{.holiday-description}
 
-<b>How it works: </b>Clock time is Session decimal and "tick" Instants.
+**How it works:** Clock time is Session decimal and "tick" Instants.
 
 You could also approximate, "quarter Night".
 
@@ -98,9 +93,9 @@ You could also approximate, "quarter Night".
 
 "Vivid twelve Tues, twenty-four."{.holiday-description}
 
-<b>How it works: </b>Habit name and day number, day name, year.
+**How it works:** Habit name and day number, day name, year.
 Leave out "day" in the day name. 
-<b>Note: </b>the 12th of every Habit is 2nd Cycle Tues.
+**Note:** the 12th of every Habit is 2nd Cycle Tues.
 The math is easy to do in your head once you get it. 
 For year, the last four digits are the same in both systems, so in common speech,
 it is unchanged. We secretly subtract 12000 years (the dawn of time-keeping)
@@ -149,8 +144,8 @@ It divides cleanly by 2, 3, 4, 5, 6, 8, and 9, allowing us to apply
 geometry and angle logic to the year more than we ever have before, which makes sense,
 since years actually are cyclical. 
 
-<b>Notice which number got left out?</b> Which does
-not divide evenly by 360 degrees of a circle <em>or</em> 365 days of a year... <b>The answer is 7.</b> 
+**Notice which number got left out?** Which does
+not divide evenly by 360 degrees of a circle *or* 365 days of a year... **The answer is 7.** 
 The number of days in a week is actually the worst reasonable choice possible,
 based on ancient religious mythology.
 
@@ -183,8 +178,8 @@ week every time. Every day of every year is the same Day and Date as it was ever
 length of time as all other bills. Business quarters and school semesters align with
 the actual calendar.
 
-<h4>If you think about all that, it's pretty crazy this isn't default. 🕵🏿‍♀️ 
-</h4>
+#### If you think about all that, it's pretty crazy this isn't default. 🕵🏿‍♀️  
+
 ## unLimited Era: Earth As People
 
 We aim to conceptualize human civilization, the simultaneity and inter-relatedness
@@ -203,9 +198,9 @@ are writing about what I'm writing, and somebody is reading what you've written 
 The problem multiplies.
 
 
-<b>Solution: </b> the event took place 8024 years into history, 4000 years later is now
-12,024 as I write this, and years never decrease forward through time. <b>No matter 
-when you read this, it's true.</b> No calculation.
+**Solution:** the event took place 8024 years into history, 4000 years later is now
+12,024 as I write this, and years never decrease forward through time. 
+**No matter when you read this, it's true.** No calculation.
 
 ### A calendar measures history
 
@@ -227,7 +222,7 @@ the spread of religions (and centralized time-keeping). At 12,024 years into his
 In common speech, we only use a year's last two digits 
 anyway. Not only these, but the entire four-digit number, remains 
 unchanged. When talking history, the full five-digit number 
-actually means something: <b>years into history.</b>
+actually means something: **years into history.**
  
 ### Does it matter before that?
 
@@ -299,13 +294,13 @@ But you can work on Satur, and now you're working 80% of days.
 
 ### Think about it...
 Some people sometimes clearly want to work 60%, some want to 
-work 80%, and mostly people are disgruntled <em>sometimes</em> with 70%. We often say "people aren't meant to 
+work 80%, and mostly people are disgruntled *sometimes* with 70%. We often say "people aren't meant to 
 live like this," and we listened. Instead of default full-time or you're worthless,
 you work "unLimited Time," giving 10% more or less than average each Cycle as your ambitions, life, 
 health, and energy dictate. 
 
 Thus, you or your employer can now plan each Cycle to work slightly more or less than 
-standard full time, or match it by switching each week. <b>Ya rly.</b> Employers often have too much or too little work and 
+standard full time, or match it by switching each week. **Ya rly.** Employers often have too much or too little work and 
 resort to overtime or slashing hours, so 
 there you go. Get rid of silly loopholes used to 
 subvert the miserable fake prison of the 7 day full-time work schedule, and 
@@ -425,12 +420,10 @@ season into an official calendar date. These are focus nodes.
 
 ### As above, so below.
 
-✔️ Time of day is designed around the way people naturally talk and think about time. 
-✔️ Days begin and end before sunrise (not midnight). 
+✔️ Time of day is designed around the way people naturally talk and think about time.  
+✔️ Days begin and end before sunrise (not midnight).  
 ✔️ A day divides into 10 Sessions, noticeably  
-different in terms of how the world looks and what people are usually up to.
-<!-- , with an 
-extra 0.8x-length zenSession considered "outside" of the day.  -->
+different in terms of how the world looks and what people are usually up to.  
 
 ### A typical day:          
 
@@ -487,7 +480,7 @@ Reserved generic sacred timeslot.{.holiday-description}
 
 
 ## Sessions
-A <b>Session</b> is about how long an activity reasonably takes (about 2.2 hours), and is
+A **Session** is about how long an activity reasonably takes (about 2.2 hours), and is
 an amount of time that creates a noticable change in daylight.
 We sleep through about three of them.
 Sessions divide the day in ten, with one ~zen~ Session that resets the day
@@ -526,27 +519,10 @@ silly time, micro dance party, contemplation, lovemaking,
 watch the sun rise, do anything you want. It's a Room of Requirements - anything
 you can't make time for. Most people just sleep through it. 😜 Our little secret. 
 
-<!-- ### Timeless Time
-
-    A miniature Holiday before the sunrise,
-    where we lovingly place the Instants, Moments, and Whiles that don't conform 
-    to a base-10 grid. Use zenSession to awaken your senses, enliven your soul, renew, let go, 
-    make prophecy, plans, and judgments. 
- -->
-<!-- ### Daily commitement
-People fall out of important routines such as meditation because there's never
-    enough time. We've literally made time for it.  
-    One justification: if you get more than 5 hours of sleep, an 
-    additional hour of meditation might be more beneficial than an 
-    extra hour of sleep. Many have reported feeling more rested, better health outcomes,
-    and overall improved personal energy and outlook.
- -->
-
 ### What's the punch line?
 
 There's 80 Instants in a Moment and 80 Moments in a 
 zenSession. Quantifying the practice is discouraged. 🤣
-
 
 ## [MOMENT]
 
@@ -568,16 +544,6 @@ will describe a progression of "moments". In practice, these Moments are
 slightly longer than minutes, which is why there are 80 Instants in a Moment,
 rather than 60.
       
-<!-- ### 1 Session = 10 Whiles = 100 Moments
-
-    A Moment is like a sentence, and a While is like a paragraph. When you tell a story, 
-    you describe a situation (chapters/Sessions), in which a progression of events (paragraphs/Whiles)
-    take place with particular actions and details (sentences/Moments). In the same analogy,
-    Instants are like individual words, which are mostly lost in service of a larger context.
-    Just as speed-readers largely intuit or skim individual words, people do not generally 
-    remember or even track particular Instants.
- -->
-
 ### Intuitive Language Units
 
 The best way to test this system is to say things like, "I had a session yesterday.
@@ -587,7 +553,6 @@ whether you meant roughly what unLimited Time indicates.
 
 ## [INSTANT]
 
-<!-- <div id="instants"> -->
 # Instants{#instants}
 ## 1 Instant = 1 second
 unLimited Time runs seamlessly with existing systems, software, 
@@ -595,15 +560,15 @@ and hardware, based around seconds and milliseconds. The goal was to improve
 timekeeping with maximum compatibility and interoperability. Technically,
 this is a framework, not its own system.
 
-<!-- ### 80 Instants per Moment, 800 per While, 8000 per Session. -->
-
 ### For math nerds: 
 
-<!-- Why are there h 80 I mnstants s rather than 100? -->
+**Standard Clock:**  
+24 hours * 60 minutes * 60   
+= 86400 seconds  
 
-<b>Standard Clock:</b> <br>24 hours * 60 minutes * 60 <br>= 86400 seconds  
-
-<b>unLimited:</b> <br>10.8 Sessions * 100 Moments * 80 <br>= 86400 Instants  
+**unLimited:**  
+10.8 Sessions * 100 Moments * 80  
+= 86400 Instants  
 
 In accepting seconds, we must accept a kink in the base-10 somewhere. 
 If you think about it a lot, we don't need to conceptualize and do mental math 
@@ -612,5 +577,3 @@ the trade-off of a number base matching our number of fingers not including thum
 
 We don't generally think in terms of Instants. They are more for quantitative measurement
 that is generally performed by machines anyway.
-
-

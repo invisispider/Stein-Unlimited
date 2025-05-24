@@ -98,4 +98,3 @@ There was zero lag.
 
 The lights cut. Blackness swallowed all distinctions - vision, memory,breath, self - absolute darkness snuffed out all of existence forever, leaving the eyes to see either nothing, or whatever the mind could contruct. 
 
-He was truly seeing Her now.

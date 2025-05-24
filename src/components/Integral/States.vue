@@ -350,18 +350,6 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual', 'next
                 y="401.66351"
                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill-opacity:1;stroke:#e7b500;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;cursor:pointer;"
                 @click="emit('spiritual')">enlightenment</tspan></text>
-                <!-- <text -->
-            <!-- xml:space="preserve"
-            style="font-weight:200;font-stretch:ultra-condensed;font-size:74.6667px;line-height:1.6;font-family:Sans;-inkscape-font-specification:'Sans, Ultra-Light Ultra-Condensed';text-align:center;letter-spacing:0.92px;text-anchor:middle;display:inline;fill:#00a0f0;fill-opacity:1;stroke:#000000;stroke-width:1.14142;stroke-linecap:round;stroke-linejoin:round"
-            x="375.73706"
-            y="68.661995"
-            id="text20"> -->
-            <!-- <tspan
-                sodipodi:role="line"
-                id="tspan20"
-                x="375"
-                y="68"
-                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:74.6667px;font-family:Sans;-inkscape-font-specification:'Sans Bold';fill:#00a0f0;fill-opacity:1">States</tspan></text> -->
                 <text
             id="text50"
             xml:space="preserve"
@@ -378,26 +366,8 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual', 'next
             style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:12px;line-height:1.4;font-family:Cantarell;-inkscape-font-specification:'Cantarell Thin';text-align:start;letter-spacing:0.92px;text-anchor:start;display:inline;fill:#195449;fill-opacity:1;stroke:#ffffff;stroke-width:1.14142;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
             x="500.56219"
             y="33.722771">
-            <!-- <tspan
-                sodipodi:role="line"
-                x="500.56219"
-                y="33.722771"
-                style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:12px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Thin';text-align:start;text-anchor:start;stroke:#ffffff;stroke-opacity:1;line-height:1.4"
-                id="tspan35">adapted from Ken Wilber</tspan> -->
-                <!-- <tspan
-                sodipodi:role="line"
-                x="500.56219"
-                y="50.52277"
-                id="tspan34"
-                style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:12px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Thin';text-align:start;text-anchor:start;stroke:#ffffff;stroke-opacity:1;line-height:1.4">by unThinkMe</tspan>-->
             </text>
-            <!-- <path
-            style="display:inline;fill:#3dbeff;fill-opacity:1;stroke:#3dbeff;stroke-width:0.752219;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-            d="m 654.57628,367.94581 2.51687,9.40132 1.99584,-2.70237 -1.42429,7.71904 -4.98209,-4.12708 2.72341,-0.28264 -2.45609,-9.25095 z"
-            id="path36"
-            sodipodi:nodetypes="cccccccc"
-            inkscape:label="arrow" /> -->
-            </g>
+        </g>
     </svg>
     <div class="content" v-html="html"></div>
     <h5 class="pedantic" style="cursor: pointer;" @click="emit('spiritual')">STATE DESCRIPTIONS</h5>

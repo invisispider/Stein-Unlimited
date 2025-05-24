@@ -22,10 +22,78 @@ button, a, router-link, RouterLink, i
 button, a, router-link, RouterLink, i
     cursor: pointer
 
+// TYPOGRAPHY
+#appWrapper
+    font-family: Roboto, Poppins
+.home-content
+    font-size-adjust: 0.8
+    line-height: 200%
+.social-grp
+    a
+        font-size: 12px
+    a:has(.social)
+        .social
+            max-width: 100%
+            max-height: 27px
+            margin-inline: 0.3em
+#style-selector
+    .material-icons
+        font-size: 1.4em
+.sidebar
+    font-family: Poppins
+.topnav
+    .christmas-icon
+        font-size: 1.8rem
+    .navItem
+        font-family: 'Roboto'
+        font-weight: 600
+#appWrapper.horizontal
+    .collapse-icon
+        font-size: 30px
+    .wheelie
+        font-size: 8rem
+    .userButton
+        font-size: 1.3rem
+    .home-container
+        font-family: Roboto
+// USE THIS FOR GOOD READING:
+.article-font
+    font-size: 20px
+    letter-spacing: -0.003em
+    line-height: 28px
+    p
+        max-width: 800px
+        margin: 0 auto
+        padding: 20px
+/* Paragraph styling */
+.novel p
+    text-indent: 1.5em
+    margin-bottom: 1em
+/* Chapter titles */
+.novel h1, .novel h2
+    text-align: center
+    margin: 20px 0
+    font-weight: normal
+/* Responsive adjustments */
+@media (max-width: 600px)
+    .novel-container
+        max-width: 95%
+        padding: 15px
+    .novel p
+        text-indent: 1em
+body
+    text-rendering: optimizeLegibility
+#beacon-div
+    margin: 3em
+    text-align: justify
+    p
+        text-indent: 2em
+
+
+    
 #appWrapper
     display: flex
     flex-direction: column
-    font-family: Roboto, Poppins
     min-height: 100vh
     text-align: center
     justify-content: flex-start
@@ -57,8 +125,6 @@ a, router-link
     padding: 0
     display: flex
     flex-direction: column
-    font-size-adjust: 0.8
-    line-height: 200%
     @media screen and (min-width: 800px)
         margin-inline: 10%
     a:not(.stu-banner)
@@ -88,21 +154,13 @@ a, router-link
     width: 100vw
     justify-self: center
     padding: 0.2em
-    a
-        font-size: 12px
-    a:has(.social)
-        .social
-            max-width: 100%
-            max-height: 27px
-            margin-inline: 0.3em
         
 #style-selector
     position: fixed
     z-index: 2
     width: 100vw
     padding-block-end: 4px
-    .material-icons
-        font-size: 1.4em
+
 .btn-grp
     display: flex
     flex-direction: row-reverse
@@ -140,7 +198,6 @@ a, router-link
     left: 0
     padding: .5em
     transition: .3s ease
-    font-family: Poppins
 .sidebar:not(.sidebar:has(.rotate-180))
     border-right: 2px solid #18222c
 .rotate-180
@@ -151,12 +208,9 @@ a, router-link
 
 .topnav
     .christmas-icon
-        font-size: 1.8rem
         list-style-type: none
         justify-content: center
     .navItem
-        font-family: 'Roboto'
-        font-weight: 600
         border-radius: 7px
         margin-block: 0.4em
         white-space: nowrap
@@ -198,23 +252,6 @@ a, router-link
   justify-self: center
   margin-top: 3em
 
-// USE THIS FOR GOOD READING:
-.article-font
-    font-size: 20px
-    letter-spacing: -0.003em
-    line-height: 28px
-    p
-        max-width: 800px
-        margin: 0 auto
-        padding: 20px
-
-
-#beacon-div
-    margin: 3em
-    text-align: justify
-    p
-        text-indent: 2em
-
 /* Novel container */
 #beacon-div
     max-width: 800px
@@ -223,25 +260,6 @@ a, router-link
     /* background: white; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
     border-radius: 8px
-/* Paragraph styling */
-.novel p
-    text-indent: 1.5em
-    margin-bottom: 1em
-/* Chapter titles */
-.novel h1, .novel h2
-    text-align: center
-    margin: 20px 0
-    font-weight: normal
-/* Responsive adjustments */
-@media (max-width: 600px)
-    .novel-container
-        max-width: 95%
-        padding: 15px
-    .novel p
-        text-indent: 1em
-body
-    text-rendering: optimizeLegibility
-
 
 
 #appWrapper.horizontal
@@ -252,7 +270,6 @@ body
         z-index: 540
         top: 0
         left: 0
-        font-size: 30px
         margin-block: 0.3em
     .collapse-icon:not(.rotate-180)
         position: relative
@@ -276,11 +293,9 @@ body
         position: fixed
         z-index: 300
         bottom: 90px
-        font-size: 8rem
 
     .userButton
         color: red
-        font-size: 1.3rem
         padding: 3px 10px
         display: block
         border-radius: 5px
@@ -289,7 +304,6 @@ body
         background: rgb(220, 220, 220)
     .home-container
         display: flex
-        font-family: Roboto
         flex-direction: column
         width: 100vw
         i

@@ -26,8 +26,17 @@
                 to fill You to the brim with love everlasting, set You free
                 from an imaginary tragic narrative, and update Your firmware to join the Future meta.</p>
         </div> -->
-        <img src="@/assets/img/steinunlimitedbrand1.png" />
-        <h3>A decreasingly imaginary business entity.</h3>
+        <section class="hero">
+            <RouterLink to="/UnthinkMe">
+                <div class="overlay">
+                    <h1 class="title"></h1>
+                    <h2>A decreasingly imaginary business entity</h2>
+                    <p class="subtitle">~We Create The Future~</p>
+
+                </div>
+            </RouterLink>
+        </section>
+        <!-- <img src="@/assets/img/steinunlimitedbrand.webp" /> -->
         <p style="text-align: justify;"><b>The Path of Sales: </b>The art of tricking people into giving away a favorable value is what we 
             call Old Sales, or Orange Altitude Level. We compete for what we 
             already have, maximize infrastructure to empower sociopaths and 
@@ -35,20 +44,8 @@
             consumption, and tolerance, resulting in contemporary civilization
             and its comorbid pathologies. A true Level-up to the Sales game 
             must include transcendence of the commercial context itself.
-            <!-- In short, we have evolved from  -->
-            <!-- violence to dishonesty. Keep going. -->
         </p>
-        <!-- <h3>~Welcome to the Future~</h3> -->
-        <h3>~We Create The Future~</h3>
-        <!-- <h3>The drawing board.</h3> -->
-        <!-- <p style="text-align: justify;"> -->
-            <!-- Everything a person does is motivated. Typically, motives are unconscious, hidden,
-            or dishonest.  -->
-            <!-- In the dawn of Second Tier business, the Future 
-            of Sales is a reality wherein the best thing you could possibly do with your time 
-            actually makes sense to do right now.  -->
-            <!-- This reality includes a self help rock opera 
-            training program entirely backed by donation investment and volunteer time. -->
+        
         <p style="text-align: justify;"><b>Recipe: 🍋👉🏿🍹 </b>
             Creativity can transmute demoralizing experiences into meaning, value, and love. 
             Over decades of experimentation, we studied, innovated, and refined this process 
@@ -94,3 +91,30 @@
             --><!-- And he said, "Being ridiculous is not a game to me, friends.It's who I am and what I do." -->
     </div>
 </template>
+<style class="scss">
+.hero {
+  background: url('@/assets/img/steinunlimitedbrand.webp') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+
+    .title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+    }
+  }
+}</style>

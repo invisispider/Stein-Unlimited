@@ -29,7 +29,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  // DEV NOTE: THE SAFARI/WEBKIT DRIVERS WORK FROM TERMINAL, JUST NOT IN VSCODE SNAP SANDBOX.
+  // DEV NOTE: THE SAFARI/WEBKIT DRIVERS WORK FROM TERMINAL, BUT NOT IN VSCODE SNAP SANDBOX.
   /* Configure projects for major browsers */
   projects: [
     {
@@ -56,23 +56,14 @@ export default defineConfig({
       name: 'Mobile Safari',
       use: { ...devices['iPhone 12'] },
     },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:8000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000, // optional: extend timeout if slow
-  },
+  // IF COMMENTED OUT, JUST RUN DEV, OTHERWISE DON'T
+  // webServer: {
+  //   command: 'npm run dev',
+  //   url: 'http://localhost:8000',
+  //   reuseExistingServer: !process.env.CI,
+  //   timeout: 120 * 1000, // optional: extend timeout if slow
+  // },
 });

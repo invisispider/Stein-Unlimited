@@ -12,6 +12,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { setupTimeWatcher } from "@/composables/setupTimeWatcher";
 import time_content from "@/content/time_content.md?raw";
 import injectMarkdown from '@/composables/injectMarkdown';
+import '@/assets/css/flatpickr.min.css';
 document.title = "unLimited Time | Live Demo";
 
 const htmlINTRODUCTION = injectMarkdown(time_content, 'INTRODUCTION');

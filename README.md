@@ -6,7 +6,7 @@
 
 **This site is a personal showcase and playground for design, engineering, and creative expression — built from the ground up. It also functions as a fully-featured web app with live content, admin tools, and real-time data.**
 <br></br>
-![Screenshot of website](screenshots/Screenshot_2.png)
+![Screenshot of website](src/assets/screenshots/Screenshot_2.png)
 <br></br>
 
 ---
@@ -28,7 +28,7 @@
 #### This is an open source website so feel welcome to help make it cooler. 🫶🏽
 
 <br></br>
-![Screenshot of website](screenshots/Screenshot_9.png)
+![Screenshot of website](src/assets/screenshots/Screenshot_9.png)
 <br></br>
 ## 🧠 Why I Built This
 
@@ -44,7 +44,7 @@ This site isn’t just a portfolio — it’s a living full-stack app that helpe
 - Real-life feedback and realtime production troubleshooting
 
 <br></br>
-![Screenshot of website](screenshots/Screenshot_7.png)
+![Screenshot of website](src/assets/screenshots/Screenshot_7.png)
 
 ---
 

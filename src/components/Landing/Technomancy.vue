@@ -41,19 +41,34 @@
             <li>CSS/SASS, UI frameworks & web design</li>
             <li>Graphic/media production and CMS work (WordPress, etc.)</li>
         </ul>
+        <img src="@/assets/img/technomancy.webp" alt="" class="logo-frame theme-image">
+        <section class="hero theme-image">
 
-        <hr>
+            <div class="overlay">
+                <!-- <h1 class="title"></h1> -->
+                <p class="subtitle">
+                    📌 <a target="_blank" href="https://www.upwork.com/freelancers/~01527a09cdcfd75500">View my profile on Upwork</a><br>
+                    📄 <a target="_blank" href="https://docs.google.com/document/d/1j5wWT1BSNhwYNJC21zuKkXTHbR3X65aXSyjJWllOgZ0/edit?usp=sharing">Download my resume</a><br>
+                    📫 Contact me on 
+                    <a target="_blank" href="https://www.github.com/invisispider">GitHub</a>, 
+                    <a target="_blank" href="https://www.linkedin.com/in/adam-loewen-3218ab48/">LinkedIn</a>, 
+                    or by <a href="mailto:adam.loewen@gmail.com">email</a>
+                </p>
+            </div>
+        </section>
+        <!-- <div class="logo-frame"> -->
+            <!-- <img src="@/assets/img/Wide - Technomancy2.webp" class="theme-image" alt=""> -->
+        <!-- </div> -->
 
         <p>
-            📌 <a target="_blank" href="https://www.upwork.com/freelancers/~01527a09cdcfd75500">View my profile on Upwork</a><br>
-            📄 <a target="_blank" href="https://docs.google.com/document/d/1j5wWT1BSNhwYNJC21zuKkXTHbR3X65aXSyjJWllOgZ0/edit?usp=sharing">Download my resume</a><br>
-            📫 Contact me on 
-            <a target="_blank" href="https://www.github.com/invisispider">GitHub</a>, 
-            <a target="_blank" href="https://www.linkedin.com/in/adam-loewen-3218ab48/">LinkedIn</a>, 
-            or by <a href="mailto:adam.loewen@gmail.com">email</a>
         </p>
         <h4>
         <a href="/">HOME</a>
         </h4>
     </section>
 </template>
+<style lang="sass" scoped>
+.hero
+    background-image: url("@/assets/img/technomancy.webp") center/cover no-repeat
+    display: flex
+</style>

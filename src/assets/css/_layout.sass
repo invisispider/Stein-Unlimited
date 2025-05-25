@@ -1,10 +1,10 @@
 @use "@/assets/css/vars" as *
 // @forward "@/assets/css/index"
 @mixin breakpoint($breakpoint)
-    @if  $breakpoint == xs
+    @if  $breakpoint == s
         @media screen and (min-width: 450px)
             @content
-    @else if $breakpoint == s
+    @else if $breakpoint == m
         @media screen and (min-width: 768px)
             @content
     @else if $breakpoint == l
@@ -58,8 +58,8 @@ a, router-link
     padding-inline: 0.4em
     display: flex
     flex-direction: column
-    // @include breakpoint(s)
-        // margin-inline: 10%
+    // @include breakpoint(m)
+    //     margin-inline: 10%
     a:not(.stu-banner)
         display: inline
         color: $active
@@ -85,8 +85,8 @@ a, router-link
     position: fixed
     bottom: 0
     width: 100vw
-    justify-self: center
-    padding: 0.2em
+    // justify-self: center
+    padding: 0.2rem
         
 #style-selector
     position: fixed
@@ -94,19 +94,20 @@ a, router-link
     width: 100vw
     padding-block-end: 4px
 
-.btn-grp
+.style-selector-buttons
     display: flex
     flex-direction: row-reverse
     width: 100vw
     grid-template-columns: repeat(10, 10%)
     margin-block: 3px
     padding-inline: 1em
+    cursor: pointer
     *
         align-self: center
         justify-self: center
         border-radius: $radius-button
         padding: 0.23em
-    @includ breakpoint(xs)
+    @includ breakpoint(s)
         i, span
             margin-inline: 0.2em
    
@@ -136,7 +137,7 @@ a, router-link
     transition: .3s ease
     padding: 0.6rem
     margin-top: 2.7rem
-    @include breakpoint(s)
+    @include breakpoint(m)
         margin-top: 0
     &:not(.sidebar-wrapper:has(.collapse-icon-closed)) // open state
         border-right: 2px solid #2c3e50
@@ -346,7 +347,6 @@ a, router-link
         padding-bottom: 0.3rem
 
 .hero
-    background: url("@/assets/img/steinunlimitedbrand.webp") center/cover no-repeat
     max-width: 90vw
     max-height: 50vh
     display: flex
@@ -356,7 +356,7 @@ a, router-link
     text-align: center
 
 .overlay
-    background: rgba(0, 0, 0, 0.8)
+    background: rgba(0, 0, 0, 0.7)
     padding: 2rem
     margin-inline: 2rem
     border-radius: 1rem
@@ -383,7 +383,7 @@ body:has(#beacon-div)
     text-align: justify
     p
         text-indent: 2em
-
+@mixin markdown-content
 /* Paragraph styling */
 .novel p
     text-indent: 1.5em /* Indent first line */

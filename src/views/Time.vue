@@ -65,8 +65,10 @@ const scrollToTop = () => {
 <template>
   <div id="zen-wrapper" class="zen-wrapper" data-test-id="zen-wrapper">
     <div class="title-logo">
+      <img src="@/assets/img/unlimitedtime.webp" alt="" class="theme-image">
+      
       <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
-          src="../public/favicon-32x32.png" />Time</h1>
+          src="../../public/favicon-32x32.png" />Time</h1>
       <h4>{{ store.forma }}</h4>
       <h2 class="readout" style="cursor: pointer;" @click="toggleShow('reading')">
         {{ store.displayZenTime }}

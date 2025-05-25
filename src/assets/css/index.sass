@@ -6,12 +6,6 @@
 @use "@/assets/css/vars" as *
 @use "@/assets/css/layout"
 @use "sass:map"
-// Global layout	/layout	site container, header, footer
-// Typography	/base	body, headings, text rules
-// Utility	/abstracts	spacing, flexbox, z-index
-// Components	/components	buttons, form inputs, etc.
-// Page types	/pages	content pages, game pages
-// Theme support	/themes	dark/light override tokens
 
 *, *:before, *:after
     box-sizing: border-box
@@ -42,6 +36,25 @@ html, body
 
 button, a, router-link, RouterLink
     cursor: pointer
+
+@mixin markdown-content
+    p
+        text-indent: 1.5em /* Indent first line */
+        margin: 0
+        line-height: 1.8em
+        // text-size-adjust: 190% // font-size-adjust
+        font-size: large
+
+    h1, h2
+        text-align: center
+
+    +layout.breakpoint(m)
+    @media (max-width: 600px)
+        .novel-container
+            max-width: 95%
+            padding: 15px
+        .novel p
+            text-indent: 1em
 
 
 // === TYPOGRAPHY
@@ -109,12 +122,11 @@ $heading-font-styles: (
         font-weight: map.get($style, weight)
 
 
-#appWrapper
-    font-family: Roboto, Poppins
 .home-page
     text-align: center
-    +layout.breakpoint(s)
+    +layout.breakpoint(m)
         text-align: justify
+
 .social
     margin-inline: 0
     margin-block: 0.5rem

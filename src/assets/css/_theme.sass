@@ -117,6 +117,9 @@ $theme-image-props: (
                 background-color: $sidebar-bg
             background-color: $mod-bg
 
+        .active-style
+            background-color: $loud
+
         .sidebar-wrapper
             background-color: $sidebar-bg
 
@@ -207,7 +210,13 @@ $theme-image-props: (
         // TIME
         .zen-wrapper
             background-color: color.adjust($bg-color, $lightness: +10%)
-
+        .content-selector
+            margin-top: 2em
+            display: inline-flex
+            flex-wrap: wrap
+            gap: 0 1rem
+            *
+                box-shadow: 1px 1px 1px $color
         
         .title-logo h2
             color: $loud
@@ -313,7 +322,7 @@ $theme-image-props: (
                     border: 1px solid $sidebar-bg
         .info-panel
             z-index: 6000
-            .btn-grp
+            .style-selector-buttons
                 background-color: $mod-bg
                 // color: red
                 a:hover

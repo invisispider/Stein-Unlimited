@@ -10,9 +10,6 @@ const props = defineProps(['infoview']);
                 Our update keeps what works, and addresses all deficits.
                 The result is simpler to learn, easier to work with, and better suited 
                 for geometry and math. Once you see the problems, the solutions are obvious.</p>
-            <!-- <p> -->
-                <!-- <b style="font-size: xx-large;">unLimited Time</b><br> -->
-                
                 <!-- A lightweight clock and calendar framework
                 designed to improve time awareness.
                 Once you see it, there's no turning back.</p> -->

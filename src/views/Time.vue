@@ -64,11 +64,12 @@ const scrollToTop = () => {
 </script>
 <template>
   <div id="zen-wrapper" class="zen-wrapper" data-test-id="zen-wrapper">
-    <div class="title-logo">
-      <img src="@/assets/img/unlimitedtime.webp" alt="" class="theme-image">
+    <div class="time-widget">
+      <img src="@/assets/img/unlimitedtime.webp" alt="unlimited time timelogo" 
+      class="theme-image unlimited-time-logo">
       
-      <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
-          src="../../public/favicon-32x32.png" />Time</h1>
+      <!-- <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
+          src="../../public/favicon-32x32.png" />Time</h1> -->
       <h4>{{ store.forma }}</h4>
       <h2 class="readout" style="cursor: pointer;" @click="toggleShow('reading')">
         {{ store.displayZenTime }}
@@ -121,7 +122,11 @@ const scrollToTop = () => {
   </div>
 </template>
 <style lang="sass">
-
 @use "@/assets/css/time"
-
+@use "@/assets/css/vars" as *
+.unlimited-time-logo
+  margin: 2rem
+  width: 100%
+  max-width: 14rem
+  border-radius: 50%
 </style>

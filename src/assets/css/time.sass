@@ -1,6 +1,26 @@
 @use "@/assets/css/vars.sass" as *
 
 #zen-wrapper
+    // font-family: HK Grotesk
+    display: flex
+    flex-direction: column
+    padding: 20px 5px
+    max-width: 100vw
+    align-content: space-between
+    padding: 3rem 0
+    @media screen and (min-width: 700px)
+        display: grid
+        grid-template-columns: 1fr max-content
+        grid-template-rows: auto
+        grid-template-areas: "dayContainer timeWidget" "habitsDiv habitsDiv" "contentDiv contentDiv"
+        #habits
+            justify-content: center
+    @media screen and (min-width: 1000px)
+        grid-template-columns: max-content max-content 2fr
+        grid-template-areas: "dayContainer timeWidget habitsDiv" "contentDiv contentDiv contentDiv"
+        align-items: flex-start
+    @media screen and (min-width: 1400px)
+        grid-template-columns: 1fr 1fr 1fr
     .content-section
         grid-area: contentDiv
         // font-size: larger
@@ -23,6 +43,19 @@
         margin-block: 0.5em
     .content-button:hover
         color: teal
+    h1
+        font-size: 2.7rem
+        margin-block-start: 1em
+        margin-block-end: 0
+    .selected
+        background-color: $stein-purple
+        // color: red
+        list-style: none
+        font-size: 1.3em
+        color: $safe-light
+    a:hover
+        text-decoration: none
+
 
 .holiday-flex
     display: flex
@@ -49,48 +82,12 @@
     thead, tbody
         display: inline-flex
 
-.zen-wrapper
-    // font-family: HK Grotesk
-    display: flex
-    flex-direction: column
-    padding: 20px 5px
-    max-width: 100vw
-    align-content: space-between
-    padding: 2em 2em
-    @media screen and (min-width: 700px)
-        display: grid
-        grid-template-columns: 1fr max-content
-        grid-template-rows: auto
-        grid-template-areas: "dayContainer titleLogo" "habitsDiv habitsDiv" "contentDiv contentDiv"
-        #habits
-            justify-content: center
-    @media screen and (min-width: 1000px)
-        grid-template-columns: max-content max-content 2fr
-        grid-template-areas: "dayContainer titleLogo habitsDiv" "contentDiv contentDiv contentDiv"
-        align-items: flex-start
-    @media screen and (min-width: 1400px)
-        grid-template-columns: 1fr 1fr 1fr
-
-    h1
-        font-size: 2.7rem
-        margin-block-start: 1em
-        margin-block-end: 0
-    .selected
-        background-color: $stein-purple
-        // color: red
-        list-style: none
-        font-size: 1.3em
-        color: $safe-light
-    a:hover
-        text-decoration: none
-
     
-.title-logo
-    grid-area: titleLogo
-    // margin: 0 auto
+.time-widget
+    grid-area: timeWidget
     justify-content: start
     align-items: center
-    // height: 100%
+
 #habits
     // align-self: start
     grid-area: habitsDiv
@@ -100,20 +97,13 @@
         max-width: 100%
         padding: 0.3em
 
-.info-panel
+#content-section
     display: flex
     flex-direction: column
-    position: fixed
     align-items: center
-    z-index: 3
-    bottom: 0
-    right: 0
-    color: $stein-lumenwhite
-    background: rgba(11, 6, 14, 0.96)
-    height: 100vh
     overflow-y: scroll
     .info-template
-        width: 100vw
+        width: 100%
         padding-inline: 15%
         p
             text-align: left
@@ -128,9 +118,6 @@
         margin: 1em 10%
         text-shadow: 1px 1px 10px black
 
-.title-logo
-    display: flex
-    flex-direction: column
 .holiday
     display: block
 .smiley
@@ -138,6 +125,7 @@
     border-radius: 6px
     width: max-content
     max-width: 90vw
+    margin: auto
     i
         border-radius: 10%
         padding-inline: 1em

@@ -144,7 +144,6 @@ $section-gap: 160px
     padding: 0.8rem 1rem
     align-items: center
     font-size: 1.2rem
-    font-family: helvetica
   .todo-title
     text-align: center
     align-items: center

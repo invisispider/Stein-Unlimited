@@ -94,6 +94,7 @@ onMounted(async () => {
     
     <h2 class="glow">Visit our <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord community!<img
       class="utm-social" src="@/assets/img/social_dc.png" /></a></h2>
+      <!-- convert to new logo style -->
       <img src="@/assets/img/unthinkme.png" style="margin-block: 1em;" class="stu-banner" />
       <h3>Integral YouTube Channel</h3>
       <p class="utm-description"><em>An important part of my life is talking about

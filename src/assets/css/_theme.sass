@@ -1,24 +1,8 @@
 @use "sass:color"
-$mygreen: #31e833
-$dark-purple: #92099e
-$dark-green: #2f855a
-$light-black: #5a5a5a
-$medium-thalmon: rgb(245, 120, 89)
-$peace: #115f83
-$pink-light: #e75480
-$button-text: #FDC
-$button-back: rgb(40, 16, 80)
-$button-active: rgb(135 19 175)
-$button-hover: rgb(149 13 135 / 62%)
-$a-text: #f6e1a9
-$a-active: #A45
-$a-hover: rgb(7 0 81 / 80%)
-$limegreen: limegreen
-$div-bckgrd: rgb(19 18 30 / 80%)
-$box-shadow-stein: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
-$deep-blue: #60a5fa
-$golden: #ff8c00
+@use "@/assets/css/vars" as *
 
+.admin
+  background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%)
 @mixin style-icons($name, $color)
   $icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
   $lightness: color.channel($color, "lightness", $space: hsl)
@@ -27,7 +11,7 @@ $golden: #ff8c00
     $lightness > 60%,
     color.scale($icon-color, $lightness: -45%, $saturation: -80%),
     color.scale($icon-color, $lightness: 45%, $saturation: -80%)
-  )
+  )  
 
   ##{$name}
     color: $icon-color
@@ -55,7 +39,9 @@ $habit-colors: (
         color: $color
         a
             color: $safe-text
-        // .topnav
+
+    
+        // SIDEBAR
         .christmas-icon
             color: rgb(49, 232, 51)
         .navItem
@@ -65,6 +51,13 @@ $habit-colors: (
             box-shadow: 0 0 40px $color
         a:hover, router-link:hover
             color: $loud
+
+        .social-grp
+            background-color: $vid-div
+            *
+                color: $loud
+            *:hover
+                color: color.adjust($loud, $lightness: -30%)
 
         // VIDEOS
         #video-container
@@ -92,7 +85,7 @@ $habit-colors: (
         .lime-green
             color: $limegreen
 
-        .rotate-180
+        .collapse-icon-closed
             background-color: $sidebar-bg
         #style-selector
             // i, .tinytext
@@ -102,7 +95,7 @@ $habit-colors: (
                 background-color: $sidebar-bg
             background-color: $mod-bg
 
-        .sidebar
+        .sidebar-wrapper
             background-color: $sidebar-bg
 
         .pedantic

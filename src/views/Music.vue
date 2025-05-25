@@ -206,9 +206,6 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 @font-face
 	font-family: "lhandw"
 	src: url(@/assets/fonts/lhandw.ttf) format("truetype")
-@font-face
-	font-family: "mistral"
-	src: url(@/assets/fonts/mistral.ttf) format("truetype")
 
 #music-main
 	// max-width: 100vw

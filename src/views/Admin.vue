@@ -114,7 +114,6 @@ onMounted(() => {
 <style lang="sass">
 .container
   display: grid
-  font-family: Roboto
 .collapseNav
   max-width: 80vw
   margin: 0.2em 0.6em

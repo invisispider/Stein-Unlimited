@@ -57,14 +57,24 @@ async function confirmSelection() {
     >Confirm Level</button>
 </template>
 <style lang="sass" scoped>
+$avatar-circle-size: 3rem
+$avatar-circle-min-size: 2rem
+
 .avatar-selector
   display: grid
-  grid-template-columns: repeat(6, 1fr)
-  grid-auto-rows: auto
-  gap: 10px
-  width: max-content
+  grid-template-columns: repeat(auto-fit, minmax($avatar-circle-min-size, $avatar-circle-size))
+  gap: 0.4rem
   margin: auto
-
+  max-width: 100vw
+    // display: grid
+  // grid-template-columns: repeat(6, 1fr)
+  // grid-auto-rows: auto
+  gap: 0.4rem
+  // width: max-content
+  margin: auto
+  max-width: 100vw
+  justify-content: center
+  
 @for $i from 1 through 6
   .avatar-circle:nth-child(#{$i})
     grid-row: 1
@@ -83,11 +93,13 @@ async function confirmSelection() {
     grid-column: #{($i - 7)}
 
 .avatar-circle
-  width: 50px
-  height: 50px
+  width: 100%
+  aspect-ratio: 1
   border-radius: 50%
   cursor: pointer
   transition: transform 0.2s, box-shadow 0.2s
+  min-width: $avatar-circle-min-size
+  max-width: $avatar-circle-size
 
 .avatar-circle:hover 
   transform: scale(1.2)

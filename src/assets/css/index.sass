@@ -1,61 +1,120 @@
-@use "@/assets/css/animations"
-@use "@/assets/css/landing"
-@use "@/assets/css/sidebar"
-@use "@/assets/css/theme"
-@use "@/assets/css/unthinkme"
+@forward "@/assets/css/animations"
+@forward "@/assets/css/layout"
+@forward "@/assets/css/theme"
+@forward "@/assets/css/unthinkme"
+@forward "@/assets/css/vars"
 @use "@/assets/css/vars" as *
+@use "@/assets/css/layout"
+// Global layout	/layout	site container, header, footer
+// Typography	/base	body, headings, text rules
+// Utility	/abstracts	spacing, flexbox, z-index
+// Components	/components	buttons, form inputs, etc.
+// Page types	/pages	content pages, game pages
+// Theme support	/themes	dark/light override tokens
 
 *, *:before, *:after
     box-sizing: border-box
     // transition: none !important
 html, body
     margin: 0
-button, a, router-link, RouterLink, i
+
+// UTILITY
+.pointer
     cursor: pointer
 .hidden
     visibility: hidden
+.text-center
+    text-align: center
+@mixin login-key($col)
+    display: block
+    position: relative 
+    top: -0.7em
+    color: $col
+.color-logged-in
+    @include login-key(#31e833)
+.color-logged-out
+    @include login-key(#da1a54)
+.margin-bottom
+    margin-block-end: 3rem
+.padding-bottom
+    padding-bottom: 3rem
 
-.green
-    color: #31e833
-.red
-    color: #da1a54
-button, a, router-link, RouterLink, i
+button, a, router-link, RouterLink
     cursor: pointer
 
-// TYPOGRAPHY
+
+// === TYPOGRAPHY
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
+// $material-icon-theme: 
+@mixin font-family($font)
+    @if $font == Roboto
+        font-family: "Roboto", sans-serif
+        font-optical-sizing: auto
+        font-weight: 500
+        font-style: normal
+        font-variation-settings: "wdth" 100
+    @else if $font == Lobster
+        font-family: "Lobster", sans-serif
+        font-weight: 400
+        font-style: normal    
+    @else if $font == Sans
+        font-family: 'Inter', 'Helvetica Neue', sans-serif
+        font-optical-sizing: auto
+        font-weight: 400
+        font-style: normal
+    @else if $font == Heading
+        font-family: "Rubik", "Inter", sans-serif
+        font-optical-sizing: auto
+        font-weight: 600
+        font-style: semi-bold
+
+* 
+    font-size: $font-size-base
+p, span, div
+    @include font-family(Sans)
+    font-size: $font-size-p
+    line-height: $line-height-base
+
+h1, h2, h3
+    @include font-family(Heading)
+h1
+    font-size: $font-size-h1
+h2
+    font-size: $font-size-h2
+h3
+    font-size: $font-size-h3
 #appWrapper
     font-family: Roboto, Poppins
-.home-content
-    font-size-adjust: 0.8
-    line-height: 200%
+.home-page
+    text-align: center
+    +layout.breakpoint(s)
+        text-align: justify
+.social
+    margin-inline: 0
+    margin-block: 0.5rem
+
 .social-grp
     a
-        font-size: 12px
+        font-size: 0.7rem
     a:has(.social)
         .social
             max-width: 100%
-            max-height: 27px
+            max-height: 2rem
             margin-inline: 0.3em
 #style-selector
     .material-icons
         font-size: 1.4em
-.sidebar
-    font-family: Poppins
 .topnav
     .christmas-icon
         font-size: 1.8rem
     .navItem
-        font-family: 'Roboto'
         font-weight: 600
-#appWrapper.horizontal
-    .collapse-icon
-        font-size: 30px
-    .wheelie
-        font-size: 8rem
-    .userButton
-        font-size: 1.3rem
-    .home-container
-        font-family: Roboto
+
+.home-container
+    font-family: Roboto
 // USE THIS FOR GOOD READING:
 .article-font
     font-size: 20px
@@ -89,227 +148,18 @@ body
     p
         text-indent: 2em
 
-
-    
-#appWrapper
-    display: flex
-    flex-direction: column
-    min-height: 100vh
-    text-align: center
-    justify-content: flex-start
-    @media screen and (min-width: 999px)
-        .flex-column p
-            text-align: left
-            text-indent: 3em
-  
-a, router-link
-  text-decoration: none
-  align-items: flex-end
-  justify-content: flex-end
-  margin-block: auto
-  padding: 0
-
-// MOBILE VERTICAL STYLE
-#appWrapper.vertical
-    .home-content
-        padding-inline: 0.4em
-.flex-column
-    display: grid
-    grid-auto-rows: min-content min-content auto min-content
-    margin-block-start: 50px
-    flex-grow: 1
-.flex
-    display: flex
-
-.home-content
-    padding: 0
-    display: flex
-    flex-direction: column
-    @media screen and (min-width: 800px)
-        margin-inline: 10%
-    a:not(.stu-banner)
-        display: inline
-        color: $active
-    a
-        text-decoration: none
-    p
-        text-align: left
-        text-indent: 2em
-        padding-block: 0.2em
-        margin-inline: 1.3em
-        max-width: 85%
-        text-justify: inter-word
-        text-indent: 3em
-        a 
-            margin-inline: 0
-
-.active-link
-    color: $active
-.social-grp
-    display: flex
-    background-color: $social-grp-color
-    justify-content: center
-    position: fixed
-    bottom: 0
-    width: 100vw
-    justify-self: center
-    padding: 0.2em
-        
-#style-selector
-    position: fixed
-    z-index: 2
-    width: 100vw
-    padding-block-end: 4px
-
-.btn-grp
-    display: flex
-    flex-direction: row-reverse
-    width: 100vw
-    grid-template-columns: repeat(10, 10%)
-    margin-block: 3px
-    padding-inline: 1em
-    *
-        align-self: center
-        justify-self: center
-        border-radius: 20%
-        padding: 0.23em
-    @media screen and (min-width: 350px)
-        i, span
-            margin-inline: 0.2em
-   
-.stu-banner
-    display: inline-block
-    height: auto
-    margin-inline: auto
-    max-width: 94%
-    border-radius: 10px
-    margin: 0
-    padding: 0
-    @media screen and (max-width: 500px)
-        max-width: 90%
-.sidebar
-    color: #fff
-    display: flex
-    flex-direction: column
-    background-color: #2f855a
-    position: fixed
-    z-index: 100
-    top: 0
-    left: 0
-    padding: .5em
-    transition: .3s ease
-.sidebar:not(.sidebar:has(.rotate-180))
-    border-right: 2px solid #18222c
-.rotate-180
-    top: 0
-    padding: 6px 50px
-    margin: 0
-    border-radius: 5%
-
-.topnav
-    .christmas-icon
-        list-style-type: none
-        justify-content: center
-    .navItem
-        border-radius: 7px
-        margin-block: 0.4em
-        white-space: nowrap
+// IMAGE INSERTS
+.logo-frame
+    max-width: 300px
+    margin: 0 auto
+    aspect-ratio: 1 / 1
+    overflow: hidden
+    border-radius: 1rem
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2)
+    img
         cursor: pointer
-        list-style-type: none
-        justify-content: center
-    a, router-link
-        border-radius: 6px
-
-
-@media screen and (min-width: 430px)
-    .topnav
-        max-width: 100vw
-        ul
-            min-height: 2rem
-            max-width: 100vw
-            justify-content: flex-start
-            align-items: center
-            list-style-type: none
-            flex-wrap: nowrap
-        ul li
-            min-width: 10vw
-            padding: .2rem
-#player
-    max-width: 100vw
-
-
-// UTILITY CLASSES
-.pointer
-    cursor: pointer
-.center-text
-    text-align: center
-
-.work-schedules
-    margin: auto
-    @media screen and (max-width: 400px)
-        display: none
-.home-logo, #landing-title
-  justify-self: center
-  margin-top: 3em
-
-/* Novel container */
-#beacon-div
-    max-width: 800px
-    margin: 40px auto
-    padding: 20px
-    /* background: white; */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-    border-radius: 8px
-
-
-#appWrapper.horizontal
-    .collapse-icon
-        // position: fixed
-        color: #92099e
-        transition: .2s linear
-        z-index: 540
-        top: 0
-        left: 0
-        margin-block: 0.3em
-    .collapse-icon:not(.rotate-180)
-        position: relative
-    .rotate-180
-        // left: 0
-        transform: rotate(180deg)
-        transition: .2s linear
-        position: fixed
-        margin-left: 0.3em
-    .vac-col-messages
-        z-index: 0
-    .vac-room-header
-        z-index: 0
-    .vac-avatar
-        margin-left: 2%
-
-    .move-up
-        top: -60px
-
-    .wheelie
-        position: fixed
-        z-index: 300
-        bottom: 90px
-
-    .userButton
-        color: red
-        padding: 3px 10px
+        width: 100%
+        height: 100%
+        object-fit: cover
         display: block
-        border-radius: 5px
-
-    .userButton:hover
-        background: rgb(220, 220, 220)
-    .home-container
-        display: flex
-        flex-direction: column
-        width: 100vw
-        i
-            margin: 0
-            padding: 0
-
-    @media screen and (min-width: 430px)
-        .home-container
-            flex-align: center
+    

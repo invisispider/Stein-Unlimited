@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import "@/assets/css/time.sass";
 import { ref, onMounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
@@ -8,7 +7,6 @@ import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
 import TimeConversions from "@/components/Time/TimeConversions.vue";
 import Flatpickr from 'vue-flatpickr-component';
-import 'flatpickr/dist/flatpickr.min.css';
 import { setupTimeWatcher } from "@/composables/setupTimeWatcher";
 import time_content from "@/content/time_content.md?raw";
 import injectMarkdown from '@/composables/injectMarkdown';
@@ -121,56 +119,5 @@ const scrollToTop = () => {
   </div>
 </template>
 <style lang="sass">
-#zen-wrapper
-  .content-section
-    grid-area: contentDiv
-    font-size: larger
-    margin: auto
-    // margin-inline: 1em
-  .content
-    font-size-adjust: 0.7;
-    max-width: 700px
-    text-align: justify
-    h1, h2
-      text-align: center
-    // p
-      // max-width: 100ch
-  .content-selector
-    margin-top: 2em;
-    display: inline-flex
-    flex-wrap: wrap
-  .content-button
-    cursor: pointer
-    padding: 5px
-    margin-block: 0.5em
-  .content-button:hover
-    color: teal
-
-.holiday-flex
-  display: flex
-  flex-wrap: nowrap
-  align-items: center
-  justify-content: space-between
-  @media screen and (min-width: 1000px)
-      margin-inline: 15%
-  h3
-      color: #0F0
-      text-wrap: nowrap
-      text-align: left
-      border-right: 1px solid #444
-      padding-right: 1em
-  p
-      padding-left: 0.5em
-      // display: flex
-      // justify-contet: center
-      flex-wrap: wrap
-      text-align: right
-.holiday-title, .holiday-description
-  text-align: center
-// .holiday-description
-.work-schedules
-  margin: auto
-  thead, tbody
-    display: inline-flex
-
+@use "@/assets/css/time"
 </style>

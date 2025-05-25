@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, onMounted } from 'vue';
+import { nextTick, ref, onMounted } from 'vue';
 import "@/assets/css/index.sass";
 import { RouterView } from "vue-router";
 import LoadingComponent from "@/components/LoadingComponent.vue"
 import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import StyleSelector from "@/components/StyleSelector.vue";
 import { useStore } from '@/stores/index';
-import { useMonitorSize } from '@/composables/monitor-size';
 import { toggleSidebar, collapsed } from "@/components/Sidebar/state";
 
 const store = useStore();
-const sizes = useMonitorSize();
-
-const isVertical = computed(()=>sizes.isVertical.value?'vertical':'horizontal')
 
 const toggleSidebarNow = () => {
     nextTick()
@@ -29,7 +25,7 @@ onMounted(() => {
 </script>
 <template>
     <div id="appWrapper" 
-        :class="[store.styleMode, isVertical]"
+        :class="[store.styleMode]"
         data-testid="app-wrapper"    
     >
         <LoadingComponent v-if="isLoading" />

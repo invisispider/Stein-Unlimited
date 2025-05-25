@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import { getFirestoreInstance } from '@/services/firebaseconfig';
-import { collection, query, orderBy, getDocs, limit } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, limit } from 'firebase/firestore';
 
 import type { Timestamp } from 'firebase/firestore';
 
@@ -18,10 +18,10 @@ interface Message {
 const messages = ref<Message[]>([]);
 
 onMounted(async () => {
-  const q = query(collection(firestoreDb, 'messages'), orderBy('timestamp', 'desc'), limit(40));
-  const snapshot = await getDocs(q)
-
-  messages.value = snapshot.docs.map(doc => doc.data() as Message)
+  const q = query(collection(firestoreDb, 'messages'), orderBy('timestamp', 'desc'), limit(60));
+  onSnapshot(q, (snapshot) => {
+    messages.value = snapshot.docs.map(doc => doc.data() as Message)
+  })
 })
 
 
@@ -88,16 +88,19 @@ function formatChatTime(date: Date) {
     <div v-for="msg in messages" :key="msg.timestamp.toString" 
       class="message" :style="{ 'color': giveColorHex(msg.level) || '#dc1b07', 'background-color': giveBackgroundHex(msg.level) || '#150202'}"
     >
-      <strong>{{ msg.displayName }}</strong><span>: {{ msg.text }}</span>
-      <p>{{ formatChatTime(msg.timestamp.toDate()) }}</p>
+      <strong>{{ msg.displayName }} </strong><span>: {{ msg.text }}</span>
+      <p>{{ formatChatTime(msg.timestamp.toDate()) }} <em>{{ msg.level }}</em></p>
+      
     </div>
   </div>
 </template>
 <style lang="sass">
+@use "@/assets/css/vars" as *
 .chat-feed
-  // margin-top: 1em
   margin-bottom: auto
-  // background-color: blue
+  background: rgba(0, 0, 0, 0.2)
+  padding: 1rem
+  border-radius: $radius-panel
 //   max-height: 400px
 //   overflow-y: auto
 .message
@@ -105,9 +108,9 @@ function formatChatTime(date: Date) {
   padding-block: 0.75rem
   padding-inline: 1rem
   text-align: left
-  border-radius: 12px
-  border: 1px solid gray
-
+  border-radius: $radius-panel
+  // border: 1px solid gray
+  box-shadow: $box-shadow-stein
 .level-circle
   width: 50px
   height: 50px

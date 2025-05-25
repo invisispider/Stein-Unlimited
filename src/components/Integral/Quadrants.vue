@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed} from "vue"
+import {ref, computed, watch} from "vue"
 import { useMonitorSize } from '@/composables/monitor-size';
 import injectMarkdown from "@/composables/injectMarkdown";
 import integral_quadrants from "@/content/integral_quadrants.md?raw";
@@ -20,6 +20,7 @@ const changeQuad = (sel: QuadRef) => {
     quadRef.value=sel
     window.scrollTo(0, 0);
 }
+
 const screenBig = computed(()=>{
     if(sizes.browserWidth.value > 475) {
         return true
@@ -410,13 +411,13 @@ const emit = defineEmits(['next'])
                 You are just as much the story of your life as you are a speck of Universe, just as much a 
                 representative of humanity as you are a detatched observer. This is all One thing. 🍣 You.
             </p>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('left-right')">LEFT AND RIGHT QUADRANTS</h5>
-            <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">TYPES</h5>
+            <h5 class="pointer pedantic" @click="changeQuad('left-right')">LEFT AND RIGHT QUADRANTS</h5>
+            <h5 class="pointer pedantic" @click="emit('next')">TYPES</h5>
         </template>
         <template v-else-if="quadRef==='left-right'">
             <div id="lefft-right" v-html="htmlHori"></div>
             <h3>Meta-Levels of Quadrants</h3>
-            <table v-if="screenBig" class="int-table disappear">
+            <table v-show="screenBig" class="int-table disappear">
                 <tbody>
                 <tr>
                     <th>Analogy</th>
@@ -475,7 +476,7 @@ const emit = defineEmits(['next'])
                 </tr>
                 </tbody>
             </table>
-            <p v-else class="pedantic">Turn device horizontal to view</p>
+            <p v-show="!screenBig" class="pedantic">Turn device horizontal to view</p>
             <h3>Visible Spectrum of Mind</h3>
             <table v-if="screenBig" class="int-table disappear">
                 <tbody>

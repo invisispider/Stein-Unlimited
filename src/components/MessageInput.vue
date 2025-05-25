@@ -35,7 +35,7 @@ const postMessage = async () => {
 
   try {
     await submitMessage({
-      uid: store.uid,
+      level: store.level || 'Infrared',
       displayName: store.displayName,
       text: text.value,
     });

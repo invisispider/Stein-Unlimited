@@ -4,20 +4,19 @@
 
 .admin
     background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%)
+
 @mixin style-icons($name, $color)
-$icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
-$lightness: color.channel($color, "lightness", $space: hsl)
-
-$bg-color: if(
-    $lightness > 60%,
-    color.scale($icon-color, $lightness: -45%, $saturation: -80%),
-    color.scale($icon-color, $lightness: 45%, $saturation: -80%)
-  )  
-
-##{$name}
-    color: $icon-color
-    background-color: $bg-color
-    border: 1px solid rgba(0,0,0,0.1)
+    $icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
+    $lightness: color.channel($color, "lightness", $space: hsl)
+    $bg-color: if(
+        $lightness > 60%,
+        color.scale($icon-color, $lightness: -45%, $saturation: -80%),
+        color.scale($icon-color, $lightness: 45%, $saturation: -80%)
+    )  
+    ##{$name}
+        color: $icon-color
+        background-color: $bg-color
+        border: 1px solid rgba(0,0,0,0.1)
 
 $habit-colors: (
     "struggles": #260436,
@@ -106,18 +105,18 @@ $theme-image-props: (
         .lime-green
             color: $limegreen
 
-        .collapse-icon-closed
-            background-color: $sidebar-bg
+        // TRANSPARENT BACKGROUND 
+        // .collapse-icon-closed
+            // background-color: $sidebar-bg
         #style-selector
-            // i, .tinytext
-                // border: 1px solid $mod-bg
-                // background-color: $sidebar-bg
-            i: hover, .tinytext *:hover
             background-color: $sidebar-bg
-            background-color: $mod-bg
+            i
+                border: 1px solid $mod-bg
+            i:hover, .tinytext
+                background-color: $mod-bg
 
-        .active-style
-            background-color: $loud
+        .activeStyle
+            background-color: color.scale($icon, $lightness: -30%)
 
         .sidebar-wrapper
             background-color: $sidebar-bg

@@ -5,6 +5,7 @@
 @forward "@/assets/css/vars"
 @use "@/assets/css/vars" as *
 @use "@/assets/css/layout"
+@use "sass:map"
 // Global layout	/layout	site container, header, footer
 // Typography	/base	body, headings, text rules
 // Utility	/abstracts	spacing, flexbox, z-index
@@ -60,32 +61,54 @@ button, a, router-link, RouterLink
         font-family: "Lobster", sans-serif
         font-weight: 400
         font-style: normal    
-    @else if $font == Sans
-        font-family: 'Inter', 'Helvetica Neue', sans-serif
-        font-optical-sizing: auto
-        font-weight: 400
-        font-style: normal
     @else if $font == Heading
         font-family: "Rubik", "Inter", sans-serif
         font-optical-sizing: auto
         font-weight: 600
         font-style: semi-bold
+    @else
+        font-family: 'Inter', 'Helvetica Neue', sans-serif
+        font-optical-sizing: auto
+        font-weight: 400
+        font-style: normal
 
-* 
-    font-size: $font-size-base
-p, span, div
+body
     @include font-family(Sans)
-    font-size: $font-size-p
-    line-height: $line-height-base
+    font-size: $font-size-base
 
-h1, h2, h3
-    @include font-family(Heading)
-h1
-    font-size: $font-size-h1
-h2
-    font-size: $font-size-h2
-h3
-    font-size: $font-size-h3
+$base-font-styles: (
+    p: (size: $font-size-p, weight: 400, line: 1),
+    span: (size: $font-size-p, weight: 300),
+    div: (size: $font-size-p, weight: 500),
+    b: (size: $font-size-p, weight: 700),
+)
+
+
+    
+@each $tag, $style in $base-font-styles
+  #{$tag}
+    @if map.has-key($style, line)
+        line-height: map.get($style, line)
+    @else
+        line-height: $line-height-base
+    font-size: map.get($style, size)
+    font-weight: map.get($style, weight)
+
+
+$heading-font-styles: (
+    h1: (size: $font-size-h1, weight: 700),
+    h2: (size: $font-size-h2, weight: 600),
+    h3: (size: $font-size-h3, weight: 600),
+    h4: (size: $font-size-h4, weight: 500),
+)
+
+@each $tag, $style in $heading-font-styles
+    #{$tag}
+        @include font-family(Heading)
+        font-size: map.get($style, size)
+        font-weight: map.get($style, weight)
+
+
 #appWrapper
     font-family: Roboto, Poppins
 .home-page
@@ -107,14 +130,14 @@ h3
 #style-selector
     .material-icons
         font-size: 1.4em
-.topnav
+.sidebar-wrapper
     .christmas-icon
         font-size: 1.8rem
-    .navItem
+    *
         font-weight: 600
+.home-navigation-card b
+    font-size: $font-size-h3
 
-.home-container
-    font-family: Roboto
 // USE THIS FOR GOOD READING:
 .article-font
     font-size: 20px

@@ -5,7 +5,7 @@
     <div id="namaste-div">
          <div class="float-image-left">
                 <!-- <img src="@/assets/img/LOGO_steinunlimited_dark.webp"> -->
-                <img src="@/assets/img/LOGO_steinunlimited.webp" class="float-image">
+                <img src="@/assets/img/LOGO_steinunlimited.webp" class="float-image theme-image">
             <div>
                 <h3>
                     Thank you 🙏🏿 for Being with us. This is our living website.
@@ -16,15 +16,48 @@
         <!-- <h5>Repeat: Love Is Okay</h5> -->
         <h2 class="text-center">Site Features:</h2>
         <!-- <h4>Treasures:</h4> -->
-        <RouterLink to="/Integral"><p class="bullet-point"><b>Integral Theory</b> Crash course in Ken Wilber's philosophy</p></RouterLink>
-        <RouterLink to="/UnThinkMe"><p class="bullet-point"><b>unThinkMe</b> Integral Theory discussion videos</p></RouterLink>
-        <RouterLink to="/Time"><p class="bullet-point"><b>unLimited Time</b> Progressive clock and calendar framework</p></RouterLink>
-        <RouterLink to="/Music"><p class="bullet-point"><b>Music</b> Music instruction, peformance, and holistic coaching</p></RouterLink>
-        <RouterLink to="/Beacon"><p class="bullet-point"><b>Beacon</b> A progressive-release science fiction mystery</p></RouterLink>
-        <RouterLink to="/Videos"><p class="bullet-point"><b>Videos</b> Dusty old archive of Adam's music and comedy projects</p></RouterLink>
-        <RouterLink to="/Crossword"><p class="bullet-point"><b>Crossword: </b> An Integral Theory crossword puzzle that's currently pointless.</p></RouterLink>
-        <RouterLink to="/Talk"><p class="bullet-point"><b>Talk</b> Public message board with strict rules.</p></RouterLink>
-        <br>
+        <div class="navigation-cards">
+            <RouterLink to="/Integral">
+                <div class="home-navigation-card">
+                    <b>Integral Theory</b> Crash course in Ken Wilber's philosophy
+                </div>
+            </RouterLink>
+            <RouterLink to="/UnThinkMe">
+                <div class="home-navigation-card">
+                    <b>unThinkMe</b> Integral Theory discussion videos
+                </div>
+            </RouterLink>
+            <RouterLink to="/Time">
+                <div class="home-navigation-card">
+                    <b>unLimited Time</b> Progressive clock and calendar framework
+                </div>
+            </RouterLink>
+            <RouterLink to="/Music">
+                <div class="home-navigation-card">
+                    <b>Music</b> Music instruction, peformance, and holistic coaching
+                </div>
+            </RouterLink>
+            <RouterLink to="/Beacon">
+                <div class="home-navigation-card">
+                    <b>Beacon</b> A progressive-release science fiction mystery
+                </div>
+            </RouterLink>
+            <RouterLink to="/Videos">
+                <div class="home-navigation-card">
+                    <b>Videos</b> Dusty old archive of Adam's music and comedy projects
+                </div>
+            </RouterLink>
+            <RouterLink to="/Crossword">
+                <div class="home-navigation-card">
+                    <b>Crossword: </b> An Integral Theory crossword puzzle that's currently pointless
+                </div>
+            </RouterLink>
+            <RouterLink to="/Talk">
+                <div class="home-navigation-card">
+                    <b>Talk</b> Public message board with strict rules
+                </div>
+            </RouterLink>
+        </div>
         <div class="float-image-left">
             <img src="@/assets/img/heroimage.webp" class="float-image">
             <div>
@@ -44,6 +77,3 @@
         </div>
     </div>
 </template>
-<style lang="sass" scoped>
-
-</style>

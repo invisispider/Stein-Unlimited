@@ -58,8 +58,8 @@ a, router-link
     padding-inline: 0.4em
     display: flex
     flex-direction: column
-    @include breakpoint(s)
-        margin-inline: 10%
+    // @include breakpoint(s)
+        // margin-inline: 10%
     a:not(.stu-banner)
         display: inline
         color: $active
@@ -328,8 +328,22 @@ a, router-link
     .stu
         p
             text-align: justify
-.bullet-point b
-    display: block
+.navigation-cards
+    display: flex
+    flex-wrap: wrap
+    padding: 1rem
+    border-radius: $radius-panel
+    justify-content: space-evenly
+    align-content: space-evenly
+
+.home-navigation-card 
+    width: 18rem
+    margin-block: 0.4rem
+    margin-inline: 0.4rem
+    *
+        max-width: 20ch
+        display: block
+        padding-bottom: 0.3rem
 
 .hero
     background: url("@/assets/img/steinunlimitedbrand.webp") center/cover no-repeat

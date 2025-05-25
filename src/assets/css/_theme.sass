@@ -1,4 +1,5 @@
 @use "sass:color"
+@use "sass:map"
 @use "@/assets/css/vars" as *
 
 .admin
@@ -31,6 +32,20 @@ $habit-colors: (
 @each $h, $c in $habit-colors
     @include style-icons("#{$h}-theme", $c)
 
+@mixin color-filter($hue: 0deg, $saturate: 100%, $brightness: 100%)
+    filter: hue-rotate($hue) saturate($saturate) brightness($brightness)
+
+$theme-image-props: (
+    struggles: (hue: 10deg, saturate: 180%, brightness: 100%),    
+    flowers: (hue: 33deg, saturate: 169%, brightness: 120%),    
+    elders: (hue: 140deg, saturate: 58%, brightness: 120%),      
+    vivid: (hue: 113deg, saturate: 71%, brightness: 120%),    
+    peace: (hue: 10deg, saturate: 30%, brightness: 120%),    
+    harvests: (hue: 150deg, saturate: 40%, brightness: 200%),  
+    hallows: (hue: 200deg, saturate: 70%, brightness: 120%),  
+    feasts: (hue: 330deg, saturate: 100%, brightness: 170%),    
+)
+
 @mixin unThemeMe($theme-name, $icon, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
     #appWrapper.#{""+$theme-name}
         $box-shadow: 2px 2px $icon, -2px -2px $contrast
@@ -40,7 +55,14 @@ $habit-colors: (
         a
             color: $safe-text
 
-    
+        .theme-image
+            $props: map.get($theme-image-props, $theme-name)
+            $hue: map.get($props, hue)
+            $saturate: if(map.has-key($props, saturate), map.get($props, saturate), 100%)
+            $brightness: if(map.has-key($props, brightness), map.get($props, brightness), 100%)
+            @include color-filter($hue, $saturate, $brightness)
+
+
         // SIDEBAR
         .christmas-icon
             color: rgb(49, 232, 51)
@@ -99,13 +121,19 @@ $habit-colors: (
             background-color: $sidebar-bg
 
         .pedantic
-            color: $loud
+            color: color.mix($loud, #999)
+            font-weight: 600
 
-        .bullet-point
-            background-image: linear-gradient(to bottom, $mod-bg, $smooth-bg)
+        .navigation-cards
+            background-color: $safe-text
+
+        .home-navigation-card
+            background-image: linear-gradient(to bottom, $vid-div, $smooth-bg)
             border-radius: 10px
             padding: 13px
             text-align: center
+            b
+                color: $loud
         // crossword
         #acrossDiv, #downDiv
             h2
@@ -376,11 +404,11 @@ $habit-colors: (
 @include unThemeMe(vivid, $peace, #9e2b2b, #e4e6d6, rgb(6, 1, 17), #ac91a3, 
     #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
 @include unThemeMe(peace, $light-black, #084955, #faf0f0, #012121, #9981a8, 
-    #d2b2e0, #dad0d0, #797171, rgb(144, 139, 211), #022326, #666)
-@include unThemeMe(harvests, #daa520, #fff8dc, #4d3c36, #14140f, #b8860b, 
-    #8b5e3c, #cd853f, #ffa500, #ff8c00, #deb887, #ff4500)
+    #d2b2e0, #dad0d0, #797171, rgb(52, 42, 187), #022326, #666)
+@include unThemeMe(harvests, #daa520, #ece6cc, #4d3c36, #14140f, #947422, 
+    #8b5e3c, #cd853f, #7b7670, #e9d949, #deb887, #ff4500)
 @include unThemeMe(hallows, $dark-green, #87cc9b, #161616, #68f78e, #100a14, 
     #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #298372)
 @include unThemeMe(feasts, #cee0e2, #1c3d5a, #e2eeec, #4d1b13, #2874a6, 
-    #213a49, #3498db, #2e86c1, #7ab7be, #aed6f1, #a3e3ee)
+    #335681, #3498db, #2e86c1, #7ab7be, #aed6f1, #a3e3ee)
 // $icon, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loudm $contrast, $hooks

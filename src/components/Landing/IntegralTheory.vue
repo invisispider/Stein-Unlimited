@@ -13,23 +13,32 @@
                 <div class="overlay">
                     <h1 class="title">Integral Theory</h1>
                     <h2>View our Interactive Guide</h2>
+                    <p>
+                        On the topic of spirituality and human potential, 
+                        Wilber is celebrated precisely <em>for</em> bringing 
+                        intellectual skepticism, postmodern sensitivity, and analytical grounding to this
+                        perennial field of human endeavor. 
+                    </p>
+                    <p class="subtitle">
+                        Visit <RouterLink to="/UnThinkMe">unThinkMe</RouterLink> for 
+                        Integral discussion
+                    </p>
                 </div>
             </section>
         </RouterLink>
-        <p>
-            On the topic of spirituality and human potential, 
-            Wilber is celebrated precisely <em>for</em> bringing 
-            intellectual skepticism, postmodern sensitivity, and analytical grounding to this
-            perennial field of human endeavor. 
-        </p>
-        <p class="subtitle">
-            Visit <RouterLink to="/UnThinkMe">unThinkMe</RouterLink> for 
-            Integral discussion
-        </p>
     </div>
 </template>
 <style lang="sass" scoped>
 .hero
     background: url("@/assets/img/aqalalatas.webp") center/cover no-repeat
     background-position: left top
+    background-size: contain
+    min-height: 25rem
+    max-width: 85vw
+    // margin: auto
+    margin-left: 0
+    background-color: blue
+    .overlay
+        p
+            max-width: 80ch
 </style>

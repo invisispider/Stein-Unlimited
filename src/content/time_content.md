@@ -5,9 +5,9 @@
 
 Welcome to the Future - this is a new way of experiencing the flow of moments, the living rhythm of existence. Taking advantage of the timeless, unLimited Time introduces **zen** as a variable; our calendar includes the untracked, the eternal, and the mystery.
 
-> Time shouldn't feel like a countdown.  
-> Or falling through your schedule.  
-> What if it flowed — like breath, like music, like water?
+#### Time shouldn't feel like a countdown.  
+#### Or falling through schedules.  
+#### What if it flowed — like breath, like music, like water?
 
 Our system emphasizes flow, organic rhythm, and simple comprehension - in terms of the language, geometry, and conceptualization we actually use to understand events and happenings. We invest meaning, positivity, and evolutionary development concepts from Integral Theory and a holistic birds-eye-view on historical global time systems - from Egyptian to Chinese - to transform the Roman slaver's sundial docket with an ultra-modern, sophisticated UI.
 

@@ -21,7 +21,7 @@
     </div>
 </template>
 <style lang="sass" scoped>
-@use "@/assets/css/layout"
+@use "@/assets/css/utility"
 .beacon-container
     box-shadow: 1px 1px gray, -1px -1px gray
     display: flex
@@ -35,7 +35,7 @@
     min-height: 50vh
     margin: 1rem
     padding: 0
-@include layout.breakpoint(l)
+@include utility.breakpoint(l)
     h2
         text-align: center
     .beacon-container

@@ -51,3 +51,7 @@ src/views/NextView.vue
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+**/Admin/            
+**/Admin/**          
+**/Admin.Vue

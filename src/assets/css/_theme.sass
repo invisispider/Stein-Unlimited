@@ -1,9 +1,23 @@
 @use "sass:color"
 @use "sass:map"
 @use "@/assets/css/vars" as *
+@use "@/assets/css/utility"
 
 .admin
     background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%)
+
+
+$habit-colors: (
+    "struggles": #260436,
+    "flowers": #ffb6c1,
+    "elders": #efefef,
+    "vivid": #cc4b67,
+    "peace": #2563eb,
+    "harvests": #cd853f,
+    "hallows": $dark-green,
+    "feasts": #101010,
+)
+
 
 @mixin style-icons($name, $color)
     $icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
@@ -18,21 +32,9 @@
         background-color: $bg-color
         border: 1px solid rgba(0,0,0,0.1)
 
-$habit-colors: (
-    "struggles": #260436,
-    "flowers": #ffb6c1,
-    "elders": #efefef,
-    "vivid": #cc4b67,
-    "peace": #2563eb,
-    "harvests": #cd853f,
-    "hallows": $dark-green,
-    "feasts": #101010,
-)
+
 @each $h, $c in $habit-colors
     @include style-icons("#{$h}-theme", $c)
-
-@mixin color-filter($hue: 0deg, $saturate: 100%, $brightness: 100%)
-    filter: hue-rotate($hue) saturate($saturate) brightness($brightness)
 
 $theme-image-props: (
     struggles: (hue: 10deg, saturate: 180%, brightness: 100%),

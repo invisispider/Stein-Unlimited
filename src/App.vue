@@ -20,7 +20,7 @@ const toggleSidebarNow = () => {
 const isLoading = ref(true);
 const toggleLoading = ()=> isLoading.value = !isLoading.value
 onMounted(() => {
-            toggleLoading();
+    toggleLoading();
 });
 </script>
 <template>
@@ -28,15 +28,15 @@ onMounted(() => {
         :class="[store.styleMode]"
         data-testid="app-wrapper"    
     >
-        <LoadingComponent v-if="isLoading" />
-        <template v-else>
-            <Sidebar />
-            <StyleSelector />
-            <router-view v-slot="{ Component }">
-                <transition name="slideUpPop" mode="out-in" appear>
-                    <component :is="Component" @click="toggleSidebarNow" />
-                </transition>
-            </router-view>
-        </template>
+    <!-- <template> -->
+        <Sidebar />
+        <StyleSelector />
+        <router-view v-slot="{ Component }">
+            <transition name="slideUpPop" mode="out-in" appear>
+                <LoadingComponent v-if="isLoading" />
+                <component :is="Component" v-else @click="toggleSidebarNow" />
+            </transition>
+        </router-view>
+        <!-- </template> -->
     </div>
 </template>

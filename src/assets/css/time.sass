@@ -1,5 +1,6 @@
 @use "@/assets/css/vars.sass" as *
 @use "@/assets/css/layout"
+
 #zen-wrapper
     // font-family: HK Grotesk
     display: flex
@@ -8,6 +9,16 @@
     max-width: 100vw
     align-content: space-between
     padding: 3rem 0
+    #content-section
+        grid-area: contentDiv
+        width: 100vw
+        align-content: center
+        margin: auto
+        // text-align: left
+        @include layout.markdown-content
+        @include layout.breakpoint(xl)
+            grid-row: 2 / 3
+            grid-column: 1 / 4
     @include layout.breakpoint(m)
         display: grid
         grid-template-columns: 1fr max-content
@@ -21,15 +32,6 @@
         align-items: flex-start
     @include layout.breakpoint(xl)
         grid-template-columns: 1fr 1fr 1fr
-    #content-section
-        grid-area: contentDiv
-        width: 100vw
-        align-content: center
-        margin: auto
-        text-align: left
-        @include layout.breakpoint(xl)
-            grid-row: 2 / 3
-            grid-column: 1 / 4
 
     .content-selector
         display: flex
@@ -173,16 +175,13 @@
     padding: 0
     align-items: center
     border-radius: 5px
-@mixin round-corner
-    rx: 4px
-    ry: 4px
 
 .zen-borders
     @include round-corner
 .unlimited-time-logo
     margin: 2rem
-    width: 100%
-    max-width: 14rem
+    width: 14rem
+    max-width: 100vw
     border-radius: 50%
 
 // ANIMATIONS

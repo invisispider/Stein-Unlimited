@@ -3,15 +3,10 @@
 @forward "@/assets/css/theme"
 @forward "@/assets/css/unthinkme"
 @forward "@/assets/css/vars"
+@forward "@/assets/css/utility"
 @use "@/assets/css/vars" as *
-@use "@/assets/css/layout"
 @use "sass:map"
-
-*, *:before, *:after
-    box-sizing: border-box
-    // transition: none !important
-html, body
-    margin: 0
+@use "@/assets/css/utility"
 
 // UTILITY
 .pointer
@@ -20,15 +15,11 @@ html, body
     visibility: hidden
 .text-center
     text-align: center
-@mixin login-key($col)
-    display: block
-    position: relative 
-    top: -0.7em
-    color: $col
+
 .color-logged-in
-    @include login-key(#31e833)
+    @include utility.login-key(#31e833)
 .color-logged-out
-    @include login-key(#da1a54)
+    @include utility.login-key(#da1a54)
 .margin-bottom
     margin-block-end: 3rem
 .padding-bottom
@@ -37,53 +28,12 @@ html, body
 button, a, router-link, RouterLink
     cursor: pointer
 
-@mixin markdown-content
-    p
-        text-indent: 1.5em /* Indent first line */
-        margin: 0
-        line-height: 1.8em
-        // text-size-adjust: 190% // font-size-adjust
-        font-size: large
-
-    h1, h2
-        text-align: center
-
-    @include layout.breakpoint(m)
-    @media (max-width: 600px)
-        .novel-container
-            max-width: 95%
-            padding: 15px
-        .novel p
-            text-indent: 1em
-
-
 // === TYPOGRAPHY
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap")
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
 // $material-icon-theme: 
-@mixin font-family($font)
-    @if $font == Roboto
-        font-family: "Roboto", sans-serif
-        font-optical-sizing: auto
-        font-weight: 500
-        font-style: normal
-        font-variation-settings: "wdth" 100
-    @else if $font == Lobster
-        font-family: "Lobster", sans-serif
-        font-weight: 400
-        font-style: normal    
-    @else if $font == Heading
-        font-family: "Rubik", "Inter", sans-serif
-        font-optical-sizing: auto
-        font-weight: 600
-        font-style: semi-bold
-    @else
-        font-family: 'Inter', 'Helvetica Neue', sans-serif
-        font-optical-sizing: auto
-        font-weight: 400
-        font-style: normal
 
 body
     @include font-family(Sans)
@@ -122,10 +72,7 @@ $heading-font-styles: (
         font-weight: map.get($style, weight)
 
 
-.home-page
-    text-align: center
-    @include layout.breakpoint(m)
-        text-align: justify
+
 
 .social
     margin-inline: 0
@@ -175,8 +122,6 @@ $heading-font-styles: (
         padding: 15px
     .novel p
         text-indent: 1em
-body
-    text-rendering: optimizeLegibility
 #beacon-div
     margin: 3em
     text-align: justify

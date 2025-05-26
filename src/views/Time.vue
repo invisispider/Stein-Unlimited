@@ -121,3 +121,6 @@ const scrollToTop = () => {
     </div>
   </div>
 </template>
+<style lang="sass">
+@use "@/assets/css/time"
+</style>

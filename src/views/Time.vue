@@ -65,8 +65,10 @@ const scrollToTop = () => {
 <template>
   <div id="zen-wrapper" class="zen-wrapper" data-test-id="zen-wrapper">
     <div class="time-widget">
-      <img src="@/assets/img/unlimitedtime.webp" alt="unlimited time timelogo" 
-      class="theme-image unlimited-time-logo">
+      <transition name="wiggle" appear>
+        <img src="@/assets/img/unlimitedtime.webp" alt="unlimited time timelogo"
+        class="theme-image unlimited-time-logo" />
+      </transition>
       
       <!-- <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
           src="../../public/favicon-32x32.png" />Time</h1> -->
@@ -76,7 +78,6 @@ const scrollToTop = () => {
         <br>
         {{ store.displayZenDate }}
       </h2>
-      <transition name="wiggle" appear>
         <div class="smiley">
           <div style="padding: 2px;">
           <Flatpickr v-model="store.inputDate" placeholder="convert Roman time" 
@@ -94,11 +95,10 @@ const scrollToTop = () => {
             @clock="toggleShow('clock')" />
           <YearWheel v-else-if="showChart == 'year'" @year="toggleShow('year')" />
         </div>
-      </transition>
     </div>
     <ZenDay @clock="toggleShow('clock')" @moment="toggleShow('clock')" @instant="toggleShow('clock')" />
     <ZenHabit @calendar="toggleShow('calendar')" />
-    <div id="content-section" class="content-section">
+    <div id="content-section" class="content">
       <div class="content-selector">
         <div class="content-button" @click="toggleShow('INTRODUCTION')">INTRODUCTION</div>
         <div class="content-button" @click="toggleShow('READING')">READING</div>
@@ -121,12 +121,3 @@ const scrollToTop = () => {
     </div>
   </div>
 </template>
-<style lang="sass">
-@use "@/assets/css/time"
-@use "@/assets/css/vars" as *
-.unlimited-time-logo
-  margin: 2rem
-  width: 100%
-  max-width: 14rem
-  border-radius: 50%
-</style>

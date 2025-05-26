@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed, watch} from "vue"
+import {ref, computed} from "vue"
 import { useMonitorSize } from '@/composables/monitor-size';
 import injectMarkdown from "@/composables/injectMarkdown";
 import integral_quadrants from "@/content/integral_quadrants.md?raw";

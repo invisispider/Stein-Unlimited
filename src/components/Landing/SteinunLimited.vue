@@ -26,29 +26,32 @@
                 to fill You to the brim with love everlasting, set You free
                 from an imaginary tragic narrative, and update Your firmware to join the Future meta.</p>
         </div> -->
-        <div class="logo-frame">
-            <RouterLink to="/UnthinkMe">
-                <img src="@/assets/img/steinunlimitedbrand.webp">
-            </RouterLink>
+        <div class="float-image-left">
+            <div class="logo-frame">
+                <RouterLink to="/UnthinkMe">
+                    <img src="@/assets/img/steinunlimitedbrand.webp">
+                </RouterLink>
+            </div>
+            <p style="text-align: justify;"><b>The Path of Sales: </b>Tricking people out of a favorable value is what we 
+                call Old Sales - Orange Sales. We compete for what we 
+                already have, maximize infrastructure to empower sociopaths and 
+                leverage unfairness, spend our time in patterns of transaction, rationalization,
+                consumption, and tolerance - resulting in contemporary civilization,
+                with its comorbid pathologies. A true Level-up to the Sales game 
+                must include transcendence of the commercial context itself.
+            </p>
+            
+            <div>
+                <p style="text-align: justify;"><b>🍋 => 🍹 Recipe: </b>
+                    Creativity can transmute demoralizing experiences into meaning, value, and love. 
+                    Over decades of research experimentation, we analyzed, we innovated, and we refined 
+                    the entire process down to three key ingredients:
+                </p>
+                <h4>Development</h4>
+                <h4>Integrity</h4>
+                <h4>Spirituality</h4>
+            </div>
         </div>
-        <p style="text-align: justify;"><b>The Path of Sales: </b>The art of tricking people into giving away a favorable value is what we 
-            call Old Sales, or Orange Altitude Level. We compete for what we 
-            already have, maximize infrastructure to empower sociopaths and 
-            leverage unfairness, and spend our time in patterns of transaction, rationalization,
-            consumption, and tolerance, resulting in contemporary civilization
-            and its comorbid pathologies. A true Level-up to the Sales game 
-            must include transcendence of the commercial context itself.
-        </p>
-        
-        <p style="text-align: justify;"><b>Recipe: 🍋👉🏿🍹 </b>
-            Creativity can transmute demoralizing experiences into meaning, value, and love. 
-            Over decades of experimentation, we studied, innovated, and refined this process 
-            down to three ingredients:
-        </p>
-        <!-- <h3>Core Values</h3> -->
-        <h4>Integrity - Not holding back on your good, true, and beautiful</h4>
-        <h4>Development - Working openly towards progress and improvement</h4>
-        <h4>Spirituality - Active engagement with wakefulness and compassion</h4>
         <!-- <h2>Our Story:</h2>
         <p>A long, long time ago, a decreasingly imaginary Turquoise corporate entity was born, as
             a lost and discouraged young man finally looked the universe in the eyes and asked some serious questions.

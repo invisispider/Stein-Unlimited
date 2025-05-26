@@ -48,7 +48,7 @@ button, a, router-link, RouterLink
     h1, h2
         text-align: center
 
-    +layout.breakpoint(m)
+    @include layout.breakpoint(m)
     @media (max-width: 600px)
         .novel-container
             max-width: 95%
@@ -124,7 +124,7 @@ $heading-font-styles: (
 
 .home-page
     text-align: center
-    +layout.breakpoint(m)
+    @include layout.breakpoint(m)
         text-align: justify
 
 .social

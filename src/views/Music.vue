@@ -22,7 +22,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 			<h3>🎙️ Recording</h3>
 			<h3>🎯 Coaching</h3>
 			<h3>⚕️ Music Therapy</h3>
-			<img class="stu-banner" src="@/assets/img/musicbusinesscardF.png" />
+			<img class="stu-banner" src="@/assets/img/musicbusinesscardF.webp" />
 		</div>
 		<h4 style="margin-block: 0.6em;">☑️ Performances and Events</h4> 
 		<h4 style="margin-block: 0.6em;">☑️ Remote Online Coaching</h4>

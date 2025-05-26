@@ -14,9 +14,7 @@ const { socials } = useSocials();
       <Namaste class="margin-bottom" />
       <SteinunLimited class="margin-bottom" />
       <UnThinkMe class="margin-bottom" />
-      <h1>Integral Theory</h1>
       <IntegralTheory class="margin-bottom" />
-      <h1>Science Fiction</h1>
       <Beacon class="margin-bottom" />
       <h1>Technomancy</h1>
       <router-link class="padding-bottom margin-bottom" to="/Technomancy">Professional holistic software engineering 

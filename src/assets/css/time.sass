@@ -1,5 +1,5 @@
 @use "@/assets/css/vars.sass" as *
-@use "@/assets/css/layout"
+@use "@/assets/css/utility"
 
 #zen-wrapper
     // font-family: HK Grotesk
@@ -15,22 +15,21 @@
         align-content: center
         margin: auto
         // text-align: left
-        @include layout.markdown-content
-        @include layout.breakpoint(xl)
+        @include utility.breakpoint(xl)
             grid-row: 2 / 3
             grid-column: 1 / 4
-    @include layout.breakpoint(m)
+    @include utility.breakpoint(m)
         display: grid
         grid-template-columns: 1fr max-content
         grid-template-rows: auto
         grid-template-areas: "dayContainer timeWidget" "habitsDiv habitsDiv" "contentDiv contentDiv"
         #habits
             justify-content: center
-    @include layout.breakpoint(l)
+    @include utility.breakpoint(l)
         grid-template-columns: max-content max-content 2fr
         grid-template-areas: "dayContainer timeWidget habitsDiv" "contentDiv contentDiv contentDiv"
         align-items: flex-start
-    @include layout.breakpoint(xl)
+    @include utility.breakpoint(xl)
         grid-template-columns: 1fr 1fr 1fr
 
     .content-selector
@@ -63,7 +62,7 @@
     flex-wrap: nowrap
     align-items: center
     justify-content: space-between
-    @include layout.breakpoint(l)
+    @include utility.breakpoint(l)
         margin-inline: 15%
     h3
         color: #0F0
@@ -177,7 +176,7 @@
     border-radius: 5px
 
 .zen-borders
-    @include round-corner
+    border-radius: $radius-button
 .unlimited-time-logo
     margin: 2rem
     width: 14rem

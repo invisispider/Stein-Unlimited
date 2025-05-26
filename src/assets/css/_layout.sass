@@ -38,9 +38,7 @@ html, body, #app, #appWrapper
         overflow-wrap: break-word
 
 #loading
-    filter: invert(1)
     z-index: 1
-    background-color: #ddeeaa
     display: flex
     flex-grow: 1    
 .loading-spinner-image
@@ -147,11 +145,14 @@ a, router-link
     // background-color: $social-grp-color
     justify-content: center
     position: fixed
-    bottom: 0
+    bottom: 0px
     width: 100vw
     // justify-self: center
     padding: 0.2rem
-    margin-bottom: 0.3rem
+    // margin-bottom: 0.3rem
+    // align-items: center
+    a
+        display: flex
         
 #style-selector
     position: fixed
@@ -163,19 +164,21 @@ a, router-link
     display: flex
     flex-direction: row-reverse
     width: 100vw
-    grid-template-columns: repeat(10, 10%)
+    grid-template-columns: repeat(7, 10%)
     margin-block: 3px
     padding-inline: 1em
     cursor: pointer
     *
+        max-width: 100%
         align-self: center
         justify-self: center
         border-radius: $radius-button
         padding: 0.23em
-    @includ breakpoint(s)
-        i, span
-            margin-inline: 0.2em
-   
+        @include utility.breakpoint(xs)
+            padding: 0.1em
+            i, span
+                margin-inline: 0.2em
+    
 .stu-banner
     display: inline-block
     height: auto
@@ -457,8 +460,13 @@ body:has(#beacon-div)
         max-width: 85ch
         margin-inline: auto
         text-align: justify
-    ul li
-        list-style-image: url("favicon.ico")
+    ul 
+        justify-self: center
+        li
+        list-style: none
+        max-width: 40ch
+        @include utility.breakpoint(m)
+            list-style-image: url("favicon.ico")
     h1, h2, h3, h4, div
         text-align: center
         // font-size-adjust: 0.7
@@ -466,3 +474,6 @@ body:has(#beacon-div)
     @include utility.breakpoint(m)
         p
             text-indent: 1em
+
+#zen-wrapper #content-section
+    @include markdown-content

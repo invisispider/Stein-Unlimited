@@ -47,6 +47,10 @@ $theme-image-props: (
     feasts: (hue: 330deg, saturate: 100%, brightness: 170%),
 )
 
+@mixin color-filter($hue: 0deg, $saturate: 100%, $brightness: 100%)
+    filter: hue-rotate($hue) saturate($saturate) brightness($brightness)
+
+
 @mixin unThemeMe($theme-name, $icon, $safe-text, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
     #appWrapper.#{""+$theme-name}
         $box-shadow: 2px 2px $icon, -2px -2px $contrast
@@ -63,6 +67,10 @@ $theme-image-props: (
             $brightness: if(map.has-key($props, brightness), map.get($props, brightness), 100%)
             @include color-filter($hue, $saturate, $brightness)
 
+        #loading
+            filter: invert(1)
+            background-color: $bg-color
+
         // SIDEBAR
         .christmas-icon
             color: rgb(49, 232, 51)
@@ -78,8 +86,14 @@ $theme-image-props: (
             background-color: $vid-div
             *
                 color: $loud
+            .social
+                border-radius: $radius-button
+                background-color: $hooks
+                padding: 0.07em
+                &:hover
+                    background-color: color.mix($color, $loud)
             *:hover
-                color: color.adjust($loud, $lightness: -30%)
+                color: color.mix($color, $loud)
 
         // VIDEOS
         #video-container
@@ -108,8 +122,8 @@ $theme-image-props: (
             color: $limegreen
 
         // TRANSPARENT BACKGROUND 
-        // .collapse-icon-closed
-            // background-color: $sidebar-bg
+        .collapse-icon-closed
+            background-color: $smooth-bg
         #style-selector
             background-color: $sidebar-bg
             i

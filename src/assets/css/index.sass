@@ -36,7 +36,7 @@ button, a, router-link, RouterLink
 // $material-icon-theme: 
 
 body
-    @include font-family(Sans)
+    @include utility.font-family(Sans)
     font-size: $font-size-base
 
 $base-font-styles: (
@@ -67,7 +67,7 @@ $heading-font-styles: (
 
 @each $tag, $style in $heading-font-styles
     #{$tag}
-        @include font-family(Heading)
+        @include utility.font-family(Heading)
         font-size: map.get($style, size)
         font-weight: map.get($style, weight)
 
@@ -80,7 +80,7 @@ $heading-font-styles: (
 
 .social-grp
     a
-        font-size: 0.7rem
+        font-size: 0.9rem
     a:has(.social)
         .social
             max-width: 100%
@@ -127,6 +127,8 @@ $heading-font-styles: (
     text-align: justify
     p
         text-indent: 2em
+    @include utility.breakpoint(xs)
+        text-align: left
 
 // IMAGE INSERTS
 .logo-frame

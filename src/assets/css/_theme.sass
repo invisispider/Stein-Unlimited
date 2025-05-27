@@ -95,6 +95,13 @@ $theme-image-props: (
             *:hover
                 color: color.mix($color, $loud)
 
+        &:has(#beacon-div)
+            background-color: $smooth-bg
+        #beacon-div
+            background-color: $bg-color
+            color: $color
+            box-shadow: 0 0 10px $color
+
         // VIDEOS
         #video-container
             .stu-banner
@@ -138,7 +145,7 @@ $theme-image-props: (
             background-color: $sidebar-bg
 
         .pedantic
-            color: color.mix($loud, #999)
+            color: color.mix($loud, #e70b0b)
             font-weight: 600
 
         .navigation-cards
@@ -222,8 +229,9 @@ $theme-image-props: (
                 padding: 0.6rem 1rem
 
         // TIME
-        .zen-wrapper
-            background-color: color.adjust($bg-color, $lightness: +10%)
+        // .zen-wrapper
+        .time-gui-container
+            background-color: color.change($color, $alpha: 10%)
         .content-selector
             margin-top: 2em
             display: inline-flex
@@ -433,7 +441,7 @@ $theme-image-props: (
 #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
 @include unThemeMe(peace, $light-black, #084955, #faf0f0, #012121, #9981a8,
 #d2b2e0, #dad0d0, #797171, rgb(52, 42, 187), #022326, #666)
-@include unThemeMe(harvests, #daa520, #ece6cc, #4d3c36, #14140f, #947422,
+@include unThemeMe(harvests, #daa520, #ece6cc, #b5a59f, #14140f, #947422,
 #8b5e3c, #cd853f, #7b7670, #e9d949, #deb887, #ff4500)
 @include unThemeMe(hallows, $dark-green, #87cc9b, #161616, #68f78e, #100a14,
 #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #298372)

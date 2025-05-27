@@ -10,7 +10,8 @@
     align-content: space-between
     padding: 3rem 0
     #content-section
-        grid-area: contentDiv
+        // grid-area: contentDiv
+        display: flex
         width: 100vw
         align-content: center
         margin: auto
@@ -18,19 +19,20 @@
         @include utility.breakpoint(xl)
             grid-row: 2 / 3
             grid-column: 1 / 4
-    @include utility.breakpoint(m)
-        display: grid
-        grid-template-columns: 1fr max-content
-        grid-template-rows: auto
-        grid-template-areas: "dayContainer timeWidget" "habitsDiv habitsDiv" "contentDiv contentDiv"
-        #habits
-            justify-content: center
-    @include utility.breakpoint(l)
-        grid-template-columns: max-content max-content 2fr
-        grid-template-areas: "dayContainer timeWidget habitsDiv" "contentDiv contentDiv contentDiv"
-        align-items: flex-start
-    @include utility.breakpoint(xl)
-        grid-template-columns: 1fr 1fr 1fr
+    .time-gui-container
+        @include utility.breakpoint(m)
+            display: grid
+            grid-template-columns: 1fr max-content
+            grid-template-rows: auto
+            grid-template-areas: "dayContainer timeWidget" "habitsDiv habitsDiv" "contentDiv contentDiv"
+            #habits
+                justify-content: center
+        @include utility.breakpoint(l)
+            grid-template-columns: max-content max-content 2fr
+            grid-template-areas: "dayContainer timeWidget habitsDiv" "contentDiv contentDiv contentDiv"
+            align-items: flex-start
+        @include utility.breakpoint(xl)
+            grid-template-columns: 1fr 1fr 1fr
 
     .content-selector
         display: flex

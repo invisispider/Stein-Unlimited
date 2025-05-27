@@ -103,12 +103,6 @@ onUnmounted(() => {
   </div>
 </template>
 <style lang="sass" scoped>
-#loading
-  min-height: 100vh
-// .load-more-wrapper
-//   display: flex
-//   jusifty-content: center
-//   margin-block: 2em
 .scroll.trigger
   display: block
   height: 1px

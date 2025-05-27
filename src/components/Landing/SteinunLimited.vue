@@ -42,14 +42,14 @@
             </p>
             
             <div>
-                <p style="text-align: justify;"><b>🍋 => 🍹 Recipe: </b>
-                    Creativity can transmute demoralizing experiences into meaning, value, and love. 
+                <h4 style="text-align: justify;"><b>🍋 => 🍹 Recipe: </b>
+                    Transmute demoralizing experiences into meaning, value, and love. 
                     Over decades of research experimentation, we analyzed, we innovated, and we refined 
-                    the entire process down to three key ingredients:
-                </p>
-                <h4>Development</h4>
-                <h4>Integrity</h4>
-                <h4>Spirituality</h4>
+                    the entire process down to three key ingredients <span class="pedantic">(hover for description):</span>
+                </h4>
+                <h3 style="cursor: pointer;" title="Get better at anything">Development</h3>
+                <h3 style="cursor: pointer;" title="Care about how you spend life">Integrity</h3>
+                <h3 style="cursor: pointer;" title="Openly explore consciousness">Spirituality</h3>
             </div>
         </div>
         <!-- <h2>Our Story:</h2>

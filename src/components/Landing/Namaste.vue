@@ -17,9 +17,9 @@
         <h2 class="text-center">Site Features:</h2>
         <!-- <h4>Treasures:</h4> -->
         <div class="navigation-cards">
-            <RouterLink to="/Integral">
+            <RouterLink to="/Talk">
                 <div class="home-navigation-card">
-                    <b>Integral Theory</b> Crash course in Ken Wilber's philosophy
+                    <b>Chat Wall</b> Login to participate in the dialog.
                 </div>
             </RouterLink>
             <RouterLink to="/UnThinkMe">
@@ -32,14 +32,19 @@
                     <b>unLimited Time</b> Progressive clock and calendar framework
                 </div>
             </RouterLink>
-            <RouterLink to="/Music">
+            <RouterLink to="/Integral">
                 <div class="home-navigation-card">
-                    <b>Music</b> Music instruction, peformance, and holistic coaching
+                    <b>Integral Theory</b> Crash course in Ken Wilber's philosophy
                 </div>
             </RouterLink>
             <RouterLink to="/Beacon">
                 <div class="home-navigation-card">
                     <b>Beacon</b> A progressive-release science fiction mystery
+                </div>
+            </RouterLink>
+            <RouterLink to="/Music">
+                <div class="home-navigation-card">
+                    <b>Music</b> Music instruction, peformance, and holistic coaching
                 </div>
             </RouterLink>
             <RouterLink to="/Videos">
@@ -50,11 +55,6 @@
             <RouterLink to="/Crossword">
                 <div class="home-navigation-card">
                     <b>Crossword: </b> An Integral Theory crossword puzzle that's currently pointless
-                </div>
-            </RouterLink>
-            <RouterLink to="/Talk">
-                <div class="home-navigation-card">
-                    <b>Talk</b> Public message board with strict rules
                 </div>
             </RouterLink>
         </div>
@@ -68,7 +68,7 @@
                     engineer, data analyst, multimedia artist, music teacher, and online philosopher on a never-ending quest
                     to include more things he can do decently well.
                 </p>
-                <p> <RouterLink to="/Technomancy">Opportunities:</RouterLink> 
+                <p><RouterLink to="/Technomancy">Opportunities:</RouterLink> 
                     Reach out with any work opportunities, collaborative inquiries, or just to say hi. 
                     Get in touch
                     via <a href="mailto:adam.loewen@gmail.com">email</a> or other options below. 💚

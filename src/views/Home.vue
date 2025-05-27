@@ -16,10 +16,15 @@ const { socials } = useSocials();
       <UnThinkMe class="margin-bottom" />
       <IntegralTheory class="margin-bottom" />
       <Beacon class="margin-bottom" />
-      <h1>Technomancy</h1>
-      <router-link class="padding-bottom margin-bottom" to="/Technomancy">Professional holistic software engineering 
+      <div class="padding-bottom margin-bottom">
+        <h1> 
+          <RouterLink to="/Technomancy">Technomancy
+          </RouterLink>
+        </h1>
+        <p><RouterLink to="/Technomancy" class="padding-bottom margin-bottom" style="text-align: center;">Professional holistic software engineering 
         and data analytics.
-      </router-link>
+        </RouterLink></p>
+      </div>
     </div>
     <div class="social-grp">
       <router-link to="TermsOfService" style="margin-right: 0.3em;">Terms</router-link>

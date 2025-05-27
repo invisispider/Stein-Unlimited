@@ -1,31 +1,10 @@
+@use "@/assets/css/utility"
+@use "@/assets/css/vars" as *
 .unthinkme
     margin-block-start: 2em
     padding: 1em
     justify-content: center
     overflow: hidden
-    // display: flex
-    // flex-direction: column
-    // margin-inline: 0
-    // flex-wrap: wrap
-    // max-width: 400px
-    // text-align: center
-    // min-height: 70vh
-    // margin: auto
-    // padding: 3rem
-    // box-shadow: 1px 1px rgb(43, 27, 74), -1px -1px rgb(43, 27, 74)
-    // margin: 0
-    // grid-auto-rows: auto
-    // max-width: 300px
-    // color: white
-    // background-color: rgb(16, 10, 28)
-    // align-content: space-around
-    // align-items: space-between
-    // max-width: 80vw
-    // *
-    //     word-wrap: wrap
-    //     overflow: hidden
-    // h2
-    //     width: 100%
     .video-div
         max-width: 420px
         border: 1px solid #7b919b
@@ -63,7 +42,7 @@
     .video-container
         display: flex
         flex-direction: column
-    // @media screen and (min-width: 430px)
+    // @include utility.breakpoint(s) screen and (min-width: 430px)
         // .video-container
         // display: grid
         // flex-direction: row
@@ -127,11 +106,11 @@
             text-align: center
             // color: #D3C
             padding: 0 5em
-    // @media screen and (min-width: 768px)
+    // @include utility.breakpoint(m)
     //     .unthinkme-div
     //         display: grid
     //         grid-template-columns: 1fr 1fr
-    // @media screen and (min-width: 1440px)
+    // @include utility.breakpoint(xl)
     //     .unthinkme-div
     //         display: grid
     //         grid-template-columns: 1fr 1fr 1fr
@@ -142,5 +121,111 @@
         // min-width: 12%
         margin-inline: 0.3em
         // padding-inline: 0.3em
-        
-    
+.video-grid
+    .scroll.trigger
+        display: block
+        height: 1px
+    img
+        transition: transform 0.2s ease
+    img:hover
+        transform: scale(1.05)
+    .video-grid
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        gap: 1rem
+        justify-items: space-around
+        // min-height: 100vh
+        @include utility.breakpoint(s)
+            grid-template-columns: repeat(2, 1fr)
+        @include utility.breakpoint(m)
+            grid-template-columns: repeat(3, 1fr)
+    .video-item
+        cursor: pointer
+
+    .video-thumb
+        width: 100%
+        height: auto
+        border-radius: 0.5rem
+        transition: transform 0.2s ease
+
+    .video-thumb:hover
+        transform: scale(1.05)
+
+    .video-title
+        margin-top: 0.5rem
+        font-size: 1rem
+        font-weight: 600
+
+    .pagination-controls
+        display: flex
+        justify-content: space-between
+        margin-bottom: 1rem
+
+    .pagination-button
+        padding: 0.5rem 1rem
+        background-color: #e0e0e0
+        border-radius: 0.5rem
+        cursor: pointer
+        &:disabled  
+            opacity: 0.5
+            cursor: not-allowed
+
+
+    .modal
+        position: fixed
+        inset: 0
+        background-color: rgba(0, 0, 0, 0.75)
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 50
+
+    .modal-content
+        background-color: white
+        padding: 1rem
+        border-radius: 0.5rem
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+        width: 100%
+        max-width: 48rem
+
+    .modal-close-button
+        margin-top: 1rem
+        padding: 0.5rem 1rem
+        background-color: #e53935
+        color: white
+        border-radius: 0.5rem
+
+    // laoding animation
+    .video-enter-active, .video-leave-active
+        transition: all 0.3s ease
+    .video-enter-from
+        opacity: 0
+        transform: translateY(10px)
+    .video-enter-to
+        opacity: 1
+        transform: translateY(0)
+    .video-leave-to
+        opacity: 0
+        transform: translateY(-10px)
+
+.utm-bg-image-div-1
+    background-image: url("@/assets/img/unthinkme.webp")
+    width: 100%
+    height: 100vh
+    max-width: 100vw
+    max-height: 30rem
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    margin: auto
+    border-radius: $radius-panel
+    .glow
+        margin: auto
+        max-width: 600px
+        padding: 1rem 1rem
+        border-radius: $radius-button
+        background-color: rgba(0, 0, 0, 0.7)
+        @include utility.breakpoint(m)
+            padding: 2rem 1rem
+    @include utility.breakpoint(xs)
+        background-size: contain

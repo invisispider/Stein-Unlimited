@@ -96,13 +96,12 @@ function formatChatTime(date: Date) {
 </template>
 <style lang="sass">
 @use "@/assets/css/vars" as *
+
 .chat-feed
   margin-bottom: auto
   background: rgba(0, 0, 0, 0.2)
   padding: 1rem
   border-radius: $radius-panel
-//   max-height: 400px
-//   overflow-y: auto
 .message
   margin-bottom: 0.75rem
   padding-block: 0.75rem
@@ -111,6 +110,7 @@ function formatChatTime(date: Date) {
   border-radius: $radius-panel
   // border: 1px solid gray
   box-shadow: $box-shadow-stein
+
 .level-circle
   width: 50px
   height: 50px

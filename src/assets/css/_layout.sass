@@ -28,7 +28,7 @@
     // transition: none !important
 html, body, #app, #appWrapper
     margin: 0
-    width: 100%
+    max-width: 100%
     text-rendering: optimizeLegibility    
     // USE AS A PRODUCTION FAILSAFE
     // overflow-x: hidden
@@ -284,11 +284,12 @@ a, router-link
 
 .work-schedules
     margin: auto
-    @media screen and (max-width: 400px)
+    @include utility.breakpoint(xs)
         display: none
+
 .home-logo, #landing-title
-  justify-self: center
-  margin-top: 3em
+    justify-self: center
+    margin-top: 3em
 
 
 
@@ -493,8 +494,3 @@ body:has(#beacon-div)
     padding: 1rem
     margin: auto
     // gap: 1rem
-.content-selector
-    margin-top: 2em
-    display: inline-flex
-    flex-wrap: wrap
-    gap: 0 1rem

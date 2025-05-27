@@ -229,12 +229,11 @@ $theme-image-props: (
                 padding: 0.6rem 1rem
 
         // TIME
-        // .zen-wrapper
         .time-gui-container
             background-color: color.change($color, $alpha: 10%)
         .time-widget
             background: $bg-color
-            box-shadow: -1px 1px 11px $loud, 1px 1px 11px $contrast
+            box-shadow: -5px -5px 21px rgba($loud, 0.2), 5px 5px 21px rgba($contrast, 0.2)
         .content-selector *
             box-shadow: 1px 1px 1px $color
         #content-section
@@ -425,12 +424,12 @@ $theme-image-props: (
             animation: glow 4s infinite alternate
 
         .zenwheel text.active
-            animation: glow 2.5s ease-in-out infinite alternate
+            animation: glow 2s infinite alternate
             @keyframes glow
                 0%
-                    text-shadow: 0px 0px -3px $color, 3px 3px 6px $loud
+                    text-shadow: 0px 0px 3px $icon, 3px 3px 6px $loud
                 to
-                    text-shadow: 0px 0px 4px $icon, 0px 0px 6px $contrast
+                    text-shadow: 0px 0px 4px $icon, 0px 0px 6px $loud
 
 @include unThemeMe(struggles, $dark-purple, #9d5fa5, #000000, #cfb0ef, #1e0127,
 #0e031b, #15082e, #040007, #92099e, #6f8d7d, #4a6cb6)

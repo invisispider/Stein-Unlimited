@@ -106,17 +106,17 @@ $heading-font-styles: (
         max-width: 800px
         margin: 0 auto
         padding: 20px
-/* Paragraph styling */
+
 .novel p
     text-indent: 1.5em
     margin-bottom: 1em
-/* Chapter titles */
+
 .novel h1, .novel h2
     text-align: center
     margin: 20px 0
     font-weight: normal
-/* Responsive adjustments */
-@media (max-width: 600px)
+
+@include utility.breakpoint(m)
     .novel-container
         max-width: 95%
         padding: 15px

@@ -15,6 +15,7 @@ document.title = "Talk ~ Stein unLimited"
     </div>
 </template>
 <style lang="sass">
+@use "@/assets/css/utility"
 .dashboard-wrapper
     margin-bottom: auto
 .talk-component
@@ -29,6 +30,9 @@ document.title = "Talk ~ Stein unLimited"
     align-items: center
     // background: rgb(122, 122, 50)
     // height: 100vh
+    @include utility.breakpoint(xs)
+        // margin-block: 0
+        padding-inline: 0
 .chat-window
     // background-color: orange
     flex: 2

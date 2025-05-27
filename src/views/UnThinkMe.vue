@@ -90,36 +90,55 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <div class="home-content unthinkme">
-    
-    <h2 class="glow">Visit our <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord community!<img
-      class="utm-social" src="@/assets/img/social_dc.png" /></a></h2>
-      <!-- convert to new logo style -->
-      <img src="@/assets/img/unthinkme.png" style="margin-block: 1em;" class="stu-banner" />
-      <h3>Integral YouTube Channel</h3>
-      <p class="utm-description"><em>An important part of my life is talking about
-        and listening to complicated ideas and feelings with a direct and playful attitude. Doing this 
-        ecclectic, expressive weekly show, and coming up with new topics and ideas, feels like 
-        playing in bands, except that people seem to be 
-        finding this more helpful than my other art projects. The real value is often in what
-        happens off camera. The relationships, connections, sharing, therapy, and growth happening in real life.
-        The unThinkMe channel is a beacon. Also, a brilliant business move to 
-        select the niche with the very best community. Not a coincidence! Extremely grateful. 🙏🏾
-      </em> ~ <b>Adam</b> </p>
-      <button class="classic-button" @click="toggleClassic">Classic Videos</button>
-      <div v-show="classicVideos">
-        <h2 id="clasic-videos" class="unthink-title">Classic Videos: <i class="material-icons glow">park</i> Integral Philosophy</h2>
-        
-        <UtmBlogArticle v-for="datum in blogData" :id="datum.id" :key="datum.id" :date="datum.date"
-        :content="datum.content" :tnurl="datum.tnurl" :ytlink="datum.ytlink" :title="datum.title" class="video-div" />
-      </div>
-    <h2 class="glow">Latest Videos:</h2>
+  <div class="unthinkme">
+    <div class="utm-bg-image-div-1 theme-image">
+      <h2 class="glow">Visit our <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord community!<img
+        class="utm-social" src="@/assets/img/social_dc.png" /></a>
+      </h2>
+    </div>
+    <h1>An Integral YouTube Channel</h1>
+    <div class="utm-description">
+      <h2>About</h2>
+      <p><b>unThinkMe</b> is what happens when two best friends—now pushing 40—start a podcast about consciousness instead of buying motorcycles. James and I met in grade school, bonded over big ideas and weird jokes, then drifted off into jobs and marriages… and eventually, right back into each other’s minds.</p>
+      <p>This channel started after I quit a corporate job and asked: Given my mix of talents and dysfunctions, what’s the most meaningful thing I can do for the world? The answer was bizarrely clear: teach Integral Theory on YouTube. It’s the one framework that’s shaped my life at every level—mind, heart, and choice. And I’ve spent decades learning to create: music, film, tech, story. So I began.</p>
+      <p>I made intricate, animated documentaries. Then realized I couldn’t do that every week without dying. So I flopped onto the couch and hit record. Bad lighting, real thoughts. People started listening—not just to the theory, but to me. So I told more of the truth.</p>
+      <p>Then my partner left me for a cult leader (yes, really). It cracked me open. Instead of collapsing, I got radically vulnerable. James came on board. We got raw, got weird, and found an actual community forming around us—people who think too much, feel too hard, and want something real.</p>
 
+      <!-- <p>🌀 Podcast – old friends riffing on consciousness and crisis</p> -->
+      <!-- <p>🧠 Integral Theory – animated explainers for your third eye</p> -->
+      <!-- <p>🧘 Yoga Guy – practical somatics for non-experts</p> -->
+      <!-- <p>🎤 Learn to Sing – music lessons for non-musicians </p> -->
+      <!-- <p>💻 Technomancy – spirituality meets software engineering</p> -->
+      <!-- <p>🎸 The Future of Sales – the world's first self-help rock opera</p> -->
+      <!-- <p>📖 Beacon – sci-fi from a Second Tier future</p> -->
+      <!-- <p>❤️‍🔥 Surreal Love – a personal myth about heartbreak, power, and transformation</p> -->
+
+      <p>This is what happens when you stop pretending and start integrating. This mess is a gift. Namaste. 🙏🏾</p>
+      <h4>~ Adam</h4>     
+      
+      <!-- <em>An important part of life is discussing 
+      complicated ideas and feelings with a forthright and playful attitude. Doing this 
+      ecclectic, expressive weekly show, coming up with new topics and ideas, feels like 
+      playing music, except that people seem to be 
+      finding this more helpful. This channel is my beacon, 
+      drawing in real-life relationships and connections that feature abundance mentality and growth mindset.
+      It was a genius business move to select the niche that is unafraid and deeply caring. 
+      It's not a coincidence! Extremely grateful. 🙏🏾
+      </em> ~ <b>Adam</b>  -->
+    </div>
+
+    <button class="classic-button" @click="toggleClassic">Classic Videos</button>
+    <div v-show="classicVideos" class="video-grid">
+      <h2 id="clasic-videos" class="unthink-title">Classic Videos: <i class="material-icons glow">park</i> Integral Philosophy</h2>
+      <TransitionGroup name="video" tag="div" class="video-grid">
+        <UtmBlogArticle v-for="datum in blogData" :id="datum.id" :key="datum.id" :date="datum.date"
+      :content="datum.content" :tnurl="datum.tnurl" :ytlink="datum.ytlink" :title="datum.title" />
+      </TransitionGroup>
+    </div>
+    <h2 class="glow">Latest Videos:</h2>
     <LoadingComponent v-show="isLoadingVideos" />
-    <!-- <div class="video-container"> -->
       <UnthinkmeGallery :videos="youtubeVideos" :has-more="hasMoreVideos" 
         :is-rendering="isLoadingVideos" @loadMore="loadVideos(false)" />
-    <!-- </div> -->
     
   </div>
 </template>
@@ -133,6 +152,7 @@ onMounted(async () => {
   margin-inline-start: auto
   border-radius: 0.5rem
 .utm-description
+  justify-self: center
   text-align: justify
   // font-size-adjust: initial
   text-justify: inter-word

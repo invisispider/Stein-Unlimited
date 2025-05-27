@@ -59,15 +59,9 @@ const svgH = computed(()=>svgHeight.value*.5);
 <template>
   <div 
     class="day-container">
-    <!-- <div class="zenclock-container"> -->
-      <!-- <div class="clock"> -->
-      <!-- <div @click="emit('clock')"> -->
-        <!-- <h2>Clock</h2> -->
-        <!-- <p>Not going round a circle. Making progress towards outcomes.</p> -->
-      <!-- </div> -->
-    <!-- </div> -->
-    
-    <svg :width="svgWidth" :height="74" class="zen-borders">
+    <div class="clock-container">
+      
+      <svg :width="svgWidth" :height="74" class="zen-borders">
       <g style="cursor: pointer;" @click="emit('clock')">
         <title>This chart shows what time of day it is now.</title>
         <rect :width="svgWidth"
@@ -75,7 +69,7 @@ const svgH = computed(()=>svgHeight.value*.5);
             </rect>
         <text :height="svgH" x="50%" y="20" 
           text-anchor="middle" 
-          class="greg-text" v-text="'Sessions Clock'" 
+          class="greg-text" v-text="'Session Clock'" 
         />
       </g>
       <g @click="emit('moment')">
@@ -102,7 +96,7 @@ const svgH = computed(()=>svgHeight.value*.5);
         <text x="4" :y="30+22+16" class="daytop-tx">Instant: {{ store.instant }}</text>
       </g>
     </svg>
-
+    
     <svg :width="svgWidth" :height="svgHeight" style="cursor: pointer;" @click="emit('clock')">
       <g id="gregMeter" fill="none">
         <title>Hours compared to Sessions</title>
@@ -120,7 +114,7 @@ const svgH = computed(()=>svgHeight.value*.5);
             class="greg-light"
             :width="gregWidth"
             :height="svgHeight / 24"
-          />
+            />
           <text
             :x="svgWidth / 100"
             :y="i * rSpread - 0.15 * rSpread"
@@ -140,9 +134,9 @@ const svgH = computed(()=>svgHeight.value*.5);
         <text :x="svgWidth / 1.6" :y="0.6 * zenSpread" v-text="`~zen~`" />
         <template v-for="(zses, j) in store.zsessionNames" :key="j + 200">
           <rect
-            :x="gregWidth"
-            :y="zenSpread + zSpread * j - zSpread"
-            :width="halfWidth"
+          :x="gregWidth"
+          :y="zenSpread + zSpread * j - zSpread"
+          :width="halfWidth"
             :height="zSpread"
             class="zen-borders"
             :class="(10-j)<=store.zsess?'session-before':'session-after'"
@@ -152,7 +146,7 @@ const svgH = computed(()=>svgHeight.value*.5);
             :y="j * zSpread + zSpread / 2"
             class="zen-mint"
             :class="{ sessionActive: (10-j)==store.zsess}"
-          >
+            >
           {{ j!=0 ? 11-j : '' }} {{ store.zsessionNames[10 - j] }}
           </text>
         </template>
@@ -166,9 +160,10 @@ const svgH = computed(()=>svgHeight.value*.5);
           :x2="halfWidth + gregWidth"
           :y2="hou_height"
           class="clock-hand"
-        />
-      </g>
-
-    </svg>
+          />
+        </g>
+        
+      </svg>
+    </div>
   </div>
 </template>

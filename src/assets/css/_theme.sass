@@ -232,13 +232,11 @@ $theme-image-props: (
         // .zen-wrapper
         .time-gui-container
             background-color: color.change($color, $alpha: 10%)
-        .content-selector
-            margin-top: 2em
-            display: inline-flex
-            flex-wrap: wrap
-            gap: 0 1rem
-            *
-                box-shadow: 1px 1px 1px $color
+        .time-widget
+            background: $bg-color
+            box-shadow: -1px 1px 11px $loud, 1px 1px 11px $contrast
+        .content-selector *
+            box-shadow: 1px 1px 1px $color
         #content-section
             h1, h2, h3
                 padding: 0 3rem 
@@ -249,8 +247,11 @@ $theme-image-props: (
 
         .smiley
             background-image: linear-gradient(to bottom, $sidebar-bg, $icon, $sidebar-bg)
-            i:hover
-                color: $smooth-bg
+        .time-info-buttons i:hover
+            color: $smooth-bg
+            box-shadow: 0 0 2px $loud
+        // .time-info-buttons i
+
         .active
             // background-color: $vid-div
             // background-color: $smooth-bg

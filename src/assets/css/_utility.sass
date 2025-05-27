@@ -1,6 +1,6 @@
 @mixin breakpoint($breakpoint)
     @if $breakpoint == xs
-        @media screen and (max-width: 450px)
+        @media screen and (max-width: 449px)
             @content
     @else if $breakpoint == s
         @media screen and (min-width: 450px)
@@ -12,14 +12,14 @@
         @media screen and (min-width: 1024px)
             @content
     @else if $breakpoint == xl
-        @media screen and (min-width: 1440px)
+        @media screen and (min-width: 1280px)
             @content
-    @else if $breakpoint == h
-        @media (orientation: landscape)
-            @content
-    @else if $breakpoint == v
-        @media (orientation: portrait)
-            @content
+    // @else if $breakpoint == h
+    //     @media (orientation: landscape)
+    //         @content
+    // @else if $breakpoint == v
+    //     @media (orientation: portrait)
+    //         @content
 
 @mixin no-overflow()
     max-width: 100vw

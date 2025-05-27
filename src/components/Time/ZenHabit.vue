@@ -8,7 +8,7 @@ const emit = defineEmits(["calendar"]);
     <!-- <h1>{{ store.dayOfYear }}</h1> -->
     <div class="zen-calendar">
       <!-- <div class="baheader"> -->
-        <h2>{{store.habitName}} Habit</h2>
+        <h2>{{store.habitName}}</h2>
       <!-- </div> -->
       <div v-if="store.habitName !== '~newZen~'" class="unchunk">
         <div

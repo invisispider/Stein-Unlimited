@@ -100,9 +100,16 @@ onMounted(async () => {
     <div class="utm-description">
       <h2>About</h2>
       <p><b>unThinkMe</b> is what happens when two best friends—now pushing 40—start a podcast about consciousness instead of buying motorcycles. James and I met in grade school, bonded over big ideas and weird jokes, then drifted off into jobs and marriages… and eventually, right back into each other’s minds.</p>
-      <p>This channel started after I quit a corporate job and asked: Given my mix of talents and dysfunctions, what’s the most meaningful thing I can do for the world? The answer was bizarrely clear: teach Integral Theory on YouTube. It’s the one framework that’s shaped my life at every level—mind, heart, and choice. And I’ve spent decades learning to create: music, film, tech, story. So I began.</p>
+      <p>This channel started after I quit a corporate job and asked: Given my mix of talents and dysfunctions, what’s the most meaningful thing I can do for the world? The answer was clear: teach Integral Theory on YouTube. 
+        It’s the one ideology that I don't seem to outgrow - quite the contrary. Integral
+        has shaped mt life and choices, and has served as constant companion and tireless challenge. 
+        I’ve also spent decades learning to create music, video, logic, and story. So I started.</p>
       <p>I made intricate, animated documentaries. Then realized I couldn’t do that every week without dying. So I flopped onto the couch and hit record. Bad lighting, real thoughts. People started listening—not just to the theory, but to me. So I told more of the truth.</p>
-      <p>Then my partner left me for a cult leader (yes, really). It cracked me open. Instead of collapsing, I got radically vulnerable. James came on board. We got raw, got weird, and found an actual community forming around us—people who think too much, feel too hard, and want something real.</p>
+      <p>Then my partner left me for a a relationship within a cult, which is just as objectively funny as it is 
+        more terrible than you can imagine. This experience cracked me open, because it isn't in 
+        my nature to respond to cliche with clice. I decide that I'm glad, and I put my foot down on gratitude.
+        James came on board. He liked the energy. A community emerged around unThinkMe - these people 
+        who think and feel "too much," while also being "heartless robots," and yearning for something real.</p>
 
       <!-- <p>🌀 Podcast – old friends riffing on consciousness and crisis</p> -->
       <!-- <p>🧠 Integral Theory – animated explainers for your third eye</p> -->

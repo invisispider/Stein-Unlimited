@@ -296,7 +296,7 @@ const checkAnswer = () => {
     </div>
     <div id="puzzle-clues">
       <div id="acrossDiv">
-        <div @click="toggle('across')" class="clue-button">Across</div>
+        <div class="clue-button" @click="toggle('across')">Across</div>
         <transition-group id="across" name="grow" tag="div" appear mode="out-in">
           <div v-for="ac in across"
             v-show="!collapseAcross"
@@ -317,7 +317,7 @@ GameHeader.vue for the title, score, and buttons
         </transition-group>
       </div>
       <div id="downDiv">
-        <div @click="toggle('down')" class="clue-button">Down</div>
+        <div class="clue-button" @click="toggle('down')">Down</div>
         <transition-group id="down" name="grow" tag="div" appear mode="out-in">
           <div v-for="dow in down"
             v-show="!collapseDown"

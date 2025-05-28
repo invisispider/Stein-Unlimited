@@ -4,6 +4,6 @@
   "exclude": ["__tests__/playwright/*"],
   "compilerOptions": {
     "composite": true,
-    "types": ["vitest/globals", "node", "jsdom"]
+    "types": ["node", "jsdom"]
   },
 }

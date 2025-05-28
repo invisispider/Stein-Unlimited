@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
 import useCrossword from "@/composables/Crosswords/integralcrossword";
+import { useStore } from "@/stores";
 document.title = "Integral Crossword ~ Stein unLimited";
 const across = ref(useCrossword.across)
 const down = ref(useCrossword.down)
+const store = useStore()
 const collapseAcross = ref(false);
 const collapseDown = ref(true);
 const rowNum = 11;
 const colNum = 11;
 const cheating = ref(false);
+const userMessage = ref('Welcome! Enjoy a nice game.');
 const toggle = (direc: string) => {
   if (direc == "across") {
     collapseAcross.value = !collapseAcross.value;
@@ -45,8 +48,38 @@ const renderChars = () => {
   down.value.forEach((datum) => drawWord(datum.pos as pRef, datum.answer, "down"));
 };
 const answerCode = ref('');
-onMounted(() => {
-	// prepare for answer check
+
+const renderMatrix = () => {
+	const m: [string[]] = [['','']];
+	for (let i = 0; i < 11; i++) {
+		m[i] = [];
+		for (let j = 0; j < 11; j++) {
+			m[i][j] = '';
+		}
+	}
+	return m;
+};
+const assignMatrix = (mat: [string[]]) => {
+	across.value.forEach((acr) => {
+		let ans = acr.answer;
+		let pos = acr.pos as pRef;
+		for (let k = 0; k < ans.length; k++) {
+			mat[pos[0] - 1][pos[1] + k - 1] = ans[k];
+		}
+	});
+	down.value.forEach((dow) => {
+		let ans = dow.answer;
+		let pos = dow.pos;
+		for (let k = 0; k < ans.length; k++) {
+			mat[pos[0] - 1 + k][pos[1] - 1] = ans[k];
+		}
+	});
+	return mat;
+};
+
+
+const setupMatrix = () => {
+		// prepare for answer check
 	across.value.forEach((ans)=> {
 		answerCode.value += ans.answer;
 	})
@@ -54,33 +87,6 @@ onMounted(() => {
 		answerCode.value += ans.answer;
 	})
 
-  const renderMatrix = () => {
-    const m: [string[]] = [['','']];
-    for (let i = 0; i < 11; i++) {
-      m[i] = [];
-      for (let j = 0; j < 11; j++) {
-        m[i][j] = '';
-      }
-    }
-    return m;
-  };
-  const assignMatrix = (mat: [string[]]) => {
-    across.value.forEach((acr) => {
-      let ans = acr.answer;
-      let pos = acr.pos as pRef;
-      for (let k = 0; k < ans.length; k++) {
-        mat[pos[0] - 1][pos[1] + k - 1] = ans[k];
-      }
-    });
-    down.value.forEach((dow) => {
-      let ans = dow.answer;
-      let pos = dow.pos;
-      for (let k = 0; k < ans.length; k++) {
-        mat[pos[0] - 1 + k][pos[1] - 1] = ans[k];
-      }
-    });
-    return mat;
-  };
   let matrix = renderMatrix();
   matrix = assignMatrix(matrix);
 	// console.log(matrix)
@@ -110,7 +116,14 @@ onMounted(() => {
       }
     });
   });
+}
+onMounted(() => {
+	setupMatrix()
+	setTimeout(() => {
+		userMessage.value = " "
+	}, 8000)
 });
+
 const selectMe = async (pRef: pRef) => {
   if (typeof pRef==='object') {
     let el = getElement(pRef) as Element;
@@ -148,14 +161,18 @@ const infoMe = () => {
   instructions +=
     "THE RULES:\n";
   instructions +=
-    "- Couch Icons jump to answer squares.\n- Click or use arrow keys to move.\n";
+    "- Couch Icons jump to squares.\n- Click or use arrow keys to move.\n";
   instructions +=
-    "- Clue Button displays answers and resets.\n";
+    "- Clue Button flashes solution then resets the board.\n- Reset Button clears the board.\n";
   instructions +=
-	"- Solve Button checks your answers.\n- Reset Button clears the board.\n";
+	"- Solve Button checks your answers.\n";
   instructions +=
-	"- New games may become available as you progresst."
-  alert(instructions);
+	"- New games may become available as you progrest."
+	setTimeout(() => {
+		userMessage.value = " ";
+	}, 20000)
+	userMessage.value = instructions
+  // alert(instructions);
 };
 // function isFocusable(element: HTMLElement): element is HTMLInputElement {
 //     return element instanceof HTMLInputElement && typeof (element as HTMLInputElement).focus === 'function';
@@ -208,9 +225,9 @@ const checkAnswer = () => {
 	}
 	let test = checkAcross();
 	if (test) {
-		alert('My goodness you have completed all ppporgus! Congratulation. Password: "LAVENDAR"');
+		userMessage.value = 'My goodness you have completed all ppporgus! Congratulation. Password: "LAVENDAR"'
 	} else {
-		alert('Hmm. Not quite.')
+		userMessage.value = 'Hmm. Not quite.'
 	}
 }
 </script>
@@ -218,6 +235,8 @@ const checkAnswer = () => {
     <div id="puzzle-body">
 		<div>
 			<h1 class="main-title">Integral Crossword</h1>
+			<p>Points: <b>{{ store.points }}</b></p>
+			<p class="user-message">{{ userMessage }}</p>
 			<div class="buttons">
 				<span id="solve" @click="infoMe">
 					<i class="material-icons">quiz</i>
@@ -298,8 +317,12 @@ const checkAnswer = () => {
 </template>
 <style lang="sass">
 @use "@/assets/css/utility"
+.user-message
+	white-space: pre-wrap
+	text-align: left
 #puzzle-body
 	margin-block: 2em
+	margin-top: 6rem
 		// font-size: 1rem
 		// padding: 0.3rem
 		// margin: 2px
@@ -329,7 +352,7 @@ const checkAnswer = () => {
 	.main-title
 		text-align: center
 		margin-block: 0.2em
-		@media screen and (max-width: 650px)
+		@include utility.breakpoint(m)
 			display: block
 			width: 100vw
 	.crossword-body
@@ -370,7 +393,8 @@ const checkAnswer = () => {
 			margin-right: 0.2em
 	#puzzle-container
 		// margin: auto
-		// width: 300px
+		width: auto
+		margin: 3rem
 		// min-width: 54%
 		// max-width: 100%
 		padding: 1px
@@ -379,6 +403,7 @@ const checkAnswer = () => {
 		border-collapse: collapse
 		border-spacing: 0
 		aspect-ratio: 1 / 1
+		width: 100%
 		// @include utility.breakpoint(l)
 		// max-width: 100%
 		tr
@@ -414,13 +439,13 @@ const checkAnswer = () => {
 		z-index: 1
 		font-size: 1em
 		position: absolute
-	@media screen and (min-width: 700px)
+	@include utility.breakpoint(m)
 		.crossword-body
 			display: grid
 			grid-template-columns: max-content max-content
 			#puzzle-clues, #puzzle-container
 				justify-self: center
-	@media screen and (min-width: 1000px)
+	@include utility.breakpoint(l)
 		.crossword-body
 			#puzzle-clues
 				display: flex

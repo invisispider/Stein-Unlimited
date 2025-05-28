@@ -1327,8 +1327,8 @@ svg
     cursor: pointer
     :hover
         stroke: white
-@media screen and (min-width: 350px)
-    svg
+// @media screen and (min-width: 350px)
+//     svg
         // max-width: 350px
         // max-height: 100vh
 .center

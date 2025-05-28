@@ -14,10 +14,12 @@ const store = useStore()
 
 const canSubmit = computed(() => text.value.length > 0 && text.value.length <= 2500)
 
+const errorMessage = ref('');
+
 const postMessage = async () => {
   const user = store.displayName
   if (!user) {
-    alert("Who Goes There? - must have a name.")
+    errorMessage.value = "You must have a name - who Goes There?"
   }
   const today = new Date().toISOString().split('T')[0]
 
@@ -29,7 +31,7 @@ const postMessage = async () => {
   const existing = await getDocs(q)
 
   if (!existing.empty) {
-    alert("You can only post once per day.")
+    errorMessage.value = "You know the rules. One post per day."
     return
   }
 
@@ -39,22 +41,22 @@ const postMessage = async () => {
       displayName: store.displayName,
       text: text.value,
     });
-    console.log("Success");
+    errorMessage.value = "Sent"
   } catch (err) {
-    alert("Message failed: " + err);
+    errorMessage.value = "Message failed: " + err 
   }
 
   text.value = ''
 }
-</script>
 
+</script>
 <template>
   <form @submit.prevent="postMessage">
+    <div v-text="errorMessage"></div>
     <textarea v-model="text" :maxlength="2500" placeholder="Write your message..." />
     <button type="submit" :disabled="!canSubmit">Post Message</button>
   </form>
 </template>
-
 <style scoped lang="scss">
 textarea {
   width: 100%;

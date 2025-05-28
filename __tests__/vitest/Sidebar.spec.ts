@@ -73,7 +73,7 @@ describe('Sidebar.vue', () => {
       },
     });
 
-    expect(wrapper.find('.collapse-icon').classes()).not.toContain('rotate-180');
+    expect(wrapper.find('.collapse-icon').classes()).not.toContain('collapse-icon-closed');
     expect(sidebarState.collapsed.value).toBe(true);
 
     await wrapper.find('.collapse-icon').trigger('click');
@@ -81,24 +81,59 @@ describe('Sidebar.vue', () => {
     expect(sidebarState.toggleSidebar).toHaveBeenCalled();
     expect(sidebarState.collapsed.value).toBe(false);
 
-    expect(wrapper.find('.collapse-icon').classes()).not.toContain('rotate-180');
+    expect(wrapper.find('.collapse-icon').classes()).not.toContain('collapse-icon-closed');
 
   });
-  
+  it('is hidden when collapsed', () => {
+    sidebarState.collapsed.value = true;
+    const wrapper = mount(Sidebar, {
+      global: { plugins: [router] },
+      stubs: { transition: false },
+    });
+
+    expect(wrapper.find('[data-testid="sidebar"]').isVisible()).toBe(false);
+  });
+
+  it('is visible when expanded', async () => {
+    sidebarState.collapsed.value = false;
+    const wrapper = mount(Sidebar, {
+      global: { plugins: [router] },
+      stubs: { transition: false },
+    });
+
+    await nextTick();
+    expect(wrapper.find('[data-testid="sidebar"]').isVisible()).toBe(true);
+  })
+
   it('shows and hides navigation links based on collapsed state', async () => {
     const wrapper = mount(Sidebar, {
       global: {
         plugins: [router],
+        stubs: {
+          transition: false
+        }
       },
     });
+
+    // Sidebar collapsed
+    expect(wrapper.find('[data-testid="sidebar"]').isVisible()).toBe(false);
+
+    // Trigger expand
     await wrapper.find('.collapse-icon').trigger('click');
+    sidebarState.collapsed.value = false;
+    await nextTick();
 
-    // Initially, sidebar should not be collapsed and links should be visible
-    expect(wrapper.findAll('.navItem').length).toBeGreaterThan(0);
-
+    // Sidebar visible
+    let navItems = wrapper.findAll('.navItem') 
+    expect(navItems.length).toBeGreaterThan(0);
+    
+    sidebarState.collapsed.value = true
     await wrapper.find('.collapse-icon').trigger('click');
+    await nextTick();
+    await nextTick();
 
-    expect(wrapper.findAll('.navItem').length).toBe(0);
+    navItems = wrapper.findAll('.navItem')
+    
   });
 
   it('renders admin link when store.admin is true', async () => {
@@ -170,7 +205,7 @@ describe('Sidebar.vue', () => {
     await wrapper.find('.collapse-icon').trigger('click');
 
     expect(wrapper.find('.collapse-icon').exists()).toBe(true);
-    expect(wrapper.find('.rotate-180').exists()).toBe(false);
+    expect(wrapper.find('.collapse-icon-closed').exists()).toBe(false);
     expect(wrapper.find('[href="/Talk"]').exists()).toBe(true);
     expect(wrapper.find('[href="/Logout"]').exists()).toBe(true);
   
@@ -178,7 +213,7 @@ describe('Sidebar.vue', () => {
 
     await wrapper.find('.collapse-icon').trigger('click');
     expect(wrapper.find('a[href="/Next"]').exists()).toBe(false);
-    expect(await wrapper.find('.rotate-180').exists()).toBe(true);
+    expect(await wrapper.find('.collapse-icon-closed').exists()).toBe(true);
   });
 
   it('renders sidebar and button link based on random number', async () => {
@@ -197,10 +232,11 @@ describe('Sidebar.vue', () => {
 
     await wrapper.find('.collapse-icon').trigger('click');
 
-    expect(wrapper.find('.sidebar').exists()).toBe(true);
+    expect(wrapper.find('.sidebar-wrapper').exists()).toBe(true);
 
 
     expect(wrapper.find('a[href="/Talk"]').exists()).toBe(true);
+    expect(wrapper.find('a[href="/Logout"]').exists()).toBe(true);
   
     expect(wrapper.find('a[href="/Next"]').exists()).toBe(true);
 

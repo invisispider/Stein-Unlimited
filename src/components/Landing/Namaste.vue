@@ -5,7 +5,8 @@
     <div id="namaste-div">
          <div class="float-image-left">
                 <!-- <img src="@/assets/img/LOGO_steinunlimited_dark.webp"> -->
-                <img src="@/assets/img/LOGO_steinunlimited.webp" class="float-image theme-image">
+                <img src="@/assets/img/LOGO_steinunlimited.webp" class="float-image theme-image"
+                alt="stein unlimited logo">
             <div>
                 <h3>
                     Thank you 🙏🏿 for Being with us. This is our living website.

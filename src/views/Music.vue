@@ -127,7 +127,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 				for that."
 			</div>
 		</div>
-		<h2 class="">Story</h2>
+		<h2 class="double-width">Story</h2>
 		<p class="bio">Adam didn’t grow up in a musical household. As a kid, he was
 			into video games, cartooning, and filmmaking. He enjoyed playing trumpet 
 			in school band, but insecurity kept him from practicing at home.
@@ -179,7 +179,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 			develop personality and creativity, and supports adults in reaching 
 			long-held musical ambitions. 
 		</p><p class="bio">
-			<b>The Bottom Line: </b>Whatever you practice, you get better at. You can 
+			<b>Whatever you practice, you get better at.</b> You can 
 			get better and better at playing music in a way that is frustrating and 
 			unsatisfying. You can get outstandingly good at not being ready, at awaiting 
 			discovery, at convincing yourself that you aren't a star and don't want to be. 
@@ -202,6 +202,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 	</div>
 </template>
 <style lang="sass" scoped>
+@use "@/assets/css/utility"
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap')
 @font-face
 	font-family: "lhandw"
@@ -229,6 +230,9 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 		margin: 0.4em
 
 .testimonials
+	// display: grid
+	// grid-template-rows
+	justify-content: space-evenly
 	.testimonial
 		display: flex
 		flex-direction: column
@@ -245,10 +249,14 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 	max-height: 10vh
 
 .double-width
-	margin: 1rem 10%
 	text-align: center
-	padding: 8px
 	border-radius: 6px
+	align-content: center
+	padding: 1rem
+	margin: 0.2rem
+	@include utility.breakpoint(m)
+		padding: 1rem 10rem
+		margin: 2rem auto
 
 .stein-players
 	display: flex
@@ -276,8 +284,8 @@ h2, h1
 	max-width: 800px
 	font-size: 1.2em
 .stu-banner
-	max-width: 500px
-	min-width: 300px
+	max-width: 100%
+	width: 300px
 	margin-block: 30px
 
 .benefits

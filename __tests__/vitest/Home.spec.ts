@@ -14,9 +14,9 @@ vi.mock('@/composables/socials', () => ({
 describe('Home.vue', () => {
   it('renders the logo image', () => {
     const wrapper = mount(Home);
-    const logoImage = wrapper.find('img.stu-banner');
+    const logoImage = wrapper.find('img.theme-image');
     expect(logoImage.exists()).toBe(true);
-    expect(logoImage.attributes('src')).toBe('/src/assets/img/steinunlimited.png');
+    expect(logoImage.attributes('src')).toBe('/src/assets/img/LOGO_steinunlimited.webp');
     expect(logoImage.attributes('alt')).toBe('stein unlimited logo');
   });
 

@@ -364,8 +364,16 @@ $theme-image-props: (
         // INTEGRAL
         .hilight
             color: $loud
+        .home-changer-int
+            a
+                color: $mod-bg
+                background-color: $color
+                box-shadow: 2px 2px 4px $smooth-bg, -2px -2px 4px $loud
+                &:hover
+                    background-color: $loud
+
         .btn-group
-            :hover
+            &:hover
                 background-color: $sidebar-bg
             button
                 // background-color: #08F
@@ -377,15 +385,6 @@ $theme-image-props: (
             .darken
                 // background-color: darken($smooth-bg, 30%)
                 background-color: color.adjust($smooth-bg, $lightness: -30%)
-        .home-changer
-            background-color: $sidebar-bg
-            a
-                background-color: $mod-bg
-                color: $color
-                // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
-                box-shadow: 1px 2px $smooth-bg, -1px -2px $loud
-        .home-changer a:hover
-            background-color: $loud
 
         .bisque
             stroke: $icon

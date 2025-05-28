@@ -51,9 +51,9 @@ test.describe('Sidebar', () => {
     const mainWindow = page.locator('#appWrapper');
     expect(mainWindow).toBeVisible();
     
-    await page.waitForSelector('.rotate-180', { state: 'visible'});
+    await page.waitForSelector('.collapse-icon-closed', { state: 'visible'});
 
-    const collapseIcon = page.locator('.rotate-180');
+    const collapseIcon = page.locator('.collapse-icon-closed');
     await collapseIcon.waitFor({ state: 'visible' });
     await expect(collapseIcon).toBeVisible();
 
@@ -77,7 +77,7 @@ test.describe('Sidebar', () => {
     // await openCollapse.click();
     await collapseIcon.click();
 
-    const talkLink = page.locator('a[href="/Talk"]')
+    const talkLink = page.getByRole('link', { name: 'Talk'})
     await expect(talkLink).toBeAttached();
 
   });
@@ -89,9 +89,9 @@ test.describe('Sidebar', () => {
     const mainWindow = page.locator('#appWrapper');
     expect(mainWindow).toBeVisible();
     
-    await page.waitForSelector('.rotate-180', { state: 'visible'});
+    await page.waitForSelector('.collapse-icon-closed', { state: 'visible'});
 
-    const collapseIcon = page.locator('.rotate-180');
+    const collapseIcon = page.locator('.collapse-icon-closed');
 
     // await collapseIcon.waitFor({ state: 'visible' });
     await expect(collapseIcon).toBeVisible();
@@ -100,8 +100,8 @@ test.describe('Sidebar', () => {
       
     await collapseIcon.click();
 
-    await page.waitForSelector('a[href="/Talk"]', { state: 'visible' });
-    await expect(page.locator('a[href="/"]')).toBeVisible();
+    await page.waitForSelector('.sidebar-link[href="/Talk"]', { state: 'attached' });
+    await expect(page.getByText('Home')).toBeVisible();
 
     const adminLink = page.locator('a[href="/Admin"]');
     await expect(adminLink).toHaveCount(0);
@@ -117,7 +117,7 @@ test.describe('Sidebar', () => {
     const openCollapse = page.locator('.collapse-icon');
     await openCollapse.click();
     
-    const talkLink = page.locator('a[href="/Talk"]')
+    const talkLink = page.getByText('Talk')
     await expect (talkLink).toHaveCount(0);
     
     await collapseIcon.hover();

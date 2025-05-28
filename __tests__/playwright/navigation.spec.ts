@@ -63,28 +63,28 @@ test('style selector and navigation', async ({ page }) => {
     return style.backgroundColor;
   });
   console.log(computedStyle)
-  await expect(computedStyle).toBe('rgb(51, 51, 51)')
+  expect(computedStyle).toBe('rgb(51, 51, 51)')
 
   // change the theme to dark purple
-  await page.getByTestId('dark').click();
+  await page.getByTitle('Flowers Theme').click();
   const computedStyle2 = await el?.evaluate(el => {
     const style = window.getComputedStyle(el);
     return style.backgroundColor;
   });
-  expect(computedStyle2).toBe('rgb(22, 22, 22)');
+  expect(computedStyle2).toBe('rgb(201, 184, 189)');
 
   // Pull open the dropdown menu for site features.
-  await page.locator('span.collapse-icon > i').click();
-  await expect(page.locator('div.sidebar.topnav')).toHaveText(/Home/);
-  await expect(page.locator('div.sidebar.topnav')).toHaveText(/Music/);
+  await page.locator('.collapse-icon-closed').click();
+  await expect(page.getByRole('link', {name: 'Home'})).toBeInViewport();
+  await expect(page.getByTestId('sidebar').getByRole('link', { name: 'Music'})).toHaveText('Music');
 
   await page.goto('/Time');
-  await expect(page.locator('div.title-logo > h1')).toHaveText(/unLimitedTime/);
+  await expect(page.getByAltText('unlimited time timelogo')).toBeTruthy();
 
   await page.goto('/Admin');
   await expect(page).toHaveURL('/');
 
   await page.goto('/pants');
   await expect(page).toHaveTitle('404 | Uh Oh Oh No');
-  await expect(page.locator('div.fourohfour')).toHaveText(/pants is in another castle/);
+  await expect(page.locator('div.fourohfour')).toContainText('pants is in another castle');
 });

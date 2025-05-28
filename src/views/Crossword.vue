@@ -186,7 +186,7 @@ const checkAnswer = () => {
 			let ans = entry.answer
 			let pos = entry.pos
 			for (let i=0; i<ans.length; i++) {
-				let testCell = document.querySelector(`#puzzle input[name='${pos[0]}x${pos[1]+i}']`)
+				let testCell = document.querySelector(`#puzzle input[name='${pos[0]}x${pos[1]+i}']`) as HTMLInputElement
 				if (testCell.value.toUpperCase()!=ans[i]) {
 					tentativeSuccess = false
 					break
@@ -197,7 +197,7 @@ const checkAnswer = () => {
 			let ans = entry.answer
 			let pos = entry.pos
 			for (let i=0; i<ans.length; i++) {
-				let testCell = document.querySelector(`#puzzle input[name='${pos[0]+i}x${pos[1]}']`)
+				let testCell = document.querySelector(`#puzzle input[name='${pos[0]+i}x${pos[1]}']`) as HTMLInputElement
 				if (testCell.value.toUpperCase()!=ans[i]) {
 					tentativeSuccess = false
 					break
@@ -216,27 +216,29 @@ const checkAnswer = () => {
 </script>
 <template>
     <div id="puzzle-body">
-	  	<div class="buttons">
+		<div>
 			<h1 class="main-title">Integral Crossword</h1>
-			<span id="solve" @click="infoMe">
-				<i class="material-icons">quiz</i>
-				info
-			</span>
-			<span id="other" @click="clueMe"> 
-				<i class="material-icons">visibility</i>
-				clue
-			</span>
-			<span id="check" @click="checkAnswer">
-				<i class="material-icons">mood</i>
-				solve
-			</span>
-			<span id="clear" @click="resetInputs(true)">
-				<i
-				class="material-icons"
-				>delete_outline</i
-				>
-				reset
-			</span>
+			<div class="buttons">
+				<span id="solve" @click="infoMe">
+					<i class="material-icons">quiz</i>
+					info
+				</span>
+				<span id="other" @click="clueMe"> 
+					<i class="material-icons">visibility</i>
+					clue
+				</span>
+				<span id="check" @click="checkAnswer">
+					<i class="material-icons">mood</i>
+					solve
+				</span>
+				<span id="clear" @click="resetInputs(true)">
+					<i
+					class="material-icons"
+					>delete_outline</i
+					>
+					reset
+				</span>
+			</div>
 		</div>
 		<div class="crossword-body">
 			<div id="puzzle-container">
@@ -295,6 +297,7 @@ const checkAnswer = () => {
   </div>
 </template>
 <style lang="sass">
+@use "@/assets/css/utility"
 #puzzle-body
 	margin-block: 2em
 		// font-size: 1rem
@@ -367,13 +370,17 @@ const checkAnswer = () => {
 			margin-right: 0.2em
 	#puzzle-container
 		// margin: auto
-		min-width: 54%
+		// width: 300px
+		// min-width: 54%
+		// max-width: 100%
 		padding: 1px
 		margin-inline: auto
-		max-width: 400px
 	table#puzzle
 		border-collapse: collapse
 		border-spacing: 0
+		aspect-ratio: 1 / 1
+		// @include utility.breakpoint(l)
+		// max-width: 100%
 		tr
 			width: 100%
 		td

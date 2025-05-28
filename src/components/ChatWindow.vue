@@ -88,7 +88,7 @@ function formatChatTime(date: Date) {
     <div v-for="msg in messages" :key="msg.timestamp.toString" 
       class="message" :style="{ 'color': giveColorHex(msg.level) || '#dc1b07', 'background-color': giveBackgroundHex(msg.level) || '#150202'}"
     >
-      <strong>{{ msg.displayName }} </strong><span>: {{ msg.text }}</span>
+      <strong>{{ msg.displayName }} </strong><span>: <br> {{ msg.text }}</span>
       <p>{{ formatChatTime(msg.timestamp.toDate()) }} <em>{{ msg.level }}</em></p>
       
     </div>

@@ -21,7 +21,9 @@ describe('StyleSelector', () => {
       },
     });
 
-    const flowersButton = wrapper.get('[data-testid="dark-purple"]');
+    // const StyleSelector = wrapper.get('[data-testid="style-selector"]');
+    const flowersButton = wrapper.get('#flowers-theme');
+    
     await flowersButton.trigger('click');
 
     expect(updateStyleMode).toHaveBeenCalledWith('flowers');

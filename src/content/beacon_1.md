@@ -2,15 +2,17 @@
 
 ---
 
-The tiny, tattered figure of Anthony Parsons moved among the mountains surrounding the Complex as ground frost melted into uneven surfaces. First came floods, then stagnation, then sudden agitations of new life - plants, insects, fungi - emerging as if from nowhere, summoned by the newly surging creeks and streams.
+The lanky, tattered figure of Anthony Parsons entered the mountains surrounding the Complex as permafrost melted into uneven surfaces. First came floods, then stagnation, then sudden agitations of new life - plants, insects, fungi - emerging as if from nowhere, summoned by the newly surging creeks and streams. 
 
-Anthony stood lone on a familiar overlook, defiantly appreciating the irony of this cliché. Entering the present moment fully, the Now, the Future, the source, his eyes closed directly at the sunset. *This is what I am.* He breathed through a well-worn progression of visualizations. *Surrender.* The smaller self of Anthony dissolved blissfully into the substance of reality as consciousness. And it was so, that they all - the lands, and thoughts, and Anthony, and body, all One forever in eternity, as always. 
+Anthony stood on a lone, familiar overlook glaring defiantly, as though daring nature to call this incidental archetype a cliché. All at once, he was overtaken with laughter, and over the passing moments, this blended into crying. *Nobody lost anyone, and nobody will,* he thought to himself. *It's only a story.* 
 
-*It is time to enter the Complex.* 
+Entering the present moment fully, the Now, the Future, the Source, eyes closed in the direction of the sunset. *This is the experience. The whole thing. This is what I am.* He breathed through a well-worn progression of visualizations. *All of this,* he said inwardly. *Surrender.* The smaller self of Anthony dissolved blissfully into the substance of reality as consciousness. And it was so, as always, that they all - the world, the awareness, the man, the thoughts and feelings as One and only One, as the timeless essence of eternity, forever. 
 
 Grey, orange, and pink clouds converged over the valley's ribbony swathes. Anthony's usual ambiguous grin - part smirk, part scowl - had been amplified and echoed as the land erupted with this pleasantry. The air blew fragrant with soil and life's secrets. He had abandoned much of his gear. In mere months, the hills now stood thick with juvenile trees. Rodents and birds followed. 
 
-Parsons had no visitors, and no sign of any. It was still dark much of the day. For months, he had lived a stripped-down, military routine - relishing every drink of water, each chance to relieve himself. Often, the terrible visions came heavy and fast, and chopping wood or building shelter offered blessed reprieve. Inevitably, the agony had its moments where it overtook him - his body writhing in spasms, his mind unraveling.
+A small part of Anthony's job had been to install trackers at key positions around the treacherous wilderness. It could be done with robotics, but they were avoiding that. He had struggled to accomplish the first two deployments, but as the weather improved, he was able to complete the task in a matter of weeks. It was nearly time to enter the Complex. 
+
+Anthony had no visitors, and no sign of any. It was still dark much of the day. For months, he had lived a stripped-down, military routine - relishing every drink of water, each chance to relieve himself. Often, the terrible visions came heavy and fast, and chopping wood or building shelter offered blessed reprieve. Inevitably, the agony had its moments where it overtook him - his body writhing in spasms, his mind unraveling.
 
 When stability returned and his basic needs were met, he’d pull out his recorder and notebooks, and begin again. Etchings. Freewriting. Point-form fragments. Each entry flowed from a strange urgency, a fleeting familiarity. These weren't his. They were from the all, and they were *for* the all.
 
@@ -42,59 +44,68 @@ Their vehicle was marvelously quiet. It seemed powered by electricity. Its enorm
 
 His heart leapt - finally. He had not seen another person in so long. The face of a human being was a gift he received gratefully. 
 
-There was no reason for him to speak to them, and they were from speaking to him about anything substantial. Nevertheless, he greeted them, and they responded with a few deliberately calm words in their peculiar language. Again, that strange sensation: he *knew* their words, even as he tried to work out the likely meaning. 
+"Pair-suns," came the firm voice of a man, in the heavy accent of their strange tongue, as he emerged from the vehicle. Anthony nodded eagerly and confirmed, knowing there was no real reason to speak. Any of them who knew English would take care not to hear him say anything. Nevertheless, he greeted them. They responded with deliberately neutral and terse words which meant nothing to him, but he delighted in their peculiar articulations. He felt again that strange sensation, as though he *knew* their words on some subliminal track, yet they remained meaningless to him. He could place the face, but not the name, as it were. 
 
-As with everything else now, there was no time to linger on whether their language was beautiful. He climbed into the passenger area of the vehicle. He now had people to read.
+The approaching man wore the typical black uniform with neon green accents. He introduced himself, it seemed, as a word that sounded like "Secret-ee." The man beckoned towards the vehicle's hatch, and Anthony climbed into the passenger compartment seat. He tried not to gawk, but there was a rush of relief to the symptoms of his long-term solitude.
 
-Two men. Black uniforms with green accents. Miniature computers clipped to their waists. They seemed preoccupied at first, but as the vehicle left the wilderness and entered the open valley of the Complex grounds, their tension ebbed. 
+The other two in the vehicle also wore black uniforms with mobile computers clipped to their waists. They seemed preoccupied at first, but as the vehicle left the wilderness and entered the open valley of the Complex grounds, their tension ebbed, and they seemed to visibly emit an inhuman level of groundedness and self-control. 
 
-Their speech was terse. At times, one would press a finger on his ear and speak to someone unseen. Their every behavior seemed optimized in some way, with long periods of intense stillness followed by rapid communication and manipulation of gadgets. They used this technology with the fluency of veteran operators.
+Their speech remained terse, but responsive, flowing like electricity. At times, one would press a finger on his ear and speak to someone unseen. They used their tech with the fluency of veteran operators. Their every behavior seemed optimized, with long periods of intense stillness followed by rapid communication and manipulation of gadgets. It brought to mind the hunting behavior of orb weaver spiders. 
 
-As they rolled through an increasingle landscape, lush with diverse flora, crawling with life, Parsons felt a flicker of childlike novelty. To ride in a strange machine, among mysterious people, watching the little huts and totems of the natives pass by with delight. 
+They rolled through the increasingly open, hilly landscape, still lush with diverse flora and buzzing with life. Parsons felt a flicker of childlike novelty, riding in this bizarre contraption, with these uncanny beings that seemed recognizable as people, intrigued at the passing of each little hut and totem of the natives, each new species of animal.
 
-Despite their controlled affect, Parsons sensed curiosity in them too. And between the two of them, a warmth - subtle but unmistakable. Almost inhuman in its steadiness. These were the “people from upstairs,” as their language called them.
+Despite their controlled affect, Parsons sensed curiosity in them too. And between the two of them, there was a subtle warmth, of a sort, but unmistakable. There was almost a feeling that one of them would explode at any moment, or they would erupt into violence. He could not tell why it seemed this way. From outside of the situation, they would seem very professional and neutral. They were called “people from upstairs,” in their language.
 
-Parsons was brought inside. And sure enough, he met once again with their leader. They spoke for hours. The materials were handed over. They embraced.
+Parsons Parsons was brought inside through a hangar door at the base of the finished Project: The Revelation Complex. It was all too much for him, for his body - it was almost like the visions. A genuine city of real people lived and worked inside of some strange dream that Anthony had long ago forgotten. And then, here he was, and he would never return to any home that he had ever known. Anthony Parsons was a dead man. He ascended their stairway, he held council with their leader. Over the course of hours, Anthony's materials were handed over. The two embraced.
 
-After some rest, another pair of attractive figures in black uniforms arrived and led Parsons down the central stairway. He was changed into a uniform—a baggy purple garment that felt like pajamas. The uncanny sensation deepened. He now breathed the air of a distant dream. One dream dissolving into another, and another. Rebirth after rebirth. Waves upon waves. Ocean waves.
+After some rest, another athletic figure in black and green arrived to lead Parsons back down the central stairway. They had him change into the uniform — a baggy white and pinkish-red garment that felt fuzzy like pajamas. The uncanny sensation deepened. The largeness of this building, the draft of its insane air flowing through his lungs, through his heart. He felt it, somehow, trying to draw him in - a feminine presence. He felt Her, one dream dissolving into another, and another. Rebirth after rebirth. Waves upon waves. Ocean waves. The visions also threatened, from their own dimensionality, and he felt himself the center of a terrible magnetism. *The smallest is the largest. Size is truly relative. It's nothing but a drop of water.* The visions would return soon, but they would not find Anthony Parsons. He was only a messenger. A foolish, wonderfully stupid messenger. He had loved being stupid. It never got old.
 
-The visions would return soon. But not for Parsons. He was only a messenger.
+The escort left him among others like himself, in the white pyjamas, though some were shocked to see him ragged, starved, missing some flesh from his fingers and face. He greeted them warmly. They told him of their several-hour journey from the North. They asked about him. Whenever he spoke, they were quiet, so he kept speaking, sharing what he’d gleaned from his visions in the hills. As though it mattered.
 
-His escorts left him among others like himself. He greeted them warmly. They told him of their several-hour journey from the North in vehicles. Whenever he spoke, they fell quiet. So he kept speaking, sharing what he’d gleaned from his visions in the hills.
+The former dancer, Katherine Dee, asked about this. He explained that he believed there was a reason for it, but he was currently unsure what that reason was. “I think that maybe,” he said, “it's for my own sake. I'm about to be purged. Maybe I could take one last stab at the whole thing - the Gift, the Complex, and the value of my own interpretation."
 
-They asked why he was telling them this.
+The others looked at him expectantly. It was always difficult to present a null verdict. But no need for excuses. They knew of his condition. It was visible. 
 
-“At some point,” he said, “all words will be heard. They will be dissected. What should you do with my interpretation? Ignore it. Let me be the one who tries to explain myself.”
+"I would say, ignore it. Who cares what I think? I've never claimed to be right about any of this. My world has passed. We've moved on. What matters is the all.”
 
-They chuckled—as though he had told a joke they didn’t understand. Then he fell silent, and after a while, their chatter resumed. Finally, they joined in a shared prayer: that they would succeed.
+It was what they had all come to expect of him. He had some inside joke with the universe, and it was one of those jokes where you had to be there. Just like the experience of enlightenment, the language tool is constructed within the mind, and so the consciousness transcending the mind is impossible to communicate with language. No amount of shouting at a door will cause it to open. The Gift had opened a door onto something more like an odd prism, where perhaps words could be re-invented to convey some essense of it, but it was ever slipping away, twisting, bombarding him with it's transmental collosus. It was not emptiness, but the screaming and wailing of thousands and thousands of languages all at once. They all believed that it was some alternative form of numinous energy, or consciousness - that certain regions of space aggregated into a self-awareness of an entirely different sort than what occurs on planets. The talking trickled down, and they all stood facing the future lying before them. 
 
-Parsons leaned over the circular guardrail and looked one last time up the spectacular stairway—spiraling in a double helix, running the full height of the Complex. Shaped like DNA, ascending. He felt something like motherly pride. Beavers build dams. People build temples to life.
+After a while, the spell was broken. The chatter resumed. They shared in one final prayer together: that what would be revealed upon the Project's success would justify the evolution of consciousness.
 
-It was like gazing up the spine of the great mother—Nature herself—or the carcass of an interstellar beast strung with purple and red lights. Smoothly articulated steps extended endlessly in both directions, joined by crosswalks at intervals.
+Parsons leaned over the circular guardrail and looked one last time through the spectacular double stairway spiraling up and down the full height of the Complex. He felt something like motherly pride. Beavers built dams. People built temples. And perhaps planets build *these*.
 
-And down them came one final pair, dressed in black.
+Like gazing up the spine of Mother Nature herself — or the stray carcass of some interstellar eldritch beast, strung with purple and red lights. Smoothly articulated steps extended endlessly in all four winding diretions, joined by crosswalks at set intervals.
 
-Parsons grinned as they introduced themselves. He spoke at length, and only after he'd run out of things to say did they begin using their devices to translate English. By then, the moment had passed, and the thin man—Gabriel—reminded him, in a strange accent and stranger voice, that there was no reason for anyone to say anything at all.
+And then down them came one final pair of black uniforms, the "caseworkers." Parsons grinned as they introduced themselves. As Joseph went to assist the others, Gabriel stood staring at Anthony, and Anthony stared back. When Anthony began to speak, Gabriel's wireless device shot up from his hip, like a gunslinger. Within a few sentences, Gabriel was translating his English somehow. At this, Anthony changed tack, and all he said was, "I look forward to working with you."
 
-Parsons raised his eyebrows. Gabriel looked sideways at him.
+Gabriel would not let up with his questioning gaze. He was hypnotised. Anthony wondered if on some level, he could posssibly know. Or if these people from upstairs had learned a form of refined intuition similar to their movements and personalities. 
 
-Parsons nodded.
+"I call himself Gabriel," he said. "How are these shades - accents? Eu, do you like this speaking, sir? Pleased."
 
-Gabriel stared for a puzzlingly long time, as though dumbfunded. Parsons returned the gaze, then began nodding again, slower this time, like a ritual. Eventually, doors opened — eighteen in all — each one branching from the central ring of the stairwell platform. One by one, the others stepped inside their assigned chambers.
+Anthony chuckled. He'd run out of things to say.
 
-Finally, it was Parsons’ turn. Gabriel was still watching him — still stupefied, as if trying to place a memory or decode a symbol. They both began to laugh. It became infectious, absurd, and it had only halfway dwindled when Parsons entered his door, and it closed behind him. 
+"I'm here to keep an eye on you," Gabriel said, studying his face. "You, this, and some groups of this area around here. It is safe. No suffer. You would be happy - I can't even say. It's no reason, I would talk, without." He was melting into laughter by the end of this, at his own accidental blunders.
 
-The room was nearly empty, save for the soft floor. He lay on his back and stared upward. A surge rose within him—unlike anything he had ever known. Not a vision, and not the emptiness of meditation, though both perhaps in a similar category. All of the forms were breaking down. The words were dying. Deconstruction. It was all being normalized.
+"It's no reason, I would talk, either," Anthony allowed, raising his eyebrows repeatedly. This caused Gabriel to guffaw. When they both finished giggling, Anthony gave Gabriel a firm nod. 
+
+"First," he said, trying to mirror Gabriel's speech pattern, "I am curious, to know a word in this language."
+
+After a few seconds, Gabriel emitted a sound, slow and deliberate. Anthony said it back.
+
+"It mean love," Gabriel explained. "Also, it mean love. I mean, love. Not love but love. What? But sometimes, it could mean love and... no words. I can stop. You and me are stealing cheap jokes, here. I ask you, all of these would be, to you, the only-one word 'love?'"
+
+Gabriel searched Anthony's face, appearing dumbfounded. Parsons returned the gaze, then nodded firmly again. The caseworkers went around the circle in opposite directions, opening each of eighteen simple, metal doors branching from the central ring of this level's stairwell. One by one, the others stepped inside their assigned chambers.
+
+Gabriel was still watching him, with a look of consternation, or recognition, like trying to decode a symbol. Parsons entered, and the dark entrance expanded to the sides, and a great distance in front of him. The door closed, and there was no more light.
+
+The chamber had seemed nearly empty, save for the soft floor. Anthony Parsons lay on his back and stared upward. To his surprise, he felt the Gif surge within him, as strong as any precursor he had ever experienced. All of the forms were breaking down. Meaning the breakdown of form itself, of making meaning. The words were dying. He sounded like Gabriel. And so here it is, like thunk! Oops.
+
+It was all being normalized. He wondered, maybe it wasn't. There was no way to remember how it worked. The thing. How it worked. How.
 
 It was like an old familiar voice came into his emotions, certainly not his ears, and it said nothing. 
 
 It was waiting. 
 
-He smiled.
+"Right," he seemed to say, and he smiled back at Her, across the space that opened up where meaning had been, once upon a time. "Okay, let’s rock", he thought.
 
-Okay, let’s rock, he thought. 
-
-There was zero lag. 
-
-The lights cut. Blackness swallowed all distinctions - vision, memory, breath, self - absolute darkness snuffed out all of existence forever, leaving the eyes to see either nothing, or whatever the mind could contruct. 
-
+There was zero lag. The bottom dropped out of every dimension. There was a sense of plummeting, of suspension, of expanding, sizeless, of vertigo, of foundation. Total darkness, swallowing all distinctions, a swirling tempest snuffing out vision, memory, breath, selfhood, all of what this seems to be, forever, leaving the eyes to see either nothing, or whatever the mind could imagine. 

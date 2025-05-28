@@ -249,6 +249,12 @@ a, router-link
     transform: rotate(180deg)
     transition: .2s linear
 
+#appWrapper:has(.integral-wrapper)
+    .collapse-icon-closed
+        margin-top: 4.1rem
+        @include utility.breakpoint(m)
+            margin-top: 0
+
 .collapse-icon
     // color: #92099e
     transition: .2s linear
@@ -335,16 +341,8 @@ a, router-link
     @include utility.breakpoint(s)
         .home-container
             flex-align: center
-    
-.home-changer
-    position: fixed
-    top: 35px
-    display: flex
-    z-index: 1
-    align-items: center
-    padding-block: 8px 4px
-    font-size: 22px
-    width: 100vw
+
+ 
 .technomancy
     text-indent: none
     max-width: 45em
@@ -494,3 +492,4 @@ body:has(#beacon-div)
     padding: 1rem
     margin: auto
     // gap: 1rem
+

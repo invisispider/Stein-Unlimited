@@ -2,7 +2,7 @@
 import TodoComponent from "@/components/Admin/TodoComponent.vue";
 import ScheduleComponent from "@/components/Admin/ScheduleComponent.vue";
 // import MJBlog from "@/components/Admin/MJBlog.vue";
-import { ref, reactive, nextTick, onMounted } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { useStore } from "@/stores/index";
 // import { auth, firestoreDb } from "@/services/firebaseconfig";
 // import { onAuthStateChanged } from "firebase/auth";
@@ -15,24 +15,24 @@ import AdminUserList from '@/components/Admin/AdminUserList.vue';
 document.title = "Upstairs ~ Stein unLimited";
 const store = useStore();
 const router = useRouter();
-const doShowTodo = ref(false);
-const doShowSchedule = ref(false);
+// const doShowTodo = ref(false);
+// const doShowSchedule = ref(false);
 // const doShowMJ = ref(false);
 const collapseState = ref(false);
-const chooseWindow = (which: string) => {
-  doShowTodo.value = false;
-  doShowSchedule.value = false;
-  // doShowMJ.value = false;
-  nextTick(() => {
-    if (which === "todo") {
-      doShowTodo.value = true;
-    } else if (which === "schedule") {
-      doShowSchedule.value = true;
-      // } else if (which === "mjblog") {
-      //   doShowMJ.value = true;
-    }
-  });
-};
+// const chooseWindow = (which: string) => {
+//   doShowTodo.value = false;
+//   doShowSchedule.value = false;
+//   // doShowMJ.value = false;
+//   nextTick(() => {
+//     if (which === "todo") {
+//       doShowTodo.value = true;
+//     } else if (which === "schedule") {
+//       doShowSchedule.value = true;
+//       // } else if (which === "mjblog") {
+//       //   doShowMJ.value = true;
+//     }
+//   });
+// };
 // onAuthStateChanged(auth, async (user) => {
 //   if (user) {
 //     auth.currentUser

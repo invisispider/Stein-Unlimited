@@ -36,16 +36,19 @@ const oneInTwoHundred = (Math.floor(Math.random() * 50 + 1)) == 18;
         >Crossword</SidebarLink>
         <SidebarLink v-if="store.admin" class="navItem admin" to="/Admin" @click="toggleSidebar"
         >Admin</SidebarLink>
+        <SidebarLink v-if="!store.uid" class="navItem" to="/Login" @click="toggleSidebar">Login</SidebarLink>
         <SidebarLink v-if="store.uid" class="navItem" to="/Logout" @click="toggleSidebar"
-        >Logout</SidebarLink>
-        <span class="christmas-icon glow" style="margin-block: 1em; padding-block: 0.2em 2.5em;">
+        >
           <RouterLink  v-if="store.uid" to="/Logout" @click="toggleSidebar">
             <i class="material-icons color-logged-in">vpn_key</i>
           </RouterLink>
           <RouterLink  v-else to="/Login" @click="toggleSidebar">
             <i class="material-icons color-logged-out">vpn_key</i>
           </RouterLink>
-        </span>
+          <span class="christmas-icon glow">
+            Huwo?
+          </span>
+        </SidebarLink>
       </div>
     </transition>
   </div>

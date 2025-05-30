@@ -189,18 +189,25 @@ async function ensureUserProfile(user: User): Promise<void> {
           <div>{{ errorMessage }}</div>
           <button class="login-submit-button" @click.prevent="startEmailLogin">Login with Email Link</button>
           <button class="login-submit-button" @click.prevent="startGoogleLogin">Login with Google</button>
+          <br>
           <RouterLink to="TermsOfService"><i class="material-icons">build</i> Terms of Service</RouterLink>
           <RouterLink to="PrivacyPolicy"><i class="material-icons">grade</i> Privacy Policy</RouterLink>
+          <p>Login to get points and interact in the Talk chat wall feature. This is not
+            a commercial thing, just a fun passion project.
+          </p>
         </div>
       </div>
-
       <div v-else>
+        <p>Welcome to the Future. We appreciate you being here. Post on <RouterLink to="/Talk" class="talk-link">Talk</RouterLink> 
+        and come back soon to see what we've done with the place.</p>
         <RouterLink class="login-submit-button" to="Logout">Logout</RouterLink>
       </div>
     </form>
   </div>  
 </template>
 <style lang="sass" scoped>
+.talk-link
+  display: inline
 .login-page
   display: flex
   flex-direction: column
@@ -223,7 +230,7 @@ async function ensureUserProfile(user: User): Promise<void> {
   i
     margin-left: 8px
   p, a, router-link
-    display: block
+    // display: block
     text-decoration: none
 
 </style>

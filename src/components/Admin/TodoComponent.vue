@@ -63,33 +63,6 @@ onUnmounted(() => {
 </script>
 <template>
   <div class="todo-list">
-    <button class="userButton btn-list-selector" @click.prevent="showList('')">
-      Project
-    </button>
-    <button
-      class="userButton btn-list-selector"
-      @click.prevent="showList('show_ideas')"
-    >
-      Show Ideas
-    </button>
-    <button
-      class="userButton btn-list-selector"
-      @click.prevent="showList('songs')"
-    >
-      Songs
-    </button>
-    <!-- <button class="userButton btn-list-selector" @click.prevent="showList('random')">Random</button> -->
-    <button
-      class="userButton btn-list-selector"
-      @click.prevent="showList('memo')"
-    >
-      Memo
-    </button>
-    <form @submit.prevent="addTodo">
-      <h2>{{ `list: ${listName}` }}</h2>
-      <input v-model="newTodo" />
-      <i class="material-icons">cruelty_free</i>
-    </form>
     <div class="todo-title"><h2>unDoMe</h2></div>
     <template v-for="ado in Todos" :key="ado">
       <div v-if="ado.list == listName" class="todo-item">
@@ -109,6 +82,33 @@ onUnmounted(() => {
         </span>
       </div>
     </template>
+    <button class="userButton btn-list-selector" @click.prevent="showList('')">
+      Project
+    </button>
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('show_ideas')"
+    >
+      Show Ideas
+    </button>
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('songs')"
+      >
+      Songs
+    </button>
+    <!-- <button class="userButton btn-list-selector" @click.prevent="showList('random')">Random</button> -->
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('memo')"
+      >
+      Memo
+    </button>
+    <form @submit.prevent="addTodo">
+      <h2>{{ `add new: ${listName}` }}</h2>
+      <input v-model="newTodo" />
+      <i class="material-icons">cruelty_free</i>
+    </form>
   </div>
 </template>
 <style lang="sass">
@@ -121,7 +121,7 @@ $section-gap: 160px
   color: $mygreen
   font-size: 2rem
   display: grid
-  width: 100vw
+  width: 100%
   margin: 1rem 0
   justify-content: center
   border-radius: 5px
@@ -166,9 +166,9 @@ $section-gap: 160px
   .todo-item, .todo-title
     text-align: center
     margin: auto
-  // .todo-list
-    // text-align: center
-    // max-width: 100%
-    // display: flex
-    // grid-template-columns: 1fr 1fr
+  .todo-list
+    text-align: center
+    max-width: 100%
+    display: flex
+    grid-template-columns: 1fr 1fr
 </style>

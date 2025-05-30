@@ -21,7 +21,7 @@ interface User {
 
 const debouncedSaveStyleToDB = debounce(async (uid: string, style: StyleName) => {
   await updateUser({"uid": uid, "styleMode": style});
-}, 10000); // 10 seconds before db commit
+}, 40000); // 40 seconds before db commit
 
 export const useStore = defineStore("main", {
   persist: true,
@@ -93,6 +93,12 @@ export const useStore = defineStore("main", {
       this.styleMode = newStyle;
       if (this.uid) {
         debouncedSaveStyleToDB(this.uid, newStyle);
+      }
+    },
+    async updatePoints(amount: number) {
+      this.points += amount;
+      if (this.uid) {
+        updateUser({"uid": this.uid, "points": amount });
       }
     },
     setUser(user: User | Partial<User>) {

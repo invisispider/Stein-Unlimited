@@ -2,7 +2,7 @@
 import TodoComponent from "@/components/Admin/TodoComponent.vue";
 import ScheduleComponent from "@/components/Admin/ScheduleComponent.vue";
 // import MJBlog from "@/components/Admin/MJBlog.vue";
-import { ref, nextTick, onMounted } from "vue";
+import { ref, reactive, nextTick, onMounted } from "vue";
 import { useStore } from "@/stores/index";
 // import { auth, firestoreDb } from "@/services/firebaseconfig";
 // import { onAuthStateChanged } from "firebase/auth";
@@ -69,53 +69,68 @@ onMounted(() => {
     })
   }
 });
+const adminState = reactive({
+  userPane: true,
+  toDoComponent: true,
+  scheduleComponent: false,
+  mJBlog: false
+})
 </script>
 <template>
-  <main class="home-container">
+  <main class="admin-container">
     <template v-if="store.admin">
       <div>
-        <component :is="TodoComponent" v-if="doShowTodo" />
-        <component :is="ScheduleComponent" v-if="doShowSchedule" />
-        <!-- <component :is="MJBlog" v-if="doShowMJ" /> -->
+        <component :is="AdminUserList" v-if="adminState.userPane" />
+        <component :is="TodoComponent" v-if="adminState.toDoComponent" />
+        <component :is="ScheduleComponent" v-if="adminState.scheduleComponent" />
+        <!-- <component :is="MJBlog" v-if="adminState.mJBlog" /> -->
       </div>
-      <h1>User Directory</h1>
-      <AdminUserList />
-      <nav v-show="store.email" class="collapseNav">
-        <button
-          v-show="!collapseState"
-          class="userButton"
-          @click.prevent="chooseWindow('todo')"
-        >
-          Memo
-        </button>
-        <button
-          v-show="!collapseState"
-          class="userButton"
-          @click.prevent="chooseWindow('schedule')"
-        >
-          Habit
-        </button>
-        <!-- <button
-          v-show="!collapseState"
-          class="userButton"
-          @click.prevent="chooseWindow('mjblog')"
-        >
-          MJ Blog
-        </button> -->
-        <i
-          class="material-icons christmas-icon green"
-          @click.prevent="collapseState = !collapseState"
-          >terminal</i
-        >
-      </nav>
+      <div class="collapseNav">
+        <nav v-show="!collapseState">
+          <button
+            class="userButton"
+            @click.prevent="adminState.userPane=!adminState.userPane"
+          >Users</button>
+
+          <!-- v-show="!collapseState" -->
+          <button
+            class="userButton"
+            @click.prevent="adminState.toDoComponent=!adminState.toDoComponent"
+          >
+            Memo
+          </button>
+          <!-- v-show="!collapseState" -->
+          <button
+            class="userButton"
+            @click.prevent="adminState.scheduleComponent=!adminState.scheduleComponent"
+          >
+            Habit
+          </button>
+        </nav>
+      <i
+        class="material-icons christmas-icon green"
+        @click.prevent="collapseState = !collapseState"
+        >terminal</i
+      >
+      </div>
     </template>
   </main>
 </template>
 <style lang="sass">
-.container
+.admin-container
+  margin-top: 5rem
   display: grid
+  .green
+    cursor: pointer
+    width: 100%
+    padding: 0.3rem 2rem
+    border-radius: 3rem
+    margin: auto
+    font-size: 3rem
+    // width: clamp(min-content, 8rem, 100%)
 .collapseNav
   max-width: 80vw
+  width: 6rem
   margin: 0.2em 0.6em
   color: white
   display: grid
@@ -124,11 +139,14 @@ onMounted(() => {
   bottom: 0
   right: 0
   z-index: 11
+  nav
+    margin: 0.2em 0.6em
+    padding: 0.5rem
 .userButton
   background: rgba(0, 0, 0, 0)
   color: red
   font-size: 1.3rem
-  padding: 3px 10px
+  padding: 0.4rem 0.9rem
   display: block
   border-radius: 5px
 .userButton:hover

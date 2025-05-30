@@ -171,14 +171,14 @@ async function ensureUserProfile(user: User): Promise<void> {
         <div>
           <h2>Kenny Logins</h2>
           <label for="email">
-          <input v-model="inputEmail" type="email"
+          <input id="email" v-model="inputEmail" type="email"
           placeholder="Email" name="email" autocomplete="email"
           />
           </label>
           <i class="material-icons">supervisor_account</i>
           <br />
           <label for="password">
-            <input v-model="inputPassword" type="password" placeholder="Password" 
+            <input id="password" v-model="inputPassword" type="password" placeholder="Password" 
             name="password"
             autocomplete="current-password"
           

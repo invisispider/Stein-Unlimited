@@ -112,6 +112,8 @@ onUnmounted(() => {
   </div>
 </template>
 <style lang="sass">
+@use "@/assets/css/utility"
+
 $mypurp: #92099e
 $mygreen: #31e833
 $section-gap: 160px
@@ -154,7 +156,7 @@ $section-gap: 160px
   form
     display: flex
     font-size: 2rem
-@media (min-width: 1024px)
+@include utility.breakpoint(l)
   form
     width: 100%
     margin: 0

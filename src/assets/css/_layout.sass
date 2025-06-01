@@ -248,12 +248,12 @@ a, router-link
             font-size: $font-size-nav-item
 
 .collapse-icon-closed
+    transform: rotate(180deg)
+    transition: .2s linear
     top: 0
     padding: 6px 1rem
     margin: 0
     border-radius: $radius-panel
-    transform: rotate(180deg)
-    transition: .2s linear
 
 #appWrapper:has(.integral-wrapper)
     .collapse-icon-closed
@@ -262,10 +262,8 @@ a, router-link
             margin-top: 0
 
 .collapse-icon
-    // color: #92099e
     transition: .2s linear
     z-index: 90
-    // min-width: 100px
     cursor: pointer
     i
         font-size: 2.4rem
@@ -274,7 +272,6 @@ a, router-link
     display: flex
     align-items: center
     cursor: pointer
-    // position: relative
     font-weight: 700
     user-select: none
     margin: 0.1rem 0
@@ -304,50 +301,17 @@ a, router-link
     margin-top: 3em
 
 
-
-#appWrapper.horizontal
-    .collapse-icon
-        position: fixed
-        color: #92099e
-        transition: .2s linear
-        z-index: 540
-        top: 0
-        left: 0
-        margin-block: 0.3em
-    .collapse-icon:not(.collapse-icon-closed)
-        position: relative
-    .collapse-icon-closed
-        // left: 0
-        transform: rotate(180deg)
-        transition: .2s linear
-        position: fixed
-        margin-left: 0.3em
-    .vac-col-messages
-        z-index: 0
-    .vac-room-header
-        z-index: 0
-    .vac-avatar
-        margin-left: 2%
-
-    .move-up
-        top: -60px
-
-    .wheelie
-        position: fixed
-        z-index: 300
-        bottom: 90px
-
-    .home-container
-        display: flex
-        flex-direction: column
-        width: 100vw
-        i
-            margin: 0
-            padding: 0
-    @include utility.breakpoint(s)
-        .home-container
-            flex-align: center
-
+// #appWrapper.horizontal
+//     .home-container
+//         display: flex
+//         flex-direction: column
+//         width: 100vw
+//         i
+//             margin: 0
+//             padding: 0
+//     @include utility.breakpoint(s)
+//         .home-container
+//             flex-align: center
  
 .technomancy
     text-indent: none
@@ -355,18 +319,13 @@ a, router-link
     padding: 1em 2em
     display: block
     flex-direction: column
-    // margin: 4em auto
     margin-top: 4rem
     margin-inline: auto
-    // box-shadow: 1px 1px teal, -1px -1px teal
     font-size-adjust: 0.7
     ul
         line-height: 3em
         li
             list-style: none
-    // a
-        // target: "_blank"
-        // display: inline
     img
         width: 100%
         border-radius: $radius-button
@@ -393,16 +352,13 @@ a, router-link
     border-radius: 0.2em
     height: 40vh
     max-height: 90vw
-    // opacity: 1
     width: 100%
-    // max-width: 90vw
 
 .time-link
     text-decoration: none
 .pitch-container
     audio
         max-width: 80vw
-
 
 #namaste-div
     p
@@ -497,5 +453,4 @@ body:has(#beacon-div)
     border-radius: 4px
     padding: 1rem
     margin: auto
-    // gap: 1rem
 

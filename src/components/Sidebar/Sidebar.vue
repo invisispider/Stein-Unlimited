@@ -38,17 +38,17 @@ const oneInTwoHundred = (Math.floor(Math.random() * 50 + 1)) == 18;
         >Admin</SidebarLink>
         <SidebarLink v-if="!store.uid" class="navItem" to="/Login" @click="toggleSidebar">Login</SidebarLink>
         <SidebarLink v-if="store.uid" class="navItem" to="/Logout" @click="toggleSidebar"
-        >
-          <RouterLink  v-if="store.uid" to="/Logout" @click="toggleSidebar">
-            <i class="material-icons color-logged-in">vpn_key</i>
-          </RouterLink>
-          <RouterLink  v-else to="/Login" @click="toggleSidebar">
-            <i class="material-icons color-logged-out">vpn_key</i>
-          </RouterLink>
-          <span class="christmas-icon glow">
-            Huwo?
-          </span>
+        >Logout
         </SidebarLink>
+        <span class="christmas-icon glow">
+        <RouterLink  v-if="store.uid">
+          <i class="material-icons color-logged-in">vpn_key</i>
+        </RouterLink>
+        <RouterLink  v-else to="/Login" @click="toggleSidebar">
+          <i class="material-icons color-logged-out">vpn_key</i>
+        </RouterLink><br>
+          {{store.uid && "Logged in" || "Welcome"}}
+        </span>
       </div>
     </transition>
   </div>

@@ -26,7 +26,7 @@ const gParts = gwtfParts.reverse();
 const widenString = '------------------------------------------';
 </script>
 <template>
-  <div id="video-container" class="container">
+  <div id="videos-container" class="container">
     <h1>Previous Projects</h1>
     <div class="button-group">
       <button v-for="button of buttons" :key="button.display" :class="{ active: button.select == selector }"
@@ -233,36 +233,19 @@ const widenString = '------------------------------------------';
   </div>
 </template>
 <style lang="sass" scoped>
-#video-container
-  .stu-banner
-    max-width: 500px
-    margin-block: 1em
-h4
-  margin: auto
-  margin-bottom: 1em
-.button-group
-  display: flex
-  justify-content: center
-  button
-    padding: 0.3em
-    border-radius: 7px
-    margin: 0.1em
-    font-size: medium
-  
-.xxl
-  font-size: xx-large
-.lg
-  font-size: large
-.container
+@use "@/assets/css/utility"
+#videos-container
   margin-top: 2em
   section
     display: flex
     flex-flow: row wrap
-    justify-content: center
+    justify-content: space-evenly
     *
+      min-width: 300px
       justify-content: center
-      width: 100vw
-    @media screen and (min-width: 700px)
+      width: 100%
+      
+    @include utility.breakpoint(m)
       p:not(.member-berries), h3, h4, h5, h6
         display: block
         padding-inline: 15%
@@ -282,11 +265,31 @@ h4
       a
         max-width: 9em
         text-decoration: none
+  .stu-banner
+    max-width: 500px
+    margin-block: 1em
+  .button-group
+    display: flex
+    justify-content: center
+    padding: 0.3rem
+    button
+      border-radius: 7px
+      margin: 0.2em
+      padding: 0.3em 0.5em
+      font-size: 1.1rem
+      @include utility.font-family(Heading)
+      @include utility.breakpoint(s)
+        font-size: 1.4rem
+    
+.xxl
+  font-size: xx-large
+.lg
+  font-size: large  
 
 .member-berries
   padding: 1em
   border-radius: 7px
-  // background: linear-gradient(#8f21ae, #26524f)
+  background: linear-gradient(rgba(#8f21ae, 0.6), rgba(#26524f, 0.6))
   display: grid
   grid-template-columns: auto 40px auto
   max-width: 600px
@@ -295,6 +298,7 @@ h4
   padding-inline: 0
   .berries
     text-transform: uppercase
+  @include utility.font-family(Heading)
 
 
   </style>

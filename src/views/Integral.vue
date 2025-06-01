@@ -233,21 +233,20 @@ const handleRegionClick = (hrf: 'Levels'|'Quadrants'|'Lines'|'Types'|'States') =
         max-height: 50vh
         border: 1px solid white
         border-radius: 12px
-    // .btn-group
-    //     position: fixed
-    //     bottom: 0
-    //     display: flex
-    //     flex-wrap: wrap
-    //     justify-content: space-evenly
-    //     button
-    //         flex-grow: 1
-    //         margin-inline: 2px
-    //         padding: 0.2em
-    //         align-items: center
-    //         justify-content: center
-    //         border-radius: 4px
-    // @media screen and (max-width: 350px)
-    //     button
-    //         font-size: 0.7em
+    .btn-group
+        position: fixed
+        bottom: 0
+        display: flex
+        flex-wrap: wrap
+        width: 100%
+        justify-content: space-between
+        background: rgba(0, 0, 0, 0.8)
+        gap: 0 0.5rem        
+        button
+            font-size: 1.1rem
+            flex: 1 1 auto
+            margin: 0.3rem 0.1rem
+            padding: 0.2em
+            border-radius: 0.3rem
 
 </style>

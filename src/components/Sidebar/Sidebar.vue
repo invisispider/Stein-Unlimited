@@ -41,9 +41,9 @@ const oneInTwoHundred = (Math.floor(Math.random() * 50 + 1)) == 18;
         >Logout
         </SidebarLink>
         <span class="christmas-icon glow">
-        <RouterLink  v-if="store.uid">
+        <div v-if="store.uid">
           <i class="material-icons color-logged-in">vpn_key</i>
-        </RouterLink>
+        </div>
         <RouterLink  v-else to="/Login" @click="toggleSidebar">
           <i class="material-icons color-logged-out">vpn_key</i>
         </RouterLink><br>

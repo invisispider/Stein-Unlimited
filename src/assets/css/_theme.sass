@@ -380,14 +380,11 @@ $theme-image-props: (
             &:hover
                 background-color: $sidebar-bg
             button
-                // background-color: #08F
-                // background-color: #101
                 background-color: $smooth-bg
                 color: $color
-                :hover
-                    background-color: $vid-div
+                &:hover
+                    background-color: color.adjust($vid-div, $lightness: 20%)
             .darken
-                // background-color: darken($smooth-bg, 30%)
                 background-color: color.adjust($smooth-bg, $lightness: -30%)
 
         .bisque

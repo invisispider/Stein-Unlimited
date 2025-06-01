@@ -109,7 +109,7 @@ test.describe('Sidebar', () => {
     const logoutLink = page.locator('.sidebar-link[href="/Logout"]');
     expect (logoutLink).toBeVisible();
 
-    const logoutButton = page.getByRole('link', { name: 'vpn_key' })
+    const logoutButton = page.getByRole('link', { name: 'Logout' })
 
     expect (logoutButton).toBeVisible();
 

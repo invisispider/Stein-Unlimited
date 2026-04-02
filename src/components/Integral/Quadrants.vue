@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import {ref, computed} from "vue"
 import { useMonitorSize } from '@/composables/monitor-size';
-import injectMarkdown from "@/composables/injectMarkdown";
-import integral_quadrants from "@/content/integral_quadrants.md?raw";
+// import injectMarkdown from "@/composables/injectMarkdown";
+// import integral_quadrants from "@/content/integral_quadrants.md?raw";
 
-const htmlBase = injectMarkdown(integral_quadrants, "BASE SECTION");
-const htmlHori = injectMarkdown(integral_quadrants, "HORI SECTION");
-const htmlVert = injectMarkdown(integral_quadrants, "VERT SECTION");
-const htmlUL = injectMarkdown(integral_quadrants, "UL SECTION");
-const htmlUR = injectMarkdown(integral_quadrants, "UR SECTION");
-const htmlLL = injectMarkdown(integral_quadrants, "LL SECTION");
-const htmlLR = injectMarkdown(integral_quadrants, "LR SECTION");
+// const htmlBase = injectMarkdown(integral_quadrants, "BASE SECTION");
+// const htmlHori = injectMarkdown(integral_quadrants, "HORI SECTION");
+// const htmlVert = injectMarkdown(integral_quadrants, "VERT SECTION");
+// const htmlUL = injectMarkdown(integral_quadrants, "UL SECTION");
+// const htmlUR = injectMarkdown(integral_quadrants, "UR SECTION");
+// const htmlLL = injectMarkdown(integral_quadrants, "LL SECTION");
+// const htmlLR = injectMarkdown(integral_quadrants, "LR SECTION");
 
 
 type QuadRef = 'base'|'up-down'|'left-right'|'upper-left'|'upper-right'|'lower-left'|'lower-right'; 
@@ -28,7 +28,7 @@ const screenBig = computed(()=>{
         return false
     }    
 })
-const emit = defineEmits(['next'])
+// const emit = defineEmits(['next'])
 </script>
 <template>
     <div class="quads-container">

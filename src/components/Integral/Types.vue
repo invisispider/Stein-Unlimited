@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { AqalTypes } from "@/composables/Integral/aqal-types";
-import injectMarkdown from "@/composables/injectMarkdown";
+// import injectMarkdown from "@/composables/injectMarkdown";
+// import integral_types from "@/content/integral_types.md?raw";
 import { ref, watch } from "vue";
-import integral_types from "@/content/integral_types.md?raw";
 
 const emit = defineEmits(['next'])
 
@@ -11,7 +11,7 @@ watch(chosenType, () => {
     window.scrollTo(0,0);
 })
 
-const html = injectMarkdown(integral_types)
+// const html = injectMarkdown(integral_types)
 </script>
 <template v-else-if="Selected == 'Types'">
     <div class="btn-group">

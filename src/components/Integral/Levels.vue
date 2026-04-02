@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import integral_levels from '@/content/integral_levels.md?raw';
-import injectMarkdown from '@/composables/injectMarkdown';
+// import integral_levels from '@/content/integral_levels.md?raw';
+// import injectMarkdown from '@/composables/injectMarkdown';
 
-const html = injectMarkdown(integral_levels);
+// const html = injectMarkdown(integral_levels);
 
 const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo',
     'turquoise', 'teal', 'green', 'orange', 'amber', 'red', 'magenta', 'infrared'
@@ -18,7 +18,7 @@ const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo
             evolutionary development in any Quadrant. 
             For simple discussion, we indicate to the left our <b>Four Selves mini-model</b>: generalized
             Levels of affinity as <b>Personality, Ego, Psyche,</b> and <b>Consciousness</b>.
-            <span class="pedantic center">Click Levels for descriptions.</span>
+            <!-- <span class="pedantic center">Click Levels for descriptions.</span> -->
         </p>
         <svg
         id="svg1"
@@ -1264,7 +1264,7 @@ const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo
                 style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:ultra-condensed;font-size:10.7946px;font-family:Sans;-inkscape-font-specification:'Sans, Ultra-Light Ultra-Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.37545">Tier</tspan></text>
         </g>
         </svg>
-        <h3>A Scale of Consciousness</h3>
+        <!-- <h3>A Scale of Consciousness</h3>
         <p>Those familiar with Spiral Dynamics (SD) will note this model is very similar, 
             barring some stages and presentation elements. 
             Ken Wilber considers SD stages the values Line, expressing the same natural pattern of 
@@ -1280,11 +1280,11 @@ const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo
         <p style="margin-bottom: 0;">
             <b>Measure your Altitudes: ✈️</b>
             Don't worry, nobody is watching. 
-            This is between you and yourself.  
+            This is between you and yourself.-->  
             <!-- You should find a top Level you Think, a top Level you Feel, -->
             <!-- and a top Level you Do. It is our hypothesis that Think will always be higher than Feel, and Feel  -->
             <!-- higher than Do, but this logical mechanic assumption may be false.  -->
-            You may consider "Your" Level 
+<!--            You may consider "Your" Level 
             by the criteria of what you Think, Feel, Do, or an average of the three. 
             <span class="pedantic">Read through each Altitude description and determine if you 
             express that Level through your understanding, your values, and your actions in ordinary, everyday life, 
@@ -1305,9 +1305,9 @@ const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo
             <br><br>
             <b>Do: </b>Does this stage motivate what you generally do these days, most of the time? Are 
             you an agent of this stage, living it?
-        </p>
+        </p> -->
 
-        <div v-html="html"></div>
+        <!-- <div v-html="html"></div> -->
 
         <h5 class="pedantic" style="cursor: pointer;" @click="emit('infrared')">LEVEL DESCRIPTIONS</h5>
         <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">LINES</h5>

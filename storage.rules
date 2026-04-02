@@ -4,11 +4,17 @@ service firebase.storage {
     match /{allPaths=**} {
       allow read, write: if request.auth.token.admin == true;
     }
-    match /avatars/{any} {
-      allow read, write: if true;
+    match /images/{any} {
+      allow read: if true;
     }
-    match /chatFiles/{folders=**} {
-      allow read, write: if request.auth.uid != null;
+    match /utmblog/{any} {
+      allow read: if true;
+    }
+    match /sounds/{any} {
+      allow read: if true;
+    }
+    match /music/{any} {
+      allow read: if true;
     }
   }
 }

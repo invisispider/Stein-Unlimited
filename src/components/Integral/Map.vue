@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import integral_map from '@/content/integral_map.md?raw';
-import injectMarkdown from '@/composables/injectMarkdown';
-
-const html = injectMarkdown(integral_map);
+// import integral_map from '@/content/integral_map.md?raw';
+// import injectMarkdown from '@/composables/injectMarkdown';
+import BookHero from "@/components/BookHero.vue";
+// const html = injectMarkdown(integral_map);
 
 const emit = defineEmits(['next', 'hrf']);
 type IntegralElement = 'Levels'|'Quadrants'|'Lines'|'Types'|'States';
@@ -26,9 +26,10 @@ const handleClick = (hrf: IntegralElement) => {
 </script>
 <template>
     <div class="integral-map">
+        <BookHero />
         <h1>Map</h1>
-        <p><b>Stein unLimited</b> presents a visual model of Ken Wilber's <b>Integral Theory</b>.
-            Each Element will be covered in depth in this guide. 
+        <p><b>Stein unLimited</b> presents our own unique visual models of Ken Wilber's <b>Integral Theory</b>.
+            Each Element is covered in depth in the book.
            <span class="pedantic"> Top buttons select <b>Elements.</b>  
             </span>
         </p>
@@ -62,30 +63,8 @@ const handleClick = (hrf: IntegralElement) => {
             <area shape="rect" coords="0,0,100, 100" href="
         </map> -->
         
-    <div class="content" v-html="html"></div>
-    <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">STATES</h5>
-        <!-- 
-        <p><b>Levels:</b> consider the maturity, cognitive aptitude, and education of the 
-            person responding.
-        <br><br>
-            <b>1 Archaic: </b>Person doesn't speak a language.
-            <br><b>2 Magic: </b>Person doesn't know what "reality" means. 
-            <br><b>3 Magic-Mythic: </b>Person tries to figure out what you want them to say.
-            <br><b>4 Mythic: </b>Person describes a familiar traditional belief system.
-            <br><b>5 Rational: </b>Person describes modern science and popular theories.
-            <br><b>6 Sensitive: </b>Person deconstructs the question using Quadrants.
-            <br><b>7 Integral: </b>Person describes something resembling these Levels.
-            <br><b>8 Holistic: </b>Person describes something resembling the Five Modules.
-            <br><b>9 Psychic: </b>Person describes reality in terms of awakening consciousness.
-            <br><b>10 Subtle: </b>Person describes overlapping layers of reality which most people are unaware of.
-            <br><b>11 Causal: </b>Person describes reality as a singular experience of indescribable union.
-            <br><b>12 NonDual: </b>Person describes reality as an everpresent, universal simple feeling of being.
-        </p>
-        <p><b>Lines: </b></p> -->
-        <!-- <p>People are uncomfortable with transcendental enlightenment concepts, as 
-            these are associated with death, cultism, and loss of selfhood.
-            Further, they tend to be confused on all sides with religious and magical notions.
-        </p> -->
+    <!-- <div class="content" v-html="html"></div> -->
+    <!-- <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">STATES</h5> -->
     </div>
 </template>
 <style lang="sass">

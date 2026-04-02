@@ -67,7 +67,7 @@ watch(lineInfo, ()=>{
             Lines.</span>
         </p>
         <img alt="Lines Mini-Model Think Feel Do" class="mini-model" src="@/assets/img/LinesModel.png" style="margin-bottom:1em;" />
-        <h3>The Nature of Intelligence</h3>
+        <!-- <h3>The Nature of Intelligence</h3>
         <p>A Line models any developmental structure. 
             Observe Lines in comments such as: <b>I'd like to improve my sense of 
             humor. I want to be beautiful. I should get in shape. Reading is fun-da-mental. 
@@ -88,8 +88,8 @@ watch(lineInfo, ()=>{
             We often use Emotional Intelligence Quotient, EQ, alongside IQ. 
             This allows us to view cognitive development in terms of two factors, or Lines, 
             rather than just one. 
-        </p>
-        <h3>Anything that Develops is a Line</h3> 
+        </p> -->
+        <!-- <h3>Anything that Develops is a Line</h3> 
         <p>
             We commonly understand intelligence to refer to several inter-related aspects of a 
             person. Intelligence, and Levels, can be modeled with one Line, two Lines, or any 
@@ -174,9 +174,9 @@ watch(lineInfo, ()=>{
             <span class="pedantic">Image originally from Integral Life resources. If you're having 
             trouble reading it, use the buttons at the bottom of the screen to 
             navigate the individual models pictured in the Psychograph.</span> 
-        </p>
-        <img alt="Integral Psychograph" class="mini-model" src="@/assets/img/kwlines.jpg" />
-        <p>
+        </p> -->
+        <!-- <img alt="Integral Psychograph" class="mini-model" src="@/assets/img/kwlines.jpg" /> -->
+        <!-- <p>
             The Altitudes system relates these overlapping universals and enables
             developmentalists (everyone who learns or teaches) to compare 
             development across Lines. Far from nit-picking definitions of intelligence, 
@@ -185,14 +185,14 @@ watch(lineInfo, ()=>{
             stacks of knowing, feeling, and being.
         </p>                
         <h3>Home Cooked 🍳 Three-Line Mini-Model</h3>
-        <img alt="Lines Mini-Model Think Feel Do" class="square-banner" src="@/assets/img/LinesModel.png" />
+        <img alt="Lines Mini-Model Think Feel Do" class="square-banner" src="@/assets/img/LinesModel.png" /> -->
         <span><b>
             Think</b> is a proxy for various Cognitive, Worldview, Spiritual, 
             and Self Lines. <br><b>Feel</b> reflects Values, Needs, Moral, 
             Affect, and Emotional Lines. <br><b>Do</b> generalizes 
             Lines like Kinesthetic, Spatial, Aesthetic, and Interpersonal.<br><br>
         </span>
-        <p>
+        <!-- <p>
             We can generalize Lines for the utmost simplicity in 
             everyday Altitudes assessment. If we are trying to place which
             Level we "are," three Lines is a mandatory minimum.
@@ -258,8 +258,8 @@ watch(lineInfo, ()=>{
             Until an Integral theory is adopted, we have no numbers to back up these commonsense observations,
             but we at least have models and vocabulary so that we can begin to test the
             possibilities presented here.
-        </p>              
-        <h3>⚔️ Integral Dungeons & Dragons 🛡️
+        </p>               -->
+        <!-- <h3>⚔️ Integral Dungeons & Dragons 🛡️
         </h3>
         <p>For fans of tabletop gaming, consider 
             an RPG stat sheet. Your individual stats are your Lines. When you
@@ -275,9 +275,9 @@ watch(lineInfo, ()=>{
             prejudice, and through their intuition and practical experimentation, they 
             found an efficient way to present an entire developmental character in a basic 
             Integral theory.
-        </p>
-        <img alt="video game character stats" class="invert stu-banner" src="@/assets/img/sotnsheet.gif" />
-        <h3>Integral Lines</h3>
+        </p> -->
+        <!-- <img alt="video game character stats" class="invert stu-banner" src="@/assets/img/sotnsheet.gif" /> -->
+        <!-- <h3>Integral Lines</h3>
         <p>While Lines are a methodologically superb way of analyzing specific strengths of 
             a human being, including moral, cognitive, care and concern, self sense, 
             and worldview, Integral does not currently recognize a satisfactory standard
@@ -290,7 +290,7 @@ watch(lineInfo, ()=>{
             Spiral Dynamics, Altitudes, or any major Line, as long as you bear in mind
             that various aspects of individuals show up at different Altitudes in varying 
             contexts.
-        </p>
+        </p> -->
         <h3>Exploring Line Models</h3>
         <p>The IQ/EQ system is a Level 5 Orange rational Lines system. Multiple Intelligences propose  
             a Level 6 Green pluralistic Lines system that is Integral-friendly. The Integral stage favors 

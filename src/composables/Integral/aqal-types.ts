@@ -26,8 +26,7 @@ export const AqalTypes = {
     'Myers-Briggs': {
         'description': 'Popular system in common usage, preferred \
         because it assumes no development. Criticized for scientific and statistical methodology. The deeper theory to it is \
-        compelling. The section on Jungian \
-        cognitive functions explains basics. J/P tells whether S/N (Perceiving functions) or T/F (Judging functions) \
+        compelling. J/P tells whether S/N (Perceiving functions) or T/F (Judging functions) \
         will be extraverted, while the other is introverted. The other middle term is your auxilliary, \
         the two middle terms not indicated by your type comprise your tertiary and inferior functions. These are the four main things \
         your brain tends to do by habit. \

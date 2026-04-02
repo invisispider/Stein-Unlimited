@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import integral_states from '@/content/integral_states.md?raw';
+// import integral_states from '@/content/integral_states.md?raw';
 import injectMarkdown from '@/composables/injectMarkdown';
+import integral_states_info from "@/content/integral_states_info.md?raw";
 
-const html = injectMarkdown(integral_states);
+// const html = injectMarkdown(integral_states);
 
 const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual', 'next']);
+const htmlSpiritual = injectMarkdown(integral_states_info, 'SPIRITUAL SECTION');
 
 
 </script>
@@ -369,9 +371,12 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual', 'next
             </text>
         </g>
     </svg>
-    <div class="content" v-html="html"></div>
-    <h5 class="pedantic" style="cursor: pointer;" @click="emit('spiritual')">STATE DESCRIPTIONS</h5>
-    <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">LEVELS</h5>
+    <!-- <div class="content" v-html="html"></div> -->
+    <!-- <h5 class="pedantic" style="cursor: pointer;" @click="emit('spiritual')">STATE DESCRIPTIONS</h5> -->
+            <div style="margin-top: 2em;"
+                v-html="htmlSpiritual"
+            ></div>
+    <!-- <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">LEVELS</h5> -->
 
     </div>
 </template>

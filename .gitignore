@@ -7,6 +7,7 @@ archive
 node_modules
 functions
 dist
+.firebase/*
 
 # Logs
 logs

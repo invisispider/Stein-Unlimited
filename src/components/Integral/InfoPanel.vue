@@ -4,10 +4,10 @@ import { watchEffect, ref } from "vue";
 import integral_states_info from "@/content/integral_states_info.md?raw";
 import injectMarkdown from '@/composables/injectMarkdown';
 
-const htmlOrdinary = injectMarkdown(integral_states_info, 'ORDINARY SECTION');
+// const htmlOrdinary = injectMarkdown(integral_states_info, 'ORDINARY SECTION');
 const htmlBrainwaves = injectMarkdown(integral_states_info, 'BRAINWAVES SECTION');
-const htmlSelves = injectMarkdown(integral_states_info, 'SELVES SECTION');
-const htmlSpiritual = injectMarkdown(integral_states_info, 'SPIRITUAL SECTION');
+// const htmlSelves = injectMarkdown(integral_states_info, 'SELVES SECTION');
+// const htmlSpiritual = injectMarkdown(integral_states_info, 'SPIRITUAL SECTION');
 
 const emit = defineEmits(['toggle', 'true']);
 const props = defineProps<{
@@ -71,21 +71,21 @@ const toggleLevel = (sel: string) => {
     }
 }
 const statesType = ['ordinary', 'brainwaves', 'selves', 'spiritual'] as const
-const toggleState = (sel: typeof statesType[number]) => {
-    selState.value = sel;
-    emit('true')
-    scrollToModal()
-}
+// const toggleState = (sel: typeof statesType[number]) => {
+//     selState.value = sel;
+//     emit('true')
+//     scrollToModal()
+// }
 // const sel = ref(props.stateSetter);
-const selState = ref<typeof statesType[number]>('ordinary');
+// const selState = ref<typeof statesType[number]>('ordinary');
 watchEffect(()=>{
     // let col = levelInfo.value.color;
     toggleLevel(props.levelSetter);
     scrollToModal();
-    if (statesType.includes(props.stateSetter as any)) {
-        toggleState(props.stateSetter);
-        scrollToModal();
-    }
+    // if (statesType.includes(props.stateSetter as any)) {
+        // toggleState(props.stateSetter);
+        // scrollToModal();
+    // }
 })
 type StatesType = typeof statesType[number];
 
@@ -113,33 +113,33 @@ type StatesType = typeof statesType[number];
                 <h4 v-show="levelInfo.frequency!==''">{{ levelInfo.age }}<br>
                 {{ levelInfo.frequency }}<br>
                 {{ levelInfo.influence }}</h4>
-                <h4><b>Currency: </b>{{  levelInfo.currency }}</h4>
+                <!-- <h4><b>Currency: </b>{{  levelInfo.currency }}</h4> -->
                 <h3>Reality: </h3>
                 <p>{{ levelInfo.values }}</p>
-                <h3>Emergence: </h3>
-                <p>{{ levelInfo.emergence }}</p>
-                <h3>In Your World: </h3>
-                <p>{{  levelInfo.relate }}</p>
+                <!-- <h3>Emergence: </h3> -->
+                <!-- <p>{{ levelInfo.emergence }}</p> -->
+                <!-- <h3>In Your World: </h3> -->
+                <!-- <p>{{  levelInfo.relate }}</p> -->
             </template>
         </template>
         <template v-else-if="Selected == 'States'">
-            <div class="btn-group-int">
+            <!-- <div class="btn-group-int">
             <button v-for="st of statesType" :key="st"
                 @click.stop="toggleState(st)">{{st}}</button>
-            </div>
-            <br>
-            <div  v-if="selState==='ordinary'" style="margin-top: 2em;"
+            </div> -->
+            <!-- <br> -->
+            <!-- <div  v-if="selState==='ordinary'" style="margin-top: 2em;"
                 v-html="htmlOrdinary"
-            ></div>
-            <div  v-else-if="selState==='brainwaves'" style="margin-top: 2em;"
+            ></div> -->
+            <div style="margin-top: 2em;"
                 v-html="htmlBrainwaves"
             ></div>
-            <div  v-else-if="selState==='selves'" style="margin-top: 2em;"
+            <!-- <div  v-else-if="selState==='selves'" style="margin-top: 2em;"
                 v-html="htmlSelves"
             ></div>
             <div  v-else style="margin-top: 2em;"
                 v-html="htmlSpiritual"
-            ></div>
+            ></div> -->
 
         </template>
     </div>

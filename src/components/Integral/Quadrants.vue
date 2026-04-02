@@ -32,26 +32,12 @@ const emit = defineEmits(['next'])
 </script>
 <template>
     <div class="quads-container">
-        <template v-if="quadRef==='base'">
-            <h1 id="base">Quadrants</h1>
-            <p class="desc">
-                <span class="pedantic">Click map elements for more info.</span>
-                Quadrants are like dimensions of consciousness, offering 
-                four simultaneous perspectives on anything real. 
-                Left is subjectivity, Right is objectivity,
-                Upper is individuality, Lower is groups. A rainbow of Levels reflects across
-                Upper-Left (UL) "I", LL "We", UR "It", and LR "Its", illustrating the emergence
-                and interplay of remarkably similar themes 
-                in the four inter-penetrating perspectives of self, culture, local and systemic nature. 
-            </p>
-        </template>
-        <!-- width="757.66882"
-        height="766.45337" -->
+        <h1 id="base">Quadrants</h1>
         <svg id="svg1"
-            class="quadrants-svg"
-            viewBox="0 0 757.66882 766.45337"
-            version="1.1"
-            inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+        class="quadrants-svg"
+        viewBox="0 0 757.66882 766.45337"
+        version="1.1"
+        inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
             sodipodi:docname="QuadrantsModel2.svg"
             inkscape:export-filename="../../../../../Videos/QuadrantsModel2.png"
             inkscape:export-xdpi="200"
@@ -373,315 +359,189 @@ const emit = defineEmits(['next'])
                 </g>
             </g>
         </svg>
-        <template v-if="quadRef==='base'">
-            <div id="base" v-html="htmlBase"></div>
-            <table>
-                <tbody>
-                <tr>
-                    <th>UL: iNtuition</th>
-                    <th>UR: Sensing</th>
-                </tr>
-                <tr>
-                    <th>LL: Feeling</th>
-                    <th>LR: Thinking</th>                        
-                </tr>
-                </tbody>
-            </table>
-            <p>As we observe repeatedly, each Quadrant can be viewed through a Quadrant, which 
-                results in the compounded multiplicity of perspectives we encounter in Jungian types as well 
-                as Quadrants. The "extraversion" and "superiority" of cognitive functions 
-                give us Quadrants to view these Quadrants through. This is to say that many, or most,
-                Typologies, or the Types Element itself, can largely be seen as another way of expressing 
-                Quadrants, this case in human personality. 
-            </p>
-            <h3>States and Quadrants</h3>
-            <p>
-                Most descriptions of transcendental or spiritualized states of consciousness 
-                seem to relate a dissolution of Quadrants as illusory. The enlightened being 
-                has gone beyond self, become one with all of existence, experiences deep 
-                interpenetrating communion with all sentient beings, vanishes into the unbounded
-                infinite void of the kosmos, understands itself to be nothing but the eternal 
-                awareness of material reality, feels the world and people around itself
-                as its own skin, expresses radical loving compassion that sees deeper into you than you do, 
-                is radiantly annointed with the light of creation. <b>Sound familiar?</b>
-                Nearly all descriptions of spirituality across time and tradition involve transcending 
-                the mentally constructed boundaries of Quadrants. In other words, nondual enlightenment 
-                can be expressed as the experience of being entirely I, We, It, and Its, at once, 
-                because this is always already the case.
-                You are just as much the story of your life as you are a speck of Universe, just as much a 
-                representative of humanity as you are a detatched observer. This is all One thing. 🍣 You.
-            </p>
-            <h5 class="pointer pedantic" @click="changeQuad('left-right')">LEFT AND RIGHT QUADRANTS</h5>
-            <h5 class="pointer pedantic" @click="emit('next')">TYPES</h5>
-        </template>
-        <template v-else-if="quadRef==='left-right'">
-            <div id="lefft-right" v-html="htmlHori"></div>
-            <h3>Meta-Levels of Quadrants</h3>
-            <table v-show="screenBig" class="int-table disappear">
-                <tbody>
-                <tr>
-                    <th>Analogy</th>
-                    <th>Level</th>
-                    <th>Bands</th>
-                    <th>UL</th>
-                    <th>UR</th>
-                    <th>LL</th>
-                    <th>LR</th>
-                </tr>
-                <tr class="cosmic-rays">
-                    <td>Cosmic Rays</td>
-                    <td>?</td>
-                    <td></td>
-                    <td colspan=4></td>
-                </tr>
-                <tr class="cosmic-rays">
-                    <td>UV Range</td>
-                    <td>Union</td>
-                    <td>States</td>
-                    <td colspan=4></td>
-                </tr>
-                <tr class="rainbow-me">
-                    <td>Visible Light</td>
-                    <td>Mind</td>
-                    <td>Altitudes</td>
-                    <td>Me</td>
-                    <td>This</td>
-                    <td>Us</td>
-                    <td>Everything</td>
-                </tr>
-                <tr>
-                    <td>Infrared</td>
-                    <td>Life</td>
-                    <td>Phylogeny</td>
-                    <td>Instinct</td>
-                    <td>Creature</td>
-                    <td>Life</td>
-                    <td>Earth</td>
-                </tr>
-                <tr>
-                    <td>Microwave</td>
-                    <td>Substance</td>
-                    <td>Chemistry</td>
-                    <td rowspan="2">Existence</td>
-                    <td>Molecule</td>
-                    <td rowspan="2">Forces</td>
-                    <td>Star System</td>
-                </tr>
-                <tr>
-                    <td>Radio</td>
-                    <td>Matter</td>
-                    <td>Physics</td>
-                    <td>Atom</td>
-                    <td>Universe</td>
-                </tr>
-                </tbody>
-            </table>
-            <p v-show="!screenBig" class="pedantic">Turn device horizontal to view</p>
-            <h3>Visible Spectrum of Mind</h3>
-            <table v-if="screenBig" class="int-table disappear">
-                <tbody>
-                <tr>
-                    <th>Analogy</th>
-                    <th>Level</th>
-                    <th>UL</th>
-                    <th>UR</th>
-                    <th>LL</th>
-                    <th>LR</th>
-                    <!-- <th></th> -->
-                </tr>
-                <tr class="cosmic-rays">
-                    <td>Clearlight</td>
-                    <td>12</td>
-                    <td colspan=4>Nondual Unity</td>
-                    <!-- <th rowspan=4>Third Tier</th> -->
-                </tr>
-                <tr class="t-ultraviolet">
-                    <td>Ultraviolet</td>
-                    <td>11</td>
-                    <td>Witness</td>
-                    <td>Consciousness</td>
-                    <td>Oneness</td>
-                    <td>Emptiness</td>
-                </tr>
-                <tr class="t-violet">
-                    <td>Violet</td>
-                    <td>10</td>
-                    <td>Subtle</td>
-                    <td>Psyche-Consciousness</td>
-                    <td>Communion</td>
-                    <td>Vision</td>
-                </tr>
-                <tr class="t-indigo">
-                    <td>Indigo</td>
-                    <td>9</td>
-                    <td>Psychic</td>
-                    <td>Psyche</td>
-                    <td>Affinity</td>
-                    <td>Intuition</td>
-                </tr>
-                <tr class="t-turquoise">
-                    <td>Turquoise</td>
-                    <td>8</td>
-                    <td>Centauric</td>
-                    <td>Psyche-Ego</td>
-                    <td>Holonic</td>
-                    <td>Holistic Mesh</td>
-                    <!-- <th rowspan=2>Second Tier</th> -->
-                </tr>
-                <tr class="t-teal">
-                    <td>Teal</td>
-                    <td>7</td>
-                    <td>Developer</td>
-                    <td>Stage-Aware Ego</td>
-                    <td>Integral</td>
-                    <td>Growth Networks</td>
-                </tr>
-                <tr class="t-green">
-                    <td>Green</td>
-                    <td>6</td>
-                    <td>Sensitive</td>
-                    <td>Ironic Ego</td>
-                    <td>Pluralistic Inclusion</td>
-                    <td>Value Communities</td>
-                    <!-- <th rowspan=6>First Tier</th> -->
-                </tr>
-                <tr class="t-orange">
-                    <td>Orange</td>
-                    <td>5</td>
-                    <td>Rational Achiever</td>
-                    <td>Earnest Ego</td>
-                    <td>Contractual Order</td>
-                    <td>Corporate States</td>
-                </tr>
-                <tr class="t-amber">
-                    <td>Amber</td>
-                    <td>4</td>
-                    <td>Absolutist Myth</td>
-                    <td>Conformist Personality</td>
-                    <td>Dogma</td>
-                    <td>Early Nations</td>
-                </tr>
-                <tr class="t-red">
-                    <td>Red</td>
-                    <td>3</td>
-                    <td>Impulsive Opportunist</td>
-                    <td>Selfish Personality</td>
-                    <td>Legend</td>
-                    <td>Feudal Empires</td>
-                </tr>
-                <tr class="t-magenta">
-                    <td>Magenta</td>
-                    <td>2</td>
-                    <td>Magical Fantasy</td>
-                    <td>Dependent Personality</td>
-                    <td>Lore</td>
-                    <td>Ethnic Tribes</td>
-                </tr>
-                <tr class="t-infrared">
-                    <td>Infrared</td>
-                    <td>1</td>
-                    <td>Quadrant Fusion</td>
-                    <td>Phenotypic Personality</td>
-                    <td>Interaction</td>
-                    <td>Survival Clans</td>
-                </tr>
-                </tbody>
-            </table>
-            <p v-else class="pedantic">Turn device horizontal to view</p>
-            <h3>Developer Kosmos</h3>
-            <!-- <p>is in every 
-                respect just naturally how the kosmos works. We don't live in a kosmos that works 
-                some other way where this defies reason.  -->
-                <!-- it is amazing that we know anything about the origin of the galaxy, let alone the  -->
-                <!-- Universe. At any rate, what we can observe is that  -->
-            <p>
-                The Big Bang differentiated 
-                some sort of primordial singularity into molecules that would ultimately 
-                form galaxies with planetary systems. We can assume this is normal.
-                Any planet would produce life. Molecules tend to
-                become organic if given the opportunity. It's not that Earth is particularly
-                special, but that molecules are special. The kosmos is special, tending or falling 
-                towards consciousness over time. 
-                <!-- This is just another fundamental dynamic of how it works,  -->
-                Just like how all matter attracts all other matter and we call that gravity, 
-                how going fast makes time slow down and we call that relativity, 
-                the kosmos is evolutionary and we call that Integral. 
-                The kosmos has a sort of meta-magnetic nature, or morphogenetic field. It tends 
-                up Levels. 
-                <!-- It gets off on it or something.
-                You are not some weird 
-                crazy mutant. You are the mental being that kosmic code generates from nothing.  -->
-                Earth molecules "want to" 
-                wake up and come to life, because that's what planets do, because you want to. 
-                <!-- Creation myths and Big Bang science are all true enough.   -->
-                The Big Bang and ourselves have everything in common. We are created 
-                in the image of our creator.
-                It's not coincidence, but mutual expression. As kosmos,
-                we're here learning about reality, because that's what matter would do if it 
-                were smart, which it will be eventually. Like clockwork. 😶‍🌫️                
-                </p>
-            <!-- <p>
-                For example, let's say you're angry at someone for being mean. It is easy 
-                to identify the Interiority of that feeling of anger, and the Exteriority 
-                of that person's behavior. And so you might say that this event has driven 
-                a wedge between you and this person. But what is the nature of this wedge?
-                You spend your time thinking about this person, this event, having intense 
-                emotions, constructing mental arguments against them, you can't get them out
-                of your head, it's like they are controlling you, it's like you're obsessed
-                with them, so by being angry with this person,
-                you have made them the most intensely intimate, passionate, and commited 
-                relationship imaginable. You've given them your full attention.
-                other person would. Now, having allowed that perspective into my own interior,
-                rather than try and push it away, out of my reality, to the exterior, the whole 
-                thing just doesn't bother me now. And ironically, by not trying to win this 
-                person over, or change their perspective or attitude, but rather, just take them 
-                and their relationship exactly as seriously as they do, I find that we thrive
-                harmoniously as a collective.                 
-            </p> -->
-            <h3>Reality is Social Holons</h3>
-            <p>
-                Quarks seem to be some kind of informational vectors which
-                assemble into the general vibe of a subatomic particle, whose interactions
-                are atoms, which interact to form molecules. We have already traversed an 
-                incomprehensible scale, but molecules can be assembled into organic forms, 
-                which can be cells, such as the cells of your body, your brain cells, even.
-                Each Level includes the previous Level into a
-                greater system of order. 
-                If you move your hand, you move the atoms of your hand,
-                you make it the case that Earth produces people who move their hand, and you change 
-                the entire universe into one in which a person moved their hand there. All at once. 
-                Reality is simultaneous Levels of simultaneous Quadrants. 
-                <!-- We're a stack of Levels in four Quadrants.
-                Instinct Leveled up towards more complex, self-aware organisms. 
-                Awareness Leveled up towards communication and social organization. 
-                At this Level of organization, 
-                Level 6 Green Meme, global communications technology grants an individual immediate access to humanity's general information.
-                This is Level 7, where we organize that information into something coherent. Once we're 
-                organized, we'll all be on the same page about where we're heading. -->
-            </p>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('up-down')">NEXT</h5>
+        <p class="desc">
+            <!-- <span class="pedantic">Click map elements for more info.</span> -->
+            Quadrants are like dimensions of consciousness, offering 
+            four simultaneous perspectives on anything real. 
+            Left is subjectivity, Right is objectivity,
+            Upper is individuality, Lower is groups. A rainbow of Levels reflects across
+            Upper-Left (UL) "I", LL "We", UR "It", and LR "Its", illustrating the emergence
+            and interplay of remarkably similar themes 
+            in the four inter-penetrating perspectives of self, culture, local and systemic nature. 
+        </p>
+        <h3>Meta-Levels of Quadrants</h3>
+        <table v-show="screenBig" class="int-table disappear">
+            <tbody>
+            <tr>
+                <th>Analogy</th>
+                <th>Level</th>
+                <th>Bands</th>
+                <th>UL</th>
+                <th>UR</th>
+                <th>LL</th>
+                <th>LR</th>
+            </tr>
+            <tr class="cosmic-rays">
+                <td>Cosmic Rays</td>
+                <td>?</td>
+                <td></td>
+                <td colspan=4></td>
+            </tr>
+            <tr class="cosmic-rays">
+                <td>UV Range</td>
+                <td>Union</td>
+                <td>States</td>
+                <td colspan=4></td>
+            </tr>
+            <tr class="rainbow-me">
+                <td>Visible Light</td>
+                <td>Mind</td>
+                <td>Altitudes</td>
+                <td>Me</td>
+                <td>This</td>
+                <td>Us</td>
+                <td>Everything</td>
+            </tr>
+            <tr>
+                <td>Infrared</td>
+                <td>Life</td>
+                <td>Phylogeny</td>
+                <td>Instinct</td>
+                <td>Creature</td>
+                <td>Life</td>
+                <td>Earth</td>
+            </tr>
+            <tr>
+                <td>Microwave</td>
+                <td>Substance</td>
+                <td>Chemistry</td>
+                <td rowspan="2">Existence</td>
+                <td>Molecule</td>
+                <td rowspan="2">Forces</td>
+                <td>Star System</td>
+            </tr>
+            <tr>
+                <td>Radio</td>
+                <td>Matter</td>
+                <td>Physics</td>
+                <td>Atom</td>
+                <td>Universe</td>
+            </tr>
+            </tbody>
+        </table>
+        <p v-show="!screenBig" class="pedantic">Turn device horizontal to view</p>
+        <h3>Visible Spectrum of Mind</h3>
+        <table v-if="screenBig" class="int-table disappear">
+            <tbody>
+            <tr>
+                <th>Analogy</th>
+                <th>Level</th>
+                <th>UL</th>
+                <th>UR</th>
+                <th>LL</th>
+                <th>LR</th>
+                <!-- <th></th> -->
+            </tr>
+            <tr class="cosmic-rays">
+                <td>Clearlight</td>
+                <td>12</td>
+                <td colspan=4>Nondual Unity</td>
+                <!-- <th rowspan=4>Third Tier</th> -->
+            </tr>
+            <tr class="t-ultraviolet">
+                <td>Ultraviolet</td>
+                <td>11</td>
+                <td>Witness</td>
+                <td>Consciousness</td>
+                <td>Oneness</td>
+                <td>Emptiness</td>
+            </tr>
+            <tr class="t-violet">
+                <td>Violet</td>
+                <td>10</td>
+                <td>Subtle</td>
+                <td>Psyche-Consciousness</td>
+                <td>Communion</td>
+                <td>Vision</td>
+            </tr>
+            <tr class="t-indigo">
+                <td>Indigo</td>
+                <td>9</td>
+                <td>Psychic</td>
+                <td>Psyche</td>
+                <td>Affinity</td>
+                <td>Intuition</td>
+            </tr>
+            <tr class="t-turquoise">
+                <td>Turquoise</td>
+                <td>8</td>
+                <td>Centauric</td>
+                <td>Psyche-Ego</td>
+                <td>Holonic</td>
+                <td>Holistic Mesh</td>
+                <!-- <th rowspan=2>Second Tier</th> -->
+            </tr>
+            <tr class="t-teal">
+                <td>Teal</td>
+                <td>7</td>
+                <td>Developer</td>
+                <td>Stage-Aware Ego</td>
+                <td>Integral</td>
+                <td>Growth Networks</td>
+            </tr>
+            <tr class="t-green">
+                <td>Green</td>
+                <td>6</td>
+                <td>Sensitive</td>
+                <td>Ironic Ego</td>
+                <td>Pluralistic Inclusion</td>
+                <td>Value Communities</td>
+                <!-- <th rowspan=6>First Tier</th> -->
+            </tr>
+            <tr class="t-orange">
+                <td>Orange</td>
+                <td>5</td>
+                <td>Rational Achiever</td>
+                <td>Earnest Ego</td>
+                <td>Contractual Order</td>
+                <td>Corporate States</td>
+            </tr>
+            <tr class="t-amber">
+                <td>Amber</td>
+                <td>4</td>
+                <td>Absolutist Myth</td>
+                <td>Conformist Personality</td>
+                <td>Dogma</td>
+                <td>Early Nations</td>
+            </tr>
+            <tr class="t-red">
+                <td>Red</td>
+                <td>3</td>
+                <td>Impulsive Opportunist</td>
+                <td>Selfish Personality</td>
+                <td>Legend</td>
+                <td>Feudal Empires</td>
+            </tr>
+            <tr class="t-magenta">
+                <td>Magenta</td>
+                <td>2</td>
+                <td>Magical Fantasy</td>
+                <td>Dependent Personality</td>
+                <td>Lore</td>
+                <td>Ethnic Tribes</td>
+            </tr>
+            <tr class="t-infrared">
+                <td>Infrared</td>
+                <td>1</td>
+                <td>Quadrant Fusion</td>
+                <td>Phenotypic Personality</td>
+                <td>Interaction</td>
+                <td>Survival Clans</td>
+            </tr>
+            </tbody>
+        </table>
+        <p v-else class="pedantic">Turn device horizontal to view</p>
 
-        </template>
-        <template v-else-if="quadRef==='up-down'">
-            <div id="up-down" v-html="htmlVert"></div>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('upper-left')">NEXT</h5>
-        </template>
-        <template v-else-if="quadRef==='upper-left'">
-            <div id="upper-left" v-html="htmlUL"></div>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('lower-left')">NEXT</h5>
-        </template>
-        <template v-else-if="quadRef==='lower-left'">
-            <div id="lower-left" v-html="htmlLL"></div>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('upper-right')">NEXT</h5>
-        </template>
-        <template v-else-if="quadRef==='upper-right'">
-            <div id="upper-right" v-html="htmlUR"></div>
-            <h5 class="pedantic" style="cursor: pointer;" @click="changeQuad('lower-right')">NEXT</h5>
-        </template>
-        <template v-else-if="quadRef==='lower-right'">
-            <div id="lower-right" v-html="htmlLR"></div>
-            <h5 class="pedantic" style="cursor: pointer;" @click="emit('next')">TYPES</h5>
-        </template>
     </div>
 </template>
 <style lang="sass" scoped>

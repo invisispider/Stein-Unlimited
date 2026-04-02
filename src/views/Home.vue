@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BookHero from '@/components/BookHero.vue';
 import Namaste from '@/components/Landing/Namaste.vue';
 import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
 import UnThinkMe from '@/components/Landing/UnThinkMe.vue';
@@ -11,6 +12,7 @@ const { socials } = useSocials();
 <template>
   <div class="flex-column home-page" data-test-id="flex-column">
     <div class="home-content">
+      <BookHero />
       <Namaste class="margin-bottom" />
       <SteinunLimited class="margin-bottom" />
       <UnThinkMe class="margin-bottom" />

@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, RouterLink } from 'vue-router';
 
 const route = useRoute();
 
@@ -41,6 +41,7 @@ const type = computed(() => route.query.type || '');
         <p v-show="!type">
             It's possible that no message went through, sorry. 🔧
         </p>
+        <RouterLink to="/">Home</RouterLink>
     </div>
 </template>
 <style lang="sass" scoped>

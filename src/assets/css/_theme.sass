@@ -291,6 +291,8 @@ $theme-image-props: (
             stroke-width: 2
         .greg-dark, .greg-light, .greg-text
             stroke: $color
+        .greg-number
+            stroke: $color
         .zen-borders
             stroke: $icon
             stroke: $color
@@ -304,6 +306,7 @@ $theme-image-props: (
         .zen-mint
             fill: $color
         .inner-rect
+            opacity: 0.5
             fill: $loud
         .daytop-bg
             fill: $smooth-bg
@@ -332,14 +335,15 @@ $theme-image-props: (
             color: $contrast
         .uncell
             background-color: $sidebar-bg
-
+            transition: background-color 80ms linear
+        .uncell:hover
+            background-color: $smooth-bg
         .selected-date
             background-color: $mod-bg
             color: $loud
         .uncell-zen
             border: 1px solid $mod-bg
-        .uncell-zen:hover
-            background-color: $smooth-bg
+
         .zen-borders:hover
             fill: $smooth-bg
         .conversion-table

@@ -22,15 +22,12 @@ export type RootState = {
 };
 
 export type TimeState = {
+  instantOfDay: number;
   now: Date;
   second: number;
   minute: number;
   hour: number;
-  instant: number;
-  zmoment: number;
-  zwhile: number;
   zhour: number;
-  zsess: number;
   forma: string;
   true_h: number;
   dayOfYear: number;

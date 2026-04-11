@@ -18,6 +18,7 @@
     },
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "ignoreDeprecations": "6.0",
   }
 }

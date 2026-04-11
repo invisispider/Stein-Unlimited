@@ -7,34 +7,32 @@ const emit = defineEmits(["clock", "calendar"]);
     <table v-if="props.showChart == 'clock'" style="cursor: pointer;" 
       @click="emit('clock')">
       <tbody>
-        <!-- @TODO our year start date in Roman -->
-        <!-- @TODO zenCycle in roman -->
       <tr>
-        <th colSpan="4">Clock Time</th>
+        <th colSpan="4">SEWMI Clock</th>
       </tr>
       <tr>
-        <th class="th-blue">Instant</th>
-        <th class="th-blue">1 Second</th>
+        <th class="th-blue">Day</th>
+        <th class="th-blue">8.64 Events</th>
       </tr>
       <tr>
-        <th class="th">Moment</th>
-        <th class="th">80 Instants</th>
+        <th class="th">Event</th>
+        <th class="th">10 Sessions</th>
       </tr>
       <tr>
-        <th class="th">While</th>
-        <th class="th">10 Moments</th>
+        <th class="th">Session</th>
+        <th class="th">10 Whiles</th>
       </tr>
         <tr>
-          <th class="th">Session</th>
-          <th class="th">100 Moments</th>
+          <th class="th">While</th>
+          <th class="th">10 Moments</th>
         </tr>
         <tr>
-          <th class="th">Day</th>
-          <th class="th">10 Sessions</th>
+          <th class="th">Moment</th>
+          <th class="th">10 Instants</th>
         </tr>
         <tr>
-          <th class="th">zen</th>
-          <th class="th">0.8 Sessions</th>
+          <th class="th">Instant</th>
+          <th class="th">=Second</th>
         </tr>
       </tbody>
     </table>

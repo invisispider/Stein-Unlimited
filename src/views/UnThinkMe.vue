@@ -8,7 +8,7 @@ import { collection, query, orderBy, getDocs,
 import UnthinkmeGallery from "@/components/UnthinkmeGallery.vue";
 import type { VideoItem } from '~types/VideoItem';
 import LoadingComponent from '@/components/LoadingComponent.vue';
-
+import BookHero from '@/components/BookHero.vue';
 document.title = "unThinkMe on YouTube ~ Stein unLimited";
 
 const firestoreDb = getFirestoreInstance();
@@ -98,19 +98,30 @@ onMounted(async () => {
     </div>
     <h1>An Integral YouTube Channel</h1>
     <div class="utm-description">
+      <BookHero />
       <h2>About</h2>
-      <p><b>unThinkMe</b> is what happens when two best friends—now pushing 40—start a podcast about consciousness instead of buying motorcycles. James and I met in grade school, bonded over big ideas and weird jokes, then drifted off into jobs and marriages… and eventually, right back into each other’s minds.</p>
-      <p>This channel started after I quit a corporate job and asked: Given my mix of talents and dysfunctions, what’s the most meaningful thing I can do for the world? The answer was clear: teach Integral Theory on YouTube. 
-        It’s the one ideology that I don't seem to outgrow - quite the contrary. Integral
-        has shaped mt life and choices, and has served as constant companion and tireless challenge. 
-        I’ve also spent decades learning to create music, video, logic, and story. So I started.</p>
-      <p>I made intricate, animated documentaries. Then realized I couldn’t do that every week without dying. So I flopped onto the couch and hit record. Bad lighting, real thoughts. People started listening—not just to the theory, but to me. So I told more of the truth.</p>
-      <p>Then my partner left me for a a relationship within a cult, which is just as objectively funny as it is 
-        more terrible than you can imagine. This experience cracked me open, because it isn't in 
-        my nature to respond to cliche with clice. I decide that I'm glad, and I put my foot down on gratitude.
-        James came on board. He liked the energy. A community emerged around unThinkMe - these people 
-        who think and feel "too much," while also being "heartless robots," and yearning for something real.</p>
-
+      <!-- <p><b>unThinkMe</b> is what happens when two best friends—now pushing 40—start a podcast about consciousness instead of buying motorcycles. James and I met in grade school, bonded over big ideas and weird jokes, then drifted off into jobs and marriages… and eventually, right back into each other’s minds.</p> -->
+      <p>
+        I didn’t aspire to be an Integral theorist on YouTube. When my life wonderfully exploded in my face, it created space to ask better questions: given my mix of talents and dysfunctions, what’s actually worth doing?
+      </p>
+      <p>
+      This is my answer—share what I’ve found most valuable for personal evolution, and offer some company to people who feel alone or misunderstood. The response has gone far beyond what I expected. I’m grateful to anyone who spends even a few minutes here. 
+      I feel welcome and useful here.
+      </p>
+      <p>
+      This isn’t an ideology you outgrow. It’s a framework you can choose to grow into—or not. The higher Levels and States are optional, but they’re real, and worth exploring.
+      </p>
+      <p>
+      For me, Integral provides structure without rigidity—a compass that guides and challenges at the same time. 
+      It enhances how I think, create, and live. 
+      The years I spent on music, video, and philosophy weren’t random after all—they were preparation.
+      </p>
+      <p>
+      This project is small, but it’s intentional. A kind of beacon. If you’re here, you probably see something in it too.
+      </p>
+        <!-- , 
+        drawing in real-life relationships and connections featuring abundance mentality and evolutionary mindset. -->
+      <!-- </p> -->
       <!-- <p>🌀 Podcast – old friends riffing on consciousness and crisis</p> -->
       <!-- <p>🧠 Integral Theory – animated explainers for your third eye</p> -->
       <!-- <p>🧘 Yoga Guy – practical somatics for non-experts</p> -->
@@ -119,19 +130,9 @@ onMounted(async () => {
       <!-- <p>🎸 The Future of Sales – the world's first self-help rock opera</p> -->
       <!-- <p>📖 Beacon – sci-fi from a Second Tier future</p> -->
       <!-- <p>❤️‍🔥 Surreal Love – a personal myth about heartbreak, power, and transformation</p> -->
-
-      <p>This is what happens when you stop pretending and start integrating. This mess is a gift. Namaste. 🙏🏾</p>
-      <h4>~ Adam</h4>     
-      
-      <!-- <em>An important part of life is discussing 
-      complicated ideas and feelings with a forthright and playful attitude. Doing this 
-      ecclectic, expressive weekly show, coming up with new topics and ideas, feels like 
-      playing music, except that people seem to be 
-      finding this more helpful. This channel is my beacon, 
-      drawing in real-life relationships and connections that feature abundance mentality and growth mindset.
-      It was a genius business move to select the niche that is unafraid and deeply caring. 
-      It's not a coincidence! Extremely grateful. 🙏🏾
-      </em> ~ <b>Adam</b>  -->
+      <!-- This is what happens when you stop pretending and start integrating. This mess is a gift. Namaste. 🙏🏾 -->
+      <!-- It was a genius business move to select the niche that is unafraid and deeply caring. 
+      It's not a coincidence! Extremely grateful. 🙏🏾 -->
     </div>
 
     <button class="classic-button" @click="toggleClassic">Classic Videos</button>

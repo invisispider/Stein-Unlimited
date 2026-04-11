@@ -13,11 +13,11 @@
                 Available now on Amazon
                 </a>
             </div>
-            <div class="guidebook-item">🎧 Audible Audiobook</div>
-            <div class="guidebook-item">🖊️ Kindle ebook</div>
-            <div class="guidebook-item">📖 Paperback</div>
-            <div class="guidebook-item">✒️ Custom Paperback (coolest)</div>
-            <div>Use our <RouterLink to="/Contact">Contact Form</RouterLink> to request a custom signed copy (including any requests)<br> 💳 $17 (<a href="https://venmo.com/u/unThinkMe-Adam">venmo</a>) plus shipping.</div>
+            <div class="guidebook-item"><a href="https://www.amazon.com/unThinkMes-Guide-Integral-Theory-Consciousness/dp/B0GR7L1LLK">🎧 Audible Audiobook</a></div>
+            <div class="guidebook-item"><a href="https://www.amazon.com/unThinkMes-Guide-Integral-Theory-Consciousness/dp/B0GR7L1LLK">🖊️ Kindle ebook</a></div>
+            <div class="guidebook-item"><a href="https://www.amazon.com/unThinkMes-Guide-Integral-Theory-Consciousness/dp/B0GR7L1LLK">📖 Paperback</a></div>
+            <div class="guidebook-item"><RouterLink to="/Contact">✒️ Custom Paperback (coolest)</RouterLink></div>
+            <div>Use our <RouterLink to="/Contact">Contact Form</RouterLink> to request custom signed copy and sticker pack (including any requests)<br> 💳 $20 (<a href="https://venmo.com/u/unThinkMe-Adam">venmo</a>) + shipping.</div>
         </div>
     </div>
 </template>

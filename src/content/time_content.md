@@ -43,12 +43,24 @@ Early sundials traced the progress of a pole's shadow as the sun crossed the sky
 
 Pie charts are great for certain applications, like when you need to eyeball relative proportions. They are bad clocks. They're terrible for seeing **what happens when**. When we plan our day, we use lists and symmetrical grids — not three spinning pie charts (the clock hands.)
 
-### Designed for Us
+### Version 2 of Clock System
 
-- 10 Sessions = 1 Day
-- 100 Moments = 10 Whiles = 1 Session
+After receiving great feedback and collaboration from the unThinkme community, we have revised the unLimited clock system.  
+60 seconds x 60 minutes x 24 hours: there are 86400 seconds in a day.  
+I messed up - I divided *that* into 10. Why? That's divisible by 10, not base-10. 
+Here is the new Eureka moment:  
+Session Event While Moment Instant.  
+SEWMI  
+86400  
+A Day has 8 Sessions, 6 Events, and 4 Whiles.  
+- The extra 6 Events and 4 Whiles are zen Event.  
+- Time awareness splits into Daily Sessions (2.7 hours) containing Events (17 min),
+and the Momentary timekeeping of Instants into 100 Whiles or 10 Moments.  
 
-In unLimited time, everything is base-10. "Session," "Moment," "While," and "Instant" are names you already use. We just made them official. No more hours, minutes, and seconds — and no need to drag ancient baggage with us.
+Introducing the "Sewmi" System!  
+If you just go in Google right now and say, "how many seconds has it been since 6AM?" It will tell you unLimited time. You don't need my clock anymore! For example, 44312 seconds is Session 4, Event 4, While 3, Moment 1, Instant 2. The amount of "seconds" is the amount of everything! 6000 Instants into the day you are at Event 6, within the first Event (which is and should be zero).
+
+This is the true power of base-10. "Session," "Event," "Moment," "While," and "Instant" are names we already use, and now they refer to the powers of tens of seconds. We made it official. No more hours, minutes, and seconds — that's just weird.
 
 ### Why AM and PM?
 
@@ -64,7 +76,7 @@ Most of us don't want to work exactly five out of every seven days — and our p
 
 ### Wait — the start of the year isn’t aligned to anything?
 
-Not really. It's close to the solstice... but off by a few days. We fix that. In unLimited time, the year starts **on** the solstice and splits cleanly into four seasons. Adding the five-day newZen Cycle means Roman and unLimited calendars only mismatch by about three days (depending on leap years).
+Not really. It's close to the solstice... but off by a few days. We fix that. In unLimited time, the year starts **on** the solstice and splits cleanly into four seasons. Adding the five-day newZen Cycle means the year is a perfect 360-day structure, with reality’s irregularity absorbed into a centered winter discontinuity.
 
 ### Sold. 👍🏿 How can I use this?
 
@@ -79,11 +91,11 @@ Want to help? Donate via [Venmo](https://venmo.com/u/unThinkMe-Adam) and leave a
 
 ## Reading Clock:
 
-### Night 8.26`52{.holiday-title}
+### Night 5`2652 {.holiday-title}
 
-"Night twenty-six, fifty two."{.holiday-description}
+"Night twenty-six. Instant 52." {.holiday-description}
 
-**How it works:** Clock time is Session decimal and "tick" Instants.
+**How it works:** Clock time is Event decimal and "tick" decimals.
 
 You could also approximate, "quarter Night".
 
@@ -422,82 +434,60 @@ season into an official calendar date. These are focus nodes.
 
 ✔️ Time of day is designed around the way people naturally talk and think about time.  
 ✔️ Days begin and end before sunrise (not midnight).  
-✔️ A day divides into 10 Sessions, noticeably  
-different in terms of how the world looks and what people are usually up to.  
+✔️ A day entirely divides into base-10 units of seconds.  
 
 ### A typical day:          
 
-### 1 Dawn:{.holiday-title}
+### 0 Dawn:{.holiday-title}
 
 Early birds rise, light appears.{.holiday-description}
 
+### 1 Morning:{.holiday-title}
 
-### 2 Breakfast:{.holiday-title}
+Wake up, prepare, commute, show up, first chunk of work.{.holiday-description}
 
-Wake up, prepare, commute, show up.{.holiday-description}
+### 2 Midday:{.holiday-title}
 
+Peak of sunlight, middle of work, usually lunch.{.holiday-description}
 
-### 3 Morning:{.holiday-title}
-
-First chunk of work day.{.holiday-description}
-
-
-### 4 Lunch:{.holiday-title}
-
-Middle period and work break.{.holiday-description}
-
-
-### 5 Afternoon:{.holiday-title}
+### 3 Afternoon:{.holiday-title}
 
 End chunk of work day.{.holiday-description}
 
-
-### 6 Dinner:{.holiday-title}
+### 4 Evening:{.holiday-title}
 
 Home life and duties.{.holiday-description}
 
+### 5 Night:{.holiday-title}
 
-### 7 Evening:{.holiday-title}
+Winding down, nightlife, and early bedtimes.{.holiday-description}
 
-Nightlife and mellow time.{.holiday-description}
-
-
-### 8 Night:{.holiday-title}
+### 6 Midnight:{.holiday-title}
 
 Common bedtime range.{.holiday-description}
 
-### 9 Midnight:{.holiday-title}
+### 7 Dead:{.holiday-title}
 
-Middle section of sleep time.{.holiday-description}
-
-### 10 Dead:{.holiday-title}
-
-The "dead of night".{.holiday-description}
+Wee hours, the "dead of night."{.holiday-description}
 
 ### ~zen~:{.holiday-title}
 
 Reserved generic sacred timeslot.{.holiday-description}
 
 
-## Sessions
-A **Session** is about how long an activity reasonably takes (about 2.2 hours), and is
-an amount of time that creates a noticable change in daylight.
+## Session
+A **Session** is about how long an activity reasonably takes (about 2.7 hours), and is an amount of time that creates a noticable change in daylight.
 We sleep through about three of them.
-Sessions divide the day in ten, with one ~zen~ Session that resets the day
-before most people are awake (5am). 
+Sessions divide the day into 8 segments of the sun\'s journey, with one ~zen~ Session to reset the day and use up the extra time until Dawn (6am).
 
+Events center around typical sleep and dietary habits, and often 
+coincide with full activities including preparation and travel. A work period, an occasion, weather pattern, group interaction, or location trip are Events. Event names indicate a typical expression for that part of the day.
 
-Sessions center around typical sleep and dietary habits, and often 
-coincide with a full activity, a work period, an occasion,
-weather pattern, group interaction, or location. Session names
-indicate what a typical person does around that time,
-mirroring common expressions.
-
-### Sessions are intuitive.
+### Sessions and Events are intuitive.
 
 Unlike with hours, we generally use
-the name (eg. "Dawn") rather than the number. Resultantly, people will not even notice
-the difference when you speak Sessions.
+the name (eg. "Dawn") rather than the number. Resultantly, people will not even notice the difference when you speak Sessions. For great specificity, the Session can be
+given as a decimal: 3\`50 would mean exactly halfway through Session 3, which is the fifth Event. This allows you to schedule all the way down to 100-Instant Whiles. For example, during your Morning Session, you might spend 3 Events at the gym, and you might switch exercize machines once in a While. People can only hold their breath for a Moment or two.
 
 ### 😎 It's Your time now.
 
@@ -508,7 +498,8 @@ unopinionated.
 
 ## ~zen~
 
-zenSession is time for timelessness. Most perspectives acknowledge
+zenSession is time for timelessness. Quantifying the practice is discouraged.
+Most perspectives acknowledge
 or recognize perhaps a time-transcendent quality to reality. 
 It was a creative 
 indulgence, perhaps, to take this least-desirable span and declare it in the name
@@ -519,11 +510,6 @@ silly time, micro dance party, contemplation, lovemaking,
 watch the sun rise, do anything you want. It's a Room of Requirements - anything
 you can't make time for. Most people just sleep through it. 😜 Our little secret. 
 
-### What's the punch line?
-
-There's 80 Instants in a Moment and 80 Moments in a 
-zenSession. Quantifying the practice is discouraged. 🤣
-
 ## [MOMENT]
 
 # Moments and Whiles{#moments}
@@ -532,22 +518,18 @@ zenSession. Quantifying the practice is discouraged. 🤣
 
 ### Whiles
 
-People often remember things 
-in terms of 10-15 minute periods, "a while". We simply made that official.
-Being one minute early or late for something makes no real difference. A While
-is where it actually starts to matter.
+People often sequence things 
+in terms of roughly 15-18 minute periods, "an event". Being one minute early or late for something, even a Moment or a While, makes no real difference. An Event length of time means you entirely missed the Event of showing up.
 
 ### Moments
 
 If you ask someone to describe what happened in a While, they
-will describe a progression of "moments". In practice, these Moments are
-slightly longer than minutes, which is why there are 80 Instants in a Moment,
-rather than 60.
+will describe a progression of "moments". Whiles and Moments serve mostly as 100-Instant containers. When we read the full clock time (or seconds into the day), we want to see it as a Session decimal followed by While decimal (Instants out of 100).
       
 ### Intuitive Language Units
 
-The best way to test this system is to say things like, "I had a session yesterday.
-It took me a while to get there. Give me a moment, please," and ask yourself
+The best way to test this system is to say things like, "I had a session.
+It took a while to get there. I needed a moment to prepare," and ask yourself
 whether you meant roughly what unLimited Time indicates.
 
 
@@ -559,21 +541,3 @@ unLimited Time runs seamlessly with existing systems, software,
 and hardware, based around seconds and milliseconds. The goal was to improve
 timekeeping with maximum compatibility and interoperability. Technically,
 this is a framework, not its own system.
-
-### For math nerds: 
-
-**Standard Clock:**  
-24 hours * 60 minutes * 60   
-= 86400 seconds  
-
-**unLimited:**  
-10.8 Sessions * 100 Moments * 80  
-= 86400 Instants  
-
-In accepting seconds, we must accept a kink in the base-10 somewhere. 
-If you think about it a lot, we don't need to conceptualize and do mental math 
-with momentary incidents as much as with medium and long term scheduling, so we accept
-the trade-off of a number base matching our number of fingers not including thumbs. ✋🏿🤚🏿
-
-We don't generally think in terms of Instants. They are more for quantitative measurement
-that is generally performed by machines anyway.

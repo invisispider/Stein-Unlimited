@@ -18,9 +18,9 @@
         <h2 class="text-center">Site Features:</h2>
         <!-- <h4>Treasures:</h4> -->
         <div class="navigation-cards">
-            <RouterLink to="/Talk">
+            <RouterLink to="/Contact">
                 <div class="home-navigation-card">
-                    <b>Chat Wall</b> Login to participate in the dialog.
+                    <b>Contact</b> Reach out and participate in the dialog.
                 </div>
             </RouterLink>
             <RouterLink to="/UnThinkMe">
@@ -35,7 +35,7 @@
             </RouterLink>
             <RouterLink to="/Integral">
                 <div class="home-navigation-card">
-                    <b>Integral Theory</b> Crash course in Ken Wilber's philosophy
+                    <b>Integral Theory</b> Visual models of Ken Wilber's philosophy
                 </div>
             </RouterLink>
             <RouterLink to="/Beacon">
@@ -53,11 +53,11 @@
                     <b>Videos</b> Dusty old archive of Adam's music and comedy projects
                 </div>
             </RouterLink>
-            <RouterLink to="/Crossword">
+            <!-- <RouterLink to="/Crossword">
                 <div class="home-navigation-card">
                     <b>Crossword: </b> An Integral Theory crossword puzzle that's currently pointless
                 </div>
-            </RouterLink>
+            </RouterLink> -->
         </div>
         <div class="float-image-left">
             <img src="@/assets/img/heroimage.webp" class="float-image">

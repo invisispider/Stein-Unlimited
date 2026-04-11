@@ -26,7 +26,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 		</div>
 		<h4 style="margin-block: 0.6em;">☑️ Performances and Events</h4> 
 		<h4 style="margin-block: 0.6em;">☑️ Remote Online Coaching</h4>
-		<h4 style="margin-block: 0.6em;">☑️ Private Lessons in Missoula</h4>
+		<h4 style="margin-block: 0.6em;">☑️ Private/Group Lessons in Portland</h4>
 		<div v-if="steinPlayers" class="stein-players">
 			<iframe style="border: 0;"
 				src="https://bandcamp.com/EmbeddedPlayer/album=2892329347/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
@@ -50,7 +50,7 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 		</div>
 		<h2 class="">Skills</h2>
 		<div class="benefits">
-			<p>Master sight reading and music theory</p>
+			<p>Master notation reading and theory</p>
 			<p>Critical self-awareness and goal-setting</p>
 			<p>Breath, posture and healthy habits</p>
 			<p>Learn any style, any artist, any song</p>

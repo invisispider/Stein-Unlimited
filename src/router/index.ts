@@ -32,11 +32,21 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/Talk",
-    name: "Talk",
-    meta: { requiresAuth: true },
-    component: () => import("@/views/Talk.vue"),
+    path: "/Contact",
+    name: "Contact",
+    component: () => import("@/views/Contact.vue"),
   },
+  {
+    path: "/Thanks",
+    name: "Thanks",
+    component: () => import("@/views/Thanks.vue"),
+  },
+  // {
+  //   path: "/Talk",
+  //   name: "Talk",
+  //   meta: { requiresAuth: true },
+  //   component: () => import("@/views/Talk.vue"),
+  // },
   {
     path: "/Admin",
     name: "Admin",

@@ -42,18 +42,8 @@ onMounted(() => {
 });
 
 const resetClock = () => {
-  // console.info('clicked Back To Now button.');
-  if (!store.inputDate) {
-    // console.warn("No inputDate available.");
-    return;
-  }
-  // console.log("inputDate before parse:", store.inputDate);
-  const from = DateTime.fromFormat(store.inputDate, "yyyy-MM-dd HH:mm");
-  if (from.isValid) {
-    store.animateBackToNow(from);
-  } else {
-    // console.warn("Invalid date string in store.inputDate:", store.inputDate);
-  }
+  const from = DateTime.fromJSDate(store.now);
+  store.animateBackToNow(from);
 };
 const scrollToTop = () => {
   const el = document.getElementById('content-section')
@@ -71,19 +61,22 @@ const scrollToTop = () => {
           class="theme-image unlimited-time-logo" />
         </transition>
         
-        <!-- <h1 style="cursor: pointer;" @click="toggleShow('unlimited')">unLimited<img
-            src="../../public/favicon-32x32.png" />Time</h1> -->
-          <h4>{{ store.forma }}</h4>
-          <h2 class="readout" style="cursor: pointer;" @click="toggleShow('reading')">
-            {{ store.displayZenTime }}
-            <br>
+          <!-- <h4>ROMAN</h4> -->
+          <p>{{ store.forma }}</p>
+          <!-- <h4>UNLIMITED</h4> -->
+          <p class="readout" style="font-weight: bold; cursor: pointer;" @click="toggleShow('reading')">
+            {{ store.displayZenTime }},
+          <!-- </p> -->
+          <!-- <p class="readout" style="font-weight: bold; cursor: pointer;" @click="toggleShow('reading')"> -->
             {{ store.displayZenDate }}
-          </h2>
+          </p>
       </div>
       <div class="time-widget time-info-widget">
         <div class="smiley">
           <h4>Time Travel</h4>
-          <Flatpickr v-model="store.inputDate" placeholder="convert Roman time" 
+          <p v-if="store.isFlowing">Current Time</p>
+          <p v-else class="pedantic">Time Stopped</p>
+          <Flatpickr v-model="store.inputDate" placeholder="convert Roman date" 
           :config="flatpickrOptions" />
           <button @click="resetClock">Back to now</button>
         </div>
@@ -103,6 +96,7 @@ const scrollToTop = () => {
       @instant="toggleShow('clock')" />
       <ZenHabit class="time-widget" @calendar="toggleShow('calendar')" />
     </div>
+    <div style="text-align: center; padding-block: 1em;"><a href="https://www.youtube.com/watch?v=0WahT7bJYMU" target="_blank">🎬 Watch unThinkMe's explainer video!</a></div>
     <div class="content-selector">
       <div class="content-button" @click="toggleShow('INTRODUCTION')">INTRODUCTION</div>
       <div class="content-button" @click="toggleShow('READING')">READING</div>

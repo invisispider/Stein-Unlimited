@@ -65,9 +65,7 @@ const scrollToTop = () => {
           <p>{{ store.forma }}</p>
           <!-- <h4>UNLIMITED</h4> -->
           <p class="readout" style="font-weight: bold; cursor: pointer;" @click="toggleShow('reading')">
-            {{ store.displayZenTime }},
-          <!-- </p> -->
-          <!-- <p class="readout" style="font-weight: bold; cursor: pointer;" @click="toggleShow('reading')"> -->
+            {{ store.displayZenTime }}
             {{ store.displayZenDate }}
           </p>
       </div>

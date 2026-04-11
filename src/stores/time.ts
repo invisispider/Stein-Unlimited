@@ -58,7 +58,7 @@ export const useTime = defineStore('time', () => {
 
     const displayZenTime = computed(() => {
         let str = state.instantOfDay.toString().padStart(5, "0");
-        return `${EventNames[Number(str[0])]} ${str[0]||"0"}\`${str[1]}${str[2]}${str[3]}${str[4]}`;
+        return `${EventNames[Number(str[0])]} ${str[0]||"0"}\`${str[1]}${str[2]} ${str[3]}${str[4]}`;
     });
 
     const normalizedDayProgress = computed(() => {
@@ -95,7 +95,7 @@ export const useTime = defineStore('time', () => {
             hour: dt.hour,
             zhour: adjHour,
             true_h: trueHour,
-            forma: `${dt.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET)} ${dt.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}`,
+            forma: `${dt.toFormat("hh:mm:ssa EEE, MMM d, yyyy")}`,
         });    
     };
 

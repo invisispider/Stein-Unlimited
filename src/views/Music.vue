@@ -175,8 +175,8 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 		</p><p class="bio">			
 			Today, Adam plays, sings, and teaches for joy. He offers experimental 
 			sessions combining music with yoga, dance, improv, and mindfulness
-			to achieve a unique form of integrative therapy. He children 
-			develop personality and creativity, and supports adults in reaching 
+			to achieve a unique form of integrative therapy. Instruction may help youths and 
+			children to develop personality and creativity, and support adults in reaching 
 			long-held musical ambitions. 
 		</p><p class="bio">
 			<b>Whatever you practice, you get better at.</b> You can 

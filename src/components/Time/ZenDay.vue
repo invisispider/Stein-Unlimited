@@ -138,7 +138,7 @@ function getZenDayStart(dt: DateTime) {
     class="day-container">
     <div class="clock-container">
       
-      <svg :width="svgWidth" :height="94" class="zen-borders" style="margin-inline-end: auto;">
+      <svg :width="svgWidth" :height="94" class="zen-borders" style="margin-inline: auto;">
       <g style="cursor: pointer;" @click="emit('clock')">
         <title>This chart shows what time of day it is now.</title>
         <rect :width="svgWidth" :height="svgHeight/5" class="daytop-bg"></rect>

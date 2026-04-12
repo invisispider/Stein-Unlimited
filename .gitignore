@@ -6,7 +6,7 @@ _adam-notes_
 archive
 node_modules
 functions
-# dist
+dist
 .firebase/*
 
 # Logs

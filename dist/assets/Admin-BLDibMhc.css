@@ -1,0 +1,201 @@
+.center-text {
+  text-align: center;
+}
+.todo-list {
+  color: #31e833;
+  font-size: 2rem;
+  display: grid;
+  width: 100%;
+  margin: 1rem 0;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #92099e;
+}
+.todo-list .todo-time {
+  font-size: 0.7rem;
+  color: orange;
+  text-align: right;
+}
+.todo-list .todo-desc {
+  color: lightBlue;
+  text-align: left;
+}
+.todo-list .todo-item, .todo-list .todo-title {
+  color: #31e833;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #92099e;
+}
+.todo-list .todo-item {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.todo-list .todo-title {
+  text-align: center;
+  align-items: center;
+  display: grid;
+}
+.todo-list h2 {
+  margin: 0.8rem;
+  justify-content: center;
+}
+.todo-list form {
+  display: flex;
+  font-size: 2rem;
+}
+@media screen and (min-width: 1024px) {
+form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+input {
+    width: 100%;
+}
+.todo-item, .todo-title {
+    text-align: center;
+    margin: auto;
+}
+.todo-list {
+    text-align: center;
+    max-width: 100%;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+}
+}
+.untable[data-v-9af60f79] {
+  display: grid;
+  padding: 0.2em;
+  background-color: #222;
+}
+.unheader[data-v-9af60f79] {
+  /* writing-mode: vertical-rl; */
+  /* text-orientation: upright; */
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #316;
+  margin: 0;
+}
+.baheader[data-v-9af60f79] {
+  background-color: red;
+  color: black;
+}
+.unchunk[data-v-9af60f79] {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+}
+.uncell[data-v-9af60f79] {
+  border: 1px solid rgba(0, 0, 255, 0.2);
+  background-color: black;
+  margin: 0;
+  padding: 1em;
+}
+.user-card[data-v-e9247707] {
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+}
+.user-card img[data-v-e9247707] {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+.user-card h3[data-v-e9247707] {
+  font-weight: 600;
+}
+.user-card p[data-v-e9247707] {
+  font-size: 0.875rem;
+}
+.user-card[data-v-e9247707] {
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+}
+.user-card img[data-v-e9247707] {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+.user-card h3[data-v-e9247707] {
+  font-weight: 600;
+}
+.user-card p[data-v-e9247707] {
+  font-size: 0.875rem;
+}.admin-user-list[data-v-0cddbc8e] {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 640px) {
+.admin-user-list[data-v-0cddbc8e] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+@media screen and (min-width: 768px) {
+.admin-user-list[data-v-0cddbc8e] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+@media screen and (min-width: 1024px) {
+.admin-user-list[data-v-0cddbc8e] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+}.admin-container {
+  margin-top: 5rem;
+  display: grid;
+}
+.admin-container .green {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.3rem 2rem;
+  border-radius: 3rem;
+  margin: auto;
+  font-size: 3rem;
+}
+.collapseNav {
+  max-width: 80vw;
+  width: 6rem;
+  margin: 0.2em 0.6em;
+  color: white;
+  display: grid;
+  background-color: rgba(10, 10, 10, 0.7);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+}
+.collapseNav nav {
+  margin: 0.2em 0.6em;
+  padding: 0.5rem;
+}
+.userButton {
+  background: rgba(0, 0, 0, 0);
+  color: red;
+  font-size: 1.3rem;
+  padding: 0.4rem 0.9rem;
+  display: block;
+  border-radius: 5px;
+}
+.userButton:hover {
+  background: rgb(220, 220, 220);
+}

@@ -1,0 +1,6 @@
+.chapter-button {
+  cursor: pointer;
+}
+.chapter-button:hover {
+  color: blue;
+}

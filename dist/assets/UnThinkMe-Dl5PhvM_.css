@@ -1,0 +1,19 @@
+.classic-button[data-v-4c10306e] {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  width: max-content;
+  margin-inline-start: auto;
+  border-radius: 0.5rem;
+}
+.utm-description[data-v-4c10306e] {
+  justify-self: center;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-block: 0.2em;
+  margin-inline: 1.3em;
+  max-width: 65ch;
+  line-height: 1.6;
+  hyphens: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

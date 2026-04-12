@@ -1,0 +1,149 @@
+.center-text {
+  text-align: center;
+}
+:where(h1) {
+  margin-block: 0.67em;
+  font-size: 2em;
+}
+.user-message {
+  white-space: pre-wrap;
+  text-align: left;
+  justify-content: center;
+  max-width: 40ch;
+  margin: auto;
+}
+#puzzle-body {
+  margin-block: 2em;
+  margin-top: 6rem;
+}
+#puzzle-body .buttons {
+  margin-block: 0.6em;
+  padding: 1rem;
+  bottom: 0;
+  min-width: 300px;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#puzzle-body .buttons span {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.2em 0.8em;
+  margin: 0.2rem;
+  border-radius: 0.6rem;
+  height: min-content;
+  align-self: center;
+}
+#puzzle-body .buttons span i {
+  margin-right: 3px;
+}
+#puzzle-body .main-title {
+  text-align: center;
+  margin-block: 0.2em;
+}
+@media screen and (min-width: 768px) {
+#puzzle-body .main-title {
+    display: block;
+    width: 100vw;
+}
+}
+#puzzle-body #puzzle-clues {
+  display: flex;
+  flex-wrap: wrap;
+}
+#puzzle-body #puzzle-clues #acrossDiv, #puzzle-body #puzzle-clues #downDiv {
+  margin: 5px;
+}
+#puzzle-body #puzzle-clues .clue-button {
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  margin: auto;
+  max-width: max-content;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#puzzle-body #puzzle-clues #across, #puzzle-body #puzzle-clues #down {
+  height: max-content;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+#puzzle-body #puzzle-clues .li-div {
+  border-radius: 4px;
+  justify-content: start;
+  align-items: center;
+  list-style-type: none;
+  text-align: left;
+}
+#puzzle-body #puzzle-clues span {
+  cursor: pointer;
+  margin-right: 0.2em;
+}
+#puzzle-body #puzzle-container {
+  margin: 1rem;
+  flex-shrink: 1;
+  margin-inline: auto;
+  justify-content: flex-start;
+}
+#puzzle-body #puzzle {
+  table-layout: fixed;
+  aspect-ratio: 1/1;
+  width: clamp(300px, 35rem, 100%);
+}
+@media screen and (min-width: 1024px) {
+#puzzle-body #puzzle {
+    margin: 2rem;
+}
+}
+#puzzle-body #puzzle td {
+  aspect-ratio: 1/1;
+  vertical-align: middle;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+#puzzle-body #puzzle input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: clamp(1rem, 4vmin, 2rem);
+  text-align: center;
+  text-transform: uppercase;
+  appearance: textfield;
+  background: none;
+}
+#puzzle-body .couch {
+  display: flex;
+  justify-content: center;
+}
+#puzzle-body .head-label {
+  z-index: 1;
+  font-size: 0.45rem;
+  position: absolute;
+  top: 0;
+}
+@media screen and (min-width: 450px) {
+#puzzle-body .head-label {
+    font-size: 0.6rem;
+}
+}
+.crossword-body {
+  display: grid;
+}
+@media screen and (min-width: 1024px) {
+.crossword-body {
+    grid-template-columns: auto auto;
+}
+.crossword-body #puzzle-clues, .crossword-body #puzzle-container {
+    justify-self: center;
+}
+}

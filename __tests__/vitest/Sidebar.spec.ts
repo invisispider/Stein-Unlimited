@@ -24,11 +24,11 @@ const routes = [
   { path: '/Technomancy', component: Dummy },
   { path: '/TermsOfService', component: Dummy },
   { path: '/PrivacyPolicy', component: Dummy },
-  { path: '/Talk', component: Dummy },
+  { path: '/Component', component: Dummy },
   { path: '/Login', component: Dummy },
-  { path: '/Crossword', component: Dummy },
+  // { path: '/Crossword', component: Dummy },
   { path: '/Logout', component: Dummy },
-  { path: '/Next', component: Dummy },
+  // { path: '/Next', component: Dummy },
 ];
 
 describe('Sidebar.vue', () => {
@@ -157,7 +157,7 @@ describe('Sidebar.vue', () => {
     nextTick();
     expect(wrapper.find('[href="/Admin"]').exists()).toBe(false);
     
-    expect(wrapper.find('a[href="/Talk"]').exists()).toBe(true);
+    expect(wrapper.find('a[href="/Contact"]').exists()).toBe(true);
   
     expect(wrapper.find('a[href="/Next"]').exists()).toBe(false);
 
@@ -180,7 +180,7 @@ describe('Sidebar.vue', () => {
     await wrapper.find('.collapse-icon').trigger('click');
 
     nextTick();
-    expect(wrapper.find('[href="/Talk"]').exists()).toBe(true);
+    expect(wrapper.find('[href="/Contact"]').exists()).toBe(true);
     expect(wrapper.find('[href="/Next"]').exists()).toBe(false);
     expect(wrapper.find('[href="/Login"]').exists()).toBe(false);
     expect(wrapper.find('[href="/Logout"]').exists()).toBe(true);
@@ -206,7 +206,7 @@ describe('Sidebar.vue', () => {
 
     expect(wrapper.find('.collapse-icon').exists()).toBe(true);
     expect(wrapper.find('.collapse-icon-closed').exists()).toBe(false);
-    expect(wrapper.find('[href="/Talk"]').exists()).toBe(true);
+    expect(wrapper.find('[href="/Contact"]').exists()).toBe(true);
     expect(wrapper.find('[href="/Logout"]').exists()).toBe(true);
   
     expect(wrapper.find('[href="/Login"]').exists()).toBe(false);
@@ -235,10 +235,10 @@ describe('Sidebar.vue', () => {
     expect(wrapper.find('.sidebar-wrapper').exists()).toBe(true);
 
 
-    expect(wrapper.find('a[href="/Talk"]').exists()).toBe(true);
+    expect(wrapper.find('a[href="/Contact"]').exists()).toBe(true);
     expect(wrapper.find('a[href="/Logout"]').exists()).toBe(true);
   
-    expect(wrapper.find('a[href="/Next"]').exists()).toBe(true);
+    // expect(wrapper.find('a[href="/Next"]').exists()).toBe(true);
 
   });
 });

@@ -67,9 +67,14 @@ test('style selector and navigation', async ({ page }) => {
 
   // change the theme to dark purple
   await page.getByTitle('Flowers Theme').click();
-  const computedStyle2 = await el?.evaluate(el => {
-    const style = window.getComputedStyle(el);
-    return style.backgroundColor;
+  await expect(
+    page.locator('#flowers-theme')
+  ).toHaveClass(/activeStyle/);
+  
+  const computedStyle2 = await el.evaluate(el => { 
+    const style2 = window.getComputedStyle(el);
+    return style2.backgroundColor
+
   });
   expect(computedStyle2).toBe('rgb(201, 184, 189)');
 

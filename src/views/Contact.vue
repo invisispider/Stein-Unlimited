@@ -102,7 +102,6 @@ const handleSubmit = async () => {
       <button :class="{ active: mode==='general' }" @click="mode = 'general'">Message</button>
       <button :class="{ active: mode==='order' }" @click="mode = 'order'">Purchase</button>
     </div>
-    <p v-show="errorMessage" class="pedantic">{{ errorMessage }}</p>
     <!-- Form -->
     <form class="contact-form" @submit.prevent="handleSubmit">
       <input type="hidden" name="_redirect" :value="redirectUrl" />
@@ -194,6 +193,7 @@ const handleSubmit = async () => {
       </button>
 
     </form>
+    <p v-show="errorMessage" class="pedantic">{{ errorMessage }}</p>
 
   </div>
 </template>

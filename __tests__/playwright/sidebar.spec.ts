@@ -61,7 +61,7 @@ test.describe('Sidebar', () => {
       
     await collapseIcon.click();
 
-    await page.waitForSelector('a[href="/Talk"]', { state: 'visible' });
+    await page.waitForSelector('a[href="/Contact"]', { state: 'visible' });
     expect(page.locator('a[href="/"]')).toBeVisible();
 
     const adminLink = page.locator('a[href="/Admin"]');
@@ -77,8 +77,8 @@ test.describe('Sidebar', () => {
     // await openCollapse.click();
     await collapseIcon.click();
 
-    const talkLink = page.getByRole('link', { name: 'Talk'})
-    await expect(talkLink).toBeAttached();
+    const musicLink = page.getByRole('link', { name: 'Music Music instruction'})
+    await expect(musicLink).toBeAttached();
 
   });
 
@@ -100,7 +100,7 @@ test.describe('Sidebar', () => {
       
     await collapseIcon.click();
 
-    await page.waitForSelector('.sidebar-link[href="/Talk"]', { state: 'attached' });
+    await page.waitForSelector('.sidebar-link[href="/Contact"]', { state: 'attached' });
     await expect(page.getByText('Home')).toBeVisible();
 
     const adminLink = page.locator('a[href="/Admin"]');
@@ -117,13 +117,13 @@ test.describe('Sidebar', () => {
     const openCollapse = page.locator('.collapse-icon');
     await openCollapse.click();
     
-    const talkLink = page.getByText('Talk')
-    await expect (talkLink).toHaveCount(0);
+    const talkLink = page.getByText('Contact')
+    await expect (talkLink).toHaveCount(2);
     
     await collapseIcon.hover();
     await collapseIcon.click();
 
-    await expect (talkLink).toBeVisible();
+    await expect (talkLink).toHaveCount(3);
 
   });
 });

@@ -57,13 +57,12 @@ export default defineConfig({
       use: { ...devices['iPhone 12'] },
     },
   ],
-
   /* Run your local dev server before starting the tests */
   // IF COMMENTED OUT, JUST RUN DEV, OTHERWISE DON'T
-  // webServer: {
-  //   command: 'npm run dev',
-  //   url: 'http://localhost:8000',
-  //   reuseExistingServer: !process.env.CI,
-  //   timeout: 120 * 1000, // optional: extend timeout if slow
-  // },
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://localhost:8000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000, // optional: extend timeout if slow
+  },
 });

@@ -31,7 +31,7 @@ describe("App", () => {
         { path: '/Music', component: Dummy },
         { path: '/Beacon', component: Dummy },
         { path: '/Videos', component: Dummy },
-        { path: '/Talk', component: Dummy },
+        { path: '/Contact', name: 'Contact', component: Dummy },
         { path: '/Crossword', component: Dummy },
         { path: '/Login', component: Dummy },
         { path: '/Technomancy', component: Dummy },

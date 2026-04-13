@@ -127,6 +127,39 @@ const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 				for that."
 			</div>
 		</div>
+		<h2 class="double-width">Holistic Musicianship</h2>
+		<p class="bio">Douglas Adams is the beloved author of the Hitchhiker's Guide to the Galaxy
+			series. He also wrote stories about Dirk Gently, the "holistic detective," a humble
+			private eye who keeps finding himself dragged into the epic and supernatural, due 
+			simply to the acknowledged interconnectedness of all things. Why fight it? 
+		</p>
+		<p class="bio">There's a reason why we want to learn music, or "be" a musician, often with 
+			a sense of yearning, sentiment, ideals, expression, catharsis - an art motive. 
+			These considerations are tyically abstracted out of the process, as they are of a personal 
+			and spiritual nature - I mean only the gratitude, wonder, sacredness, wholeness, 
+			and cosmic meaning shared by people of 
+			all beliefs and ideologies. Most musicians are not equipped to deal with those factors, but we 
+			must admit it would be efficient.  
+		</p>
+		<p class="bio">
+			We acknowledge and honor the self in our holistic 
+			process. Yes, I want to make beautiful sounds.
+			Students often show up with a hidden dream that lessons will deliver something other than the ability to 
+			execute passages well. They're disappointed when learning to play never pays off,
+			never blew their socks off. It feels like nothing 
+			actually changed. Bad teacher. Why you wanted to learn music is none of their business. 
+			In all cases, that's what I focus on. Let's give ourselves permission to have a 
+			dream, let's learn to play and fulfill the dream in a unique, personal, spiritual, and 
+			beautiful way. 
+		</p>
+		<p class="bio">
+			In many cases, lessons are as 
+			simple as how to play and read and write, performance coaching, etc. Musicianship is, to 
+			some extent, a matter of showing up and hours spent. Likewise, it reflects the quality of those hours.
+			The obstacle to progress is never lack of talent or ability. In some cases, far better and 
+			more lasting progress comes from a fair amount of focus on personal, social, 
+			and spiritual factors - particularly self-esteem, positive attitude, and leadership.
+		</p>
 		<h2 class="double-width">Story</h2>
 		<p class="bio">Adam didn’t grow up in a musical household. As a kid, he was
 			into video games, cartooning, and filmmaking. He enjoyed playing trumpet 

@@ -1,11 +1,26 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import router from '@/router';
+import { useRoute } from 'vue-router';
+
 document.title = "Contact ~ Stein unLimited"
 type Mode = 'business' | 'general' | 'order';
 const mode = ref<Mode>('business');
 // Formspree endpoint
 const FORM_ENDPOINT = "https://formspree.io/f/mgopneap";
+const validModes = ['business', 'general', 'order'];
+
+const route = useRoute();
+watch(
+  () => route.query.mode,
+  (qMode) => {
+    const value = Array.isArray(qMode) ? qMode[0] : qMode;
+    if (validModes.includes(value as Mode)) {
+      mode.value = value as Mode;
+    }
+  },
+  { immediate: true }
+);
 
 const isValidEmail = (email: string) =>{
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -108,8 +123,17 @@ const handleSubmit = async () => {
       <div v-show="mode==='business'" class="contact-description">Professional inquiries and networking. Get in
         touch for holistic solutions.
       </div>
-      <div v-show="mode==='general'" class="contact-description">We love feedback on the work, general questions,
-        and often just weird stuff. Reach out and see if anything happens.
+      <div v-show="mode==='general'" class="contact-description">We embrace and integrate feedback. 
+        Reach out and see what happens. 
+        <ul>
+          <li>Give your 
+        notes and opinions on the Beacon fiction series as it develops - evolutionary fiction</li>
+          <li>Tell us how you like unLimited Time and the site itself</li>
+          <li>General questions about us and Integral Theory</li>
+          <li>Questions about products and services</li>
+          <li>Often just weird stuff</li>
+        </ul>
+        
       </div>
       <div v-show="mode==='order'" class="contact-description">
         <h3 style="text-align: center;">The unThinkMe Corner Store</h3>

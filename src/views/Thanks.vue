@@ -12,15 +12,17 @@ const type = computed(() => route.query.type || '');
         <div v-if="type === 'order'">
             <h1>✅ Order received</h1>
             <p>
-                <strong>Send payment via Venmo to @unThinkMe-Adam</strong><br />
-                    Include your name in the payment.
+                <strong>Send payment via <a href="https://venmo.com/u/unThinkMe-Adam">Venmo to @unThinkMe-Adam</a></strong>
             </p>
-
-            <p>Your order will ship within a few days.</p>
-
+            <p>If you're in a rush, please add $6 standard shipping for ordinary US domestic orders.</p> 
+            <p>Once we receive your order, we'll calculate your total and send a confirmation to the email provided.</p>
+            
+            <p>Upon payment, your order should ship within three business days.</p>
+            
             <p class="subtle">
                 Thanks for supporting this project directly—it genuinely makes a difference.
             </p>
+            <img style="width: 250px;" src="@/assets/img/venmo-qr.png" alt="venmo QR" />
 
         </div>
         <div v-else-if="type === 'business'">

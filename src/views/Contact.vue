@@ -136,12 +136,13 @@ const handleSubmit = async () => {
         
       </div>
       <div v-show="mode==='order'" class="contact-description">
-        <h3 style="text-align: center;">The unThinkMe Corner Store</h3>
+        <h3 style="text-align: center;">The unThinkMe Store</h3>
         <p>This is a fun, casual way you can 
         purchase Stein unLimited products and services, giving $0 to Jeff Bezos and other corporate giants. 
         </p>
-        <p style="text-align: center;"><b>~Signature Pack~ unThinkMe's Guide
-          to Integral Theory</b></p>
+        <p style="text-align: center;"><b>~Custom Paperback Pack~<br>
+          unThinkMe's Guide to Integral Theory</b><br>
+          <b>$20 (+ $5 for US shipping)</b></p>
           <div class="flex" style="justify-content: center;" >
           <img src="@/assets/img/bookjacket.jpg" class="product-card" style="border-radius: 2%; margin-right: 5px;" />
           <img src="@/assets/img/sticker-AltitudesLevels-web.jpg" class="product-card" />
@@ -149,27 +150,37 @@ const handleSubmit = async () => {
           <p class="order-note" style="text-align: center;">
             Includes signed copy + optional message + bonus Levels sticker.
           </p>
-        <b>$20 (+shipping)</b> 
+         
           <p>Pick up your copy of the unThinkMe book directly from Adam through Venmo and
-            US Postal, with the AWESOME Levels of Consciousness sticker, and a personal 
-            message, OR spice things up with a Truth or Dare request. 
+            US Postal, with the AWESOME Full-size (3" x 6") Levels of Consciousness sticker, and a personal 
+            message, OR spice things up with a Truth or Dare request. For international orders, shipping rates may be high (we'll check with you), so in that case,
+            you may go with Amazon for shipping, then reach out here to order a sticker and personal request/message.
           </p>
-        <p style="text-align: center;"><b>~Exclusive - Levels of Consciousness sticker~</b></p>
+          <p><b>Please note: for the first run of orders, there is a delay on the stickers, so the stickers will ship separately as stock arrives. Don't worry when your book arrives 
+            without a sticker! We expect them on April 27th.</b>
+          </p>
+        <p style="text-align: center;"><b>~Levels of Consciousness stickers~</b><br>
+          <b>Full-size: 3" x 6" - $5 (+ $2 shipping)</b><br>
+          <b>Mini-size: 1.5" x 3" - $3 (+ $2 shipping)</b>
+        </p>
         <p>
-          unThinkMe Altitudes Levels graphic can be purchased seperately while supplies
-          last. Classic 3"x2" decal for laptops,
-          water bottles, and perhaps less common places.
+          Exclusive Altitudes Levels graphic stickers can be purchased seperately while supplies
+          last. The full-size comes with the custom book pack, but can also be purchased separately. Decals are great for laptops, gear cases, 
+          water bottles, and less common places.
         </p>
-          <b>$5 (+shipping)</b>
-        <p style="text-align: center;"><b>~Holistic Music Lessons (remote)~</b></p>
-          <p> Adam teaches holistic general music - voice, guitar, bass, piano, rhythm, performance, audio, 
+          
+        <!-- <p style="text-align: center;"><b>~Holistic Music Lessons (remote)~</b></p> -->
+          <!-- <p> Adam teaches holistic general music - voice, guitar, bass, piano, rhythm, performance, audio, 
           production, and also communicative, psychological, somatic, spiritual, and existential aspects of the practice.
+        </p> -->
+          <!-- <b>$30 / 30min negotiable.</b> -->
+        <p><b>No commitment! Reach out if curious.</b></p>
+        <p>This is informal, but totally real - we take your order and satisfaction seriously. This is just a fun way to purchase our products
+          directly from the source. For purchases, we'll send payment request and a response, and upon
+        payment, item should ship within 1 or 2 business days, then please allow standard shipping time.
         </p>
-          <b>$30 / 30min negotiable.</b>
-        <p>No commitment! Reach out if curious, very informal. For purchases, 
-        we'll calculate shipping based on the address, we'll send payment request, and upon
-        payment, item should ship within 1 or 2 business days, and then take forever to get there.
-        </p>
+        <p>Don't forget to include your truth or dare / message request in the bottom section - or just be sure and mention it before paying!</p>
+
       </div>
       <!-- hidden subject for Formspree -->
       <input type="hidden" name="_subject" :value="computedSubject" />

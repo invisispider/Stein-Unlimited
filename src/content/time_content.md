@@ -45,6 +45,8 @@ Pie charts are great for certain applications, like when you need to eyeball rel
 
 ### Version 2 of Clock System
 
+[Watch this video explaining the Clock update!](https://youtu.be/wCtpa4dJyUQ)  
+
 After receiving great feedback and collaboration from the unThinkme community, we have revised the unLimited clock system.  
 60 seconds x 60 minutes x 24 hours: there are 86400 seconds in a day.  
 I messed up - I divided *that* into 10. Why? That's divisible by 10, not base-10. 
@@ -91,11 +93,11 @@ Want to help? Donate via [Venmo](https://venmo.com/u/unThinkMe-Adam) and leave a
 
 ## Reading Clock:
 
-### Night 5`2652 {.holiday-title}
+### Night 5.26`52 {.holiday-title}
 
-"Night twenty-six. Instant 52." {.holiday-description}
+"Night twenty-six, 52." {.holiday-description}
 
-**How it works:** Clock time is Event decimal and "tick" decimals.
+**How it works:** Clock time is Session decimal and "tick" instants.
 
 You could also approximate, "quarter Night".
 

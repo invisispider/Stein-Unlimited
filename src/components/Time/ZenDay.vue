@@ -158,7 +158,7 @@ function getZenDayStart(dt: DateTime) {
           :height="6" :y="45" class="alt-fill"
         />
         <text x="4" :y="16+30" class="daytop-tx">
-          SEW:  {{String(Sewmi.event)}}`{{String(Sewmi.session)}}{{String(Sewmi.while)}}
+          SEW:  {{String(Sewmi.event)}}.{{String(Sewmi.session)}}{{String(Sewmi.while)}}
         </text>
       </g>
       <g @click="emit('instant')">

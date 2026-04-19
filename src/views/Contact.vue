@@ -120,8 +120,26 @@ const handleSubmit = async () => {
     <!-- Form -->
     <form class="contact-form" @submit.prevent="handleSubmit">
       <input type="hidden" name="_redirect" :value="redirectUrl" />
-      <div v-show="mode==='business'" class="contact-description">Professional inquiries and networking. Get in
-        touch for holistic solutions.
+      <div v-show="mode==='business'" class="contact-description">
+        <p>Professional inquiries and networking.</p> 
+        <!-- <p>Services currently offered:</p>  -->
+        <!-- <h2>Adam Loewen</h2> -->
+        <ul>
+          <li>Integral Speaking & Podcasts</li>
+          <li>Software Development</li>
+          <li>Regulated Industry Statistics & Data Technology</li>
+          <!-- <li>Scripted voice acting</li> -->
+          <li>Holistic Coaching</li>
+          <!-- <li class="pedantic">Ecstatic Dance / Yoga Facilitator</li> -->
+          <!-- <li class="pedantic">Holistic Therapy/Coaching/Consulting</li>/ -->
+        </ul>
+        <p>My professional (and beloved non-professional) work inhabits a large variety of contexts, and I would love for this website to provide a unifying focus.
+          I do freelance contract work, temporary work, possibly more, and I offer everything I do as services here.
+        </p> 
+        <!-- <p>          
+          I also do spiritual community things, and I'm a  
+        </p> -->
+        <p class="pedantic">Get in touch for unLimited solutions.</p>
       </div>
       <div v-show="mode==='general'" class="contact-description">We embrace and integrate feedback. 
         Reach out and see what happens. 
@@ -136,37 +154,41 @@ const handleSubmit = async () => {
         
       </div>
       <div v-show="mode==='order'" class="contact-description">
-        <h3 style="text-align: center;">The unThinkMe Store</h3>
-        <p>This is a fun, casual way you can 
-        purchase Stein unLimited products and services, giving $0 to Jeff Bezos and other corporate giants. 
+        <h1 style="text-align: center;">unLimited Store</h1>
+        <h3 style="text-align: center;">The best way to purchase unThinkMe products</h3>
+        <p>Thank you for being here! We feel that you must be very kind and wise. 
+          We aim to deliver a fast, smooth, and soulful commercial experience.
+          Please give us feedback at any time on how we can improve your experience.
         </p>
-        <p style="text-align: center;"><b>~Custom Paperback Pack~<br>
-          unThinkMe's Guide to Integral Theory</b><br>
-          <b>$20 (+ $5 for US shipping)</b></p>
+        <h2 style="text-align:center;">unThinkMe's Guide to Integral Theory (book)</h2>
+        <h2 style="text-align: center;">~Custom Paperback Pack~</h2>
+        <p class="pedantic" style="text-align: center;">
+          <b>$25</b> - Signed copy + full-size Levels sticker + (optional) Truth or Dare challenge + US shipping included
+        </p>
           <div class="flex" style="justify-content: center;" >
           <img src="@/assets/img/bookjacket.jpg" class="product-card" style="border-radius: 2%; margin-right: 5px;" />
           <img src="@/assets/img/sticker-AltitudesLevels-web.jpg" class="product-card" />
         </div>
-          <p class="order-note" style="text-align: center;">
-            Includes signed copy + optional message + bonus Levels sticker.
+        <p>Pick up your copy of the unThinkMe book direct through Venmo and
+          US Postage, with the AWESOME full-size Levels of Consciousness sticker, and a personalized 
+          message from the author. Spice things up with a "Truth or Dare" request for YouTube or your message. 
           </p>
-         
-          <p>Pick up your copy of the unThinkMe book directly from Adam through Venmo and
-            US Postal, with the AWESOME Full-size (3" x 6") Levels of Consciousness sticker, and a personal 
-            message, OR spice things up with a Truth or Dare request. For international orders, shipping rates may be high (we'll check with you), so in that case,
-            you may go with Amazon for shipping, then reach out here to order a sticker and personal request/message.
-          </p>
-          <p><b>Please note: for the first run of orders, there is a delay on the stickers, so the stickers will ship separately as stock arrives. Don't worry when your book arrives 
+          <p class="pedantic"><b>Please note: for the first run of orders, there is a delay on stickers, so they will ship separately as stock arrives. Don't worry when your book arrives 
             without a sticker! We expect them on April 27th.</b>
           </p>
-        <p style="text-align: center;"><b>~Levels of Consciousness stickers~</b><br>
-          <b>Full-size: 3" x 6" - $5 (+ $2 shipping)</b><br>
-          <b>Mini-size: 1.5" x 3" - $3 (+ $2 shipping)</b>
+          <p class="order-note">We regret that for international orders, shipping rates may be high (we'll check with you). In that case,
+        you may go with Amazon for shipping, and still reach out here for a sticker / personal request or message. We apologize for the inconvenience - 
+        the audience is small but very global.
+      </p>
+        <p style="text-align: center;"><b>~Levels of Consciousness - individual stickers~</b><br>
+          <b>Full-size: 3" x 6" - $7</b><br>
+          <b>Mini-size: 1.5" x 3" - $4</b><br>
+          <b>Sticker Pack: 1 Full, 2 Mini - $9</b><br>
+          <span class="order-note">*prices include US shipping</span>
         </p>
         <p>
-          Exclusive Altitudes Levels graphic stickers can be purchased seperately while supplies
-          last. The full-size comes with the custom book pack, but can also be purchased separately. Decals are great for laptops, gear cases, 
-          water bottles, and less common places.
+          Exclusive Altitudes Levels graphic stickers can also be purchased separately while supplies
+          last. Decals are great for laptops, gear cases, water bottles, and less common places.
         </p>
           
         <!-- <p style="text-align: center;"><b>~Holistic Music Lessons (remote)~</b></p> -->
@@ -175,12 +197,9 @@ const handleSubmit = async () => {
         </p> -->
           <!-- <b>$30 / 30min negotiable.</b> -->
         <p><b>No commitment! Reach out if curious.</b></p>
-        <p>This is informal, but totally real - we take your order and satisfaction seriously. This is just a fun way to purchase our products
-          directly from the source. For purchases, we'll send payment request and a response, and upon
-        payment, item should ship within 1 or 2 business days, then please allow standard shipping time.
-        </p>
-        <p>Don't forget to include your truth or dare / message request in the bottom section - or just be sure and mention it before paying!</p>
-
+        <p>We take your order and satisfaction seriously. For purchases, we'll send a response with payment request. Upon
+        payment, item should ship within 1 or 2 business days, then please allow standard shipping time. Don't forget 
+        Truth or Dare / message request in the bottom section - or be sure and mention it before completing your order.</p>
       </div>
       <!-- hidden subject for Formspree -->
       <input type="hidden" name="_subject" :value="computedSubject" />

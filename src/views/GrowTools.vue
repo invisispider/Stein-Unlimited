@@ -2,7 +2,7 @@
 import GrowDashboardMockup from '@/components/GrowTools/GrowDashboardMockup.vue';
 import TestingChart from '@/components/GrowTools/TestingChart.vue';
 import { useSocials } from '@/composables/socials';
-document.title = "Adam Loewen | Regulated Industy Operations";
+document.title = "Adam Loewen | Cannabis Industy Operations";
 const { socials } = useSocials();
 </script>
 <template>
@@ -10,21 +10,23 @@ const { socials } = useSocials();
         <section id="hero" class="gt-section gt-hero">
             <div class="gt-hero-left">
                 <h1 class="gt-heading">Adam Loewen</h1>
-                <p class="gt-tagline">
-                    Google Sheets • Metrc Workflows • Reporting Automation • Custom Utilities
-                </p>
                 <h2 class="gt-subheading">Cannabis Reporting & Workflow Automation</h2>
-                <p class="gt-text">Helping Oregon cannabis operators reduce spreadsheet chaos, automate reporting tasks, and improve operational visibility.</p>
                 <div class="gt-avatar">
                     <img src="@/assets/img/mega-adam-avatar.webp" alt="Adam Loewen avatar">
                 </div>
-                <div style="display: flex;">
+                <p class="gt-text">Helping Oregon operators reduce spreadsheet chaos, automate reporting tasks, and improve operational visibility.
+                    I come equipped with modern software skills and hands-on indstry experience.
+                </p>
+                <div style="display: flex; justify-content: center;">
                     <a class="gt-button-2" href="#solutions">Example Tools</a>
                     <a href="/Contact" class="gt-button">Contact Me</a>
                 </div>
-                <p>
+                <p class="gt-text">
                     View my <a href="https://github.com/invisispider" target="_blank">GitHub projects</a>
-                    , or my <a href="https://www.upwork.com/freelancers/~01527a09cdcfd75500" target="_blank" >Upwork Freelancer Profile</a>
+                    , or <a href="https://www.upwork.com/freelancers/~01527a09cdcfd75500" target="_blank" >Upwork Freelancer Profile</a>
+                </p>
+                <p class="gt-tagline">
+                    Google Sheets • Metrc Workflows • Reporting Automation • Custom Utilities
                 </p>
             </div>
 
@@ -35,25 +37,40 @@ const { socials } = useSocials();
             </div>            
 
         </section>
-        <section id="solutions" class="gt-section">
-            <h2>Common operational problems I solve</h2>
-
-            <TestingChart />
-
-       
-            <p>Cannabis teams have <b class="text-slate">NO TIME</b> for repetitive work in 
-                <span class="text-slate"><b>spreadsheets, databases,</b> and <b>web exports.</b></span>
+        <section id="clients" class="gt-section">
+            <h2>Built for teams who think structurally</h2>
+            <p class="gt-tagline">
+                If your operations overview is split between spreadsheets, PDFs, and Metrc exports —
+                this is for you. Do any of these sound familiar?
             </p>
+            <ul>
+                <li>Repetitive manual copy/paste tasks</li>
+                <li>Inflexible lab COAs and app exports</li>
+                <li>Multiple "sources of truth"</li>
+                <li>Faking numbers to resolve discrepancies</li>
+                <li>Emergency late night inventory audits</li>
+            </ul>
+            <p class="gt-text">Most producers care about their products deeply, but they figure out their data systems as they go. They sometimes 
+            miss out on time, money, and stress-saving best practices that other players already take advantage of.
+            </p>
+            <p class="gt-text">We want software that scales, software that shows the business information at a glance, 
+                that says exactly what the status of everything is, that suggests ways we can improve. Pull up your yields,
+                top figures, averages, and alerts. Compare the realtime performance of strains, procedures, or partners.
+            </p>
+        </section>
+        <section id="solutions" class="gt-section">
+            <h2>Problems and Solutions</h2>
 
             <div class="gt-card-container">
 
                 <div class="gt-card">
                 <header>Messy spreadsheets → structured systems</header>
-                <p>Clean and standardize cultivation and inventory tracking systems built in Sheets or Excel.</p>
+                <p>Clean and standardize cultivation inventory tracking in Sheets or Excel.</p>
                 <ul>
-                    <li>duplicate cleanup</li>
-                    <li>standard templates</li>
-                    <li>inventory restructuring</li>
+                    <li>clean up errors, formulas, and duplicates</li>
+                    <li>Apps Script to import and compare reports</li>
+                    <li>automated template generation</li>
+                    <li>future-proof data design</li>
                 </ul>
                 </div>
 
@@ -61,9 +78,10 @@ const { socials } = useSocials();
                 <header>Operations → dashboards</header>
                 <p>Turn fragmented operational data into clear KPIs and visual dashboards.</p>
                 <ul>
-                    <li>yield tracking</li>
-                    <li>production trends</li>
-                    <li>inventory visibility</li>
+                    <li>track yields, trends, and inventory</li>
+                    <li>increase data visibility and efficiency</li>
+                    <li>custom aggregate and summary stats</li>
+                    <li>integrate BI, Charts, Tableau, JS, Python</li>
                 </ul>
                 </div>
 
@@ -79,40 +97,33 @@ const { socials } = useSocials();
 
                 <div class="gt-card">
                 <header>Manual workflows → automation</header>
-                <p>Automate repetitive reporting, syncing, and spreadsheet workflows using Apps Script and lightweight tooling.</p>
+                <p>Automate repetitive updating and syncing, using Apps Script and lightweight tooling.</p>
                 <ul>
-                    <li>scheduled reports</li>
-                    <li>email summaries</li>
-                    <li>workflow automation</li>
+                    <li>email lab result summaries</li>
+                    <li>automated Metrc report updates</li>
+                    <li>spreadsheet reset/duplication</li>
                 </ul>
                 </div>
 
                 <div class="gt-card">
-                <header>Field entry → mobile capture</header>
-                <p>Simple mobile tools connected directly to spreadsheets for real-time operational updates.</p>
+                <header>Sticky laptop → mobile capture</header>
+                <p>Browser-based UIs enable onsite mobile users to update source data in real-time.</p>
                 <ul>
+                    <li>QA and compliance logging</li>
+                    <li>clone propagation</li>
                     <li>harvest entry</li>
-                    <li>QA logging</li>
-                    <li>inventory updates</li>
+                    <li>waste disposal</li>
                 </ul>
                 </div>
 
             </div>
-        </section>
-        <section id="clients" class="gt-section">
-            <h2>Built for teams buried in spreadsheets</h2>
+            <TestingChart />
 
-            <p>
-                If your operations live in Excel, Google Sheets, PDFs, or Metrc exports —
-                this is for you.
+       
+            <p>Cannabis teams have <b class="text-slate">NO TIME</b> for repetitive work in 
+                <span class="text-slate"><b>spreadsheets, databases,</b> and <b>web exports.</b></span>
             </p>
 
-            <ul>
-                <li>Growers tracking inventory across multiple sheets</li>
-                <li>Labs manually processing COAs and test results</li>
-                <li>Operators reconciling Metrc vs reality</li>
-                <li>Teams losing time to copy/paste reporting work</li>
-            </ul>
         </section>
         <section class="gt-section">
             <h2>How it works</h2>
@@ -200,9 +211,10 @@ $soft-off-white: #FAF9F6
 .gt-subheading
     color: $muted-green
     font-size: clamp(1.3rem, 2vw, 2rem)
-    margin-top: 1rem
     font-weight: 500
-.gt-tagline, p, li, h3
+.gt-tagline
+    color: $slate
+p, li, h3
     color: $charcoal
 // .gt-dashboard
 
@@ -240,7 +252,7 @@ $soft-off-white: #FAF9F6
     margin-bottom: 2em
 .gt-text
     align-self: center
-    max-width: 50ch
+    // max-width: 50ch
     font-size: 1.05rem
     line-height: 1.7
 .gt-button, .gt-button-2
@@ -269,7 +281,10 @@ $soft-off-white: #FAF9F6
     @media screen and (max-width: 900px)
         grid-template-columns: 1fr
 .gt-hero-left
+    align-self: flex-start
     border: 1px solid $soft-off-white
+    .gt-button
+        justify-self: center
 .gt-socials
     display: inline-flex
     *

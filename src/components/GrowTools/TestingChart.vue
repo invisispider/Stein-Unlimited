@@ -75,14 +75,16 @@ const chartOptions: ApexOptions = {
         />
     </div>
       <table>
-        <tr>
-          <th>Test</th>
-          <th>Value</th>
-        </tr>
-        <tr v-for="row in csvData" :key="row.name">
-          <td>{{ row.name }}</td>
-          <td>{{ row.value }}%</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Test</th>
+            <th>Value</th>
+          </tr>
+          <tr v-for="row in csvData" :key="row.name">
+            <td>{{ row.name }}</td>
+            <td>{{ row.value }}%</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 

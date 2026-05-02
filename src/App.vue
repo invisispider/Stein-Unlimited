@@ -7,6 +7,7 @@ import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import StyleSelector from "@/components/StyleSelector.vue";
 import { useStore } from '@/stores/index';
 import { toggleSidebar, collapsed } from "@/components/Sidebar/state";
+import { useRoute } from 'vue-router';
 
 const store = useStore();
 
@@ -16,7 +17,7 @@ const toggleSidebarNow = () => {
         toggleSidebar()
     }
 }
-
+const route = useRoute();
 const isLoading = ref(true);
 const toggleLoading = ()=> isLoading.value = !isLoading.value
 onMounted(() => {
@@ -28,15 +29,13 @@ onMounted(() => {
         :class="[store.styleMode]"
         data-testid="app-wrapper"    
     >
-    <!-- <template> -->
-        <Sidebar />
-        <StyleSelector />
-        <router-view v-slot="{ Component }">
-            <transition name="slideUpPop" mode="out-in" appear>
-                <LoadingComponent v-if="isLoading" />
-                <component :is="Component" v-else @click="toggleSidebarNow" />
-            </transition>
-        </router-view>
-        <!-- </template> -->
+    <Sidebar  v-show="!route.meta.hideSidebar" />
+    <StyleSelector v-show="!route.meta.hideStyleSelector" />
+    <router-view v-slot="{ Component }">
+        <transition name="slideUpPop" mode="out-in" appear>
+            <LoadingComponent v-if="isLoading" />
+            <component :is="Component" v-else @click="toggleSidebarNow" />
+        </transition>
+    </router-view>
     </div>
 </template>

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useStore } from "@/stores/index";
-import { getAuthInstance, getFirestoreInstance } from "@/services/firebaseconfig";
-const auth = getAuthInstance();
-const firestoreDb = getFirestoreInstance();
+import { auth, db } from "@/services/firebase";
 import {
   signInWithEmailAndPassword,
   sendSignInLinkToEmail,
@@ -12,8 +10,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
-// browserLocalPersistence,
-// setPersistence,
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 // import UserDashboard from "./UserDashboard.vue";
 // import { user } from "firebase-functions/v1/auth";
@@ -129,7 +125,7 @@ const startGoogleLogin = async () => {
 };
 
 async function ensureUserProfile(user: User): Promise<void> {
-  const docRef = doc(firestoreDb, 'users', user.uid);
+  const docRef = doc(db, 'users', user.uid);
   const docSnap = await getDoc(docRef);
 
   if (!docSnap.exists()) {

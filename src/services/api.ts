@@ -1,13 +1,12 @@
 import axios from 'axios';
 import { getDocs, collection } from '@firebase/firestore'
-import { getFirestoreInstance } from '@/services/firebaseconfig';
-const firestoreDb = getFirestoreInstance();
+import { db } from '@/services/firebase';
 const API_BASE_URL = 'https://us-central1-stein-unlimited.cloudfunctions.net';
 
 
 // Admin Use
 export async function getAllUsers() {
-  const usersSnapshot = await getDocs(collection(firestoreDb, 'users'));
+  const usersSnapshot = await getDocs(collection(db, 'users'));
   return usersSnapshot.docs.map(doc => {
     const data = doc.data();
     return {

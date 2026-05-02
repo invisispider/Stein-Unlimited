@@ -1,13 +1,11 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { getAuthInstance, getFirestoreInstance } from "@/services/firebaseconfig";
+import { auth, db } from "@/services/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 import { defineStore } from "pinia";
 import type { RootState } from "@/models/states.model";
 import { getUser, updateUser } from '@/services/api';
 import debounce from "lodash/debounce";
-const auth = getAuthInstance();
-const firestoreDb = getFirestoreInstance();
 // console.log("pinia rendered");
 
 export type StyleName = "struggles"|"flowers"|"elders"|"vivid"|"peace"|"harvests"|"hallows"|"feasts"
@@ -54,7 +52,7 @@ export const useStore = defineStore("main", {
           try {
             if (user) {
               this.setUser(user);
-              const docRef = doc(firestoreDb, "users", user.uid);
+              const docRef = doc(db, "users", user.uid);
               const docSnap = await getDoc(docRef);
               if (docSnap.exists()) {
                 const docData = docSnap.data();

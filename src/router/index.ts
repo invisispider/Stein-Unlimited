@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
-import { getAuthInstance } from "@/services/firebaseconfig";
+import { auth } from "@/services/firebase";
 import { useStore } from "@/stores/index";
 import { signOut } from "@firebase/auth";
 
@@ -23,7 +23,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "Logout",
     component: LogoutComponent,
     beforeEnter: async () => {
-      const auth = getAuthInstance();
       await signOut(auth);
       const store = useStore();
       store.logout();
@@ -88,6 +87,15 @@ const routes: Array<RouteRecordRaw> = [
     path: "/Next",
     name: "Next",
     component: () => import("@/views/Next.vue"),
+  },
+  {
+    path: "/GrowTools",
+    name: "GrowTools",
+    component: () => import("@/views/GrowTools.vue"),
+    meta: {
+      hideSidebar: true,
+      hideStyleSelector: true,
+    },
   },
   {
     path: "/Crossword",

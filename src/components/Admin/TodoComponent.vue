@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onUnmounted } from "vue";
-import { getFirestoreInstance } from "@/services/firebaseconfig.ts";
+import { db } from "@/services/firebase";
 // import { useStore } from "@/stores/index.ts";
-const firestoreDb = getFirestoreInstance();
+
 import {
   collection,
   query,
@@ -16,7 +16,7 @@ import {
 // const store = useStore();
 const newTodo = ref("");
 const Todos = ref([]);
-const colRef = collection(firestoreDb, "todo_collection");
+const colRef = collection(db, "todo_collection");
 const listName = ref("");
 const q = query(colRef, orderBy("createdAt"));
 // real time collection data
@@ -52,7 +52,7 @@ const addTodo = () => {
   newTodo.value = "";
 };
 const removeTodo = (id) => {
-  const docRef = doc(firestoreDb, "todo_collection", id);
+  const docRef = doc(db, "todo_collection", id);
   deleteDoc(docRef);
 };
 onUnmounted(() => {

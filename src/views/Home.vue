@@ -20,11 +20,11 @@ const { socials } = useSocials();
       <Beacon class="margin-bottom" />
       <div class="padding-bottom margin-bottom">
         <h1> 
-          <RouterLink to="/Technomancy">Technomancy
+          <RouterLink to="/GrowTools">GrowTools
           </RouterLink>
         </h1>
-        <p><RouterLink to="/Technomancy" class="padding-bottom margin-bottom" style="text-align: center;">Professional holistic software engineering 
-        and data analytics.
+        <p><RouterLink to="/GrowTools" class="padding-bottom margin-bottom" style="text-align: center;">Professional holistic software engineering 
+        and data analytics in heavily-regulated industry.
         </RouterLink></p>
       </div>
     </div>

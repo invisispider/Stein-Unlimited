@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useStore } from '@/stores/index'
-import { getFirestoreInstance, fireFunctions } from '@/services/firebaseconfig';
+import { db, fireFunctions } from '@/services/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore'
 import { httpsCallable } from 'firebase/functions';
 
 const submitMessage= httpsCallable(fireFunctions, 'submitMessage');
 
-const db = getFirestoreInstance();
+const db = db();
 
 const text = ref('')
 const store = useStore()

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import { getFirestoreInstance } from '@/services/firebaseconfig';
+import { db } from '@/services/firebase';
 import { collection, query, orderBy, onSnapshot, limit } from 'firebase/firestore';
 
 import type { Timestamp } from 'firebase/firestore';
 
-const firestoreDb = getFirestoreInstance();
+const firestoreDb = db();
 
 interface Message {
   uid: string;

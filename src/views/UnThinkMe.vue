@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import { getFirestoreInstance } from "@/services/firebaseconfig";
+import { db } from "@/services/firebase";
 import UtmBlogArticle from "@/components/UtmBlogArticle.vue";
 import { collection, query, orderBy, getDocs, 
   type DocumentData, limit, startAfter, 
@@ -11,7 +11,7 @@ import LoadingComponent from '@/components/LoadingComponent.vue';
 import BookHero from '@/components/BookHero.vue';
 document.title = "unThinkMe on YouTube ~ Stein unLimited";
 
-const firestoreDb = getFirestoreInstance();
+const firestoreDb = db();
 
 const classicVideos = ref(false);
 const toggleClassic = () => classicVideos.value = !classicVideos.value

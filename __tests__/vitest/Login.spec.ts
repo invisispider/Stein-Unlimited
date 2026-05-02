@@ -4,7 +4,7 @@ import { createTestingPinia } from '@pinia/testing';
 import Login from '@/components/Login.vue';
 import { useStore } from '@/stores';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { getAuthInstance } from '@/services/firebaseconfig';
+import { auth } from '@/services/firebase';
 
 interface MockStore {
   setUser: Mock;
@@ -20,7 +20,7 @@ vi.mock('firebase/auth', async () => {
   const actual = await vi.importActual<typeof import('firebase/auth')>('firebase/auth')
   return {
     ...actual,
-    getAuthInstance: vi.fn(() => ({}),),
+    auth: vi.fn(() => ({}),),
     signInWithEmailAndPassword: vi.fn(() => Promise.resolve({
         user: { uis: '123', email: 'test@example.com' }
     })),
@@ -52,7 +52,6 @@ vi.mock('firebase/firestore', async () => {
   })
   
 test('should initialize Firebase Auth correctly', () => {
-  const auth = getAuthInstance()
   expect(auth).toBeTruthy()
 })
 

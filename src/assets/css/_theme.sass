@@ -22,11 +22,14 @@ $habit-colors: (
 @mixin style-icons($name, $color)
     $icon-color: color.scale($color, $saturation: -30%, $lightness: -10%)
     $lightness: color.channel($color, "lightness", $space: hsl)
-    $bg-color: if(
-        $lightness > 60%,
-        color.scale($icon-color, $lightness: -45%, $saturation: -80%),
-        color.scale($icon-color, $lightness: 45%, $saturation: -80%)
-    )  
+    // $bg-color: if(
+    //     $lightness > 60%,
+    //     color.scale($icon-color, $lightness: -45%, $saturation: -80%),
+    //     color.scale($icon-color, $lightness: 45%, $saturation: -80%)
+    // )  
+    $bg-lightness: color.channel($icon-color, "lightness", $space: hsl)
+
+    $bg-color: if(sass($bg-lightness > 60%): color.scale($icon-color, $lightness: -45%, $saturation: -80%); else: color.scale($icon-color, $lightness: 45%, $saturation: -80%))
     ##{$name}
         color: $icon-color
         background-color: $bg-color
@@ -64,8 +67,8 @@ $theme-image-props: (
         .theme-image
             $props: map.get($theme-image-props, $theme-name)
             $hue: map.get($props, hue)
-            $saturate: if(map.has-key($props, saturate), map.get($props, saturate), 100%)
-            $brightness: if(map.has-key($props, brightness), map.get($props, brightness), 100%)
+            $saturate: if(sass(map.has-key($props, saturate)): map.get($props, saturate); else: 100%)
+            $brightness: if(sass(map.has-key($props, brightness)): map.get($props, brightness); else: 100%)
             @include color-filter($hue, $saturate, $brightness)
 
         #loading

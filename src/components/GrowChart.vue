@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import VueApexCharts from "vue3-apexcharts"
+import type { ApexOptions } from "apexcharts"
 
 const series = [
   {
@@ -8,7 +9,7 @@ const series = [
   },
 ]
 
-const chartOptions = {
+const chartOptions: ApexOptions = {
   chart: {
     toolbar: {
       show: false,

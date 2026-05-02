@@ -18,22 +18,27 @@
 
       <!-- CHART -->
       <div class="panel chart-panel">
-        <div class="panel-title">Weekly Yield Trend</div>
+        
+        <GrowChart />
 
-        <div class="chart">
-          <div
-            v-for="(bar, i) in chartData"
-            :key="i"
-            class="bar"
-            :style="{ height: bar + '%' }"
-          />
-        </div>
+        <!-- CHART -->
+        <div class="panel chart-panel">
+            <div class="panel-title">Weekly Yield Trend</div>
 
-        <div class="chart-caption">
-          Simulated production output (lbs)
+            <div class="chart">
+            <div
+                v-for="(bar, i) in chartData"
+                :key="i"
+                class="bar"
+                :style="{ height: bar + '%' }"
+            />
+            </div>
+
+            <div class="chart-caption">
+            Simulated production output (lbs)
+            </div>
         </div>
       </div>
-      <GrowChart />
       <!-- ALERTS -->
       <div class="panel alert-panel">
         <div class="panel-title">System Alerts</div>

@@ -37,7 +37,78 @@ const { socials } = useSocials();
                 </ul> -->
             </div>            
         </section>
-        <section id="tools" class="gt-section">
+        <section id="solutions" class="gt-section">
+            <h2>Common operational problems I solve</h2>
+
+            <p>
+                Most cannabis teams aren’t looking for “software systems” — they’re trying to eliminate repetitive work inside spreadsheets, PDFs, and Metrc exports.
+            </p>
+
+            <div class="gt-card-container">
+
+                <div class="gt-card">
+                <header>Lab reports → usable data</header>
+                <p>Convert PDF COAs and lab reports into structured spreadsheets and searchable datasets.</p>
+                <ul>
+                    <li>COA extraction</li>
+                    <li>bulk report processing</li>
+                    <li>CSV normalization</li>
+                </ul>
+                </div>
+
+                <div class="gt-card">
+                <header>Messy spreadsheets → structured systems</header>
+                <p>Clean and standardize cultivation and inventory tracking systems built in Sheets or Excel.</p>
+                <ul>
+                    <li>duplicate cleanup</li>
+                    <li>standard templates</li>
+                    <li>inventory restructuring</li>
+                </ul>
+                </div>
+
+                <div class="gt-card">
+                <header>Operations → dashboards</header>
+                <p>Turn fragmented operational data into clear KPIs and visual dashboards.</p>
+                <ul>
+                    <li>yield tracking</li>
+                    <li>production trends</li>
+                    <li>inventory visibility</li>
+                </ul>
+                </div>
+
+                <div class="gt-card">
+                <header>Metrc → reality alignment</header>
+                <p>Reconcile Metrc data with real-world inventory and flag inconsistencies before they become problems.</p>
+                <ul>
+                    <li>validation checks</li>
+                    <li>reconciliation tools</li>
+                    <li>discrepancy detection</li>
+                </ul>
+                </div>
+
+                <div class="gt-card">
+                <header>Manual workflows → automation</header>
+                <p>Automate repetitive reporting, syncing, and spreadsheet workflows using Apps Script and lightweight tooling.</p>
+                <ul>
+                    <li>scheduled reports</li>
+                    <li>email summaries</li>
+                    <li>workflow automation</li>
+                </ul>
+                </div>
+
+                <div class="gt-card">
+                <header>Field entry → mobile capture</header>
+                <p>Simple mobile tools connected directly to spreadsheets for real-time operational updates.</p>
+                <ul>
+                    <li>harvest entry</li>
+                    <li>QA logging</li>
+                    <li>inventory updates</li>
+                </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- <section id="tools" class="gt-section">
             <h2>Services</h2>
             <p>Focused operational tooling for cannabis businesses 
                 using spreadsheets, Metrc exports, PDFs, and reporting workflows.</p>
@@ -117,8 +188,8 @@ const { socials } = useSocials();
                     <p>Suggested visual: mobile mockup.</p>
                 </div>
             </div>
-        </section>
-        <section id="examples" class="gt-section">
+        </section> -->
+        <!-- <section id="examples" class="gt-section">
             <h2>Example Tools</h2>
             <div class="gt-tools">
                 <div class="gt-tool">
@@ -175,16 +246,16 @@ const { socials } = useSocials();
                         adding many automations and quality-of-life upgrades.
                     </p>
 
-                </div>
+                </div> -->
                 <!-- <p>Each should include:</p> -->
                 <!-- <ul>
                     <li>screenshot</li>
                     <li>1 sentence outcome</li>
                     <li>optionally GitHub/demo link</li>
                 </ul> -->
-            </div>
-        </section>
-        <section id="clients" class="gt-section">
+            <!-- </div>
+        </section> -->
+        <!-- <section id="clients" class="gt-section">
             <h2>Who This Is For</h2>
             <p>✅ Small cannabis operations using spreadsheets and manual workflows</p>
             <ul>
@@ -193,8 +264,23 @@ const { socials } = useSocials();
                 <li>Processors</li>
                 <li>Dispensaries</li>
             </ul>
+        </section> -->
+        <section id="clients" class="gt-section">
+            <h2>Built for teams buried in spreadsheets</h2>
+
+            <p>
+                If your operations live in Excel, Google Sheets, PDFs, or Metrc exports —
+                this is for you.
+            </p>
+
+            <ul>
+                <li>Growers tracking inventory across multiple sheets</li>
+                <li>Labs manually processing COAs and test results</li>
+                <li>Operators reconciling Metrc vs reality</li>
+                <li>Teams losing time to copy/paste reporting work</li>
+            </ul>
         </section>
-        <section id="process" class="gt-section">
+        <!-- <section id="process" class="gt-section">
             <h2>Process</h2>
             <p>1. Review Current Workflow</p>
             <p>Understand the reporting or operational bottleneck.</p>
@@ -202,6 +288,52 @@ const { socials } = useSocials();
             <p>Create an automation, dashboard, cleanup process, or reporting tool.</p>
             <p>3. Save Time & Reduce Friction</p>
             <p>Reduce repetitive work and improve visibility.</p>
+        </section> -->
+        <section class="gt-section">
+            <h2>Example: Lab report → usable data</h2>
+
+            <div class="gt-before-after">
+                <div>
+                <h3>Before</h3>
+                <ul>
+                    <li>PDF COA reports</li>
+                    <li>Manual data entry</li>
+                    <li>Hard to search or compare results</li>
+                </ul>
+                </div>
+
+                <div>
+                <h3>After</h3>
+                <ul>
+                    <li>Structured CSV / spreadsheet</li>
+                    <li>Searchable test data</li>
+                    <li>Ready for dashboards or compliance tracking</li>
+                </ul>
+                </div>
+            </div>
+
+            <p>
+                This is typical of the kinds of operational cleanup tools I build.
+            </p>
+        </section>
+        <section class="gt-section">
+            <h2>How it works</h2>
+
+            <p>
+                You send me a real workflow, spreadsheet, or report.
+                I turn it into something that runs cleaner, faster, or automatically.
+            </p>
+
+            <ul>
+                <li>Remove manual copy/paste work</li>
+                <li>Standardize messy data</li>
+                <li>Automate repetitive reporting</li>
+                <li>Connect tools that don’t currently talk to each other</li>
+            </ul>
+
+            <p>
+                Most fixes take the form of lightweight scripts, dashboards, or data pipelines.
+            </p>
         </section>
         <section id="cta" class="gt-footer">    
             <h2>Get in Touch</h2>

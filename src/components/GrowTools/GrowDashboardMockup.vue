@@ -90,7 +90,7 @@
 </template>
 
 <script setup lang="ts">
-import GrowChart from '@/components/GrowChart.vue';
+import GrowChart from '@/components/GrowTools/GrowChart.vue';
 
 const kpis = [
   { label: 'Active Packages', value: '2,481', trend: '+4.2%' },

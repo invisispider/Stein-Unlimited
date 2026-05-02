@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import GrowDashboardMockup from '@/components/GrowDashboardMockup.vue';
+import GrowDashboardMockup from '@/components/GrowTools/GrowDashboardMockup.vue';
+import TestingChart from '@/components/GrowTools/TestingChart.vue';
 import { useSocials } from '@/composables/socials';
 document.title = "Adam Loewen | Regulated Industy Operations";
 const { socials } = useSocials();
@@ -13,48 +14,38 @@ const { socials } = useSocials();
                     Google Sheets • Metrc Workflows • Reporting Automation • Custom Utilities
                 </p>
                 <h2 class="gt-subheading">Cannabis Reporting & Workflow Automation</h2>
-                <!-- <h4>Independent automation and reporting tools for growers, processors, labs, and dispensaries.</h4> -->
                 <p class="gt-text">Helping Oregon cannabis operators reduce spreadsheet chaos, automate reporting tasks, and improve operational visibility.</p>
-                <!-- <RouterLink class="gt-button" to="/Contact">
-                    Tell Me About Your Workflow 
-                </RouterLink> -->
                 <div class="gt-avatar">
                     <img src="@/assets/img/mega-adam-avatar.webp" alt="Adam Loewen avatar">
                 </div>
                 <div style="display: flex;">
-                    <a class="gt-button-2" href="tools">Example Tools</a>
+                    <a class="gt-button-2" href="#solutions">Example Tools</a>
                     <a href="/Contact" class="gt-button">Contact Me</a>
                 </div>
-                    <!-- <p>GitHub links, Short Loom/screen recordings</p> -->
+                <p>
+                    View my <a href="https://github.com/invisispider" target="_blank">GitHub projects</a>
+                    , or my <a href="https://www.upwork.com/freelancers/~01527a09cdcfd75500" target="_blank" >Upwork Freelancer Profile</a>
+                </p>
             </div>
+
             <div style="margin: auto;" class="gt-hero-right">
+
                 <GrowDashboardMockup />
-                <!-- <ul>
-                    <li>inventory chart</li>
-                    <li>spreadsheet preview</li>
-                    <li>KPI cards</li>
-                    <li>reconciliation warnings</li>
-                </ul> -->
+
             </div>            
+
         </section>
         <section id="solutions" class="gt-section">
             <h2>Common operational problems I solve</h2>
 
-            <p>
-                Most cannabis teams aren’t looking for “software systems” — they’re trying to eliminate repetitive work inside spreadsheets, PDFs, and Metrc exports.
+            <TestingChart />
+
+       
+            <p>Cannabis teams have <b class="text-slate">NO TIME</b> for repetitive work in 
+                <span class="text-slate"><b>spreadsheets, databases,</b> and <b>web exports.</b></span>
             </p>
 
             <div class="gt-card-container">
-
-                <div class="gt-card">
-                <header>Lab reports → usable data</header>
-                <p>Convert PDF COAs and lab reports into structured spreadsheets and searchable datasets.</p>
-                <ul>
-                    <li>COA extraction</li>
-                    <li>bulk report processing</li>
-                    <li>CSV normalization</li>
-                </ul>
-                </div>
 
                 <div class="gt-card">
                 <header>Messy spreadsheets → structured systems</header>
@@ -108,163 +99,6 @@ const { socials } = useSocials();
 
             </div>
         </section>
-        <!-- <section id="tools" class="gt-section">
-            <h2>Services</h2>
-            <p>Focused operational tooling for cannabis businesses 
-                using spreadsheets, Metrc exports, PDFs, and reporting workflows.</p>
-            <div class="gt-card-container">
-                <div class="gt-card">
-                    <header>Lab Data Conversion</header>
-                    <h3></h3>
-                Convert PDF lab reports into clean spreadsheets, CSVs, and searchable datasets.
-                    <p></p>
-                Potential examples:
-                    <ul>
-                        <li>COA extraction</li>
-                        <li>bulk report processing</li>
-                        <li>CSV normalization</li>
-                        <li>automated reporting pipelines</li>
-                    </ul>
-                    <p>Suggested visual: PDF → Table transformation graphic.</p>
-                </div>            
-                <div class="gt-card">
-                    <header>Spreadsheet Cleanup & Standardization</header>
-                    <h3>Fix messy cultivation spreadsheets, standardize inventory tracking, and improve reporting reliability.</h3>
-                    <p>Potential examples:</p>
-                    <ul>
-                        <li>duplicate cleanup</li>
-                        <li>inventory structure</li>
-                        <li>standard templates</li>
-                        <li>reporting consistency</li>
-                    </ul>
-                    <p>Suggested visual: before/after spreadsheet comparison.</p>
-                </div>
-                <div class="gt-card">
-                    <header>Dashboards & Operational Visibility</header>
-                    <h3>Inventory summaries, production metrics, KPI dashboards, and operational reporting tailored to your workflow.</h3>
-                    <p>Potential examples:</p>
-                    <ul>
-                        <li>yield tracking</li>
-                        <li>production trends</li>
-                        <li>inventory snapshots</li>
-                        <li>mobile-friendly dashboards</li>
-                    </ul>
-                    <p>Suggested visual: dashboard KPI cards.</p>
-                </div>
-                <div class="gt-card">
-                    <header>Metrc Validation & Reconciliation</header>
-                    <h3>Catch formatting issues, mismatches, and reporting errors before they become operational problems.</h3>
-                    <p>Potential examples:</p>
-                    <ul>
-                        <li>inventory reconciliation</li>
-                        <li>package validation</li>
-                        <li>import formatting</li>
-                        <li>discrepancy checks</li>
-                    </ul>
-                    <p>Suggested visual: warning/errors panel.</p>                
-                </div>
-                <div class="gt-card">
-                    <header>Google Sheets Automation</header>
-                    <h3>Apps Scripts, scheduled reports, automated notifications, exports, and workflow integrations.</h3>
-                    <p>Potential examples:</p>
-                    <ul>
-                        <li>email summaries</li>
-                        <li>scheduled syncs</li>
-                        <li>triggered workflows</li>
-                        <li>reporting automation</li>
-                    </ul>
-                    <p>Suggested visual: automation flow diagram.</p>
-                </div>
-                <div class="gt-card">
-                    <header>Mobile Data Entry Tools</header>
-                    <h3>Simple mobile-friendly interfaces connected directly to operational spreadsheets and reporting systems.</h3>
-                    <p>Potential examples:</p>
-                    <ul>
-                        <li>harvest entry</li>
-                        <li>inventory updates</li>
-                        <li>QA tracking</li>
-                        <li>field logging</li>
-                    </ul>
-                    <p>Suggested visual: mobile mockup.</p>
-                </div>
-            </div>
-        </section> -->
-        <!-- <section id="examples" class="gt-section">
-            <h2>Example Tools</h2>
-            <div class="gt-tools">
-                <div class="gt-tool">
-                    <h3>Test Results to Spreadsheets</h3>
-                    <p>Testing labs often put out PDF reports where it's difficult to simply "grab what you want"
-                        and bring it into your own inventory tracking system.
-                    </p>
-                    <p>I work with labs and other licensees to connect systems for seamless and automated 
-                        test reporting.
-                    </p>
-                </div>
-                <div class="gt-tool">
-                    <h3>Metrc Automation</h3>
-                    <p>With or without an API key, I know of many ways to automate Metrc reporting, data 
-                        reconciliation, and client log-in.
-                    </p>
-                    <p>Instead of being another data layer, we make your system work directly, and play 
-                        nicely, with state regulatory tracking.
-                    </p>
-                </div>
-                <div class="gt-tool">
-                    <h3>Reporting Dashboard</h3>
-                    <p>I can take your existing, proprietary data system (often spreadsheets) and use it to 
-                        power real-time visual reporting in a single-source dashboard.
-                    </p>
-                    <p>See visual comparisons of your strains, their potency, productivity, and hardiness - the 
-                        oft-neglected cultivation KPI figures can drive decisions that set your brand apart.
-                    </p>
-                </div>
-                <div class="gt-tool">
-                    <h3>Compliance Validation</h3>
-                    <p>Small human errors can lead to major fines. I can install Apps Scripts and validation to your 
-                        existing system to check your numbers against Metrc and other data sources.
-                    </p>
-                    <p>Being "fully compliant" ultimately means that your Metrc account perfectly reflects your 
-                        facility reality on the ground. I can get us considerably closer.
-                    </p>
-                </div>
-                <div class="gt-tool">
-                    <h3>Metrc Recovery</h3>
-                    <p>Lots of things can go wrong as you scale up - oops, every single entry with a 
-                        mispelling has to be re-entered. 
-                    </p>
-                    <p>I can help you to recover from these issues, 
-                        and also to design future-proof systems that scale with you.
-                    </p>
-                </div>
-                <div class="gt-tool">
-                    <h3>Yield Tracking</h3>
-                    <p>Everyone has their own system. I don't want to change your system. I want 
-                        to help your system work, no matter what happens.
-                    </p>
-                    <p>I can consult with you on the best ways to track and check your inventory, 
-                        adding many automations and quality-of-life upgrades.
-                    </p>
-
-                </div> -->
-                <!-- <p>Each should include:</p> -->
-                <!-- <ul>
-                    <li>screenshot</li>
-                    <li>1 sentence outcome</li>
-                    <li>optionally GitHub/demo link</li>
-                </ul> -->
-            <!-- </div>
-        </section> -->
-        <!-- <section id="clients" class="gt-section">
-            <h2>Who This Is For</h2>
-            <p>✅ Small cannabis operations using spreadsheets and manual workflows</p>
-            <ul>
-                <li>Growers</li>
-                <li>Extraction Labs</li>
-                <li>Processors</li>
-                <li>Dispensaries</li>
-            </ul>
-        </section> -->
         <section id="clients" class="gt-section">
             <h2>Built for teams buried in spreadsheets</h2>
 
@@ -279,42 +113,6 @@ const { socials } = useSocials();
                 <li>Operators reconciling Metrc vs reality</li>
                 <li>Teams losing time to copy/paste reporting work</li>
             </ul>
-        </section>
-        <!-- <section id="process" class="gt-section">
-            <h2>Process</h2>
-            <p>1. Review Current Workflow</p>
-            <p>Understand the reporting or operational bottleneck.</p>
-            <p>2. Build Lightweight Solution</p>
-            <p>Create an automation, dashboard, cleanup process, or reporting tool.</p>
-            <p>3. Save Time & Reduce Friction</p>
-            <p>Reduce repetitive work and improve visibility.</p>
-        </section> -->
-        <section class="gt-section">
-            <h2>Example: Lab report → usable data</h2>
-
-            <div class="gt-before-after">
-                <div>
-                <h3>Before</h3>
-                <ul>
-                    <li>PDF COA reports</li>
-                    <li>Manual data entry</li>
-                    <li>Hard to search or compare results</li>
-                </ul>
-                </div>
-
-                <div>
-                <h3>After</h3>
-                <ul>
-                    <li>Structured CSV / spreadsheet</li>
-                    <li>Searchable test data</li>
-                    <li>Ready for dashboards or compliance tracking</li>
-                </ul>
-                </div>
-            </div>
-
-            <p>
-                This is typical of the kinds of operational cleanup tools I build.
-            </p>
         </section>
         <section class="gt-section">
             <h2>How it works</h2>
@@ -372,9 +170,11 @@ const { socials } = useSocials();
 <style lang="sass" scoped>
 @use "sass:color"
 $charcoal: #36454F
-$slate: #708090
+$slate: DarkSlateBlue
 $muted-green: #6e7864
 $soft-off-white: #FAF9F6
+.text-slate
+    color: $slate
 .gt-container
     background-color: $soft-off-white
     color: $charcoal
@@ -475,7 +275,19 @@ $soft-off-white: #FAF9F6
     *
         margin-inline: 1em
         max-width: 3em
+
+@mixin sepia-filter($intensity: 5%)
+  -webkit-filter: sepia($intensity)
+  filter: sepia($intensity)         
+
+.gt-avatar > img
+  @include sepia-filter(26%)
+  transition: filter 0.3s ease
+  &:hover
+    @include sepia-filter(0%)
+
 .gt-avatar
+    box-shadow: 0 0 15px $charcoal
     width: 170px
     height: 170px
     border-radius: 50%
@@ -502,4 +314,5 @@ $soft-off-white: #FAF9F6
         padding: 0.5em 1em
         border-radius: 0.3em
         box-shadow: 0 0 5px $charcoal
+
 </style>

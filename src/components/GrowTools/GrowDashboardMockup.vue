@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import GrowChart from '@/components/GrowTools/GrowChart.vue';
+
+const kpis = [
+  { label: 'Active Packages', value: '2,481', trend: '+4.2%' },
+  { label: 'Pending COAs', value: '12', trend: '-2 today' },
+  { label: 'Validation Errors', value: '3', trend: '-1 fixed' },
+  { label: 'Weekly Yield', value: '148.2 lbs', trend: '+6.1%' },
+]
+
+const chartData = [40, 55, 62, 48, 70, 82, 74]
+
+const table = [
+  { id: 1, package: 'PKG-221', strain: 'Blue Dream', status: 'Active', qty: '14.2g' },
+  { id: 2, package: 'PKG-847', strain: 'GMO', status: 'Pending', qty: '8.1g' },
+  { id: 3, package: 'PKG-109', strain: 'Gelato', status: 'Active', qty: '22.4g' },
+]
+</script>
 <template>
   <div class="dashboard">
 
@@ -61,10 +79,8 @@
       </div>
     </div>
 
-    <!-- TABLE -->
-    <div class="panel table-panel">
-      <div class="panel-title">Recent Inventory</div>
-
+    <div class="panel-title">Recent Inventory</div>
+    <div class="gt-table-wrapper">
       <table>
         <thead>
           <tr>
@@ -74,7 +90,6 @@
             <th>Qty</th>
           </tr>
         </thead>
-
         <tbody>
           <tr v-for="row in table" :key="row.id">
             <td>{{ row.package }}</td>
@@ -84,30 +99,9 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
+    </div>  
   </div>
 </template>
-
-<script setup lang="ts">
-import GrowChart from '@/components/GrowTools/GrowChart.vue';
-
-const kpis = [
-  { label: 'Active Packages', value: '2,481', trend: '+4.2%' },
-  { label: 'Pending COAs', value: '12', trend: '-2 today' },
-  { label: 'Validation Errors', value: '3', trend: '-1 fixed' },
-  { label: 'Weekly Yield', value: '148.2 lbs', trend: '+6.1%' },
-]
-
-const chartData = [40, 55, 62, 48, 70, 82, 74]
-
-const table = [
-  { id: 1, package: 'PKG-221', strain: 'Blue Dream', status: 'Active', qty: '14.2g' },
-  { id: 2, package: 'PKG-847', strain: 'GMO', status: 'Pending', qty: '8.1g' },
-  { id: 3, package: 'PKG-109', strain: 'Gelato', status: 'Active', qty: '22.4g' },
-]
-</script>
-
 <style lang="sass" scoped>
 $charcoal: #36454F
 $soft: #FAF9F6
@@ -117,10 +111,13 @@ $green: #4a7c59
 $orange: #c07a2c
 
 .dashboard
-  padding: 1rem
   background: white
   border-radius: 1rem
   box-shadow: 0 10px 30px rgba(0,0,0,0.08)
+  @media screen and (max-width: 600px) 
+    margin: 0
+  @media screen and (min-width: 600px)
+    padding: 1rem
 
 .kpi-grid
   display: grid
@@ -209,19 +206,12 @@ $orange: #c07a2c
 .alert.info
   color: $muted
 
-/* TABLE */
-.table-panel
-  overflow-x: auto
-
-table
-  width: 100%
-  border-collapse: collapse
-
 th, td
   text-align: left
-  padding: 0.5rem
   border-bottom: 1px solid $border
-
+  @media screen and (min-width: 600px)
+    padding: 0.5rem
+  
 .active
   color: $green
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GrowDashboardMockup from '@/components/GrowTools/GrowDashboardMockup.vue';
 import TestingChart from '@/components/GrowTools/TestingChart.vue';
+import MetrcCleanupDemo from '@/components/GrowTools/MetrcCleanupDemo.vue';
 import { useSocials } from '@/composables/socials';
 document.title = "Adam Loewen | Cannabis Industy Operations";
 const { socials } = useSocials();
@@ -14,9 +15,10 @@ const { socials } = useSocials();
                 <div class="gt-avatar">
                     <img src="@/assets/img/mega-adam-avatar.webp" alt="Adam Loewen avatar">
                 </div>
-                <p class="gt-text">Helping Oregon operators reduce spreadsheet chaos, automate reporting tasks, and improve operational visibility.
-                    I come equipped with modern software skills and hands-on indstry experience.
+                <p class="gt-text">Helping Oregon operators reduce spreadsheet chaos, clean up Metrc workflows, and automate repetitive tasks.
+                    I come equipped with modern software skills and hands-on industry experience.
                 </p>
+                <a href="/Contact">Send Me a Workflow Problem</a>
                 <div style="display: flex; justify-content: center;">
                     <a class="gt-button-2" href="#solutions">Example Tools</a>
                     <a href="/Contact" class="gt-button">Contact Me</a>
@@ -25,17 +27,18 @@ const { socials } = useSocials();
                     View my <a href="https://github.com/invisispider" target="_blank">GitHub projects</a>
                     , or <a href="https://www.upwork.com/freelancers/~01527a09cdcfd75500" target="_blank" >Upwork Freelancer Profile</a>
                 </p>
-                <p class="gt-tagline">
+                <!-- <p class="gt-tagline">
                     Google Sheets • Metrc Workflows • Reporting Automation • Custom Utilities
+                </p> -->
+                <!-- <p class="gt-text">
+                Custom tooling built with modern web technologies,
+                Google Apps Script, and lightweight automation systems.
+                </p> -->
+                <p class="gt-tagline">
+                Vue • Python • Google Apps Script • Sheets Automation • Dashboards • Metrc Workflows
                 </p>
             </div>
-
-            <div style="margin: auto;" class="gt-hero-right">
-
-                <GrowDashboardMockup />
-
-            </div>            
-
+            <GrowDashboardMockup />
         </section>
         <section id="clients" class="gt-section">
             <h2>Built for teams who think structurally</h2>
@@ -47,7 +50,7 @@ const { socials } = useSocials();
                 <li>Repetitive manual copy/paste tasks</li>
                 <li>Inflexible lab COAs and app exports</li>
                 <li>Multiple "sources of truth"</li>
-                <li>Faking numbers to resolve discrepancies</li>
+                <li>Patchwork fixes to inventory discrepancies</li>
                 <li>Emergency late night inventory audits</li>
             </ul>
             <p class="gt-text">Most producers care about their products deeply, but they figure out their data systems as they go. They sometimes 
@@ -60,91 +63,110 @@ const { socials } = useSocials();
         </section>
         <section id="solutions" class="gt-section">
             <h2>Problems and Solutions</h2>
-
             <div class="gt-card-container">
-
                 <div class="gt-card">
                 <header>Messy spreadsheets → structured systems</header>
-                <p>Clean and standardize cultivation inventory tracking in Sheets or Excel.</p>
-                <ul>
-                    <li>clean up errors, formulas, and duplicates</li>
-                    <li>Apps Script to import and compare reports</li>
-                    <li>automated template generation</li>
-                    <li>future-proof data design</li>
-                </ul>
+                    <p>Clean and standardize cultivation inventory tracking in Sheets or Excel.</p>
+                    <ul>
+                        <li>clean up errors, formulas, and duplicates</li>
+                        <li>Apps Script to import and compare reports</li>
+                        <li>automated template generation</li>
+                        <li>future-proof data design</li>
+                    </ul>
                 </div>
-
                 <div class="gt-card">
-                <header>Operations → dashboards</header>
-                <p>Turn fragmented operational data into clear KPIs and visual dashboards.</p>
-                <ul>
-                    <li>track yields, trends, and inventory</li>
-                    <li>increase data visibility and efficiency</li>
-                    <li>custom aggregate and summary stats</li>
-                    <li>integrate BI, Charts, Tableau, JS, Python</li>
-                </ul>
+                    <header>Operations → dashboards</header>
+                    <p>Turn fragmented operational data into clear KPIs and visual dashboards.</p>
+                    <ul>
+                        <li>track yields, trends, and inventory</li>
+                        <li>increase data visibility and efficiency</li>
+                        <li>custom aggregate and summary stats</li>
+                        <li>integrate BI, Charts, Tableau, JS, Python</li>
+                    </ul>
                 </div>
-
                 <div class="gt-card">
-                <header>Metrc → reality alignment</header>
-                <p>Reconcile Metrc data with real-world inventory and flag inconsistencies before they become problems.</p>
-                <ul>
-                    <li>validation checks</li>
-                    <li>reconciliation tools</li>
-                    <li>discrepancy detection</li>
-                </ul>
-                </div>
-
+                    <header>Manual workflows → automation</header>
+                    <p>Automate repetitive updating and syncing, using Apps Script and lightweight tooling.</p>
+                    <ul>
+                        <li>email lab result summaries</li>
+                        <li>automated Metrc report updates</li>
+                        <li>spreadsheet reset/duplication</li>
+                    </ul>
+                    </div>
                 <div class="gt-card">
-                <header>Manual workflows → automation</header>
-                <p>Automate repetitive updating and syncing, using Apps Script and lightweight tooling.</p>
-                <ul>
-                    <li>email lab result summaries</li>
-                    <li>automated Metrc report updates</li>
-                    <li>spreadsheet reset/duplication</li>
-                </ul>
+                    <header>Sticky laptop → mobile capture</header>
+                    <p>Browser-based UIs enable onsite mobile users to update source data in real-time.</p>
+                    <ul>
+                        <li>QA and compliance logging</li>
+                        <li>clone propagation</li>
+                        <li>harvest entry</li>
+                        <li>waste disposal</li>
+                    </ul>
                 </div>
-
-                <div class="gt-card">
-                <header>Sticky laptop → mobile capture</header>
-                <p>Browser-based UIs enable onsite mobile users to update source data in real-time.</p>
-                <ul>
-                    <li>QA and compliance logging</li>
-                    <li>clone propagation</li>
-                    <li>harvest entry</li>
-                    <li>waste disposal</li>
-                </ul>
-                </div>
-
             </div>
-            <TestingChart />
-
-       
-            <p>Cannabis teams have <b class="text-slate">NO TIME</b> for repetitive work in 
-                <span class="text-slate"><b>spreadsheets, databases,</b> and <b>web exports.</b></span>
-            </p>
-
+        </section>
+        <TestingChart />
+        <section class="gt-section">
+            <h2>Example Project Description</h2>
+            
+            <div class="gt-card">
+                <header>Lab COAs → Structured Operational Data</header>
+                <p><b>Problem:</b><br>
+                    Many labs offer unique formatted lab reports, 
+                    designed for human reading, not data extraction.
+                    Producer manually copies test results 
+                    from PDFs, which is time-consuming and error-prone.
+                </p>
+                <p><b>Solution:</b><br>
+                    Python-based extraction tool to:
+                </p>
+                <ul>
+                    <li>parse multiple lab PDF layouts</li>
+                    <li>normalize test result formats</li>
+                    <li>convert reports into structured CSV data</li>
+                    <li>update existing plant/package records</li>
+                </ul>
+                <img src="@/assets/img/growtools_workflow.webp" alt="Workflow example" class="gt-workflow-img" />
+                <p>
+                    <b>Result:</b> <br>Reduced manual data entry 
+                    and improved product quality metrics visibility.
+                    As production scales, it becomes increasingly difficult to manage a huge archive of 
+                    reports with different formats. 
+                    <span style="font-weight: 600;" class="text-slate">
+                    It's time to get ahead of this problem once you 
+                    start to notice it.</span>
+                </p>
+            </div>
+            <a
+                href="https://github.com/invisispider/pdf-coa-to-csv"
+                target="_blank"
+                class="gt-button-2"
+            >
+                View on GitHub
+            </a>
         </section>
         <section class="gt-section">
             <h2>How it works</h2>
-
+            <p>No expensive platform migration required.
+            Most improvements build on tools your team already uses.
+            </p>
             <p>
                 You send me a real workflow, spreadsheet, or report.
                 I turn it into something that runs cleaner, faster, or automatically.
             </p>
-
             <ul>
                 <li>Remove manual copy/paste work</li>
                 <li>Standardize messy data</li>
                 <li>Automate repetitive reporting</li>
                 <li>Connect tools that don’t currently talk to each other</li>
             </ul>
-
-            <p>
-                Most fixes take the form of lightweight scripts, dashboards, or data pipelines.
+            <p>Most fixes take the form of lightweight scripts, dashboards, or data pipelines.</p>
+            <p>Cannabis teams have <b class="text-slate">NO TIME</b> for repetitive work in 
+                <span class="text-slate"><b>spreadsheets, databases,</b> and <b>web exports.</b></span>
             </p>
         </section>
-        <section id="cta" class="gt-footer">    
+        <MetrcCleanupDemo />
+        <section id="cta" class="gt-section gt-footer">    
             <h2>Get in Touch</h2>
             <p>Annoying or repetitive workflow? Need better reporting?</p>
             <p>Send an example and I’ll let you know whether it can be simplified or automated.</p>         
@@ -178,7 +200,7 @@ const { socials } = useSocials();
         </section>
     </div>
 </template>
-<style lang="sass" scoped>
+<style lang="sass">
 @use "sass:color"
 $charcoal: #36454F
 $slate: DarkSlateBlue
@@ -191,17 +213,23 @@ $soft-off-white: #FAF9F6
     color: $charcoal
     display: flex
     flex-direction: column
+    max-width: 100vw
+    overflow-x: scroll
     ul
         padding-left: 0
         list-style-position: inside
 .gt-section:nth-child(even)
-    background-color: rgba(255,255,255,0.45)
+    background-color: rgba(255,255,255,0.5)
 .gt-section
-    // min-height: 50vh
-    border-bottom: 3px solid $muted-green
+    border-bottom: 1px solid rgba(0,0,0,0.08)
     width: min(1200px, 92%)
+    max-width: 60ch
     margin-inline: auto
-    padding: 1rem 0 3rem 0
+    // padding: 0
+    @media screen and (min-width: 600px)
+        padding: 4rem 1rem
+    @media screen and (min-width: 1100px)
+        max-width: 80ch
 .gt-heading
     width: 100%
     color: $charcoal
@@ -216,19 +244,18 @@ $soft-off-white: #FAF9F6
     color: $slate
 p, li, h3
     color: $charcoal
-// .gt-dashboard
 
 .gt-card-container
     display: grid
     justify-items: center
+    gap: 1em
     @media screen and (min-width: 800px)
         grid-template-columns: 1fr 1fr
-        gap: 1em
     .gt-card
         border-radius: 1em
         padding: 1.5rem
         background-color: white
-        min-width: 380px
+        width: 100%
         max-width: 800px
         transition: transform 0.2s ease, box-shadow 0.2s ease
         border: 1px solid rgba(0,0,0,0.06)
@@ -252,7 +279,6 @@ p, li, h3
     margin-bottom: 2em
 .gt-text
     align-self: center
-    // max-width: 50ch
     font-size: 1.05rem
     line-height: 1.7
 .gt-button, .gt-button-2
@@ -265,8 +291,6 @@ p, li, h3
     font-weight: 600
     transition: 0.2s ease
     color: $muted-green !important
-    // align-self: center
-    // width: max-content
     &:hover
         background-color: color.adjust($charcoal, $lightness: +55%)    
 .gt-button
@@ -275,11 +299,12 @@ p, li, h3
     border: 1px solid $charcoal
 .gt-hero
     display: grid
-    grid-template-columns: 1.1fr 0.9fr
-    gap: 4rem
     align-items: center
-    @media screen and (max-width: 900px)
-        grid-template-columns: 1fr
+    grid-template-columns: 1fr
+    @media screen and (min-width: 600px)
+        gap: 4rem
+    @media screen and (min-width: 900px)
+        grid-template-columns: 1.1fr 0.9fr
 .gt-hero-left
     align-self: flex-start
     border: 1px solid $soft-off-white
@@ -299,7 +324,7 @@ p, li, h3
   @include sepia-filter(26%)
   transition: filter 0.3s ease
   &:hover
-    @include sepia-filter(0%)
+    @include sepia-filter(56%)
 
 .gt-avatar
     box-shadow: 0 0 15px $charcoal
@@ -324,10 +349,29 @@ p, li, h3
         grid-template-columns: 1fr 1fr
     .gt-tool
         margin: 1em
-        diplay: flex
+        display: flex
         flex-direction: column
         padding: 0.5em 1em
         border-radius: 0.3em
         box-shadow: 0 0 5px $charcoal
 
+.gt-table-wrapper
+    width: 100%
+    overflow-x: auto
+    table
+        max-width: 100%
+        margin-inline: auto
+        border-collapse: collapse
+        width: 500px
+        font-size: clamp(1rem, 2vw, 2rem)
+    td:hover, th:hover
+        background-color: rgba(0,0,0,0.3)
+.gt-workflow-img
+    width: 100%
+    // margin: 1em 0
+    // padding: 1em 0
+    // display: block
+    border-radius: 1rem
+    border: 1px solid rgba(0,0,0,0.08)
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06)
 </style>

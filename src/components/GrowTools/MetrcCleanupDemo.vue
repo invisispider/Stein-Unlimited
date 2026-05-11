@@ -68,7 +68,7 @@ const discrepancyCount = computed(() => {
 const isClean = computed(() => discrepancyCount.value === 0)
 </script>
 <template>
-    <div class="gt-metrc-cleanup">
+    <div class="gt-metrc-cleanup" style="overflow-x: scroll;">
         <h2>Metrc Cleanup</h2>
         <p>Simple visual demo of automated Metrc validation.</p>
         <transition name="fade" mode="out-in">
@@ -99,62 +99,7 @@ const isClean = computed(() => discrepancyCount.value === 0)
                 </tbody>
             </table>
         </div>
-    <button class="cleanup-button" @click="cleanupData">Cleanup</button>
-    <button class="reset-button" @click="resetData">Reset</button>
+    <button class="gt-button" @click="cleanupData">Cleanup</button>
+    <button class="gt-reset-button" @click="resetData">Reset</button>
     </div>
 </template>
-<style lang="sass" scoped>
-.gt-metrc-cleanup
-    padding: 1rem
-    background: #f9f9f9
-    border: 1px solid #ddd
-    border-radius: 8px
-th, td
-    padding: 0.5rem 1rem
-    border: 1px solid #ccc
-td
-    transition: all 0.75s ease
-table
-    border-collapse: collapse
-    width: 100%
-button
-    margin-top: 1rem
-    margin-inline: 1rem
-    padding: 0.7rem 1.2rem
-    border-radius: 2rem
-    font-size: 0.9rem
-    font-weight: 500
-    border: 1px solid #6e7864
-    &:hover
-        opacity: 0.7
-.reset-button
-    background: lightBlue
-.success, .note-success
-    background-color: #e8f5e9
-    color: #2e7d32
-.error, .note-error
-    background-color: #ffebee
-    color: #d64545
-.note-error, .note-success
-    font-weight: 600
-    border-radius: 2em
-    padding: 0.5rem 1rem
-    margin-bottom: 1rem
-    max-width: 600px
-    text-align: center
-    margin-inline: auto
-.fade-enter-active
-    transition: opacity 5s ease
-.fade-leave-active
-    transition: opacity 0.25s ease
-.fade-enter-from,
-.fade-leave-to
-    opacity: 0
-.material-icons
-    font-size: 1rem
-    vertical-align: middle
-    margin-left: 0.25rem
-    &:hover
-        color: #000
-
-</style>

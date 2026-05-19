@@ -160,9 +160,7 @@ const { socials } = useSocials();
             <h2>Get in Touch</h2>
             <p class="gt-text">Annoying or repetitive workflow? Need better reporting?
             Get in touch with an example or question.</p>         
-            <div class="gt-button">
-                <RouterLink to="/Contact">Contact Form</RouterLink>
-            </div>
+            <RouterLink class="gt-button" to="/Contact">Contact Form</RouterLink>
             <div v-show="false">
                 <p>Images Needed:</p>
                 <ul>
@@ -326,8 +324,10 @@ $gt-hover-green: color.adjust($gt-color-green-fg, $lightness: +20%)
         border: 1px solid $gt-border
     .gt-button
         background-color: color.adjust($gt-color-black-fg, $lightness: +60%)
+        color: $gt-color-black-fg !important
         &:hover
-            background-color: color.adjust($gt-color-black-fg, $lightness: +55%)    
+            background-color: color.adjust($gt-color-black-fg, $lightness: +55%)  
+    
     .gt-button-2
         background-color: $gt-color-slate
         color: $gt-color-cream !important
